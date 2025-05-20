@@ -27,10 +27,10 @@
 
 
 ## Product increments (AFTER SPRINT)
-- 
-- 
-- 
-- 
+- Decided on the technologies used for the project (python sklearn for models, django+vue.js application)
+- Successfully created an initial visual draft of the application
+- Successfully set up a docker image with the development environment
+- Successfully outlined the information about models used and general idea of how the data should be cleared
 
 
 ## Sprint review / retrospective (AFTER SPRINT)
