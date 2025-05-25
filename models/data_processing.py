@@ -3,7 +3,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from ydata_profiling import ProfileReport
 
-
 # --- Settings ---
 INPUT_PATH = './raw_data/merged.csv'
 COLUMNS_TO_DROP = [
@@ -20,10 +19,27 @@ def ensure_dir(path):
 
 df = pd.read_csv(
     INPUT_PATH,
-    parse_dates=['time'],
     engine='python',
-    on_bad_lines='skip'
+    on_bad_lines='skip',
+    na_values=['?','']
 )
+
+# Clear time (Problem with .KIEL timezone)
+if 'time' in df.columns:
+    df['time'] = (
+        df['time'].astype(str)
+          .str.replace(r"\..*$", "", regex=True)
+          .str.strip("'")
+    )
+    df['time'] = pd.to_datetime(df['time'], format='mixed', errors='coerce')
+    df['time'] = df['time'].dt.tz_localize('UTC', ambiguous='NaT', nonexistent='shift_forward')
+    df['time'] = df['time'].dt.tz_convert('Europe/Berlin')
+
+# Convert columns to numeric
+for col in ['Draught', 'TH', 'SOG', 'COG']:
+    if col in df.columns:
+        df[col] = pd.to_numeric(df[col], errors='coerce')
+
 
 # Drop unwanted columns
 df_clean = df.drop(columns=COLUMNS_TO_DROP, errors='ignore')
