@@ -6,7 +6,7 @@ from ydata_profiling import ProfileReport
 # --- Settings ---
 INPUT_PATH = './raw_data/merged.csv'
 COLUMNS_TO_DROP = [
-    'TripID', 'Name', 'Callsign', 'MMSI'
+    'ID', 'Name', 'Callsign', 'MMSI'
 ]
 OUTPUT_CLEANED_CSV = './cleaned.csv'
 FIGURES_DIR = './figures'
