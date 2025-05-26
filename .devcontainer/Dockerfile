@@ -1,12 +1,20 @@
 # 1. Backend and frontend together
 FROM python:3.11-slim
 
-# Node.js for Vue
+# Node.js for Vue + system deps
 RUN apt-get update && \
-    apt-get install -y curl gnupg git && \
-    curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
-    apt-get install -y nodejs && \
-    apt-get clean && rm -rf /var/lib/apt/lists/*
+    apt-get install -y \
+        curl \
+        gnupg \
+        git \
+        gcc \
+        libpq-dev \
+        python3-dev \
+        build-essential \
+        tree \
+    && curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
+    && apt-get install -y nodejs \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Set work directory
 WORKDIR /workspace
