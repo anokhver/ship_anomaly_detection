@@ -1,4 +1,4 @@
-### Labelling methodology
+### Labeling methodology
 After the data has been cleaned, the anomalies in a learning set of data must be labeled. For manual labeling, python libraries already included (numpy, pandas) will be used.
 The anomalies will be manually labeled according to a set of rules previosly discussed:
 
