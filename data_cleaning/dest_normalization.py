@@ -1,9 +1,83 @@
 import re
 from fuzzywuzzy import fuzz, process
 
+name_german = {
+    'DEHAM': ["HAMBURG", "HAMBUG", "HH", "HAM"],
+    'DEBRV': ["BREMERHAVEN", "BREMENHAVEN", "BRV", "DEBHV", "BHV"],
+    'DEBRE': ["BREMEN", "BRE"],
+    'DEKEL': ["KIEL", "KEL"],
+    'DEHAM.FINKENWERDER': ["FINKENWERDER", "FINKENWERD"],
+    'DEHAM.BLEXEN': ["BLEXEN"],
+    'DESTA': ["STADE", "STAD", "STA"],
+    'DEBRB': ["BRUNSBUETTEL", "BRUNSBUETT", "BRB"],
+    'DEHAM.ELBE': ["ELBE"],
+    'DEVTT': ["HIDDENSEE", "VTT"],
+    'DEWVN': ["WILHELMSHAVEN", "WVN"],
+    'country': ["DE"]
+}
+
+name_poland = {
+    'PLGDN': ["GDANSK", "GDANK", "GDN"],
+    'PLGDY': ["GDYNIA", "GYDNIA", "GYDINIA", "GDY", "GDYNA"],
+    'SZCZECIN': ["SZCZECIN", "SZCZECIN", "SZZ"],
+    'country': ["PL"]
+}
+
+name_lythuania = {
+    'LTKLJ': ["KLAIPEDA", "KLJ"],
+    'country': ["LT"]
+}
+
+name_sweden = {
+    'SEHAD': ["HALMSTAD", "HAD"],
+    'SENOK': ["NOK"],
+    'SEAHU': ["AHUS", "AHU"],
+    'country': ["SE"]
+}
+
+name_russia = {
+    'RUKGD': ["KALININGRAD", "KALININGRAD", "KAL"],
+    'country': ["RU"]
+}
+
+name_denmark = {
+    'DKKOB': ["KOBENHAVN", "COPENHAGEN", "COPENHAGUE", "CPH"],
+    'country': ["DK"]
+}
+
+name_finland = {
+    'FIHKO': ["HANKO", "HKO"],
+    'country': ["FI"]
+}
+
+name_belgium = {
+    "BEANR": ["BEANR", "ANR"],
+    'country': ["BE"]
+}
+
+full_dict = [
+    name_german,
+    name_poland,
+    name_lythuania,
+    name_sweden,
+    name_russia,
+    name_denmark,
+    name_finland,
+    name_belgium
+]
+
 
 def clean_destination(dest):
-    if not isinstance(dest, str): return dest  # Skip non-string values
+    """Clean and standardize destination strings by removing special characters and normalizing format.
+
+    Args:
+        dest (str): The destination string to clean
+
+    Returns:
+        str: Cleaned destination string in uppercase with standardized formatting
+    """
+    if not isinstance(dest, str):
+        return dest  # Skip non-string values
 
     dest = re.sub(r'[^A-Za-z0-9\s./\\><]', '', dest)  # Keep only alphanum + ./\\><
     dest = re.sub(r'\.{2,}', '.', dest)  # Reduce multiple dots to one
@@ -17,8 +91,12 @@ def clean_destination(dest):
 
 
 def save_filtered_ports(df, country_name='Germany'):
-    # Load the CSV file into a pandas DataFrame
+    """Filter port data by country and save to CSV, keeping only relevant columns.
 
+    Args:
+        df (pd.DataFrame): DataFrame containing port data
+        country_name (str): Country name to filter by (default: 'Germany')
+    """
     # Filter rows where 'Main Port Name', 'Alternate Port Name', 'Country Code', or 'Region Name' contains "Hamburg" or "DE"
     filtered_ports = df[
         df['Country Code'].str.contains(country_name, case=False, na=False) |
@@ -39,8 +117,6 @@ def save_filtered_ports(df, country_name='Germany'):
     ]
 
     filtered_ports = filtered_ports.drop(columns=columns_to_drop)
-
-    # Optionally, save the filtered data to a new CSV file
     filtered_ports.to_csv(f'../data/{country_name}.csv', index=False)
 
 
@@ -146,6 +222,26 @@ def print_fuzzy_matches(matches, min_score=0, group_similar=False):
 
 
 def match_names(name, variants_dicts):
+    """
+    Match a port name against known variants and return the standardized key.
+
+    Args:
+        name (str): The port name to match
+        variants_dicts (list): List of dictionaries containing port variants,
+            where each dictionary has standardized keys with variant spellings as values,
+            and a 'country' key with country codes
+
+    Returns:
+        str: The matched standardized key if found, or original name if no match
+
+    Example:
+        >>> name_german = {
+        ...     'DEHAM': ["HAMBURG", "HAMBUG", "HH", "HAM"],
+        ...     'country': ["DE"]
+        ... }
+        >>> match_names("Hamburg", [name_german])
+        'DEHAM'
+    """
     if not isinstance(name, str):
         return name
 
@@ -159,13 +255,5 @@ def match_names(name, variants_dicts):
                 pattern = rf"({country_prefix}[\.\-_]?)?{variant}([\.\-_]?{country_prefix})?"
                 match = re.search(pattern, name, re.IGNORECASE)
                 if match:
-                    before = name[:match.start()].strip()
-                    after = name[match.end():].strip()
-
-                    replacement = (
-                        f"{before + '.' if before and re.search(r'[A-Za-z]$', before) else before or ''}"
-                        f"{key}"
-                        f"{'.' + after if after and re.search(r'^[A-Za-z]', after) else after or ''}"
-                    )
-                    return replacement
+                    return key
     return name
