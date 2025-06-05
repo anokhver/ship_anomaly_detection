@@ -1,5 +1,9 @@
 import re
+
+import numpy as np
+import pandas as pd
 from fuzzywuzzy import fuzz, process
+from scipy.spatial import distance
 
 name_german = {
     'DEHAM': ["HAMBURG", "HAMBUG", "HH", "HAM"],
@@ -19,7 +23,7 @@ name_german = {
 name_poland = {
     'PLGDN': ["GDANSK", "GDANK", "GDN"],
     'PLGDY': ["GDYNIA", "GYDNIA", "GYDINIA", "GDY", "GDYNA"],
-    'SZCZECIN': ["SZCZECIN", "SZCZECIN", "SZZ"],
+    'PLSZZ': ["SZCZECIN", "SZZ", "PLSZCZECIN"],
     'country': ["PL"]
 }
 
@@ -65,6 +69,7 @@ full_dict = [
     name_finland,
     name_belgium
 ]
+
 
 
 def clean_destination(dest):
@@ -221,18 +226,21 @@ def print_fuzzy_matches(matches, min_score=0, group_similar=False):
                     print(f"  → {match} (score: {score})")
 
 
-def match_names(name, variants_dicts):
+def match_names(name, variants_dicts, test=False):
     """
     Match a port name against known variants and return the standardized key.
 
     Args:
-        name (str): The port name to match
-        variants_dicts (list): List of dictionaries containing port variants,
-            where each dictionary has standardized keys with variant spellings as values,
-            and a 'country' key with country codes
+        name (str): The port name to match. Can include variations or misspellings.
+        variants_dicts (list): A list of dictionaries where:
+            - Keys are standardized port codes or names.
+            - Values are lists of variant spellings or aliases for the key.
+            - Each dictionary also contains a 'country' key with a list of country codes.
+        test (bool): If True, returns the original name if no match is found.
+                     If False, returns None when no match is found.
 
     Returns:
-        str: The matched standardized key if found, or original name if no match
+        str: The standardized key if a match is found, or the original name/None based on `test`.
 
     Example:
         >>> name_german = {
@@ -241,19 +249,91 @@ def match_names(name, variants_dicts):
         ... }
         >>> match_names("Hamburg", [name_german])
         'DEHAM'
+
+    Notes:
+        - The function uses regex to match names, accounting for optional country prefixes or suffixes.
+        - Matching prioritizes longer keys to avoid partial matches.
     """
-    if not isinstance(name, str):
-        return name
+    if not isinstance(name, str, ):
+        return name if test else None
 
     for variant_dict in variants_dicts:
         country_prefix = variant_dict.get('country', [None])[0]
-        for key, variants in variant_dict.items():
-            if key == 'country':
-                continue
 
-            for variant in variants:
-                pattern = rf"({country_prefix}[\.\-_]?)?{variant}([\.\-_]?{country_prefix})?"
-                match = re.search(pattern, name, re.IGNORECASE)
-                if match:
+        # Get all keys sorted by specificity (longest first)
+        sorted_keys = sorted(
+            [k for k in variant_dict.keys() if k != 'country'],
+            key=lambda x: -len(x)
+        )
+
+        for key in sorted_keys:
+            # Try matching both the key itself and its variants
+            patterns_to_try = [key] + variant_dict[key]
+
+            for pattern_str in patterns_to_try:
+                # Build regex pattern that accounts for country prefix/suffix
+                pattern = rf"({country_prefix}[\.\-_]?)?{pattern_str}([\.\-_]?{country_prefix})?"
+                if re.search(pattern, name, re.IGNORECASE):
                     return key
-    return name
+                    # before = name[:match.start()].strip()
+                    # after = name[match.end():].strip()
+                    #
+                    # replacement = (
+                    #     f"{before + '.' if before and re.search(r'[A-Za-z]$', before) else before or ''}"
+                    #     f"{key}"
+                    #     f"{'.' + after if after and re.search(r'^[A-Za-z]', after) else after or ''}"
+                    # )
+    return name if test else None
+
+def fill_missing_destinations_by_proximity(df):
+    df_filled = df.copy()
+
+    for trip_id, trip_group in df_filled.groupby('TripID'):
+        # Ensure order
+        trip_group = trip_group.sort_index()
+        trip_indices = trip_group.index
+
+        for i, idx in enumerate(trip_indices):
+            if pd.isna(df_filled.at[idx, 'Destination']):
+                above = None
+                for j in range(i-1, -1, -1):
+                    ref_idx = trip_indices[j]
+                    if not pd.isna(df_filled.at[ref_idx, 'Destination']):
+                        above = {
+                            'index': ref_idx,
+                            'lat': df_filled.at[ref_idx, 'Latitude'],
+                            'lon': df_filled.at[ref_idx, 'Longitude'],
+                            'dest': df_filled.at[ref_idx, 'Destination']
+                        }
+                        break
+
+                below = None
+                for j in range(i+1, len(trip_indices)):
+                    ref_idx = trip_indices[j]
+                    if not pd.isna(df_filled.at[ref_idx, 'Destination']):
+                        below = {
+                            'index': ref_idx,
+                            'lat': df_filled.at[ref_idx, 'Latitude'],
+                            'lon': df_filled.at[ref_idx, 'Longitude'],
+                            'dest': df_filled.at[ref_idx, 'Destination']
+                        }
+                        break
+
+                if above and below:
+                    current_point = np.array([[df_filled.at[idx, 'Latitude'],
+                                               df_filled.at[idx, 'Longitude']]])
+                    above_point = np.array([[above['lat'], above['lon']]])
+                    below_point = np.array([[below['lat'], below['lon']]])
+
+                    dist_above = distance.cdist(current_point, above_point)[0][0]
+                    dist_below = distance.cdist(current_point, below_point)[0][0]
+
+                    df_filled.at[idx, 'Destination'] = (
+                        above['dest'] if dist_above <= dist_below else below['dest']
+                    )
+                elif above:
+                    df_filled.at[idx, 'Destination'] = above['dest']
+                elif below:
+                    df_filled.at[idx, 'Destination'] = below['dest']
+
+    return df_filled
