@@ -1,8 +1,5 @@
-django
-djangorestframework
-django-cors-headers
 scikit-learn>=1.0
-numpy
+numpy<=2.1
 pandas
 matplotlib
 ydata_profiling

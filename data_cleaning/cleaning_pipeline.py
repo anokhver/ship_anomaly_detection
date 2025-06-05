@@ -23,7 +23,7 @@ def replace_with_key(df, column, name_variants):
 
 
 def main():
-    file_path = '../models/cleaned_atr.csv'
+    file_path = '../data/cleaned_atr.csv'
     output_path = '../data/prepared.parquet'
 
     print(f"\n{'=' * 50}")
