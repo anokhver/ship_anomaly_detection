@@ -67,8 +67,32 @@ After
 | Destination   | 0.007443  |
 | shiptype      | 0.717820  |
 
-**TODO**
-What to do with trips where:
--Length && Breadth && Shiptype all null
--Destination is all null
--Draught is all null
+### New columns normalized names
+| Original Column Name | Normalized Column Name |
+|----------------------|------------------------|
+| TripID               | trip_id                |
+| StartLatitude        | start_latitude         |
+| StartLongitude       | start_longitude        |
+| StartTime            | start_time             |
+| EndLatitude          | end_latitude           |
+| EndLongitude         | end_longitude          |
+| EndTime              | end_time               |
+| StartPort            | start_port             |
+| EndPort              | end_port               |
+| time                 | time_stamp             |
+| shiptype             | ship_type              | 
+| Length               | length                 |
+| Breadth              | breadth                |
+| Draught              | draught                |
+| Latitude             | latitude               |
+| Longitude            | longitude              |
+| SOG                  | speed_over_ground      |
+| COG                  | course_over_ground     |
+| TH                   | true_heading           |
+| Destination          | destination            |
+| AisSourcen           | ais_source             |
+
+
+[TUHH link](https://www3.tuhh.de/sts/hoou/data-quality-explored/1-1-AIS-data.html)
+[AIS data](https://api.vtexplorer.com/docs/response-ais.html)
+[Anomaly detection](https://www.sciencedirect.com/science/article/pii/S002980182303024X)
