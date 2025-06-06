@@ -6,7 +6,7 @@ from ydata_profiling import ProfileReport
 # --- Settings ---
 INPUT_PATH = '../data/fix_noise.parquet'  # Changed to parquet
 FIGURES_DIR = './figures_prepared'
-REPORT_HTML = './profile_prepared.html'
+REPORT_HTML = './profile_parquet.html'
 # --------------------------------------
 
 def ensure_dir(path):
