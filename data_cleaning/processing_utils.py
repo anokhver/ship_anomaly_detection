@@ -2,74 +2,103 @@ import re
 
 import numpy as np
 import pandas as pd
-from fuzzywuzzy import fuzz, process
+from matplotlib import pyplot as plt
 from scipy.spatial import distance
+import seaborn as sns
 
+
+def plot_missing(df):
+    cols = df.columns
+    plt.figure(figsize=(10, 5))
+    return sns.heatmap(df[cols].isnull(), cmap=['white', 'black'], cbar=False)
+
+
+def get_percentage_missing(df, col=None):
+    if col is None:
+        return df.isnull().sum() / len(df) * 100
+    else:
+        return df[col].isnull().sum() / len(df) * 100
+
+
+def get_entries_with_missing_values(df, col):
+    trips_with_missing = df[df[col].isna()][
+        'TripID'].unique()  # 1. Get TripIDs with at least one missing col value
+    df_missing_trips = df[df['TripID'].isin(trips_with_missing)]  # 2. Filter DataFrame to include only these trips
+
+    return (
+        df_missing_trips
+        .groupby('TripID')[col]
+        .apply(lambda x: list(x.unique()))
+    )
+
+
+# ---------------- Destination filtering and matching ----------------
 name_german = {
-    'DEHAM': ["HAMBURG", "HAMBUG", "HH", "HAM"],
-    'DEBRV': ["BREMERHAVEN", "BREMENHAVEN", "BRV", "DEBHV", "BHV"],
-    'DEBRE': ["BREMEN", "BRE"],
-    'DEKEL': ["KIEL", "KEL"],
-    'DEHAM.FINKENWERDER': ["FINKENWERDER", "FINKENWERD"],
-    'DEHAM.BLEXEN': ["BLEXEN"],
-    'DESTA': ["STADE", "STAD", "STA"],
-    'DEBRB': ["BRUNSBUETTEL", "BRUNSBUETT", "BRB"],
-    'DEHAM.ELBE': ["ELBE"],
-    'DEVTT': ["HIDDENSEE", "VTT"],
-    'DEWVN': ["WILHELMSHAVEN", "WVN"],
+    'HAM': ["HAMBURG", "HAMBUG", "HH", "FINKENWERD", "FINKENWERDER", "BLEXEN", "ELBE"],
+    # 'HAM.FINKENWERDER': ["FINKENWERDER", "FINKENWERD"],
+    # 'DEHAM.BLEXEN': ["BLEXEN"],
+    # 'DEHAM.ELBE': ["ELBE"],
+    'BRV': ["BREMERHAVEN", "BREMENHAVEN", "DEBHV", "BHV"],
+    'BRE': ["BREMEN"],
+    'KEL': ["KIEL"],
+    'STA': ["STADE", "STAD"],
+    'BRB': ["BRUNSBUETTEL", "BRUNSBUETT"],
+    'VTT': ["HIDDENSEE"],
+    'WVN': ["WILHELMSHAVEN", ],
     'country': ["DE"]
 }
 
 name_poland = {
-    'PLGDN': ["GDANSK", "GDANK", "GDN"],
-    'PLGDY': ["GDYNIA", "GYDNIA", "GYDINIA", "GDY", "GDYNA"],
-    'PLSZZ': ["SZCZECIN", "SZZ", "PLSZCZECIN"],
+    'GDN': ["GDANSK", "GDANK"],
+    'GDY': ["GDYNIA", "GYDNIA", "GYDINIA", "GDYNA"],
+    'SZZ': ["SZCZECIN", "PLSZCZECIN"],
     'country': ["PL"]
 }
 
 name_lythuania = {
-    'LTKLJ': ["KLAIPEDA", "KLJ"],
+    'KLJ': ["KLAIPEDA"],
     'country': ["LT"]
 }
 
 name_sweden = {
-    'SEHAD': ["HALMSTAD", "HAD"],
-    'SENOK': ["NOK"],
-    'SEAHU': ["AHUS", "AHU"],
+    'HAD': ["HALMSTAD"],
+    'NOK': ["NOK"],
+    'AHU': ["AHUS"],
     'country': ["SE"]
 }
 
 name_russia = {
-    'RUKGD': ["KALININGRAD", "KALININGRAD", "KAL"],
+    'KGD': ["KALININGRAD", "KALININGRAD", "KAL"],
     'country': ["RU"]
 }
 
 name_denmark = {
-    'DKKOB': ["KOBENHAVN", "COPENHAGEN", "COPENHAGUE", "CPH"],
+    'KOB': ["KOBENHAVN", "COPENHAGEN", "COPENHAGUE", "CPH"],
     'country': ["DK"]
 }
 
 name_finland = {
-    'FIHKO': ["HANKO", "HKO"],
+    'HKO': ["HANKO"],
     'country': ["FI"]
 }
 
 name_belgium = {
-    "BEANR": ["BEANR", "ANR"],
+    "ANR": ["ANR"],
     'country': ["BE"]
 }
 
-full_dict = [
-    name_german,
-    name_poland,
-    name_lythuania,
-    name_sweden,
-    name_russia,
-    name_denmark,
-    name_finland,
-    name_belgium
-]
 
+def full_dict():
+    return [
+        name_german,
+        name_poland,
+        name_lythuania,
+        name_sweden,
+        name_russia,
+        name_denmark,
+        name_finland,
+        name_belgium
+    ]
 
 
 def clean_destination(dest):
@@ -84,149 +113,29 @@ def clean_destination(dest):
     if not isinstance(dest, str):
         return dest  # Skip non-string values
 
-    dest = re.sub(r'[^A-Za-z0-9\s./\\><]', '', dest)  # Keep only alphanum + ./\\><
-    dest = re.sub(r'\.{2,}', '.', dest)  # Reduce multiple dots to one
-    dest = re.sub(r'[\\/]{2,}', '/', dest)  # Standardize slashes to single /
-    dest = re.sub(r'>{2,}', '>', dest)  # Reduce multiple > to one
-    dest = re.sub(r'<{2,}', '<', dest)  # Reduce multiple < to one
+    dest = dest.upper()
+    dest = re.sub(r'\s+', '', dest)  # Remove all whitespace
+
+    dest = re.sub(r'[^A-Za-z0-9./\\><]', '', dest)  # Keep only alphanum + ./\\><
+
+    # Normalize slashes and symbols
+    dest = re.sub(r'\.{2,}', '.', dest)
+    dest = re.sub(r'\\{2,}', r'\\', dest)
+    dest = re.sub(r'/{2,}', '/', dest)
+    dest = re.sub(r'>{2,}', '>', dest)
+    dest = re.sub(r'<{2,}', '<', dest)
     dest = re.sub(r'(?<!\w)\.|\.(?!\w)', '', dest)  # Remove lonely dots
-    dest = re.sub(r'\s+', '', dest).strip().upper()  # Normalize whitespace and uppercase
+
+    # Replace slashes with dots
+    dest = dest.replace('/', '.').replace('\\', '.')
+
+    # Remove leading/trailing dots
+    dest = dest.strip('.')
 
     return dest
 
 
-def save_filtered_ports(df, country_name='Germany'):
-    """Filter port data by country and save to CSV, keeping only relevant columns.
-
-    Args:
-        df (pd.DataFrame): DataFrame containing port data
-        country_name (str): Country name to filter by (default: 'Germany')
-    """
-    # Filter rows where 'Main Port Name', 'Alternate Port Name', 'Country Code', or 'Region Name' contains "Hamburg" or "DE"
-    filtered_ports = df[
-        df['Country Code'].str.contains(country_name, case=False, na=False) |
-        df['Region Name'].str.contains(country_name, case=False, na=False)
-        ]
-
-    columns_to_drop = [
-        col for col in filtered_ports.columns
-        if not any(keyword in col.lower() for keyword in (
-            'port name',
-            'region',
-            'locode',
-            'maximum vessel',
-            'entrance width',
-            'channel depth',
-            'cargo pier depth',
-        ))
-    ]
-
-    filtered_ports = filtered_ports.drop(columns=columns_to_drop)
-    filtered_ports.to_csv(f'../data/{country_name}.csv', index=False)
-
-
-def find_fuzzy_matches(destinations, threshold=80, scorer=fuzz.token_set_ratio, show_progress=False):
-    """
-    Find fuzzy matches among destination names.
-
-    Parameters:
-        destinations (list): List of destination strings to compare
-        threshold (int): Minimum similarity score to consider a match (0-100)
-        scorer: Fuzzy matching function (default: token_set_ratio)
-        show_progress (bool): Whether to print progress during processing
-
-    Returns:
-        dict: Dictionary where keys are original names and values are lists of matches
-              with their scores in format [(matched_name, score), ...]
-    """
-    matches = {}
-    total = len(destinations)
-
-    for i, dest in enumerate(destinations, 1):
-        # Skip NAN/empty values
-        if not dest or str(dest).strip().upper() in ('NAN', 'NULL', ''):
-            continue
-
-        if show_progress:
-            print(f"Processing {i}/{total}: {dest[:30]}...", end='\r')
-
-        # Find matches above threshold (excluding self)
-        potential_matches = process.extract(
-            dest,
-            destinations,
-            scorer=scorer,
-            limit=None
-        )
-
-        # Filter matches
-        good_matches = [
-            (match, score)
-            for match, score in potential_matches
-            if score >= threshold and match != dest
-        ]
-
-        if good_matches:
-            matches[dest] = good_matches
-
-    if show_progress:
-        print("\n" + "=" * 50)
-
-    return matches
-
-
-def print_fuzzy_matches(matches, min_score=0, group_similar=False):
-    """
-    Print fuzzy matching results in a readable format.
-
-    Parameters:
-        matches (dict): Output from find_fuzzy_matches
-        min_score (int): Minimum score to display
-        group_similar (bool): Whether to group similar matches together
-    """
-    if not matches:
-        print("No matches found")
-        return
-
-    print(f"\nFuzzy matches (score ≥ {min_score}):")
-    print("=" * 60)
-
-    if group_similar:
-        # Group similar matches to avoid duplicates
-        already_matched = set()
-        for dest in sorted(matches.keys()):
-            if dest in already_matched:
-                continue
-
-            print(f"\nGroup: {dest}")
-            print("-" * 50)
-
-            # Include the original in the group
-            all_in_group = {dest}
-
-            for match, score in matches[dest]:
-                if score >= min_score:
-                    print(f"  → {match} (score: {score})")
-                    all_in_group.add(match)
-
-                    # Also include matches of matches
-                    if match in matches:
-                        for submatch, subscore in matches[match]:
-                            if subscore >= min_score and submatch not in all_in_group:
-                                print(f"    → {submatch} (score: {subscore})")
-                                all_in_group.add(submatch)
-
-            already_matched.update(all_in_group)
-    else:
-        # Simple listing
-        for dest in sorted(matches.keys()):
-            print(f"\n{dest} matches:")
-            print("-" * 50)
-            for match, score in matches[dest]:
-                if score >= min_score:
-                    print(f"  → {match} (score: {score})")
-
-
-def match_names(name, variants_dicts, test=False):
+def match_names(name, variants_dicts=None, test=False):
     """
     Match a port name against known variants and return the standardized key.
 
@@ -256,6 +165,8 @@ def match_names(name, variants_dicts, test=False):
     """
     if not isinstance(name, str, ):
         return name if test else None
+    if variants_dicts is None:
+        variants_dicts = full_dict()
 
     for variant_dict in variants_dicts:
         country_prefix = variant_dict.get('country', [None])[0]
@@ -274,7 +185,7 @@ def match_names(name, variants_dicts, test=False):
                 # Build regex pattern that accounts for country prefix/suffix
                 pattern = rf"({country_prefix}[\.\-_]?)?{pattern_str}([\.\-_]?{country_prefix})?"
                 if re.search(pattern, name, re.IGNORECASE):
-                    return key
+                    return f"{country_prefix}.{key}"
                     # before = name[:match.start()].strip()
                     # after = name[match.end():].strip()
                     #
@@ -284,6 +195,7 @@ def match_names(name, variants_dicts, test=False):
                     #     f"{'.' + after if after and re.search(r'^[A-Za-z]', after) else after or ''}"
                     # )
     return name if test else None
+
 
 def fill_missing_destinations_by_proximity(df):
     df_filled = df.copy()
@@ -296,7 +208,7 @@ def fill_missing_destinations_by_proximity(df):
         for i, idx in enumerate(trip_indices):
             if pd.isna(df_filled.at[idx, 'Destination']):
                 above = None
-                for j in range(i-1, -1, -1):
+                for j in range(i - 1, -1, -1):
                     ref_idx = trip_indices[j]
                     if not pd.isna(df_filled.at[ref_idx, 'Destination']):
                         above = {
@@ -308,7 +220,7 @@ def fill_missing_destinations_by_proximity(df):
                         break
 
                 below = None
-                for j in range(i+1, len(trip_indices)):
+                for j in range(i + 1, len(trip_indices)):
                     ref_idx = trip_indices[j]
                     if not pd.isna(df_filled.at[ref_idx, 'Destination']):
                         below = {

@@ -14,10 +14,10 @@ def dest_help(df):
     return df
 
 
-def replace_with_key(df, column, name_variants):
+def replace_with_key(df, column):
     """Replace values in a column with standardized names using a mapping dictionary"""
     print(f"Standardizing {column} names using mapping dictionary...")
-    df[column] = df[column].apply(lambda x: match_names(x, name_variants))
+    df[column] = df[column].apply(lambda x: match_names(x))
     return df
 
 
@@ -50,11 +50,13 @@ def main():
     df['StartTime'] = pd.to_datetime(df['StartTime'], utc=True)
     df['EndTime'] = pd.to_datetime(df['EndTime'], utc=True)
     df['time'] = pd.to_datetime(df['time'], utc=True)
+    df['shiptype'] = df['shiptype'].astype('category')
 
     # Categorical conversions
     df['StartPort'] = df['StartPort'].astype('string').astype('category')
     df['EndPort'] = df['EndPort'].astype('string').astype('category')
     df['Destination'] = df['Destination'].astype('string').astype('category')
+    df['shiptype'] = df['shiptype'].astype('int').astype('category')
 
     print("\nData types after conversion:")
     print(df.dtypes)
@@ -78,12 +80,7 @@ def main():
     df.loc[mask, 'Destination'] = df.loc[mask, 'Destination'].str.split('>').str[1]
 
     # Standardize destination names
-    df = replace_with_key(df, 'Destination', full_dict)
-
-    # Handle destinations with '.' character
-    mask = df['Destination'].str.contains('.', na=False)
-    print(f"Found {mask.sum()} entries with '.' in Destination")
-    df.loc[mask, 'Destination'] = df.loc[mask, 'Destination'].str.split('.').str[0]
+    df = replace_with_key(df, 'Destination')
 
     # Final destination cleaning
     df = dest_help(df)

@@ -44,7 +44,28 @@ The main notebook for it is noise_handling.ipynb. It contains the following step
 4 **Draught** 
     - Only fill in if there are at least one not null value
     - After analysis fill in with the median of a trip
+5 **COG**
+    - Was only one null last entry for trip filled with 0
+6 **Handel values that are 0 for whole trip**
+    - Train a HistGradientBoostingRegressor model to predict missing Draught values based on Length and Breadth
+  
+| Parameter     | Missing % |
+|---------------|-----------|
+| Length        | 1.122565  |
+| Breadth       | 1.122565  |
+| Draught       | 1.784436  |
+| COG           | 0.000109  |
+| Destination   | 0.575840  |
+| COG           | 0.000109  |
+| shiptype      | 0.717820  |
 
+
+After
+
+| Parameter     | Missing % |
+|---------------|-----------|
+| Destination   | 0.007443  |
+| shiptype      | 0.717820  |
 
 **TODO**
 What to do with trips where:
