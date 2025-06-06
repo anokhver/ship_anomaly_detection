@@ -1,7 +1,6 @@
 import os
 from processing_utils import *
 import pandas as pd
-import numpy as np
 import re
 
 
@@ -93,7 +92,8 @@ def main():
     print(df['Destination'].value_counts().head(10))
 
     # ------ Step 3: Deal with missing values ------
-    print("\nStep 4: Handling missing values and duplicates...")
+    # print("\nStep 4: Handling missing values and duplicates...")
+    print("\nStep 4: Droping duplicates...")
 
     # Remove duplicates
     initial_count = len(df)
@@ -101,40 +101,44 @@ def main():
     final_count = len(df)
     print(f"Removed {initial_count - final_count} duplicate rows")
 
+    # Note now in noise handling
+
     # Drop unnecessary column
-    df.drop(columns=['AisSourcen'], inplace=True)
-    print("Dropped AisSourcen column")
+
+    # df.drop(columns=['AisSourcen'], inplace=True)
+    # print("Dropped AisSourcen column")
 
     # Replace zeros with NaN for numerical columns
-    num_cols = ['Length', 'Breadth', 'Draught']
-    for col in num_cols:
-        zero_count = (df[col] == 0).sum()
-        df[col] = df[col].replace(0, np.nan)
-        print(f"Replaced {zero_count} zeros with NaN in {col}")
-
-    # Fill missing values with shiptype means
-    print("\nFilling missing values with shiptype means...")
-    for col in num_cols:
-        missing_before = df[col].isna().sum()
-        df[col] = df[col].fillna(df.groupby('shiptype')[col].transform('mean'))
-        missing_after = df[col].isna().sum()
-        print(f"Filled {missing_before - missing_after} missing values in {col}")
+    # num_cols = ['Length', 'Breadth', 'Draught']
+    # for col in num_cols:
+    #     zero_count = (df[col] == 0).sum()
+    #     df[col] = df[col].replace(0, np.nan)
+    #     print(f"Replaced {zero_count} zeros with NaN in {col}")
+    #
+    # # Fill missing values with shiptype means
+    # print("\nFilling missing values with shiptype means...")
+    # for col in num_cols:
+    #     missing_before = df[col].isna().sum()
+    #     df[col] = df[col].fillna(df.groupby('shiptype')[col].transform('mean'))
+    #     missing_after = df[col].isna().sum()
+    #     print(f"Filled {missing_before - missing_after} missing values in {col}")
 
     # Fill missing destinations
-    print("\nFilling missing destinations using proximity method...")
-    missing_before = df['Destination'].isna().sum()
-    df = fill_missing_destinations_by_proximity(df)
-    missing_after = df['Destination'].isna().sum()
-    print(f"Filled {missing_before - missing_after} missing destinations")
+
+    # print("\nFilling missing destinations using proximity method...")
+    # missing_before = df['Destination'].isna().sum()
+    # df = fill_missing_destinations_by_proximity(df)
+    # missing_after = df['Destination'].isna().sum()
+    # print(f"Filled {missing_before - missing_after} missing destinations")
 
     # Final duplicate check
-    df = df.drop_duplicates()
-    print(f"Final row count after all cleaning: {len(df)}")
-
-    # Missing values report
-    print("\nMissing values percentage report:")
-    missing_report = (df.isnull().sum() / len(df) * 100).round(1)
-    print(missing_report)
+    # df = df.drop_duplicates()
+    # print(f"Final row count after all cleaning: {len(df)}")
+    #
+    # # Missing values report
+    # print("\nMissing values percentage report:")
+    # missing_report = (df.isnull().sum() / len(df) * 100).round(1)
+    # print(missing_report)
 
     # ------ Step 4: Save the cleaned DataFrame ------
     print(f"\nStep 5: Saving cleaned data to {output_path}")

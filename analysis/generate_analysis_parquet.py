@@ -4,9 +4,9 @@ import matplotlib.pyplot as plt
 from ydata_profiling import ProfileReport
 
 # --- Settings ---
-INPUT_PATH = '../data/prepared.parquet'  # Changed to parquet
-FIGURES_DIR = './figures_prepered'
-REPORT_HTML = './profile_prepered.html'
+INPUT_PATH = '../data/fix_noise.parquet'  # Changed to parquet
+FIGURES_DIR = './figures_prepared'
+REPORT_HTML = './profile_prepared.html'
 # --------------------------------------
 
 def ensure_dir(path):
@@ -27,14 +27,14 @@ print(df.isna().sum())
 ensure_dir(FIGURES_DIR)
 numeric_cols = df.select_dtypes(include=['number']).columns
 for col in numeric_cols:
-    plt.figure()
-    df[col].hist(bins=50)
-    plt.title(f"Histogram of {col}")
-    plt.xlabel(col)
-    plt.ylabel('Frequency')
-    plt.tight_layout()
-    plt.savefig(os.path.join(FIGURES_DIR, f"hist_{col}.png"))
-    plt.close()
+    # plt.figure()
+    # df[col].hist(bins=50)
+    # plt.title(f"Histogram of {col}")
+    # plt.xlabel(col)
+    # plt.ylabel('Frequency')
+    # plt.tight_layout()
+    # plt.savefig(os.path.join(FIGURES_DIR, f"hist_{col}.png"))
+    # plt.close()
 
     plt.figure()
     df.boxplot(column=col)

@@ -1,6 +1,8 @@
-scikit-learn>=1.0
-numpy<=2.1
-pandas
+fuzzywuzzy
 matplotlib
+numpy
+pandas>=2.1
+scipy
+seaborn
 ydata_profiling
-ydata-sdk
+plotly
