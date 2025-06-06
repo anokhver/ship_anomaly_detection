@@ -9,8 +9,7 @@
 
 1. **Remove unlikely data**:  
    - Data appearing on land.  
-   - Speed greater than 30 knots or less than 0 knots.  
-   - Other data standards as shown in Table 1.
+   - Speed greater than 30 knots.
     -MMSI 9 digits 
    
 2. **Down-sampling**:  

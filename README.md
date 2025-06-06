@@ -1,4 +1,52 @@
-### Get data for outlier purging
+# Data
+
+## Label convention
+None - was not labeled \
+True - is anomaly \
+False - is not anomaly
+
+## Data situation
+Data situated in data directory
+
+```
+/data
+├── `cleaned_atr.csv` - Dropped for sure useless attributes data
+├── `prepared.parquet` - Prepared data for outlier purging
+├── `fix_noise.parquet` - Data after outlier purging
+└── /manual_labeling - Manual labeling data
+    ├── `from_KIEL` - Start port Kiel
+    └── `from_BREMERHAVEN` - Start port Bremerhaven
+```
+
+## New columns normalized names
+Added label column
+
+| Original Column Name | Normalized Column Name |
+|----------------------|------------------------|
+| TripID               | trip_id                |
+| StartLatitude        | start_latitude         |
+| StartLongitude       | start_longitude        |
+| StartTime            | start_time             |
+| EndLatitude          | end_latitude           |
+| EndLongitude         | end_longitude          |
+| EndTime              | end_time               |
+| StartPort            | start_port             |
+| EndPort              | end_port               |
+| time                 | time_stamp             |
+| shiptype             | ship_type              | 
+| Length               | length                 |
+| Breadth              | breadth                |
+| Draught              | draught                |
+| Latitude             | latitude               |
+| Longitude            | longitude              |
+| SOG                  | speed_over_ground      |
+| COG                  | course_over_ground     |
+| TH                   | true_heading           |
+| Destination          | destination            |
+
+
+
+## Get data for outlier purging
 
 Refer to `data_cleaning` directory
 
@@ -10,7 +58,7 @@ Refer to `data_cleaning` directory
     - missing values filled properly
     - AirSource column dropped during missing values handling
 
-### Run the analysis, 
+## Run the analysis
 
 Refer to the `analysis` directory
 
@@ -48,6 +96,7 @@ The main notebook for it is noise_handling.ipynb. It contains the following step
     - Was only one null last entry for trip filled with 0
 6 **Handel values that are 0 for whole trip**
     - Train a HistGradientBoostingRegressor model to predict missing Draught values based on Length and Breadth
+    - Length and Breadth on each other (in int form)
   
 | Parameter     | Missing % |
 |---------------|-----------|
@@ -67,32 +116,9 @@ After
 | Destination   | 0.007443  |
 | shiptype      | 0.717820  |
 
-### New columns normalized names
-| Original Column Name | Normalized Column Name |
-|----------------------|------------------------|
-| TripID               | trip_id                |
-| StartLatitude        | start_latitude         |
-| StartLongitude       | start_longitude        |
-| StartTime            | start_time             |
-| EndLatitude          | end_latitude           |
-| EndLongitude         | end_longitude          |
-| EndTime              | end_time               |
-| StartPort            | start_port             |
-| EndPort              | end_port               |
-| time                 | time_stamp             |
-| shiptype             | ship_type              | 
-| Length               | length                 |
-| Breadth              | breadth                |
-| Draught              | draught                |
-| Latitude             | latitude               |
-| Longitude            | longitude              |
-| SOG                  | speed_over_ground      |
-| COG                  | course_over_ground     |
-| TH                   | true_heading           |
-| Destination          | destination            |
-| AisSourcen           | ais_source             |
 
 
-[TUHH link](https://www3.tuhh.de/sts/hoou/data-quality-explored/1-1-AIS-data.html)
-[AIS data](https://api.vtexplorer.com/docs/response-ais.html)
+
+[TUHH link](https://www3.tuhh.de/sts/hoou/data-quality-explored/1-1-AIS-data.html)\
+[AIS data](https://api.vtexplorer.com/docs/response-ais.html)\
 [Anomaly detection](https://www.sciencedirect.com/science/article/pii/S002980182303024X)
