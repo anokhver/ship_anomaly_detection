@@ -23,6 +23,7 @@ WORKDIR /workspace
 COPY requirements.txt .
 RUN pip install --upgrade pip && pip install -r requirements.txt
 
+
 # Install frontend dependencies (if not using multi-stage build)
 COPY frontend/package*.json frontend/
 RUN cd frontend && npm install

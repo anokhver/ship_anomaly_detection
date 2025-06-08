@@ -37,38 +37,52 @@
 </template>
 
 <script setup>
-	import { ref, onMounted } from "vue";
+	import { onMounted } from "vue";
 	import L from "leaflet";
 	import "leaflet/dist/leaflet.css";
 
-	document.title = "Maritime AI - Cruise Data Visualization";
+	import tripData from "@/assets/trip.json";
 
-	const trips = ref([]);
-	const selectedTripId = ref(null);
+	let map = null;
+	let markersGroup = null;
+	let polyline = null;
 
-	const metricOptions = ref([
-		{ value: "speed", label: "Speed (SOG)" },
-		{ value: "course", label: "Course (COG)" },
-		{ value: "draught", label: "Draught" },
-	]);
-	const selectedMetric = ref(metricOptions.value[0].value);
+	function drawPoints(points) {
+		if (markersGroup) {
+			markersGroup.clearLayers();
+		}
+		if (polyline) {
+			polyline.remove();
+		}
+
+		const latlngs = points.map((pt) => [pt.latitude, pt.longitude]);
+		markersGroup = L.layerGroup().addTo(map);
+
+		points.forEach((pt, idx) => {
+			// Uncomment if you want indexes
+			// const marker = L.marker([pt.latitude, pt.longitude]).addTo(markersGroup);
+			// marker.bindTooltip(`${idx + 1}`, { permanent: true, direction: "right" });
+
+			// Uncomment if you don't want indexes
+			L.marker([pt.latitude, pt.longitude]).addTo(markersGroup);
+		});
+
+		if (latlngs.length) {
+			map.fitBounds(L.latLngBounds(latlngs));
+		}
+	}
 
 	onMounted(() => {
-		trips.value = [
-			{ id: 39131, name: "39131: Bremerhaven → Hamburg" },
-			{ id: 39132, name: "39132: Hamburg → Gdynia" },
-		];
-
-		const map = L.map("map").setView([53.57, 8.53], 6);
+		map = L.map("map").setView([53.57, 8.53], 6);
 		L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 			maxZoom: 18,
 			attribution: "&copy; OpenStreetMap contributors",
 		}).addTo(map);
-	});
 
-	function selectTrip(id) {
-		selectedTripId.value = id;
-	}
+		markersGroup = L.layerGroup().addTo(map);
+
+		drawPoints(tripData);
+	});
 </script>
 
 <style scoped lang="scss">
