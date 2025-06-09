@@ -60,11 +60,11 @@
 
 		points.forEach((pt, idx) => {
 			// Uncomment if you want indexes
-			// const marker = L.marker([pt.latitude, pt.longitude]).addTo(markersGroup);
-			// marker.bindTooltip(`${idx + 1}`, { permanent: true, direction: "right" });
+			const marker = L.marker([pt.latitude, pt.longitude]).addTo(markersGroup);
+			marker.bindTooltip(`${idx + 1}`, { permanent: true, direction: "right" });
 
 			// Uncomment if you don't want indexes
-			L.marker([pt.latitude, pt.longitude]).addTo(markersGroup);
+			//L.marker([pt.latitude, pt.longitude]).addTo(markersGroup);
 		});
 
 		if (latlngs.length) {

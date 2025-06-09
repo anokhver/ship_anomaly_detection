@@ -50,7 +50,7 @@ def main():
     parser.add_argument(
         '--input',
         '-i',
-        default='from_BREMERHAVEN.parquet',
+        default='from_KIEL.parquet',
         help='Input Parquet file'
     )
     parser.add_argument(
