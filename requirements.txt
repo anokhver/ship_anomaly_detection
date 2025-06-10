@@ -1,8 +1,10 @@
 fuzzywuzzy
-matplotlib
-numpy
+matplotlib~=3.10.0
+numpy~=2.1.3
 pandas>=2.1
-scipy
-seaborn
+scipy~=1.15.2
+seaborn~=0.13.2
 ydata_profiling
 plotly
+contextily
+pyproj
