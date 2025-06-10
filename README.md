@@ -16,7 +16,8 @@
 
 ### Git repository structure:
 - The **main** branch Contains all deliverables and is the final state of the project at the end of a sprint.
-- All other branches are created at will by team members, and are used only for testing, if necessary.
+- Other branches are created at will by team members, and are used only for testing, if necessary.
+- **data-cleaning** branch, as the name suggests, contains the pipeline for data cleaning (results are stored in the main branch)
 
 ## Directory contents
 
