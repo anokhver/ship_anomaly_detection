@@ -15,7 +15,8 @@ def ensure_dir(path):
 
 # Load data from Parquet
 df = pd.read_parquet(INPUT_PATH)
-
+if df.columns[-1] == 'is_anomaly':
+    df = df.drop(columns=['is_anomaly'])
 # Analysis only - no processing
 print("Data loaded successfully. Shape:", df.shape)
 print("\nColumn dtypes:")
