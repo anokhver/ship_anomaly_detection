@@ -14,8 +14,10 @@ Data situated in data directory
 ├── `prepared.parquet` - Prepared data for outlier purging
 ├── `fix_noise.parquet` - Data after outlier purging
 └── /manual_labeling - Manual labeling data
-    ├── `from_KIEL` - Start port Kiel
-    └── `from_BREMERHAVEN` - Start port Bremerhaven
+    ├── `from_KIEL` - Start port Kiel not labeled
+    ├── `from_BREMERHAVEN` - Start port Bremerhaven not labeled
+    ├── 
+    └──
 ```
 
 ## New columns normalized names
@@ -43,7 +45,6 @@ Added label column
 | COG                  | course_over_ground     |
 | TH                   | true_heading           |
 | Destination          | destination            |
-
 
 
 ## Get data for outlier purging
