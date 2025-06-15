@@ -130,6 +130,8 @@ def match_names(name: Union[str, None],
         'DE.HAM'
         >>> match_names("GDANSK")
         'PL.GDN'
+        >>> match_names("GDYNIAVIANOK")
+        'PL.GDY'
     """
     if not isinstance(name, str) or not name.strip():
         return name if test else None
@@ -157,6 +159,8 @@ def match_names(name: Union[str, None],
         for port_key in port_keys:
             # Check all variants for this port
             all_patterns = [port_key] + variant_dict[port_key]
+            # Sort patterns by length (longest first) for better matching
+            all_patterns.sort(key=len, reverse=True)
 
             for pattern in all_patterns:
                 if _matches_pattern(cleaned_name, pattern, country_code):
@@ -188,16 +192,31 @@ def _matches_pattern(name: str, pattern: str, country_code: str) -> bool:
     if name == f"{pattern}.{country_code}" or name == f"{pattern}{country_code}":
         return True
 
-    # Check if pattern is contained within name boundaries
-    # Use word boundaries to avoid partial matches
-    pattern_regex = rf'\b{re.escape(pattern)}\b'
-    if re.search(pattern_regex, name, re.IGNORECASE):
+    # This handles cases like "GDYNIAVIANOK" containing "GDYNIA"
+    if name.startswith(pattern):
         return True
+
+    if name.endswith(pattern):
+        return True
+
+    # Check if pattern is contained within name with separators
+    # This handles cases with dots, slashes, etc.
+    separator_patterns = [
+        rf'\.{re.escape(pattern)}(?:\.|$)',  # .PATTERN. or .PATTERN at end
+        rf'^{re.escape(pattern)}\.',  # PATTERN. at start
+        rf'\.{re.escape(pattern)}$',  # .PATTERN at end
+    ]
+
+    for sep_pattern in separator_patterns:
+        if re.search(sep_pattern, name, re.IGNORECASE):
+            return True
 
     # Check for pattern with country code variations
     country_patterns = [
-        rf'\b{re.escape(country_code)}\.?{re.escape(pattern)}\b',
-        rf'\b{re.escape(pattern)}\.?{re.escape(country_code)}\b'
+        rf'^{re.escape(country_code)}\.?{re.escape(pattern)}',  # Start with country code
+        rf'{re.escape(pattern)}\.?{re.escape(country_code)}$',  # End with country code
+        rf'\.{re.escape(country_code)}\.?{re.escape(pattern)}(?:\.|$)',  # Country in middle
+        rf'(?:^|\.){re.escape(pattern)}\.?{re.escape(country_code)}(?:\.|$)',  # Pattern then country
     ]
 
     for country_pattern in country_patterns:
@@ -270,3 +289,27 @@ def validate_port_data() -> bool:
     except Exception as e:
         print(f"Error validating port data: {e}")
         return False
+
+
+# Test function to verify the fix
+def test_matching():
+    """Test the matching functionality with various inputs."""
+    test_cases = [
+        "GDYNIAVIANOK",
+        "GDYNIA",
+        "HAMBURG",
+        "HAMBURGPORT",
+        "DE.HAM",
+        "HAM.DE",
+        "BREMEN.CITY",
+        "PLGDYNIA"
+    ]
+
+    print("Testing port matching:")
+    for test_case in test_cases:
+        result = match_names(test_case)
+        print(f"'{test_case}' -> {result}")
+
+
+if __name__ == "__main__":
+    test_matching()

@@ -42,12 +42,12 @@ def get_percentage_missing(df: pd.DataFrame, col: Optional[str] = None) -> Union
         Percentage of missing values
     """
     if col is None:
-        return (df.isnull().sum() / len(df) * 100).round(2)
+        return (df.isnull().sum() / len(df) * 100).round(5)
     else:
         if col not in df.columns:
             warnings.warn(f"Column '{col}' not found in dataframe")
             return 0.0
-        return round(df[col].isnull().sum() / len(df) * 100, 2)
+        return round(df[col].isnull().sum() / len(df) * 100, 5)
 
 
 def get_entries_with_missing_values(df: pd.DataFrame, col: str) -> pd.Series:
@@ -313,7 +313,6 @@ def fill_missing_destinations_by_proximity(df: pd.DataFrame) -> pd.DataFrame:
 
         for i, idx in enumerate(trip_indices):
             if pd.isna(df_filled.at[idx, 'Destination']) :
-                print("Had none")
                 current_lat = df_filled.at[idx, 'Latitude']
                 current_lon = df_filled.at[idx, 'Longitude']
 

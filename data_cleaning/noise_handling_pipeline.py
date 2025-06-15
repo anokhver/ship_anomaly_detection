@@ -1,15 +1,18 @@
 import os
+import argparse
 import pandas as pd
 import numpy as np
 from pathlib import Path
+from sklearn.ensemble import HistGradientBoostingRegressor
+from sklearn.metrics import r2_score
 
 from data_cleaning.utils.fill_missing_utils import (
     get_percentage_missing,
-    fill_missing,
     all_fill_with_mode,
     plot_missing,
     column_mapping,
-    fill_missing_destinations_by_proximity, get_entries_with_missing_values
+    fill_missing_destinations_by_proximity,
+    get_entries_with_missing_values
 )
 from data_cleaning.utils.utils import remove_duplicates
 
@@ -36,23 +39,60 @@ def convert_impossible_to_nan(df: pd.DataFrame) -> pd.DataFrame:
     if removed_count > 0:
         print(f"Removed {removed_count} rows with unrealistic SOG values")
 
-    # df['Destination'] = df['Destination'].fillna(pd.NA)
+    # Fill destination with pd.NA (from notebook)
+    df['Destination'] = df['Destination'].fillna(pd.NA)
 
     return df
+
+
+def fill_missing_regression(df: pd.DataFrame, target_col: str, feature_cols: list,
+                            round_values: bool = True) -> pd.DataFrame:
+    """
+    Fill missing values using HistGradientBoostingRegressor.
+    This function was in the notebook but missing from your py file.
+    """
+    df_copy = df.copy()
+    known = df_copy.dropna(subset=[target_col])
+    missing = df_copy[df[target_col].isna()]
+
+    if len(missing) == 0:
+        print(f"No missing values to fill for {target_col}")
+        return df_copy
+
+    X_train = known[feature_cols]
+    y_train = known[target_col]
+    X_test = missing[feature_cols]
+
+    model = HistGradientBoostingRegressor()
+    model.fit(X_train, y_train)
+    predicted_values = model.predict(X_test)
+
+    if round_values:
+        predicted_values = np.round(predicted_values).astype(int)
+
+    df_copy.loc[df_copy[target_col].isna(), target_col] = predicted_values
+    print(f"R2 score for {target_col}:", r2_score(y_train, model.predict(X_train)))
+
+    return df_copy
 
 
 def handle_ship_dimensions(df: pd.DataFrame) -> pd.DataFrame:
     """Handle missing ship dimension values using mode filling and regression."""
     print("Processing ship dimensions...")
 
-    # Fill basic dimensions with mode
+    # Fill basic dimensions with mode first
     all_fill_with_mode(df, 'Length')
     all_fill_with_mode(df, 'Breadth')
 
-    # Use regression to fill remaining missing values
-    df = fill_missing(df, 'Length', ['Breadth', 'Draught'])
-    df = fill_missing(df, 'Breadth', ['Length', 'Draught'])
-    df = fill_missing(df, 'Draught', ['Length', 'Breadth'], round_values=False)
+    # Check correlations (from notebook)
+    print(f"Draught-Length correlation: {df['Draught'].corr(df['Length']):.3f}")
+    print(f"Draught-Breadth correlation: {df['Draught'].corr(df['Breadth']):.3f}")
+    print(f"Length-Breadth correlation: {df['Length'].corr(df['Breadth']):.3f}")
+
+    # Use regression to fill remaining missing values (this was the main missing part)
+    df = fill_missing_regression(df, 'Length', ['Breadth', 'Draught'])
+    df = fill_missing_regression(df, 'Breadth', ['Length', 'Draught'])
+    df = fill_missing_regression(df, 'Draught', ['Length', 'Breadth'], round_values=False)
 
     return df
 
@@ -60,6 +100,9 @@ def handle_ship_dimensions(df: pd.DataFrame) -> pd.DataFrame:
 def handle_shiptype(df: pd.DataFrame) -> pd.DataFrame:
     """Fill missing shiptype values using forward fill within valid trips."""
     print("Processing ship types...")
+
+    # Ensure shiptype has positive values only (from notebook)
+    df['shiptype'] = df['shiptype'].apply(lambda x: x if x > 0 else np.nan)
 
     # Identify trips that have at least one valid shiptype
     valid_trips = df.groupby('TripID')['shiptype'].transform(lambda x: x.notna().any())
@@ -100,9 +143,13 @@ def handle_draught(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-def create_output_splits(df: pd.DataFrame, output_dir: str = '../data/manual_labeling/') -> None:
+def create_output_splits(df: pd.DataFrame, output_dir: str) -> None:
     """Create port-specific data splits for manual labeling."""
     Path(output_dir).mkdir(parents=True, exist_ok=True)
+
+    # Print unique ports (from notebook)
+    print("Start ports:", df['start_port'].unique())
+    print("End ports:", df['end_port'].unique())
 
     port_splits = {
         'KIEL': df[df['start_port'] == 'KIEL'].copy().reset_index(drop=True),
@@ -118,7 +165,9 @@ def create_output_splits(df: pd.DataFrame, output_dir: str = '../data/manual_lab
 
 def noise_handling(
         file_path: str = 'data/2_destination_norm.parquet',
-        output_path: str = '../data/fix_noise.parquet'
+        output_path: str = '../data/cleaned_data_no_labels.parquet',
+        create_splits: bool = True,
+        splits_dir: str = None
 ) -> None:
     """
     Main pipeline for cleaning noise in ship AIS data.
@@ -126,6 +175,8 @@ def noise_handling(
     Args:
         file_path: Input parquet file path
         output_path: Output parquet file path
+        create_splits: Whether to create port-specific splits
+        splits_dir: Directory for port splits (defaults to output_path parent + 'manual_labeling')
     """
     print(f"\n{'=' * 50}")
     print("STARTING DATA NOISE CLEANING PIPELINE")
@@ -150,22 +201,22 @@ def noise_handling(
     # Remove duplicates
     df = remove_duplicates(df)
 
-
     # Step 2: Convert impossible values to NaN
     print("\nStep 2: Converting impossible values to NaN & dropping some invalid rows")
     df = convert_impossible_to_nan(df)
 
     # Generate and save missing values plot
-    plot_dir = Path('plots')
+    plot_dir = Path(output_path).parent / 'plots'
     plot_dir.mkdir(exist_ok=True)
 
     plot = plot_missing(df)
-    print(f"Missing values plot saved to {plot_dir / 'missing_values_1.png'}")
-    plot.figure.savefig(plot_dir / 'missing_values.png', dpi=300, bbox_inches='tight')
+    plot_path = plot_dir / 'missing_values_before.png'
+    plot.figure.savefig(plot_path, dpi=300, bbox_inches='tight')
+    print(f"Missing values plot saved to {plot_path}")
 
     # Step 3: Fill missing destinations
     print("\nStep 3: Filling missing destinations")
-    print(get_entries_with_missing_values(df, 'Destination'))
+    print("Entries with missing destinations:", get_entries_with_missing_values(df, 'Destination'))
     df = fill_missing_destinations_by_proximity(df)
     print(f"Destination missing: {get_percentage_missing(df, 'Destination'):.2f}%")
 
@@ -176,9 +227,10 @@ def noise_handling(
 
     # Fill COG with 0 (common practice for missing course over ground)
     df['COG'] = df['COG'].fillna(0)
+    print("Filled remaining COG values with 0")
 
-    # Step 5: Handle ship dimensions
-    print("\n\nStep 5: Processing ship dimensions with all NAN entries for the trip")
+    # Step 5: Handle ship dimensions (this was the main missing regression part)
+    print("\nStep 5: Processing ship dimensions with regression for trips with all NaN entries")
     df = handle_ship_dimensions(df)
 
     # Verify completeness
@@ -188,10 +240,13 @@ def noise_handling(
         missing_pct = get_percentage_missing(df, col)
         print(f"{col}: {missing_pct:.2f}% missing")
 
+    # Final missing values plot
     plot = plot_missing(df)
-    print(f"Missing values plot saved to {plot_dir / 'missing_values_2.png'}")
-    plot.figure.savefig(plot_dir / 'missing_values_2.png', dpi=300, bbox_inches='tight')
+    plot_path = plot_dir / 'missing_values_after.png'
+    plot.figure.savefig(plot_path, dpi=300, bbox_inches='tight')
+    print(f"Final missing values plot saved to {plot_path}")
 
+    # Final duplicate removal
     df = remove_duplicates(df)
 
     # Step 6: Finalize dataset
@@ -199,22 +254,69 @@ def noise_handling(
     df_final = df.rename(columns=column_mapping)
     df_final['is_anomaly'] = None
 
-    # Create output splits for manual labeling
-    create_output_splits(df_final)
+    # Create output splits for manual labeling if requested
+    if create_splits:
+        if splits_dir is None:
+            splits_dir = Path(output_path).parent / 'manual_labeling'
+        create_output_splits(df_final, splits_dir)
 
     # Save main output
     try:
-        df.to_parquet(output_path)
+        df_final.to_parquet(output_path)
         print(f"\nProcessed data saved to: {output_path}")
-        print(f"Final dataset shape: {df.shape}")
+        print(f"Final dataset shape: {df_final.shape}")
     except Exception as e:
         raise RuntimeError(f"Failed to save output: {e}")
 
 
+def parse_arguments():
+    """Parse command line arguments."""
+    parser = argparse.ArgumentParser(
+        description="Clean noise in ship AIS data",
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter
+    )
+
+    parser.add_argument(
+        'input_file',
+        type=str,
+        default='data/2_destination_norm.parquet',
+        help='Path to input parquet file'
+    )
+
+    parser.add_argument(
+        'output_file',
+        type=str,
+        default='../data/fix_noise.parquet',
+        help='Path to output parquet file'
+    )
+
+    parser.add_argument(
+        '--no-splits',
+        action='store_true',
+        help='Skip creating port-specific data splits'
+    )
+
+    parser.add_argument(
+        '--splits-dir',
+        type=str,
+        default=None,
+        help='Directory for port-specific splits (default: output_dir/manual_labeling)'
+    )
+
+    return parser.parse_args()
+
+
 def main():
     """Entry point for the noise handling pipeline."""
+    args = parse_arguments()
+
     try:
-        noise_handling()
+        noise_handling(
+            file_path=args.input_file,
+            output_path=args.output_file,
+            create_splits=not args.no_splits,
+            splits_dir=args.splits_dir
+        )
         print("\nPipeline completed successfully!")
     except Exception as e:
         print(f"\n❌ Pipeline failed: {e}")
