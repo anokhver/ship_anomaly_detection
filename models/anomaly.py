@@ -54,7 +54,7 @@ df['anomaly_speed']   = df['delta_speed_over_ground']  > speed_change_threshold
 df['anomaly_draught'] = df['delta_draught']            > draught_change_threshold
 
 print("6) Detecting large movement (>3 km)")
-df['anomaly_distance'] = df['delta_pos_km'] > distance_anomaly_km
+df['anomaly_distance'] = False # this stays False, I decided not to use it
 
 print("7) Combining all flags into is_anomaly")
 df['is_anomaly'] = df[
