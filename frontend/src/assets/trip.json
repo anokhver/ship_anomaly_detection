@@ -1,6237 +1,3621 @@
 [
   {
-    "latitude": 54.36,
-    "longitude": 10.14,
-    "comment": "Entry number 1"
+    "latitude": 53.58,
+    "longitude": 8.53,
+    "time_stamp": "2016-04-04T13:52:00",
+    "score": 37.45429742123929,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.36,
-    "longitude": 10.14,
-    "comment": "Entry number 2"
+    "latitude": 53.58,
+    "longitude": 8.53,
+    "time_stamp": "2016-04-04T13:53:00",
+    "score": -45.861216907996095,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.36,
-    "longitude": 10.14,
-    "comment": "Entry number 3"
+    "latitude": 53.58,
+    "longitude": 8.53,
+    "time_stamp": "2016-04-04T13:54:00",
+    "score": -47.8224760166313,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.36,
-    "longitude": 10.14,
-    "comment": "Entry number 4"
+    "latitude": 53.58,
+    "longitude": 8.53,
+    "time_stamp": "2016-04-04T13:55:00",
+    "score": -93.95076386593178,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.36,
-    "longitude": 10.14,
-    "comment": "Entry number 5"
+    "latitude": 53.58,
+    "longitude": 8.53,
+    "time_stamp": "2016-04-04T13:56:00",
+    "score": -25.64060631517873,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.36,
-    "longitude": 10.14,
-    "comment": "Entry number 6"
+    "latitude": 53.58,
+    "longitude": 8.52,
+    "time_stamp": "2016-04-04T13:58:00",
+    "score": 1217.8489585723464,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.36,
-    "longitude": 10.15,
-    "comment": "Entry number 7"
+    "latitude": 53.58,
+    "longitude": 8.52,
+    "time_stamp": "2016-04-04T13:58:00",
+    "score": 374.3616778941662,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.36,
-    "longitude": 10.15,
-    "comment": "Entry number 8"
+    "latitude": 53.58,
+    "longitude": 8.52,
+    "time_stamp": "2016-04-04T13:59:00",
+    "score": 1144.4056461074001,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.36,
-    "longitude": 10.15,
-    "comment": "Entry number 9"
+    "latitude": 53.58,
+    "longitude": 8.52,
+    "time_stamp": "2016-04-04T14:00:00",
+    "score": 170.56826799930172,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.36,
-    "longitude": 10.16,
-    "comment": "Entry number 10"
+    "latitude": 53.58,
+    "longitude": 8.52,
+    "time_stamp": "2016-04-04T14:01:00",
+    "score": -68.97148501896277,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.36,
-    "longitude": 10.16,
-    "comment": "Entry number 11"
+    "latitude": 53.59,
+    "longitude": 8.51,
+    "time_stamp": "2016-04-04T14:02:00",
+    "score": -250.64966998884347,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.36,
-    "longitude": 10.17,
-    "comment": "Entry number 12"
+    "latitude": 53.59,
+    "longitude": 8.51,
+    "time_stamp": "2016-04-04T14:03:00",
+    "score": -188.22539609757996,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.36,
-    "longitude": 10.17,
-    "comment": "Entry number 13"
+    "latitude": 53.59,
+    "longitude": 8.51,
+    "time_stamp": "2016-04-04T14:04:00",
+    "score": -157.1483825487187,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.36,
-    "longitude": 10.17,
-    "comment": "Entry number 14"
+    "latitude": 53.59,
+    "longitude": 8.51,
+    "time_stamp": "2016-04-04T14:05:00",
+    "score": -123.05605757865465,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.37,
-    "longitude": 10.18,
-    "comment": "Entry number 15"
+    "latitude": 53.6,
+    "longitude": 8.5,
+    "time_stamp": "2016-04-04T14:06:00",
+    "score": -83.70417320788829,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.37,
-    "longitude": 10.18,
-    "comment": "Entry number 16"
+    "latitude": 53.6,
+    "longitude": 8.5,
+    "time_stamp": "2016-04-04T14:07:00",
+    "score": 35.532175768246134,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.37,
-    "longitude": 10.18,
-    "comment": "Entry number 17"
+    "latitude": 53.6,
+    "longitude": 8.49,
+    "time_stamp": "2016-04-04T14:08:00",
+    "score": -22.94356390710618,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.37,
-    "longitude": 10.18,
-    "comment": "Entry number 18"
+    "latitude": 53.61,
+    "longitude": 8.49,
+    "time_stamp": "2016-04-04T14:09:00",
+    "score": 135.2812180126191,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.38,
-    "longitude": 10.19,
-    "comment": "Entry number 19"
+    "latitude": 53.61,
+    "longitude": 8.48,
+    "time_stamp": "2016-04-04T14:10:00",
+    "score": 148.0437927126684,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.38,
-    "longitude": 10.19,
-    "comment": "Entry number 20"
+    "latitude": 53.61,
+    "longitude": 8.48,
+    "time_stamp": "2016-04-04T14:12:00",
+    "score": 163.7982418388142,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.38,
-    "longitude": 10.19,
-    "comment": "Entry number 21"
+    "latitude": 53.62,
+    "longitude": 8.47,
+    "time_stamp": "2016-04-04T14:13:00",
+    "score": 139.80383061510838,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.38,
-    "longitude": 10.19,
-    "comment": "Entry number 22"
+    "latitude": 53.62,
+    "longitude": 8.46,
+    "time_stamp": "2016-04-04T14:14:00",
+    "score": 229.70828367346735,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.39,
-    "longitude": 10.19,
-    "comment": "Entry number 23"
+    "latitude": 53.63,
+    "longitude": 8.45,
+    "time_stamp": "2016-04-04T14:15:00",
+    "score": 291.3469534024498,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.39,
-    "longitude": 10.2,
-    "comment": "Entry number 24"
+    "latitude": 53.62,
+    "longitude": 8.46,
+    "time_stamp": "2016-04-04T14:15:00",
+    "score": 193.90623182067952,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.39,
-    "longitude": 10.2,
-    "comment": "Entry number 25"
+    "latitude": 53.63,
+    "longitude": 8.44,
+    "time_stamp": "2016-04-04T14:16:00",
+    "score": 201.99847295522227,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.39,
-    "longitude": 10.2,
-    "comment": "Entry number 26"
+    "latitude": 53.63,
+    "longitude": 8.44,
+    "time_stamp": "2016-04-04T14:17:00",
+    "score": 215.8646835941047,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.4,
-    "longitude": 10.2,
-    "comment": "Entry number 27"
+    "latitude": 53.63,
+    "longitude": 8.43,
+    "time_stamp": "2016-04-04T14:18:00",
+    "score": 219.67559998187062,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.4,
-    "longitude": 10.2,
-    "comment": "Entry number 28"
+    "latitude": 53.64,
+    "longitude": 8.42,
+    "time_stamp": "2016-04-04T14:19:00",
+    "score": 211.96673880538242,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.4,
-    "longitude": 10.2,
-    "comment": "Entry number 29"
+    "latitude": 53.64,
+    "longitude": 8.42,
+    "time_stamp": "2016-04-04T14:20:00",
+    "score": 238.43407989060506,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.41,
-    "longitude": 10.2,
-    "comment": "Entry number 30"
+    "latitude": 53.64,
+    "longitude": 8.41,
+    "time_stamp": "2016-04-04T14:21:00",
+    "score": 262.4243300465282,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.41,
-    "longitude": 10.21,
-    "comment": "Entry number 31"
+    "latitude": 53.64,
+    "longitude": 8.4,
+    "time_stamp": "2016-04-04T14:22:00",
+    "score": 229.77582152077912,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.41,
-    "longitude": 10.21,
-    "comment": "Entry number 32"
+    "latitude": 53.65,
+    "longitude": 8.4,
+    "time_stamp": "2016-04-04T14:23:00",
+    "score": 211.21666742798902,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.42,
-    "longitude": 10.21,
-    "comment": "Entry number 33"
+    "latitude": 53.65,
+    "longitude": 8.39,
+    "time_stamp": "2016-04-04T14:24:00",
+    "score": 236.28932437350545,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.42,
-    "longitude": 10.22,
-    "comment": "Entry number 34"
+    "latitude": 53.66,
+    "longitude": 8.38,
+    "time_stamp": "2016-04-04T14:25:00",
+    "score": 216.46682236527545,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.42,
-    "longitude": 10.22,
-    "comment": "Entry number 35"
+    "latitude": 53.66,
+    "longitude": 8.38,
+    "time_stamp": "2016-04-04T14:26:00",
+    "score": 226.18145497902788,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.43,
-    "longitude": 10.23,
-    "comment": "Entry number 36"
+    "latitude": 53.66,
+    "longitude": 8.37,
+    "time_stamp": "2016-04-04T14:27:00",
+    "score": 227.78323742917246,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.43,
-    "longitude": 10.22,
-    "comment": "Entry number 37"
+    "latitude": 53.67,
+    "longitude": 8.37,
+    "time_stamp": "2016-04-04T14:28:00",
+    "score": 45.73639895583233,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.44,
-    "longitude": 10.23,
-    "comment": "Entry number 38"
+    "latitude": 53.67,
+    "longitude": 8.36,
+    "time_stamp": "2016-04-04T14:29:00",
+    "score": 38.667802014375866,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.44,
-    "longitude": 10.23,
-    "comment": "Entry number 39"
+    "latitude": 53.68,
+    "longitude": 8.36,
+    "time_stamp": "2016-04-04T14:30:00",
+    "score": -48.835367437613286,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.44,
-    "longitude": 10.24,
-    "comment": "Entry number 40"
+    "latitude": 53.68,
+    "longitude": 8.35,
+    "time_stamp": "2016-04-04T14:31:00",
+    "score": 59.558438758849206,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.45,
-    "longitude": 10.24,
-    "comment": "Entry number 41"
+    "latitude": 53.68,
+    "longitude": 8.35,
+    "time_stamp": "2016-04-04T14:32:00",
+    "score": 60.545104728759725,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.45,
-    "longitude": 10.25,
-    "comment": "Entry number 42"
+    "latitude": 53.69,
+    "longitude": 8.34,
+    "time_stamp": "2016-04-04T14:33:00",
+    "score": -31.624747292816437,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.46,
-    "longitude": 10.25,
-    "comment": "Entry number 43"
+    "latitude": 53.69,
+    "longitude": 8.33,
+    "time_stamp": "2016-04-04T14:34:00",
+    "score": -41.54680158079668,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.45,
-    "longitude": 10.25,
-    "comment": "Entry number 44"
+    "latitude": 53.7,
+    "longitude": 8.33,
+    "time_stamp": "2016-04-04T14:35:00",
+    "score": -36.182646937928666,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.46,
-    "longitude": 10.25,
-    "comment": "Entry number 45"
+    "latitude": 53.7,
+    "longitude": 8.32,
+    "time_stamp": "2016-04-04T14:36:00",
+    "score": -51.056485600310225,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.46,
-    "longitude": 10.26,
-    "comment": "Entry number 46"
+    "latitude": 53.7,
+    "longitude": 8.32,
+    "time_stamp": "2016-04-04T14:37:00",
+    "score": -86.42550407256681,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.46,
-    "longitude": 10.26,
-    "comment": "Entry number 47"
+    "latitude": 53.7,
+    "longitude": 8.31,
+    "time_stamp": "2016-04-04T14:38:00",
+    "score": -50.69471088156092,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.46,
-    "longitude": 10.26,
-    "comment": "Entry number 48"
+    "latitude": 53.71,
+    "longitude": 8.3,
+    "time_stamp": "2016-04-04T14:39:00",
+    "score": -64.21986371986327,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.47,
-    "longitude": 10.26,
-    "comment": "Entry number 49"
+    "latitude": 53.71,
+    "longitude": 8.29,
+    "time_stamp": "2016-04-04T14:40:00",
+    "score": -46.276789817178496,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.47,
-    "longitude": 10.26,
-    "comment": "Entry number 50"
+    "latitude": 53.71,
+    "longitude": 8.29,
+    "time_stamp": "2016-04-04T14:42:00",
+    "score": -101.79312024802789,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.47,
-    "longitude": 10.27,
-    "comment": "Entry number 51"
+    "latitude": 53.72,
+    "longitude": 8.28,
+    "time_stamp": "2016-04-04T14:42:00",
+    "score": -48.754043944397836,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.47,
-    "longitude": 10.27,
-    "comment": "Entry number 52"
+    "latitude": 53.72,
+    "longitude": 8.27,
+    "time_stamp": "2016-04-04T14:44:00",
+    "score": -42.95877733302996,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.47,
-    "longitude": 10.27,
-    "comment": "Entry number 53"
+    "latitude": 53.72,
+    "longitude": 8.27,
+    "time_stamp": "2016-04-04T14:44:00",
+    "score": -48.90401918718976,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.48,
-    "longitude": 10.27,
-    "comment": "Entry number 54"
+    "latitude": 53.72,
+    "longitude": 8.26,
+    "time_stamp": "2016-04-04T14:45:00",
+    "score": -83.76351625910479,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.48,
-    "longitude": 10.28,
-    "comment": "Entry number 55"
+    "latitude": 53.73,
+    "longitude": 8.25,
+    "time_stamp": "2016-04-04T14:46:00",
+    "score": -123.03997026686102,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.48,
-    "longitude": 10.28,
-    "comment": "Entry number 56"
+    "latitude": 53.73,
+    "longitude": 8.24,
+    "time_stamp": "2016-04-04T14:47:00",
+    "score": -30.65286479267411,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.48,
-    "longitude": 10.29,
-    "comment": "Entry number 57"
+    "latitude": 53.73,
+    "longitude": 8.24,
+    "time_stamp": "2016-04-04T14:48:00",
+    "score": -2.0224457541341962,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.48,
-    "longitude": 10.29,
-    "comment": "Entry number 58"
+    "latitude": 53.73,
+    "longitude": 8.23,
+    "time_stamp": "2016-04-04T14:49:00",
+    "score": -43.849011373672056,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.49,
-    "longitude": 10.3,
-    "comment": "Entry number 59"
+    "latitude": 53.74,
+    "longitude": 8.22,
+    "time_stamp": "2016-04-04T14:50:00",
+    "score": -123.14826510422427,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.49,
-    "longitude": 10.3,
-    "comment": "Entry number 60"
+    "latitude": 53.74,
+    "longitude": 8.22,
+    "time_stamp": "2016-04-04T14:51:00",
+    "score": -146.23801536033898,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.49,
-    "longitude": 10.31,
-    "comment": "Entry number 61"
+    "latitude": 53.74,
+    "longitude": 8.21,
+    "time_stamp": "2016-04-04T14:52:00",
+    "score": -34.23640907552931,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.49,
-    "longitude": 10.31,
-    "comment": "Entry number 62"
+    "latitude": 53.75,
+    "longitude": 8.2,
+    "time_stamp": "2016-04-04T14:53:00",
+    "score": -92.0235567894506,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.49,
-    "longitude": 10.32,
-    "comment": "Entry number 63"
+    "latitude": 53.75,
+    "longitude": 8.2,
+    "time_stamp": "2016-04-04T14:54:00",
+    "score": -113.44230665134364,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.49,
-    "longitude": 10.32,
-    "comment": "Entry number 64"
+    "latitude": 53.75,
+    "longitude": 8.19,
+    "time_stamp": "2016-04-04T14:55:00",
+    "score": -142.54962507310097,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.49,
-    "longitude": 10.33,
-    "comment": "Entry number 65"
+    "latitude": 53.76,
+    "longitude": 8.19,
+    "time_stamp": "2016-04-04T14:56:00",
+    "score": -65.11589662396545,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.5,
-    "longitude": 10.33,
-    "comment": "Entry number 66"
+    "latitude": 53.76,
+    "longitude": 8.18,
+    "time_stamp": "2016-04-04T14:57:00",
+    "score": -98.64328374758111,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.5,
-    "longitude": 10.34,
-    "comment": "Entry number 67"
+    "latitude": 53.76,
+    "longitude": 8.17,
+    "time_stamp": "2016-04-04T14:58:00",
+    "score": -163.00411070813857,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.5,
-    "longitude": 10.34,
-    "comment": "Entry number 68"
+    "latitude": 53.77,
+    "longitude": 8.17,
+    "time_stamp": "2016-04-04T14:59:00",
+    "score": -23.18011179122618,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.5,
-    "longitude": 10.35,
-    "comment": "Entry number 69"
+    "latitude": 53.77,
+    "longitude": 8.16,
+    "time_stamp": "2016-04-04T15:00:00",
+    "score": -92.31790212820715,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.5,
-    "longitude": 10.35,
-    "comment": "Entry number 70"
+    "latitude": 53.77,
+    "longitude": 8.16,
+    "time_stamp": "2016-04-04T15:01:00",
+    "score": -95.35159402872728,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.5,
-    "longitude": 10.36,
-    "comment": "Entry number 71"
+    "latitude": 53.78,
+    "longitude": 8.15,
+    "time_stamp": "2016-04-04T15:02:00",
+    "score": -139.80662615094434,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.5,
-    "longitude": 10.36,
-    "comment": "Entry number 72"
+    "latitude": 53.78,
+    "longitude": 8.15,
+    "time_stamp": "2016-04-04T15:03:00",
+    "score": -110.55589606317972,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.5,
-    "longitude": 10.37,
-    "comment": "Entry number 73"
+    "latitude": 53.78,
+    "longitude": 8.15,
+    "time_stamp": "2016-04-04T15:04:00",
+    "score": -152.17388883480726,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.51,
-    "longitude": 10.38,
-    "comment": "Entry number 74"
+    "latitude": 53.79,
+    "longitude": 8.14,
+    "time_stamp": "2016-04-04T15:05:00",
+    "score": -215.90521732530829,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.51,
-    "longitude": 10.38,
-    "comment": "Entry number 75"
+    "latitude": 53.79,
+    "longitude": 8.14,
+    "time_stamp": "2016-04-04T15:06:00",
+    "score": -220.7980119794238,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.51,
-    "longitude": 10.39,
-    "comment": "Entry number 76"
+    "latitude": 53.79,
+    "longitude": 8.14,
+    "time_stamp": "2016-04-04T15:07:00",
+    "score": -336.1244381790193,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.51,
-    "longitude": 10.39,
-    "comment": "Entry number 77"
+    "latitude": 53.8,
+    "longitude": 8.13,
+    "time_stamp": "2016-04-04T15:08:00",
+    "score": -376.9335126415874,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.51,
-    "longitude": 10.4,
-    "comment": "Entry number 78"
+    "latitude": 53.8,
+    "longitude": 8.13,
+    "time_stamp": "2016-04-04T15:09:00",
+    "score": -328.55770597325795,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.51,
-    "longitude": 10.4,
-    "comment": "Entry number 79"
+    "latitude": 53.8,
+    "longitude": 8.13,
+    "time_stamp": "2016-04-04T15:10:00",
+    "score": -330.6316000560075,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.51,
-    "longitude": 10.41,
-    "comment": "Entry number 80"
+    "latitude": 53.8,
+    "longitude": 8.13,
+    "time_stamp": "2016-04-04T15:11:00",
+    "score": -336.57543846365274,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.52,
-    "longitude": 10.42,
-    "comment": "Entry number 81"
+    "latitude": 53.81,
+    "longitude": 8.12,
+    "time_stamp": "2016-04-04T15:12:00",
+    "score": -254.55528392809583,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.52,
-    "longitude": 10.42,
-    "comment": "Entry number 82"
+    "latitude": 53.81,
+    "longitude": 8.12,
+    "time_stamp": "2016-04-04T15:13:00",
+    "score": -295.83634301689244,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.52,
-    "longitude": 10.43,
-    "comment": "Entry number 83"
+    "latitude": 53.81,
+    "longitude": 8.12,
+    "time_stamp": "2016-04-04T15:14:00",
+    "score": -291.4341253696625,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.52,
-    "longitude": 10.44,
-    "comment": "Entry number 84"
+    "latitude": 53.81,
+    "longitude": 8.11,
+    "time_stamp": "2016-04-04T15:15:00",
+    "score": -310.3357287122885,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.52,
-    "longitude": 10.43,
-    "comment": "Entry number 85"
+    "latitude": 53.82,
+    "longitude": 8.11,
+    "time_stamp": "2016-04-04T15:16:00",
+    "score": -348.65695065014916,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.52,
-    "longitude": 10.44,
-    "comment": "Entry number 86"
+    "latitude": 53.82,
+    "longitude": 8.1,
+    "time_stamp": "2016-04-04T15:17:00",
+    "score": -191.52731068906223,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.52,
-    "longitude": 10.45,
-    "comment": "Entry number 87"
+    "latitude": 53.82,
+    "longitude": 8.1,
+    "time_stamp": "2016-04-04T15:18:00",
+    "score": -126.96422960301311,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.53,
-    "longitude": 10.45,
-    "comment": "Entry number 88"
+    "latitude": 53.82,
+    "longitude": 8.09,
+    "time_stamp": "2016-04-04T15:19:00",
+    "score": -187.57475026606335,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.53,
-    "longitude": 10.46,
-    "comment": "Entry number 89"
+    "latitude": 53.83,
+    "longitude": 8.09,
+    "time_stamp": "2016-04-04T15:20:00",
+    "score": -209.43501490787253,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.53,
-    "longitude": 10.47,
-    "comment": "Entry number 90"
+    "latitude": 53.83,
+    "longitude": 8.08,
+    "time_stamp": "2016-04-04T15:21:00",
+    "score": -178.059514712985,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.53,
-    "longitude": 10.47,
-    "comment": "Entry number 91"
+    "latitude": 53.83,
+    "longitude": 8.07,
+    "time_stamp": "2016-04-04T15:22:00",
+    "score": -167.26462941225395,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.53,
-    "longitude": 10.48,
-    "comment": "Entry number 92"
+    "latitude": 53.83,
+    "longitude": 8.06,
+    "time_stamp": "2016-04-04T15:23:00",
+    "score": -189.70139582894785,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.53,
-    "longitude": 10.48,
-    "comment": "Entry number 93"
+    "latitude": 53.83,
+    "longitude": 8.06,
+    "time_stamp": "2016-04-04T15:24:00",
+    "score": -165.23851364441293,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.53,
-    "longitude": 10.49,
-    "comment": "Entry number 94"
+    "latitude": 53.84,
+    "longitude": 8.05,
+    "time_stamp": "2016-04-04T15:25:00",
+    "score": -88.89222101958694,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.54,
-    "longitude": 10.49,
-    "comment": "Entry number 95"
+    "latitude": 53.84,
+    "longitude": 8.04,
+    "time_stamp": "2016-04-04T15:26:00",
+    "score": -148.79238538891127,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.54,
-    "longitude": 10.5,
-    "comment": "Entry number 96"
+    "latitude": 53.84,
+    "longitude": 8.04,
+    "time_stamp": "2016-04-04T15:27:00",
+    "score": -158.37401543332794,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.54,
-    "longitude": 10.51,
-    "comment": "Entry number 97"
+    "latitude": 53.84,
+    "longitude": 8.03,
+    "time_stamp": "2016-04-04T15:28:00",
+    "score": -163.36171724277187,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.54,
-    "longitude": 10.51,
-    "comment": "Entry number 98"
+    "latitude": 53.85,
+    "longitude": 8.02,
+    "time_stamp": "2016-04-04T15:29:00",
+    "score": -155.80592206284382,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.54,
-    "longitude": 10.52,
-    "comment": "Entry number 99"
+    "latitude": 53.85,
+    "longitude": 8.01,
+    "time_stamp": "2016-04-04T15:30:00",
+    "score": -177.81501026308456,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.54,
-    "longitude": 10.52,
-    "comment": "Entry number 100"
+    "latitude": 53.85,
+    "longitude": 8.01,
+    "time_stamp": "2016-04-04T15:31:00",
+    "score": -147.09272188063937,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.54,
-    "longitude": 10.53,
-    "comment": "Entry number 101"
+    "latitude": 53.85,
+    "longitude": 8.0,
+    "time_stamp": "2016-04-04T15:32:00",
+    "score": -188.81982702677374,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.54,
-    "longitude": 10.53,
-    "comment": "Entry number 102"
+    "latitude": 53.85,
+    "longitude": 7.99,
+    "time_stamp": "2016-04-04T15:33:00",
+    "score": -193.40580335860636,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.55,
-    "longitude": 10.54,
-    "comment": "Entry number 103"
+    "latitude": 53.85,
+    "longitude": 7.98,
+    "time_stamp": "2016-04-04T15:34:00",
+    "score": -159.86591159624118,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.55,
-    "longitude": 10.55,
-    "comment": "Entry number 104"
+    "latitude": 53.85,
+    "longitude": 7.98,
+    "time_stamp": "2016-04-04T15:35:00",
+    "score": -160.0249209094577,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.55,
-    "longitude": 10.55,
-    "comment": "Entry number 105"
+    "latitude": 53.85,
+    "longitude": 7.97,
+    "time_stamp": "2016-04-04T15:36:00",
+    "score": -143.99709817004327,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.55,
-    "longitude": 10.56,
-    "comment": "Entry number 106"
+    "latitude": 53.86,
+    "longitude": 7.96,
+    "time_stamp": "2016-04-04T15:37:00",
+    "score": -147.79827287848843,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.55,
-    "longitude": 10.56,
-    "comment": "Entry number 107"
+    "latitude": 53.86,
+    "longitude": 7.95,
+    "time_stamp": "2016-04-04T15:38:00",
+    "score": -139.45861708109805,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.55,
-    "longitude": 10.57,
-    "comment": "Entry number 108"
+    "latitude": 53.86,
+    "longitude": 7.95,
+    "time_stamp": "2016-04-04T15:39:00",
+    "score": -173.8945928533724,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.55,
-    "longitude": 10.58,
-    "comment": "Entry number 109"
+    "latitude": 53.86,
+    "longitude": 7.94,
+    "time_stamp": "2016-04-04T15:40:00",
+    "score": -199.10321915830127,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.55,
-    "longitude": 10.58,
-    "comment": "Entry number 110"
+    "latitude": 53.86,
+    "longitude": 7.93,
+    "time_stamp": "2016-04-04T15:41:00",
+    "score": -237.39119011476214,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.55,
-    "longitude": 10.59,
-    "comment": "Entry number 111"
+    "latitude": 53.86,
+    "longitude": 7.92,
+    "time_stamp": "2016-04-04T15:42:00",
+    "score": -238.86058928726243,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.55,
-    "longitude": 10.59,
-    "comment": "Entry number 112"
+    "latitude": 53.86,
+    "longitude": 7.92,
+    "time_stamp": "2016-04-04T15:43:00",
+    "score": 12.237029364370756,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.55,
-    "longitude": 10.6,
-    "comment": "Entry number 113"
+    "latitude": 53.86,
+    "longitude": 7.91,
+    "time_stamp": "2016-04-04T15:44:00",
+    "score": 73.22688077558314,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.56,
-    "longitude": 10.61,
-    "comment": "Entry number 114"
+    "latitude": 53.86,
+    "longitude": 7.9,
+    "time_stamp": "2016-04-04T15:45:00",
+    "score": -254.35355413017805,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.56,
-    "longitude": 10.61,
-    "comment": "Entry number 115"
+    "latitude": 53.86,
+    "longitude": 7.9,
+    "time_stamp": "2016-04-04T15:46:00",
+    "score": -266.3918248405548,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.56,
-    "longitude": 10.62,
-    "comment": "Entry number 116"
+    "latitude": 53.87,
+    "longitude": 7.89,
+    "time_stamp": "2016-04-04T15:47:00",
+    "score": -193.35585352613884,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.56,
-    "longitude": 10.62,
-    "comment": "Entry number 117"
+    "latitude": 53.87,
+    "longitude": 7.89,
+    "time_stamp": "2016-04-04T15:49:00",
+    "score": -152.79820845619747,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.56,
-    "longitude": 10.63,
-    "comment": "Entry number 118"
+    "latitude": 53.87,
+    "longitude": 7.88,
+    "time_stamp": "2016-04-04T15:50:00",
+    "score": -89.61998556367143,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.56,
-    "longitude": 10.64,
-    "comment": "Entry number 119"
+    "latitude": 53.87,
+    "longitude": 7.88,
+    "time_stamp": "2016-04-04T15:51:00",
+    "score": -18.84280746775994,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.56,
-    "longitude": 10.64,
-    "comment": "Entry number 120"
+    "latitude": 53.88,
+    "longitude": 7.89,
+    "time_stamp": "2016-04-04T15:52:00",
+    "score": 1399.1777626008457,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.56,
-    "longitude": 10.65,
-    "comment": "Entry number 121"
+    "latitude": 53.87,
+    "longitude": 7.88,
+    "time_stamp": "2016-04-04T15:52:00",
+    "score": -238.02134098432657,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.56,
-    "longitude": 10.65,
-    "comment": "Entry number 122"
+    "latitude": 53.88,
+    "longitude": 7.89,
+    "time_stamp": "2016-04-04T15:53:00",
+    "score": 135.4394345603232,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.56,
-    "longitude": 10.66,
-    "comment": "Entry number 123"
+    "latitude": 53.88,
+    "longitude": 7.89,
+    "time_stamp": "2016-04-04T15:55:00",
+    "score": -239.24182912883566,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.56,
-    "longitude": 10.67,
-    "comment": "Entry number 124"
+    "latitude": 53.89,
+    "longitude": 7.9,
+    "time_stamp": "2016-04-04T15:56:00",
+    "score": -214.07776415072226,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.56,
-    "longitude": 10.67,
-    "comment": "Entry number 125"
+    "latitude": 53.89,
+    "longitude": 7.9,
+    "time_stamp": "2016-04-04T15:57:00",
+    "score": -177.22265404798827,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.56,
-    "longitude": 10.68,
-    "comment": "Entry number 126"
+    "latitude": 53.89,
+    "longitude": 7.91,
+    "time_stamp": "2016-04-04T15:58:00",
+    "score": -171.2487168577918,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.56,
-    "longitude": 10.68,
-    "comment": "Entry number 127"
+    "latitude": 53.9,
+    "longitude": 7.91,
+    "time_stamp": "2016-04-04T15:59:00",
+    "score": -150.34980320008185,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.56,
-    "longitude": 10.69,
-    "comment": "Entry number 128"
+    "latitude": 53.9,
+    "longitude": 7.92,
+    "time_stamp": "2016-04-04T16:00:00",
+    "score": -83.22542156395411,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.56,
-    "longitude": 10.7,
-    "comment": "Entry number 129"
+    "latitude": 53.91,
+    "longitude": 7.92,
+    "time_stamp": "2016-04-04T16:01:00",
+    "score": -98.45396878069687,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.56,
-    "longitude": 10.7,
-    "comment": "Entry number 130"
+    "latitude": 53.91,
+    "longitude": 7.93,
+    "time_stamp": "2016-04-04T16:02:00",
+    "score": -86.22725641374609,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.56,
-    "longitude": 10.71,
-    "comment": "Entry number 131"
+    "latitude": 53.91,
+    "longitude": 7.93,
+    "time_stamp": "2016-04-04T16:03:00",
+    "score": -110.46294728686121,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.56,
-    "longitude": 10.71,
-    "comment": "Entry number 132"
+    "latitude": 53.92,
+    "longitude": 7.94,
+    "time_stamp": "2016-04-04T16:04:00",
+    "score": -70.896725167878,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.56,
-    "longitude": 10.72,
-    "comment": "Entry number 133"
+    "latitude": 53.92,
+    "longitude": 7.94,
+    "time_stamp": "2016-04-04T16:05:00",
+    "score": -100.88046299469056,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.56,
-    "longitude": 10.73,
-    "comment": "Entry number 134"
+    "latitude": 53.92,
+    "longitude": 7.95,
+    "time_stamp": "2016-04-04T16:06:00",
+    "score": -12.970279248505221,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.56,
-    "longitude": 10.73,
-    "comment": "Entry number 135"
+    "latitude": 53.93,
+    "longitude": 7.95,
+    "time_stamp": "2016-04-04T16:07:00",
+    "score": -68.13651314897947,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.56,
-    "longitude": 10.74,
-    "comment": "Entry number 136"
+    "latitude": 53.93,
+    "longitude": 7.95,
+    "time_stamp": "2016-04-04T16:08:00",
+    "score": -68.70146899157999,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.56,
-    "longitude": 10.74,
-    "comment": "Entry number 137"
+    "latitude": 53.93,
+    "longitude": 7.96,
+    "time_stamp": "2016-04-04T16:09:00",
+    "score": -63.16107740509278,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.56,
-    "longitude": 10.75,
-    "comment": "Entry number 138"
+    "latitude": 53.94,
+    "longitude": 7.96,
+    "time_stamp": "2016-04-04T16:10:00",
+    "score": -77.68373628939503,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.56,
-    "longitude": 10.76,
-    "comment": "Entry number 139"
+    "latitude": 53.94,
+    "longitude": 7.97,
+    "time_stamp": "2016-04-04T16:11:00",
+    "score": -83.6941305024825,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.56,
-    "longitude": 10.76,
-    "comment": "Entry number 140"
+    "latitude": 53.95,
+    "longitude": 7.97,
+    "time_stamp": "2016-04-04T16:12:00",
+    "score": -72.9965254369863,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.56,
-    "longitude": 10.77,
-    "comment": "Entry number 141"
+    "latitude": 53.95,
+    "longitude": 7.98,
+    "time_stamp": "2016-04-04T16:13:00",
+    "score": -71.77806860959367,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.56,
-    "longitude": 10.77,
-    "comment": "Entry number 142"
+    "latitude": 53.95,
+    "longitude": 7.99,
+    "time_stamp": "2016-04-04T16:14:00",
+    "score": -118.93856955608453,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.56,
-    "longitude": 10.78,
-    "comment": "Entry number 143"
+    "latitude": 53.95,
+    "longitude": 7.99,
+    "time_stamp": "2016-04-04T16:15:00",
+    "score": -112.00269718462414,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.56,
-    "longitude": 10.79,
-    "comment": "Entry number 144"
+    "latitude": 53.96,
+    "longitude": 8.0,
+    "time_stamp": "2016-04-04T16:16:00",
+    "score": -78.4078139394619,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.56,
-    "longitude": 10.79,
-    "comment": "Entry number 145"
+    "latitude": 53.96,
+    "longitude": 8.01,
+    "time_stamp": "2016-04-04T16:17:00",
+    "score": -25.28986475776992,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.57,
-    "longitude": 10.8,
-    "comment": "Entry number 146"
+    "latitude": 53.96,
+    "longitude": 8.01,
+    "time_stamp": "2016-04-04T16:18:00",
+    "score": -46.649918655746205,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.57,
-    "longitude": 10.8,
-    "comment": "Entry number 147"
+    "latitude": 53.96,
+    "longitude": 8.02,
+    "time_stamp": "2016-04-04T16:19:00",
+    "score": -95.08166819483722,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.57,
-    "longitude": 10.81,
-    "comment": "Entry number 148"
+    "latitude": 53.96,
+    "longitude": 8.03,
+    "time_stamp": "2016-04-04T16:20:00",
+    "score": -65.13704530294399,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.57,
-    "longitude": 10.82,
-    "comment": "Entry number 149"
+    "latitude": 53.96,
+    "longitude": 8.04,
+    "time_stamp": "2016-04-04T16:21:00",
+    "score": -26.089321891992768,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.57,
-    "longitude": 10.82,
-    "comment": "Entry number 150"
+    "latitude": 53.96,
+    "longitude": 8.04,
+    "time_stamp": "2016-04-04T16:22:00",
+    "score": -21.82784301217157,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.57,
-    "longitude": 10.83,
-    "comment": "Entry number 151"
+    "latitude": 53.97,
+    "longitude": 8.05,
+    "time_stamp": "2016-04-04T16:23:00",
+    "score": -53.97904299299148,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.57,
-    "longitude": 10.84,
-    "comment": "Entry number 152"
+    "latitude": 53.97,
+    "longitude": 8.06,
+    "time_stamp": "2016-04-04T16:24:00",
+    "score": -111.89134258711215,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.57,
-    "longitude": 10.84,
-    "comment": "Entry number 153"
+    "latitude": 53.97,
+    "longitude": 8.07,
+    "time_stamp": "2016-04-04T16:25:00",
+    "score": -82.02274352159225,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.57,
-    "longitude": 10.85,
-    "comment": "Entry number 154"
+    "latitude": 53.97,
+    "longitude": 8.07,
+    "time_stamp": "2016-04-04T16:26:00",
+    "score": -9.99146159951897,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.57,
-    "longitude": 10.85,
-    "comment": "Entry number 155"
+    "latitude": 53.97,
+    "longitude": 8.08,
+    "time_stamp": "2016-04-04T16:27:00",
+    "score": 5.698296101268397,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.57,
-    "longitude": 10.86,
-    "comment": "Entry number 156"
+    "latitude": 53.97,
+    "longitude": 8.08,
+    "time_stamp": "2016-04-04T16:28:00",
+    "score": -71.81479430395916,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.57,
-    "longitude": 10.87,
-    "comment": "Entry number 157"
+    "latitude": 53.97,
+    "longitude": 8.09,
+    "time_stamp": "2016-04-04T16:29:00",
+    "score": 15.649767716552788,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.57,
-    "longitude": 10.87,
-    "comment": "Entry number 158"
+    "latitude": 53.97,
+    "longitude": 8.1,
+    "time_stamp": "2016-04-04T16:30:00",
+    "score": -106.16510942712216,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.57,
-    "longitude": 10.88,
-    "comment": "Entry number 159"
+    "latitude": 53.97,
+    "longitude": 8.09,
+    "time_stamp": "2016-04-04T16:30:00",
+    "score": -112.19576238488071,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.57,
-    "longitude": 10.88,
-    "comment": "Entry number 160"
+    "latitude": 53.97,
+    "longitude": 8.11,
+    "time_stamp": "2016-04-04T16:31:00",
+    "score": -30.833933033781932,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.57,
-    "longitude": 10.89,
-    "comment": "Entry number 161"
+    "latitude": 53.97,
+    "longitude": 8.11,
+    "time_stamp": "2016-04-04T16:32:00",
+    "score": -97.7026964651127,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.57,
-    "longitude": 10.9,
-    "comment": "Entry number 162"
+    "latitude": 53.97,
+    "longitude": 8.12,
+    "time_stamp": "2016-04-04T16:33:00",
+    "score": -199.42976370216138,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.57,
-    "longitude": 10.9,
-    "comment": "Entry number 163"
+    "latitude": 53.97,
+    "longitude": 8.12,
+    "time_stamp": "2016-04-04T16:34:00",
+    "score": -202.50150371682935,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.57,
-    "longitude": 10.91,
-    "comment": "Entry number 164"
+    "latitude": 53.98,
+    "longitude": 8.13,
+    "time_stamp": "2016-04-04T16:35:00",
+    "score": -131.20027235262228,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.57,
-    "longitude": 10.91,
-    "comment": "Entry number 165"
+    "latitude": 53.98,
+    "longitude": 8.13,
+    "time_stamp": "2016-04-04T16:36:00",
+    "score": -56.676549628838075,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.57,
-    "longitude": 10.92,
-    "comment": "Entry number 166"
+    "latitude": 53.98,
+    "longitude": 8.14,
+    "time_stamp": "2016-04-04T16:37:00",
+    "score": -65.40081346672582,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.57,
-    "longitude": 10.93,
-    "comment": "Entry number 167"
+    "latitude": 53.98,
+    "longitude": 8.14,
+    "time_stamp": "2016-04-04T16:38:00",
+    "score": -37.28321565528654,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.57,
-    "longitude": 10.93,
-    "comment": "Entry number 168"
+    "latitude": 53.98,
+    "longitude": 8.14,
+    "time_stamp": "2016-04-04T16:40:00",
+    "score": -38.251366991552686,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.57,
-    "longitude": 10.94,
-    "comment": "Entry number 169"
+    "latitude": 53.98,
+    "longitude": 8.15,
+    "time_stamp": "2016-04-04T16:40:00",
+    "score": -168.89453662425512,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.57,
-    "longitude": 10.95,
-    "comment": "Entry number 170"
+    "latitude": 53.98,
+    "longitude": 8.16,
+    "time_stamp": "2016-04-04T16:41:00",
+    "score": -62.9724894669821,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.57,
-    "longitude": 10.95,
-    "comment": "Entry number 171"
+    "latitude": 53.98,
+    "longitude": 8.16,
+    "time_stamp": "2016-04-04T16:42:00",
+    "score": -63.952163295206674,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.57,
-    "longitude": 10.96,
-    "comment": "Entry number 172"
+    "latitude": 53.99,
+    "longitude": 8.17,
+    "time_stamp": "2016-04-04T16:43:00",
+    "score": -28.12873540720352,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.57,
-    "longitude": 10.96,
-    "comment": "Entry number 173"
+    "latitude": 53.99,
+    "longitude": 8.17,
+    "time_stamp": "2016-04-04T16:44:00",
+    "score": -58.892171286764324,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.57,
-    "longitude": 10.97,
-    "comment": "Entry number 174"
+    "latitude": 53.99,
+    "longitude": 8.17,
+    "time_stamp": "2016-04-04T16:45:00",
+    "score": -54.79298747965777,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.57,
-    "longitude": 10.98,
-    "comment": "Entry number 175"
+    "latitude": 53.99,
+    "longitude": 8.18,
+    "time_stamp": "2016-04-04T16:46:00",
+    "score": -120.98002063119861,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.57,
-    "longitude": 10.98,
-    "comment": "Entry number 176"
+    "latitude": 53.99,
+    "longitude": 8.18,
+    "time_stamp": "2016-04-04T16:47:00",
+    "score": -86.35261872634146,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.57,
-    "longitude": 10.99,
-    "comment": "Entry number 177"
+    "latitude": 53.99,
+    "longitude": 8.19,
+    "time_stamp": "2016-04-04T16:48:00",
+    "score": -100.87289217762736,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.58,
-    "longitude": 11.0,
-    "comment": "Entry number 178"
+    "latitude": 53.99,
+    "longitude": 8.19,
+    "time_stamp": "2016-04-04T16:49:00",
+    "score": -69.80225982972456,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.58,
-    "longitude": 11.0,
-    "comment": "Entry number 179"
+    "latitude": 53.99,
+    "longitude": 8.2,
+    "time_stamp": "2016-04-04T16:50:00",
+    "score": -70.50927742344811,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.58,
-    "longitude": 11.01,
-    "comment": "Entry number 180"
+    "latitude": 53.99,
+    "longitude": 8.21,
+    "time_stamp": "2016-04-04T16:52:00",
+    "score": -49.697152539067474,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.58,
-    "longitude": 11.02,
-    "comment": "Entry number 181"
+    "latitude": 53.99,
+    "longitude": 8.2,
+    "time_stamp": "2016-04-04T16:52:00",
+    "score": -102.42249413504624,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.58,
-    "longitude": 11.02,
-    "comment": "Entry number 182"
+    "latitude": 53.99,
+    "longitude": 8.21,
+    "time_stamp": "2016-04-04T16:53:00",
+    "score": -123.35709719000056,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.58,
-    "longitude": 11.03,
-    "comment": "Entry number 183"
+    "latitude": 53.99,
+    "longitude": 8.22,
+    "time_stamp": "2016-04-04T16:54:00",
+    "score": -138.64973697238725,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.58,
-    "longitude": 11.03,
-    "comment": "Entry number 184"
+    "latitude": 53.99,
+    "longitude": 8.22,
+    "time_stamp": "2016-04-04T16:55:00",
+    "score": -130.16126393766217,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.58,
-    "longitude": 11.04,
-    "comment": "Entry number 185"
+    "latitude": 53.99,
+    "longitude": 8.23,
+    "time_stamp": "2016-04-04T16:56:00",
+    "score": -83.49256941518729,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.58,
-    "longitude": 11.05,
-    "comment": "Entry number 186"
+    "latitude": 53.99,
+    "longitude": 8.23,
+    "time_stamp": "2016-04-04T16:57:00",
+    "score": -57.83523734924006,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.58,
-    "longitude": 11.05,
-    "comment": "Entry number 187"
+    "latitude": 53.99,
+    "longitude": 8.23,
+    "time_stamp": "2016-04-04T16:58:00",
+    "score": -29.450708399027008,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.58,
-    "longitude": 11.06,
-    "comment": "Entry number 188"
+    "latitude": 53.99,
+    "longitude": 8.24,
+    "time_stamp": "2016-04-04T16:59:00",
+    "score": 34.13993208600027,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.58,
-    "longitude": 11.07,
-    "comment": "Entry number 189"
+    "latitude": 53.99,
+    "longitude": 8.24,
+    "time_stamp": "2016-04-04T17:01:00",
+    "score": 81.89107300834235,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.58,
-    "longitude": 11.08,
-    "comment": "Entry number 190"
+    "latitude": 53.99,
+    "longitude": 8.24,
+    "time_stamp": "2016-04-04T17:01:00",
+    "score": 86.1404156509991,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.58,
-    "longitude": 11.09,
-    "comment": "Entry number 191"
+    "latitude": 53.99,
+    "longitude": 8.25,
+    "time_stamp": "2016-04-04T17:02:00",
+    "score": 189.0984161068052,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.58,
-    "longitude": 11.09,
-    "comment": "Entry number 192"
+    "latitude": 53.99,
+    "longitude": 8.26,
+    "time_stamp": "2016-04-04T17:04:00",
+    "score": 1196.7629992103589,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.58,
-    "longitude": 11.1,
-    "comment": "Entry number 193"
+    "latitude": 53.99,
+    "longitude": 8.25,
+    "time_stamp": "2016-04-04T17:04:00",
+    "score": 254.0232554819679,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.58,
-    "longitude": 11.11,
-    "comment": "Entry number 194"
+    "latitude": 53.99,
+    "longitude": 8.26,
+    "time_stamp": "2016-04-04T17:05:00",
+    "score": 706.8201636067536,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.58,
-    "longitude": 11.12,
-    "comment": "Entry number 195"
+    "latitude": 53.99,
+    "longitude": 8.27,
+    "time_stamp": "2016-04-04T17:06:00",
+    "score": -264.2360346852993,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.58,
-    "longitude": 11.12,
-    "comment": "Entry number 196"
+    "latitude": 53.99,
+    "longitude": 8.28,
+    "time_stamp": "2016-04-04T17:07:00",
+    "score": -203.89420136095328,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.58,
-    "longitude": 11.14,
-    "comment": "Entry number 197"
+    "latitude": 53.99,
+    "longitude": 8.28,
+    "time_stamp": "2016-04-04T17:08:00",
+    "score": -241.6926500257116,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.58,
-    "longitude": 11.13,
-    "comment": "Entry number 198"
+    "latitude": 53.99,
+    "longitude": 8.29,
+    "time_stamp": "2016-04-04T17:09:00",
+    "score": -218.7701535678798,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.58,
-    "longitude": 11.14,
-    "comment": "Entry number 199"
+    "latitude": 53.99,
+    "longitude": 8.3,
+    "time_stamp": "2016-04-04T17:11:00",
+    "score": -185.29430309701615,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.58,
-    "longitude": 11.15,
-    "comment": "Entry number 200"
+    "latitude": 53.99,
+    "longitude": 8.31,
+    "time_stamp": "2016-04-04T17:12:00",
+    "score": -184.73468763596134,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.58,
-    "longitude": 11.15,
-    "comment": "Entry number 201"
+    "latitude": 53.99,
+    "longitude": 8.31,
+    "time_stamp": "2016-04-04T17:13:00",
+    "score": -198.77579230423703,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.58,
-    "longitude": 11.16,
-    "comment": "Entry number 202"
+    "latitude": 53.99,
+    "longitude": 8.32,
+    "time_stamp": "2016-04-04T17:14:00",
+    "score": -196.0776079751938,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.58,
-    "longitude": 11.16,
-    "comment": "Entry number 203"
+    "latitude": 53.99,
+    "longitude": 8.33,
+    "time_stamp": "2016-04-04T17:15:00",
+    "score": -148.61507354387845,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.58,
-    "longitude": 11.17,
-    "comment": "Entry number 204"
+    "latitude": 53.99,
+    "longitude": 8.34,
+    "time_stamp": "2016-04-04T17:16:00",
+    "score": -184.95766361098345,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.58,
-    "longitude": 11.18,
-    "comment": "Entry number 205"
+    "latitude": 53.98,
+    "longitude": 8.34,
+    "time_stamp": "2016-04-04T17:16:00",
+    "score": -210.16316932388236,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.57,
-    "longitude": 11.18,
-    "comment": "Entry number 206"
+    "latitude": 53.98,
+    "longitude": 8.35,
+    "time_stamp": "2016-04-04T17:17:00",
+    "score": -234.6679545380132,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.57,
-    "longitude": 11.19,
-    "comment": "Entry number 207"
+    "latitude": 53.98,
+    "longitude": 8.36,
+    "time_stamp": "2016-04-04T17:18:00",
+    "score": -199.40434932748985,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.57,
-    "longitude": 11.19,
-    "comment": "Entry number 208"
+    "latitude": 53.98,
+    "longitude": 8.36,
+    "time_stamp": "2016-04-04T17:19:00",
+    "score": -167.99529866529724,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.57,
-    "longitude": 11.2,
-    "comment": "Entry number 209"
+    "latitude": 53.98,
+    "longitude": 8.37,
+    "time_stamp": "2016-04-04T17:20:00",
+    "score": -142.37104606550793,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.57,
-    "longitude": 11.2,
-    "comment": "Entry number 210"
+    "latitude": 53.98,
+    "longitude": 8.38,
+    "time_stamp": "2016-04-04T17:21:00",
+    "score": -221.44110817521346,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.57,
-    "longitude": 11.21,
-    "comment": "Entry number 211"
+    "latitude": 53.98,
+    "longitude": 8.39,
+    "time_stamp": "2016-04-04T17:22:00",
+    "score": -181.52452554863544,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.57,
-    "longitude": 11.22,
-    "comment": "Entry number 212"
+    "latitude": 53.98,
+    "longitude": 8.39,
+    "time_stamp": "2016-04-04T17:23:00",
+    "score": -208.70623243543332,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.56,
-    "longitude": 11.22,
-    "comment": "Entry number 213"
+    "latitude": 53.98,
+    "longitude": 8.4,
+    "time_stamp": "2016-04-04T17:24:00",
+    "score": -187.83732588313205,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.56,
-    "longitude": 11.23,
-    "comment": "Entry number 214"
+    "latitude": 53.98,
+    "longitude": 8.41,
+    "time_stamp": "2016-04-04T17:25:00",
+    "score": -129.75220495512076,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.56,
-    "longitude": 11.23,
-    "comment": "Entry number 215"
+    "latitude": 53.98,
+    "longitude": 8.42,
+    "time_stamp": "2016-04-04T17:26:00",
+    "score": -214.10125943068124,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.56,
-    "longitude": 11.24,
-    "comment": "Entry number 216"
+    "latitude": 53.98,
+    "longitude": 8.42,
+    "time_stamp": "2016-04-04T17:27:00",
+    "score": -217.17527157250947,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.55,
-    "longitude": 11.24,
-    "comment": "Entry number 217"
+    "latitude": 53.98,
+    "longitude": 8.43,
+    "time_stamp": "2016-04-04T17:28:00",
+    "score": -176.08710358392932,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.55,
-    "longitude": 11.25,
-    "comment": "Entry number 218"
+    "latitude": 53.97,
+    "longitude": 8.44,
+    "time_stamp": "2016-04-04T17:29:00",
+    "score": -216.61088382497928,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.55,
-    "longitude": 11.25,
-    "comment": "Entry number 219"
+    "latitude": 53.97,
+    "longitude": 8.44,
+    "time_stamp": "2016-04-04T17:30:00",
+    "score": -161.17564949162875,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.55,
-    "longitude": 11.26,
-    "comment": "Entry number 220"
+    "latitude": 53.97,
+    "longitude": 8.45,
+    "time_stamp": "2016-04-04T17:31:00",
+    "score": -213.80545128033805,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.55,
-    "longitude": 11.26,
-    "comment": "Entry number 221"
+    "latitude": 53.97,
+    "longitude": 8.46,
+    "time_stamp": "2016-04-04T17:32:00",
+    "score": -204.39335920988879,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.54,
-    "longitude": 11.27,
-    "comment": "Entry number 222"
+    "latitude": 53.97,
+    "longitude": 8.47,
+    "time_stamp": "2016-04-04T17:33:00",
+    "score": -181.52972418192917,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.54,
-    "longitude": 11.28,
-    "comment": "Entry number 223"
+    "latitude": 53.97,
+    "longitude": 8.47,
+    "time_stamp": "2016-04-04T17:34:00",
+    "score": -184.81179959234964,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.54,
-    "longitude": 11.28,
-    "comment": "Entry number 224"
+    "latitude": 53.97,
+    "longitude": 8.48,
+    "time_stamp": "2016-04-04T17:35:00",
+    "score": -151.02025296068655,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.54,
-    "longitude": 11.29,
-    "comment": "Entry number 225"
+    "latitude": 53.97,
+    "longitude": 8.49,
+    "time_stamp": "2016-04-04T17:36:00",
+    "score": -250.09126900236447,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.54,
-    "longitude": 11.29,
-    "comment": "Entry number 226"
+    "latitude": 53.97,
+    "longitude": 8.5,
+    "time_stamp": "2016-04-04T17:37:00",
+    "score": -230.49359283288527,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.54,
-    "longitude": 11.3,
-    "comment": "Entry number 227"
+    "latitude": 53.97,
+    "longitude": 8.5,
+    "time_stamp": "2016-04-04T17:38:00",
+    "score": -199.58628369648,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.54,
-    "longitude": 11.3,
-    "comment": "Entry number 228"
+    "latitude": 53.97,
+    "longitude": 8.51,
+    "time_stamp": "2016-04-04T17:39:00",
+    "score": -206.28081315682743,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.53,
-    "longitude": 11.31,
-    "comment": "Entry number 229"
+    "latitude": 53.97,
+    "longitude": 8.52,
+    "time_stamp": "2016-04-04T17:40:00",
+    "score": -149.35519207655852,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.53,
-    "longitude": 11.31,
-    "comment": "Entry number 230"
+    "latitude": 53.96,
+    "longitude": 8.53,
+    "time_stamp": "2016-04-04T17:42:00",
+    "score": -215.380484142486,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.53,
-    "longitude": 11.32,
-    "comment": "Entry number 231"
+    "latitude": 53.96,
+    "longitude": 8.53,
+    "time_stamp": "2016-04-04T17:42:00",
+    "score": -214.75448180848844,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.53,
-    "longitude": 11.32,
-    "comment": "Entry number 232"
+    "latitude": 53.96,
+    "longitude": 8.54,
+    "time_stamp": "2016-04-04T17:44:00",
+    "score": -273.3319604475114,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.53,
-    "longitude": 11.33,
-    "comment": "Entry number 233"
+    "latitude": 53.96,
+    "longitude": 8.55,
+    "time_stamp": "2016-04-04T17:45:00",
+    "score": -164.4390765284927,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.53,
-    "longitude": 11.33,
-    "comment": "Entry number 234"
+    "latitude": 53.96,
+    "longitude": 8.55,
+    "time_stamp": "2016-04-04T17:45:00",
+    "score": -199.1221427299172,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.53,
-    "longitude": 11.34,
-    "comment": "Entry number 235"
+    "latitude": 53.96,
+    "longitude": 8.56,
+    "time_stamp": "2016-04-04T17:46:00",
+    "score": -133.39111637550945,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.52,
-    "longitude": 11.34,
-    "comment": "Entry number 236"
+    "latitude": 53.96,
+    "longitude": 8.57,
+    "time_stamp": "2016-04-04T17:47:00",
+    "score": -222.53557408711367,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.52,
-    "longitude": 11.35,
-    "comment": "Entry number 237"
+    "latitude": 53.96,
+    "longitude": 8.57,
+    "time_stamp": "2016-04-04T17:48:00",
+    "score": -250.8841136219096,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.52,
-    "longitude": 11.36,
-    "comment": "Entry number 238"
+    "latitude": 53.96,
+    "longitude": 8.58,
+    "time_stamp": "2016-04-04T17:49:00",
+    "score": -228.37309270093192,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.52,
-    "longitude": 11.36,
-    "comment": "Entry number 239"
+    "latitude": 53.96,
+    "longitude": 8.59,
+    "time_stamp": "2016-04-04T17:50:00",
+    "score": -175.93016397588076,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.52,
-    "longitude": 11.37,
-    "comment": "Entry number 240"
+    "latitude": 53.95,
+    "longitude": 8.6,
+    "time_stamp": "2016-04-04T17:51:00",
+    "score": -277.3133280829429,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.52,
-    "longitude": 11.37,
-    "comment": "Entry number 241"
+    "latitude": 53.95,
+    "longitude": 8.6,
+    "time_stamp": "2016-04-04T17:52:00",
+    "score": -257.5047624119977,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.51,
-    "longitude": 11.38,
-    "comment": "Entry number 242"
+    "latitude": 53.95,
+    "longitude": 8.61,
+    "time_stamp": "2016-04-04T17:53:00",
+    "score": -232.96750378982483,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.51,
-    "longitude": 11.38,
-    "comment": "Entry number 243"
+    "latitude": 53.95,
+    "longitude": 8.62,
+    "time_stamp": "2016-04-04T17:54:00",
+    "score": -213.70775839903513,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.51,
-    "longitude": 11.39,
-    "comment": "Entry number 244"
+    "latitude": 53.95,
+    "longitude": 8.62,
+    "time_stamp": "2016-04-04T17:55:00",
+    "score": -216.2290931843504,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.51,
-    "longitude": 11.39,
-    "comment": "Entry number 245"
+    "latitude": 53.95,
+    "longitude": 8.63,
+    "time_stamp": "2016-04-04T17:56:00",
+    "score": -271.6278307101911,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.51,
-    "longitude": 11.4,
-    "comment": "Entry number 246"
+    "latitude": 53.94,
+    "longitude": 8.63,
+    "time_stamp": "2016-04-04T17:57:00",
+    "score": -319.51463398510396,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.51,
-    "longitude": 11.4,
-    "comment": "Entry number 247"
+    "latitude": 53.94,
+    "longitude": 8.64,
+    "time_stamp": "2016-04-04T17:58:00",
+    "score": -310.4601826952687,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.51,
-    "longitude": 11.41,
-    "comment": "Entry number 248"
+    "latitude": 53.94,
+    "longitude": 8.64,
+    "time_stamp": "2016-04-04T17:59:00",
+    "score": -310.8227567399724,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.5,
-    "longitude": 11.41,
-    "comment": "Entry number 249"
+    "latitude": 53.93,
+    "longitude": 8.65,
+    "time_stamp": "2016-04-04T18:00:00",
+    "score": -188.08438607736753,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.5,
-    "longitude": 11.42,
-    "comment": "Entry number 250"
+    "latitude": 53.93,
+    "longitude": 8.65,
+    "time_stamp": "2016-04-04T18:01:00",
+    "score": -218.55305844654458,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.5,
-    "longitude": 11.42,
-    "comment": "Entry number 251"
+    "latitude": 53.93,
+    "longitude": 8.66,
+    "time_stamp": "2016-04-04T18:02:00",
+    "score": -360.1048662388698,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.5,
-    "longitude": 11.43,
-    "comment": "Entry number 252"
+    "latitude": 53.92,
+    "longitude": 8.66,
+    "time_stamp": "2016-04-04T18:03:00",
+    "score": -286.2380733351772,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.5,
-    "longitude": 11.44,
-    "comment": "Entry number 253"
+    "latitude": 53.92,
+    "longitude": 8.66,
+    "time_stamp": "2016-04-04T18:04:00",
+    "score": -288.7588024111103,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.5,
-    "longitude": 11.44,
-    "comment": "Entry number 254"
+    "latitude": 53.92,
+    "longitude": 8.67,
+    "time_stamp": "2016-04-04T18:05:00",
+    "score": -240.3689947099233,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.49,
-    "longitude": 11.45,
-    "comment": "Entry number 255"
+    "latitude": 53.91,
+    "longitude": 8.67,
+    "time_stamp": "2016-04-04T18:06:00",
+    "score": -350.74472116571224,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.49,
-    "longitude": 11.45,
-    "comment": "Entry number 256"
+    "latitude": 53.91,
+    "longitude": 8.67,
+    "time_stamp": "2016-04-04T18:07:00",
+    "score": -312.41262034573697,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.49,
-    "longitude": 11.46,
-    "comment": "Entry number 257"
+    "latitude": 53.91,
+    "longitude": 8.68,
+    "time_stamp": "2016-04-04T18:08:00",
+    "score": -302.34830737774723,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.49,
-    "longitude": 11.46,
-    "comment": "Entry number 258"
+    "latitude": 53.9,
+    "longitude": 8.68,
+    "time_stamp": "2016-04-04T18:09:00",
+    "score": -281.06597188200726,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.49,
-    "longitude": 11.47,
-    "comment": "Entry number 259"
+    "latitude": 53.9,
+    "longitude": 8.68,
+    "time_stamp": "2016-04-04T18:10:00",
+    "score": -285.31565325175757,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.49,
-    "longitude": 11.47,
-    "comment": "Entry number 260"
+    "latitude": 53.89,
+    "longitude": 8.69,
+    "time_stamp": "2016-04-04T18:11:00",
+    "score": -317.19204495223994,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.49,
-    "longitude": 11.48,
-    "comment": "Entry number 261"
+    "latitude": 53.89,
+    "longitude": 8.69,
+    "time_stamp": "2016-04-04T18:12:00",
+    "score": -316.2902925122919,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.48,
-    "longitude": 11.48,
-    "comment": "Entry number 262"
+    "latitude": 53.89,
+    "longitude": 8.69,
+    "time_stamp": "2016-04-04T18:13:00",
+    "score": -349.1266819645648,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.48,
-    "longitude": 11.49,
-    "comment": "Entry number 263"
+    "latitude": 53.88,
+    "longitude": 8.7,
+    "time_stamp": "2016-04-04T18:14:00",
+    "score": -274.26800828824616,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.48,
-    "longitude": 11.49,
-    "comment": "Entry number 264"
+    "latitude": 53.88,
+    "longitude": 8.7,
+    "time_stamp": "2016-04-04T18:15:00",
+    "score": -327.7810674059094,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.48,
-    "longitude": 11.5,
-    "comment": "Entry number 265"
+    "latitude": 53.88,
+    "longitude": 8.7,
+    "time_stamp": "2016-04-04T18:16:00",
+    "score": -246.39526760129434,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.48,
-    "longitude": 11.5,
-    "comment": "Entry number 266"
+    "latitude": 53.87,
+    "longitude": 8.71,
+    "time_stamp": "2016-04-04T18:17:00",
+    "score": -364.159585898524,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.48,
-    "longitude": 11.51,
-    "comment": "Entry number 267"
+    "latitude": 53.87,
+    "longitude": 8.71,
+    "time_stamp": "2016-04-04T18:18:00",
+    "score": -396.1107035780217,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.47,
-    "longitude": 11.51,
-    "comment": "Entry number 268"
+    "latitude": 53.87,
+    "longitude": 8.72,
+    "time_stamp": "2016-04-04T18:19:00",
+    "score": -287.7478544459193,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.47,
-    "longitude": 11.52,
-    "comment": "Entry number 269"
+    "latitude": 53.87,
+    "longitude": 8.72,
+    "time_stamp": "2016-04-04T18:20:00",
+    "score": -322.29872811991913,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.47,
-    "longitude": 11.52,
-    "comment": "Entry number 270"
+    "latitude": 53.86,
+    "longitude": 8.73,
+    "time_stamp": "2016-04-04T18:21:00",
+    "score": -415.35860440252713,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.47,
-    "longitude": 11.52,
-    "comment": "Entry number 271"
+    "latitude": 53.86,
+    "longitude": 8.73,
+    "time_stamp": "2016-04-04T18:22:00",
+    "score": -351.6616589635362,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.47,
-    "longitude": 11.53,
-    "comment": "Entry number 272"
+    "latitude": 53.86,
+    "longitude": 8.73,
+    "time_stamp": "2016-04-04T18:23:00",
+    "score": -463.96286669078086,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.47,
-    "longitude": 11.53,
-    "comment": "Entry number 273"
+    "latitude": 53.85,
+    "longitude": 8.74,
+    "time_stamp": "2016-04-04T18:24:00",
+    "score": -248.79518600230745,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.47,
-    "longitude": 11.54,
-    "comment": "Entry number 274"
+    "latitude": 53.85,
+    "longitude": 8.74,
+    "time_stamp": "2016-04-04T18:25:00",
+    "score": -370.6743414679315,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.46,
-    "longitude": 11.54,
-    "comment": "Entry number 275"
+    "latitude": 53.85,
+    "longitude": 8.75,
+    "time_stamp": "2016-04-04T18:26:00",
+    "score": -354.478247399976,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.46,
-    "longitude": 11.55,
-    "comment": "Entry number 276"
+    "latitude": 53.85,
+    "longitude": 8.75,
+    "time_stamp": "2016-04-04T18:27:00",
+    "score": -353.1880234397422,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.46,
-    "longitude": 11.55,
-    "comment": "Entry number 277"
+    "latitude": 53.85,
+    "longitude": 8.76,
+    "time_stamp": "2016-04-04T18:28:00",
+    "score": -449.6955233139354,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.46,
-    "longitude": 11.56,
-    "comment": "Entry number 278"
+    "latitude": 53.84,
+    "longitude": 8.76,
+    "time_stamp": "2016-04-04T18:29:00",
+    "score": -433.543632802523,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.46,
-    "longitude": 11.56,
-    "comment": "Entry number 279"
+    "latitude": 53.84,
+    "longitude": 8.76,
+    "time_stamp": "2016-04-04T18:30:00",
+    "score": -464.91438950195356,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.46,
-    "longitude": 11.57,
-    "comment": "Entry number 280"
+    "latitude": 53.84,
+    "longitude": 8.77,
+    "time_stamp": "2016-04-04T18:31:00",
+    "score": -349.18086873547963,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.46,
-    "longitude": 11.58,
-    "comment": "Entry number 281"
+    "latitude": 53.84,
+    "longitude": 8.78,
+    "time_stamp": "2016-04-04T18:32:00",
+    "score": -253.20667317242078,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.46,
-    "longitude": 11.58,
-    "comment": "Entry number 282"
+    "latitude": 53.84,
+    "longitude": 8.78,
+    "time_stamp": "2016-04-04T18:33:00",
+    "score": -245.0400819160393,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.45,
-    "longitude": 11.59,
-    "comment": "Entry number 283"
+    "latitude": 53.83,
+    "longitude": 8.79,
+    "time_stamp": "2016-04-04T18:34:00",
+    "score": -472.9368597111454,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.45,
-    "longitude": 11.59,
-    "comment": "Entry number 284"
+    "latitude": 53.83,
+    "longitude": 8.79,
+    "time_stamp": "2016-04-04T18:35:00",
+    "score": -405.9971300009222,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.45,
-    "longitude": 11.6,
-    "comment": "Entry number 285"
+    "latitude": 53.83,
+    "longitude": 8.8,
+    "time_stamp": "2016-04-04T18:36:00",
+    "score": -389.716541975429,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.45,
-    "longitude": 11.6,
-    "comment": "Entry number 286"
+    "latitude": 53.83,
+    "longitude": 8.81,
+    "time_stamp": "2016-04-04T18:37:00",
+    "score": -322.50975792906047,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.45,
-    "longitude": 11.61,
-    "comment": "Entry number 287"
+    "latitude": 53.83,
+    "longitude": 8.82,
+    "time_stamp": "2016-04-04T18:38:00",
+    "score": -403.65119007541966,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.45,
-    "longitude": 11.61,
-    "comment": "Entry number 288"
+    "latitude": 53.83,
+    "longitude": 8.82,
+    "time_stamp": "2016-04-04T18:39:00",
+    "score": -365.7015504232536,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.45,
-    "longitude": 11.62,
-    "comment": "Entry number 289"
+    "latitude": 53.83,
+    "longitude": 8.83,
+    "time_stamp": "2016-04-04T18:40:00",
+    "score": -359.5904099056288,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.45,
-    "longitude": 11.62,
-    "comment": "Entry number 290"
+    "latitude": 53.83,
+    "longitude": 8.84,
+    "time_stamp": "2016-04-04T18:41:00",
+    "score": -309.2710369520644,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.44,
-    "longitude": 11.63,
-    "comment": "Entry number 291"
+    "latitude": 53.83,
+    "longitude": 8.84,
+    "time_stamp": "2016-04-04T18:42:00",
+    "score": -365.09393549411743,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.44,
-    "longitude": 11.63,
-    "comment": "Entry number 292"
+    "latitude": 53.83,
+    "longitude": 8.85,
+    "time_stamp": "2016-04-04T18:43:00",
+    "score": -323.5988718931635,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.44,
-    "longitude": 11.64,
-    "comment": "Entry number 293"
+    "latitude": 53.83,
+    "longitude": 8.86,
+    "time_stamp": "2016-04-04T18:44:00",
+    "score": -414.59754478001014,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.44,
-    "longitude": 11.64,
-    "comment": "Entry number 294"
+    "latitude": 53.83,
+    "longitude": 8.86,
+    "time_stamp": "2016-04-04T18:46:00",
+    "score": -424.04910659005577,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.44,
-    "longitude": 11.65,
-    "comment": "Entry number 295"
+    "latitude": 53.83,
+    "longitude": 8.88,
+    "time_stamp": "2016-04-04T18:47:00",
+    "score": -330.3051146695932,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.44,
-    "longitude": 11.65,
-    "comment": "Entry number 296"
+    "latitude": 53.83,
+    "longitude": 8.87,
+    "time_stamp": "2016-04-04T18:47:00",
+    "score": -286.00729818652076,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.44,
-    "longitude": 11.66,
-    "comment": "Entry number 297"
+    "latitude": 53.84,
+    "longitude": 8.88,
+    "time_stamp": "2016-04-04T18:48:00",
+    "score": -385.3894506858928,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.44,
-    "longitude": 11.66,
-    "comment": "Entry number 298"
+    "latitude": 53.84,
+    "longitude": 8.89,
+    "time_stamp": "2016-04-04T18:49:00",
+    "score": -354.878683303717,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.43,
-    "longitude": 11.67,
-    "comment": "Entry number 299"
+    "latitude": 53.84,
+    "longitude": 8.9,
+    "time_stamp": "2016-04-04T18:50:00",
+    "score": -311.8997017876575,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.43,
-    "longitude": 11.67,
-    "comment": "Entry number 300"
+    "latitude": 53.84,
+    "longitude": 8.91,
+    "time_stamp": "2016-04-04T18:51:00",
+    "score": -287.1392760961021,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.43,
-    "longitude": 11.68,
-    "comment": "Entry number 301"
+    "latitude": 53.84,
+    "longitude": 8.91,
+    "time_stamp": "2016-04-04T18:52:00",
+    "score": -223.42128156323565,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.43,
-    "longitude": 11.68,
-    "comment": "Entry number 302"
+    "latitude": 53.84,
+    "longitude": 8.92,
+    "time_stamp": "2016-04-04T18:54:00",
+    "score": -374.7755067288874,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.43,
-    "longitude": 11.69,
-    "comment": "Entry number 303"
+    "latitude": 53.84,
+    "longitude": 8.93,
+    "time_stamp": "2016-04-04T18:55:00",
+    "score": -330.0582348008186,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.43,
-    "longitude": 11.7,
-    "comment": "Entry number 304"
+    "latitude": 53.84,
+    "longitude": 8.93,
+    "time_stamp": "2016-04-04T18:56:00",
+    "score": -408.14223653536715,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.43,
-    "longitude": 11.7,
-    "comment": "Entry number 305"
+    "latitude": 53.84,
+    "longitude": 8.94,
+    "time_stamp": "2016-04-04T18:57:00",
+    "score": -369.10309715211315,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.43,
-    "longitude": 11.71,
-    "comment": "Entry number 306"
+    "latitude": 53.84,
+    "longitude": 8.95,
+    "time_stamp": "2016-04-04T18:58:00",
+    "score": -306.272049053189,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.42,
-    "longitude": 11.71,
-    "comment": "Entry number 307"
+    "latitude": 53.84,
+    "longitude": 8.95,
+    "time_stamp": "2016-04-04T18:59:00",
+    "score": -248.54098631602005,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.42,
-    "longitude": 11.72,
-    "comment": "Entry number 308"
+    "latitude": 53.84,
+    "longitude": 8.97,
+    "time_stamp": "2016-04-04T19:00:00",
+    "score": -380.00780151979257,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.42,
-    "longitude": 11.72,
-    "comment": "Entry number 309"
+    "latitude": 53.84,
+    "longitude": 8.96,
+    "time_stamp": "2016-04-04T19:00:00",
+    "score": -363.6184288417469,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.42,
-    "longitude": 11.73,
-    "comment": "Entry number 310"
+    "latitude": 53.84,
+    "longitude": 8.97,
+    "time_stamp": "2016-04-04T19:01:00",
+    "score": -288.2124483107118,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.42,
-    "longitude": 11.73,
-    "comment": "Entry number 311"
+    "latitude": 53.84,
+    "longitude": 8.98,
+    "time_stamp": "2016-04-04T19:02:00",
+    "score": -437.66050070650317,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.42,
-    "longitude": 11.74,
-    "comment": "Entry number 312"
+    "latitude": 53.85,
+    "longitude": 8.99,
+    "time_stamp": "2016-04-04T19:04:00",
+    "score": -353.01680897105166,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.42,
-    "longitude": 11.74,
-    "comment": "Entry number 313"
+    "latitude": 53.85,
+    "longitude": 9.0,
+    "time_stamp": "2016-04-04T19:05:00",
+    "score": -308.2463659218736,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.42,
-    "longitude": 11.75,
-    "comment": "Entry number 314"
+    "latitude": 53.85,
+    "longitude": 8.99,
+    "time_stamp": "2016-04-04T19:05:00",
+    "score": -410.4699749016452,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 11.75,
-    "comment": "Entry number 315"
+    "latitude": 53.85,
+    "longitude": 9.01,
+    "time_stamp": "2016-04-04T19:07:00",
+    "score": -420.84408328290897,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 11.76,
-    "comment": "Entry number 316"
+    "latitude": 53.85,
+    "longitude": 9.01,
+    "time_stamp": "2016-04-04T19:07:00",
+    "score": -388.33798531088155,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 11.77,
-    "comment": "Entry number 317"
+    "latitude": 53.85,
+    "longitude": 9.02,
+    "time_stamp": "2016-04-04T19:08:00",
+    "score": -398.6533383435037,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 11.77,
-    "comment": "Entry number 318"
+    "latitude": 53.85,
+    "longitude": 9.03,
+    "time_stamp": "2016-04-04T19:10:00",
+    "score": -408.787214542484,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 11.78,
-    "comment": "Entry number 319"
+    "latitude": 53.86,
+    "longitude": 9.03,
+    "time_stamp": "2016-04-04T19:11:00",
+    "score": -393.1895213771679,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 11.78,
-    "comment": "Entry number 320"
+    "latitude": 53.86,
+    "longitude": 9.04,
+    "time_stamp": "2016-04-04T19:12:00",
+    "score": -344.85648316454467,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 11.79,
-    "comment": "Entry number 321"
+    "latitude": 53.86,
+    "longitude": 9.04,
+    "time_stamp": "2016-04-04T19:13:00",
+    "score": -310.34707357202956,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 11.79,
-    "comment": "Entry number 322"
+    "latitude": 53.86,
+    "longitude": 9.05,
+    "time_stamp": "2016-04-04T19:14:00",
+    "score": -311.0485904894681,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 11.8,
-    "comment": "Entry number 323"
+    "latitude": 53.86,
+    "longitude": 9.06,
+    "time_stamp": "2016-04-04T19:15:00",
+    "score": -315.765366446974,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 11.8,
-    "comment": "Entry number 324"
+    "latitude": 53.86,
+    "longitude": 9.06,
+    "time_stamp": "2016-04-04T19:16:00",
+    "score": -351.3555167212269,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 11.81,
-    "comment": "Entry number 325"
+    "latitude": 53.87,
+    "longitude": 9.07,
+    "time_stamp": "2016-04-04T19:17:00",
+    "score": -323.6413815601659,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 11.82,
-    "comment": "Entry number 326"
+    "latitude": 53.87,
+    "longitude": 9.08,
+    "time_stamp": "2016-04-04T19:18:00",
+    "score": -365.1394405474882,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 11.82,
-    "comment": "Entry number 327"
+    "latitude": 53.87,
+    "longitude": 9.08,
+    "time_stamp": "2016-04-04T19:19:00",
+    "score": -232.2102635005656,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 11.83,
-    "comment": "Entry number 328"
+    "latitude": 53.87,
+    "longitude": 9.09,
+    "time_stamp": "2016-04-04T19:20:00",
+    "score": -380.4083853427569,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 11.83,
-    "comment": "Entry number 329"
+    "latitude": 53.87,
+    "longitude": 9.09,
+    "time_stamp": "2016-04-04T19:21:00",
+    "score": 217.76637208596344,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.41,
-    "longitude": 11.84,
-    "comment": "Entry number 330"
+    "latitude": 53.87,
+    "longitude": 9.1,
+    "time_stamp": "2016-04-04T19:22:00",
+    "score": 99.4467693609854,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.41,
-    "longitude": 11.84,
-    "comment": "Entry number 331"
+    "latitude": 53.87,
+    "longitude": 9.1,
+    "time_stamp": "2016-04-04T19:23:00",
+    "score": 89.52443188091615,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.41,
-    "longitude": 11.85,
-    "comment": "Entry number 332"
+    "latitude": 53.87,
+    "longitude": 9.1,
+    "time_stamp": "2016-04-04T19:24:00",
+    "score": -56.159516577990644,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 11.86,
-    "comment": "Entry number 333"
+    "latitude": 53.87,
+    "longitude": 9.11,
+    "time_stamp": "2016-04-04T19:25:00",
+    "score": -191.17114537816246,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 11.86,
-    "comment": "Entry number 334"
+    "latitude": 53.87,
+    "longitude": 9.11,
+    "time_stamp": "2016-04-04T19:26:00",
+    "score": -106.01308954985348,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 11.87,
-    "comment": "Entry number 335"
+    "latitude": 53.87,
+    "longitude": 9.11,
+    "time_stamp": "2016-04-04T19:27:00",
+    "score": -137.6683432696118,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 11.87,
-    "comment": "Entry number 336"
+    "latitude": 53.87,
+    "longitude": 9.11,
+    "time_stamp": "2016-04-04T19:28:00",
+    "score": -102.40208400892993,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 11.88,
-    "comment": "Entry number 337"
+    "latitude": 53.87,
+    "longitude": 9.12,
+    "time_stamp": "2016-04-04T19:29:00",
+    "score": -122.59221857244825,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 11.88,
-    "comment": "Entry number 338"
+    "latitude": 53.87,
+    "longitude": 9.12,
+    "time_stamp": "2016-04-04T19:30:00",
+    "score": -90.1976975847183,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 11.89,
-    "comment": "Entry number 339"
+    "latitude": 53.87,
+    "longitude": 9.12,
+    "time_stamp": "2016-04-04T19:31:00",
+    "score": -198.49061927432945,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 11.9,
-    "comment": "Entry number 340"
+    "latitude": 53.87,
+    "longitude": 9.13,
+    "time_stamp": "2016-04-04T19:32:00",
+    "score": 189.49592729912342,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.41,
-    "longitude": 11.9,
-    "comment": "Entry number 341"
+    "latitude": 53.87,
+    "longitude": 9.13,
+    "time_stamp": "2016-04-04T19:33:00",
+    "score": -21.375846632799494,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 11.91,
-    "comment": "Entry number 342"
+    "latitude": 53.87,
+    "longitude": 9.14,
+    "time_stamp": "2016-04-04T19:34:00",
+    "score": -90.44800548591411,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 11.91,
-    "comment": "Entry number 343"
+    "latitude": 53.87,
+    "longitude": 9.14,
+    "time_stamp": "2016-04-04T19:35:00",
+    "score": -239.39256998965516,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 11.92,
-    "comment": "Entry number 344"
+    "latitude": 53.87,
+    "longitude": 9.15,
+    "time_stamp": "2016-04-04T19:36:00",
+    "score": -326.1426910137343,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 11.92,
-    "comment": "Entry number 345"
+    "latitude": 53.87,
+    "longitude": 9.15,
+    "time_stamp": "2016-04-04T19:37:00",
+    "score": -370.87974416722886,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 11.93,
-    "comment": "Entry number 346"
+    "latitude": 53.87,
+    "longitude": 9.16,
+    "time_stamp": "2016-04-04T19:38:00",
+    "score": -304.7262391047452,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 11.93,
-    "comment": "Entry number 347"
+    "latitude": 53.87,
+    "longitude": 9.17,
+    "time_stamp": "2016-04-04T19:39:00",
+    "score": -337.0823660070728,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 11.94,
-    "comment": "Entry number 348"
+    "latitude": 53.87,
+    "longitude": 9.18,
+    "time_stamp": "2016-04-04T19:40:00",
+    "score": -291.9178128409292,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 11.95,
-    "comment": "Entry number 349"
+    "latitude": 53.87,
+    "longitude": 9.18,
+    "time_stamp": "2016-04-04T19:41:00",
+    "score": -266.96588129523366,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 11.95,
-    "comment": "Entry number 350"
+    "latitude": 53.87,
+    "longitude": 9.19,
+    "time_stamp": "2016-04-04T19:42:00",
+    "score": -256.14014721031435,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 11.96,
-    "comment": "Entry number 351"
+    "latitude": 53.87,
+    "longitude": 9.2,
+    "time_stamp": "2016-04-04T19:43:00",
+    "score": -164.91436319411378,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 11.96,
-    "comment": "Entry number 352"
+    "latitude": 53.87,
+    "longitude": 9.2,
+    "time_stamp": "2016-04-04T19:44:00",
+    "score": -191.49924520072318,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 11.97,
-    "comment": "Entry number 353"
+    "latitude": 53.87,
+    "longitude": 9.21,
+    "time_stamp": "2016-04-04T19:45:00",
+    "score": -116.79828505956334,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 11.97,
-    "comment": "Entry number 354"
+    "latitude": 53.87,
+    "longitude": 9.22,
+    "time_stamp": "2016-04-04T19:46:00",
+    "score": -231.79078729109892,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 11.98,
-    "comment": "Entry number 355"
+    "latitude": 53.87,
+    "longitude": 9.23,
+    "time_stamp": "2016-04-04T19:47:00",
+    "score": -172.70051998688268,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 11.98,
-    "comment": "Entry number 356"
+    "latitude": 53.87,
+    "longitude": 9.23,
+    "time_stamp": "2016-04-04T19:48:00",
+    "score": -237.17946648701263,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 11.99,
-    "comment": "Entry number 357"
+    "latitude": 53.87,
+    "longitude": 9.24,
+    "time_stamp": "2016-04-04T19:49:00",
+    "score": -176.72627665794266,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 12.0,
-    "comment": "Entry number 358"
+    "latitude": 53.87,
+    "longitude": 9.25,
+    "time_stamp": "2016-04-04T19:50:00",
+    "score": -116.14822954263332,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 12.0,
-    "comment": "Entry number 359"
+    "latitude": 53.87,
+    "longitude": 9.25,
+    "time_stamp": "2016-04-04T19:51:00",
+    "score": -159.5250605962567,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 12.01,
-    "comment": "Entry number 360"
+    "latitude": 53.86,
+    "longitude": 9.26,
+    "time_stamp": "2016-04-04T19:52:00",
+    "score": -154.76727036764555,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 12.01,
-    "comment": "Entry number 361"
+    "latitude": 53.86,
+    "longitude": 9.27,
+    "time_stamp": "2016-04-04T19:53:00",
+    "score": -184.01316725815582,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 12.02,
-    "comment": "Entry number 362"
+    "latitude": 53.86,
+    "longitude": 9.28,
+    "time_stamp": "2016-04-04T19:54:00",
+    "score": -135.37903154499713,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 12.02,
-    "comment": "Entry number 363"
+    "latitude": 53.86,
+    "longitude": 9.28,
+    "time_stamp": "2016-04-04T19:55:00",
+    "score": -132.6684638958493,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 12.03,
-    "comment": "Entry number 364"
+    "latitude": 53.86,
+    "longitude": 9.29,
+    "time_stamp": "2016-04-04T19:56:00",
+    "score": -180.38387189923242,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 12.04,
-    "comment": "Entry number 365"
+    "latitude": 53.85,
+    "longitude": 9.29,
+    "time_stamp": "2016-04-04T19:57:00",
+    "score": -199.54970414876493,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 12.04,
-    "comment": "Entry number 366"
+    "latitude": 53.85,
+    "longitude": 9.3,
+    "time_stamp": "2016-04-04T19:58:00",
+    "score": -107.7288200432597,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 12.05,
-    "comment": "Entry number 367"
+    "latitude": 53.85,
+    "longitude": 9.31,
+    "time_stamp": "2016-04-04T19:59:00",
+    "score": -184.1279277190638,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 12.05,
-    "comment": "Entry number 368"
+    "latitude": 53.85,
+    "longitude": 9.31,
+    "time_stamp": "2016-04-04T19:59:00",
+    "score": -183.78175032882064,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 12.06,
-    "comment": "Entry number 369"
+    "latitude": 53.84,
+    "longitude": 9.32,
+    "time_stamp": "2016-04-04T20:01:00",
+    "score": -128.89669011334468,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 12.06,
-    "comment": "Entry number 370"
+    "latitude": 53.84,
+    "longitude": 9.32,
+    "time_stamp": "2016-04-04T20:02:00",
+    "score": -158.55740021704014,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 12.07,
-    "comment": "Entry number 371"
+    "latitude": 53.84,
+    "longitude": 9.33,
+    "time_stamp": "2016-04-04T20:03:00",
+    "score": -143.8596668826242,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 12.07,
-    "comment": "Entry number 372"
+    "latitude": 53.84,
+    "longitude": 9.33,
+    "time_stamp": "2016-04-04T20:03:00",
+    "score": -157.9058588634864,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 12.08,
-    "comment": "Entry number 373"
+    "latitude": 53.83,
+    "longitude": 9.34,
+    "time_stamp": "2016-04-04T20:04:00",
+    "score": -238.31517535131866,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 12.09,
-    "comment": "Entry number 374"
+    "latitude": 53.83,
+    "longitude": 9.34,
+    "time_stamp": "2016-04-04T20:05:00",
+    "score": -192.4415202897601,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 12.09,
-    "comment": "Entry number 375"
+    "latitude": 53.82,
+    "longitude": 9.35,
+    "time_stamp": "2016-04-04T20:06:00",
+    "score": -127.17117358202313,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 12.1,
-    "comment": "Entry number 376"
+    "latitude": 53.82,
+    "longitude": 9.35,
+    "time_stamp": "2016-04-04T20:07:00",
+    "score": -120.03052494922099,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 12.1,
-    "comment": "Entry number 377"
+    "latitude": 53.82,
+    "longitude": 9.36,
+    "time_stamp": "2016-04-04T20:08:00",
+    "score": -101.92789438479804,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 12.11,
-    "comment": "Entry number 378"
+    "latitude": 53.81,
+    "longitude": 9.36,
+    "time_stamp": "2016-04-04T20:09:00",
+    "score": -177.94844510886583,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 12.11,
-    "comment": "Entry number 379"
+    "latitude": 53.81,
+    "longitude": 9.36,
+    "time_stamp": "2016-04-04T20:11:00",
+    "score": -170.98650330616852,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 12.12,
-    "comment": "Entry number 380"
+    "latitude": 53.8,
+    "longitude": 9.37,
+    "time_stamp": "2016-04-04T20:12:00",
+    "score": -106.81424906779489,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 12.12,
-    "comment": "Entry number 381"
+    "latitude": 53.8,
+    "longitude": 9.37,
+    "time_stamp": "2016-04-04T20:13:00",
+    "score": -138.43347102602797,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 12.13,
-    "comment": "Entry number 382"
+    "latitude": 53.8,
+    "longitude": 9.37,
+    "time_stamp": "2016-04-04T20:14:00",
+    "score": -108.82431831049917,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 12.14,
-    "comment": "Entry number 383"
+    "latitude": 53.79,
+    "longitude": 9.37,
+    "time_stamp": "2016-04-04T20:15:00",
+    "score": -169.98515480068727,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 12.14,
-    "comment": "Entry number 384"
+    "latitude": 53.79,
+    "longitude": 9.38,
+    "time_stamp": "2016-04-04T20:15:00",
+    "score": -120.62752190206038,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 12.15,
-    "comment": "Entry number 385"
+    "latitude": 53.78,
+    "longitude": 9.38,
+    "time_stamp": "2016-04-04T20:16:00",
+    "score": -61.882556975519265,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 12.15,
-    "comment": "Entry number 386"
+    "latitude": 53.78,
+    "longitude": 9.38,
+    "time_stamp": "2016-04-04T20:17:00",
+    "score": -31.130332336812444,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 12.16,
-    "comment": "Entry number 387"
+    "latitude": 53.78,
+    "longitude": 9.38,
+    "time_stamp": "2016-04-04T20:18:00",
+    "score": -30.936884336820412,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.41,
-    "longitude": 12.16,
-    "comment": "Entry number 388"
+    "latitude": 53.77,
+    "longitude": 9.39,
+    "time_stamp": "2016-04-04T20:19:00",
+    "score": -100.47097340954429,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.42,
-    "longitude": 12.17,
-    "comment": "Entry number 389"
+    "latitude": 53.77,
+    "longitude": 9.39,
+    "time_stamp": "2016-04-04T20:20:00",
+    "score": -126.97640577317111,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.42,
-    "longitude": 12.17,
-    "comment": "Entry number 390"
+    "latitude": 53.76,
+    "longitude": 9.39,
+    "time_stamp": "2016-04-04T20:21:00",
+    "score": -43.88753079374442,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.42,
-    "longitude": 12.17,
-    "comment": "Entry number 391"
+    "latitude": 53.76,
+    "longitude": 9.39,
+    "time_stamp": "2016-04-04T20:22:00",
+    "score": -79.86505347083607,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.42,
-    "longitude": 12.18,
-    "comment": "Entry number 392"
+    "latitude": 53.75,
+    "longitude": 9.4,
+    "time_stamp": "2016-04-04T20:23:00",
+    "score": -93.99227131695625,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.43,
-    "longitude": 12.18,
-    "comment": "Entry number 393"
+    "latitude": 53.75,
+    "longitude": 9.4,
+    "time_stamp": "2016-04-04T20:24:00",
+    "score": -133.2648413083284,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.43,
-    "longitude": 12.19,
-    "comment": "Entry number 394"
+    "latitude": 53.75,
+    "longitude": 9.4,
+    "time_stamp": "2016-04-04T20:25:00",
+    "score": -139.17398434950246,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.43,
-    "longitude": 12.19,
-    "comment": "Entry number 395"
+    "latitude": 53.74,
+    "longitude": 9.41,
+    "time_stamp": "2016-04-04T20:26:00",
+    "score": -131.50773193725286,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.43,
-    "longitude": 12.19,
-    "comment": "Entry number 396"
+    "latitude": 53.74,
+    "longitude": 9.41,
+    "time_stamp": "2016-04-04T20:27:00",
+    "score": -79.43821503014715,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.43,
-    "longitude": 12.2,
-    "comment": "Entry number 397"
+    "latitude": 53.74,
+    "longitude": 9.42,
+    "time_stamp": "2016-04-04T20:28:00",
+    "score": -154.2683091642341,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.44,
-    "longitude": 12.2,
-    "comment": "Entry number 398"
+    "latitude": 53.73,
+    "longitude": 9.42,
+    "time_stamp": "2016-04-04T20:29:00",
+    "score": -119.88028506140859,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.44,
-    "longitude": 12.21,
-    "comment": "Entry number 399"
+    "latitude": 53.73,
+    "longitude": 9.43,
+    "time_stamp": "2016-04-04T20:30:00",
+    "score": -58.86605809916318,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.44,
-    "longitude": 12.21,
-    "comment": "Entry number 400"
+    "latitude": 53.73,
+    "longitude": 9.43,
+    "time_stamp": "2016-04-04T20:31:00",
+    "score": -71.86104545666217,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.44,
-    "longitude": 12.21,
-    "comment": "Entry number 401"
+    "latitude": 53.73,
+    "longitude": 9.44,
+    "time_stamp": "2016-04-04T20:32:00",
+    "score": -53.81188244921873,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.45,
-    "longitude": 12.22,
-    "comment": "Entry number 402"
+    "latitude": 53.72,
+    "longitude": 9.45,
+    "time_stamp": "2016-04-04T20:33:00",
+    "score": -56.99826077874559,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.45,
-    "longitude": 12.22,
-    "comment": "Entry number 403"
+    "latitude": 53.72,
+    "longitude": 9.45,
+    "time_stamp": "2016-04-04T20:34:00",
+    "score": -83.5772987115422,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.45,
-    "longitude": 12.22,
-    "comment": "Entry number 404"
+    "latitude": 53.72,
+    "longitude": 9.46,
+    "time_stamp": "2016-04-04T20:35:00",
+    "score": -82.9822803934569,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.45,
-    "longitude": 12.23,
-    "comment": "Entry number 405"
+    "latitude": 53.71,
+    "longitude": 9.46,
+    "time_stamp": "2016-04-04T20:36:00",
+    "score": -115.32159980521124,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.46,
-    "longitude": 12.23,
-    "comment": "Entry number 406"
+    "latitude": 53.71,
+    "longitude": 9.47,
+    "time_stamp": "2016-04-04T20:37:00",
+    "score": -105.63515252655611,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.46,
-    "longitude": 12.23,
-    "comment": "Entry number 407"
+    "latitude": 53.71,
+    "longitude": 9.47,
+    "time_stamp": "2016-04-04T20:38:00",
+    "score": -90.13536593391905,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.46,
-    "longitude": 12.23,
-    "comment": "Entry number 408"
+    "latitude": 53.7,
+    "longitude": 9.48,
+    "time_stamp": "2016-04-04T20:39:00",
+    "score": -103.09834654615042,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.47,
-    "longitude": 12.23,
-    "comment": "Entry number 409"
+    "latitude": 53.7,
+    "longitude": 9.48,
+    "time_stamp": "2016-04-04T20:40:00",
+    "score": -99.21595375232005,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.47,
-    "longitude": 12.24,
-    "comment": "Entry number 410"
+    "latitude": 53.7,
+    "longitude": 9.49,
+    "time_stamp": "2016-04-04T20:42:00",
+    "score": -119.49731493889772,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.47,
-    "longitude": 12.24,
-    "comment": "Entry number 411"
+    "latitude": 53.69,
+    "longitude": 9.49,
+    "time_stamp": "2016-04-04T20:42:00",
+    "score": -6.024932306236906,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.48,
-    "longitude": 12.24,
-    "comment": "Entry number 412"
+    "latitude": 53.69,
+    "longitude": 9.49,
+    "time_stamp": "2016-04-04T20:44:00",
+    "score": -8.889076242555802,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.48,
-    "longitude": 12.24,
-    "comment": "Entry number 413"
+    "latitude": 53.68,
+    "longitude": 9.5,
+    "time_stamp": "2016-04-04T20:45:00",
+    "score": -92.40488672318065,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.48,
-    "longitude": 12.24,
-    "comment": "Entry number 414"
+    "latitude": 53.68,
+    "longitude": 9.5,
+    "time_stamp": "2016-04-04T20:45:00",
+    "score": -97.51865005957029,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.49,
-    "longitude": 12.25,
-    "comment": "Entry number 415"
+    "latitude": 53.67,
+    "longitude": 9.5,
+    "time_stamp": "2016-04-04T20:46:00",
+    "score": 6.114018858027293,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.49,
-    "longitude": 12.25,
-    "comment": "Entry number 416"
+    "latitude": 53.67,
+    "longitude": 9.5,
+    "time_stamp": "2016-04-04T20:47:00",
+    "score": -76.19883394026533,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.49,
-    "longitude": 12.25,
-    "comment": "Entry number 417"
+    "latitude": 53.67,
+    "longitude": 9.5,
+    "time_stamp": "2016-04-04T20:48:00",
+    "score": -84.03718556014132,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.49,
-    "longitude": 12.25,
-    "comment": "Entry number 418"
+    "latitude": 53.66,
+    "longitude": 9.5,
+    "time_stamp": "2016-04-04T20:49:00",
+    "score": -167.65156219581218,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.5,
-    "longitude": 12.25,
-    "comment": "Entry number 419"
+    "latitude": 53.66,
+    "longitude": 9.51,
+    "time_stamp": "2016-04-04T20:50:00",
+    "score": -265.31604537832686,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.5,
-    "longitude": 12.26,
-    "comment": "Entry number 420"
+    "latitude": 53.66,
+    "longitude": 9.51,
+    "time_stamp": "2016-04-04T20:51:00",
+    "score": -309.3620903731028,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.5,
-    "longitude": 12.26,
-    "comment": "Entry number 421"
+    "latitude": 53.65,
+    "longitude": 9.51,
+    "time_stamp": "2016-04-04T20:52:00",
+    "score": -224.70784596942167,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.51,
-    "longitude": 12.26,
-    "comment": "Entry number 422"
+    "latitude": 53.65,
+    "longitude": 9.51,
+    "time_stamp": "2016-04-04T20:53:00",
+    "score": -262.82088756089934,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.51,
-    "longitude": 12.26,
-    "comment": "Entry number 423"
+    "latitude": 53.65,
+    "longitude": 9.51,
+    "time_stamp": "2016-04-04T20:54:00",
+    "score": -251.64637437611395,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.51,
-    "longitude": 12.26,
-    "comment": "Entry number 424"
+    "latitude": 53.64,
+    "longitude": 9.51,
+    "time_stamp": "2016-04-04T20:55:00",
+    "score": -225.36128890404007,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.52,
-    "longitude": 12.26,
-    "comment": "Entry number 425"
+    "latitude": 53.64,
+    "longitude": 9.52,
+    "time_stamp": "2016-04-04T20:56:00",
+    "score": -92.93507021381356,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.52,
-    "longitude": 12.27,
-    "comment": "Entry number 426"
+    "latitude": 53.64,
+    "longitude": 9.52,
+    "time_stamp": "2016-04-04T20:57:00",
+    "score": -211.4359915733162,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.52,
-    "longitude": 12.27,
-    "comment": "Entry number 427"
+    "latitude": 53.63,
+    "longitude": 9.52,
+    "time_stamp": "2016-04-04T20:58:00",
+    "score": -108.7576462391794,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.52,
-    "longitude": 12.27,
-    "comment": "Entry number 428"
+    "latitude": 53.63,
+    "longitude": 9.53,
+    "time_stamp": "2016-04-04T20:59:00",
+    "score": -94.48477359730236,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.53,
-    "longitude": 12.27,
-    "comment": "Entry number 429"
+    "latitude": 53.62,
+    "longitude": 9.53,
+    "time_stamp": "2016-04-04T21:00:00",
+    "score": -122.18154043080085,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.53,
-    "longitude": 12.27,
-    "comment": "Entry number 430"
+    "latitude": 53.62,
+    "longitude": 9.54,
+    "time_stamp": "2016-04-04T21:01:00",
+    "score": 35.69664131172749,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.53,
-    "longitude": 12.28,
-    "comment": "Entry number 431"
+    "latitude": 53.62,
+    "longitude": 9.54,
+    "time_stamp": "2016-04-04T21:02:00",
+    "score": 64.62661201524338,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.54,
-    "longitude": 12.28,
-    "comment": "Entry number 432"
+    "latitude": 53.61,
+    "longitude": 9.55,
+    "time_stamp": "2016-04-04T21:03:00",
+    "score": -79.01413244666378,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.54,
-    "longitude": 12.28,
-    "comment": "Entry number 433"
+    "latitude": 53.61,
+    "longitude": 9.55,
+    "time_stamp": "2016-04-04T21:04:00",
+    "score": -45.570886205217676,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.54,
-    "longitude": 12.28,
-    "comment": "Entry number 434"
+    "latitude": 53.61,
+    "longitude": 9.56,
+    "time_stamp": "2016-04-04T21:05:00",
+    "score": -48.96254598746509,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.55,
-    "longitude": 12.28,
-    "comment": "Entry number 435"
+    "latitude": 53.61,
+    "longitude": 9.56,
+    "time_stamp": "2016-04-04T21:06:00",
+    "score": -42.888567303182526,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.55,
-    "longitude": 12.29,
-    "comment": "Entry number 436"
+    "latitude": 53.6,
+    "longitude": 9.57,
+    "time_stamp": "2016-04-04T21:07:00",
+    "score": 20.939408778080633,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.55,
-    "longitude": 12.29,
-    "comment": "Entry number 437"
+    "latitude": 53.6,
+    "longitude": 9.58,
+    "time_stamp": "2016-04-04T21:08:00",
+    "score": 22.95563298631464,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.55,
-    "longitude": 12.29,
-    "comment": "Entry number 438"
+    "latitude": 53.6,
+    "longitude": 9.58,
+    "time_stamp": "2016-04-04T21:09:00",
+    "score": 26.02506435004466,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.56,
-    "longitude": 12.29,
-    "comment": "Entry number 439"
+    "latitude": 53.59,
+    "longitude": 9.59,
+    "time_stamp": "2016-04-04T21:10:00",
+    "score": 92.43700058431273,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.56,
-    "longitude": 12.29,
-    "comment": "Entry number 440"
+    "latitude": 53.59,
+    "longitude": 9.59,
+    "time_stamp": "2016-04-04T21:11:00",
+    "score": 60.93451607372822,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.56,
-    "longitude": 12.29,
-    "comment": "Entry number 441"
+    "latitude": 53.59,
+    "longitude": 9.6,
+    "time_stamp": "2016-04-04T21:12:00",
+    "score": 26.05321762415656,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.57,
-    "longitude": 12.3,
-    "comment": "Entry number 442"
+    "latitude": 53.58,
+    "longitude": 9.6,
+    "time_stamp": "2016-04-04T21:13:00",
+    "score": -11.81072341714571,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.57,
-    "longitude": 12.3,
-    "comment": "Entry number 443"
+    "latitude": 53.58,
+    "longitude": 9.61,
+    "time_stamp": "2016-04-04T21:14:00",
+    "score": 14.089515764835596,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.57,
-    "longitude": 12.3,
-    "comment": "Entry number 444"
+    "latitude": 53.58,
+    "longitude": 9.61,
+    "time_stamp": "2016-04-04T21:15:00",
+    "score": -25.92482782316938,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.57,
-    "longitude": 12.3,
-    "comment": "Entry number 445"
+    "latitude": 53.58,
+    "longitude": 9.62,
+    "time_stamp": "2016-04-04T21:16:00",
+    "score": 107.5932348709141,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.58,
-    "longitude": 12.3,
-    "comment": "Entry number 446"
+    "latitude": 53.57,
+    "longitude": 9.63,
+    "time_stamp": "2016-04-04T21:17:00",
+    "score": -29.06248335981809,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.58,
-    "longitude": 12.31,
-    "comment": "Entry number 447"
+    "latitude": 53.57,
+    "longitude": 9.63,
+    "time_stamp": "2016-04-04T21:18:00",
+    "score": -21.48134735294343,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.58,
-    "longitude": 12.31,
-    "comment": "Entry number 448"
+    "latitude": 53.57,
+    "longitude": 9.64,
+    "time_stamp": "2016-04-04T21:19:00",
+    "score": -5.399572696826681,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.58,
-    "longitude": 12.32,
-    "comment": "Entry number 449"
+    "latitude": 53.57,
+    "longitude": 9.65,
+    "time_stamp": "2016-04-04T21:20:00",
+    "score": 91.57501884885164,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.58,
-    "longitude": 12.32,
-    "comment": "Entry number 450"
+    "latitude": 53.57,
+    "longitude": 9.65,
+    "time_stamp": "2016-04-04T21:21:00",
+    "score": 57.229448683851615,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.59,
-    "longitude": 12.33,
-    "comment": "Entry number 451"
+    "latitude": 53.56,
+    "longitude": 9.66,
+    "time_stamp": "2016-04-04T21:22:00",
+    "score": 10.116666861589238,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.59,
-    "longitude": 12.33,
-    "comment": "Entry number 452"
+    "latitude": 53.56,
+    "longitude": 9.67,
+    "time_stamp": "2016-04-04T21:23:00",
+    "score": 12.345262034307325,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.59,
-    "longitude": 12.34,
-    "comment": "Entry number 453"
+    "latitude": 53.56,
+    "longitude": 9.68,
+    "time_stamp": "2016-04-04T21:24:00",
+    "score": 70.78280436700379,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.59,
-    "longitude": 12.34,
-    "comment": "Entry number 454"
+    "latitude": 53.56,
+    "longitude": 9.68,
+    "time_stamp": "2016-04-04T21:25:00",
+    "score": 36.469774194417596,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.59,
-    "longitude": 12.34,
-    "comment": "Entry number 455"
+    "latitude": 53.56,
+    "longitude": 9.69,
+    "time_stamp": "2016-04-04T21:26:00",
+    "score": -0.6593573419711447,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.6,
-    "longitude": 12.35,
-    "comment": "Entry number 456"
+    "latitude": 53.56,
+    "longitude": 9.7,
+    "time_stamp": "2016-04-04T21:27:00",
+    "score": -55.97725386167599,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.6,
-    "longitude": 12.35,
-    "comment": "Entry number 457"
+    "latitude": 53.56,
+    "longitude": 9.71,
+    "time_stamp": "2016-04-04T21:29:00",
+    "score": 505.7362125136,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.6,
-    "longitude": 12.36,
-    "comment": "Entry number 458"
+    "latitude": 53.56,
+    "longitude": 9.7,
+    "time_stamp": "2016-04-04T21:29:00",
+    "score": 181.44270690594158,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.6,
-    "longitude": 12.36,
-    "comment": "Entry number 459"
+    "latitude": 53.56,
+    "longitude": 9.72,
+    "time_stamp": "2016-04-04T21:30:00",
+    "score": 346.4582394180625,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.6,
-    "longitude": 12.37,
-    "comment": "Entry number 460"
+    "latitude": 53.56,
+    "longitude": 9.72,
+    "time_stamp": "2016-04-04T21:32:00",
+    "score": -121.28956422268061,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.61,
-    "longitude": 12.37,
-    "comment": "Entry number 461"
+    "latitude": 53.56,
+    "longitude": 9.73,
+    "time_stamp": "2016-04-04T21:33:00",
+    "score": -130.33562260782264,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.61,
-    "longitude": 12.38,
-    "comment": "Entry number 462"
+    "latitude": 53.56,
+    "longitude": 9.73,
+    "time_stamp": "2016-04-04T21:34:00",
+    "score": -91.08009564265922,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.61,
-    "longitude": 12.38,
-    "comment": "Entry number 463"
+    "latitude": 53.56,
+    "longitude": 9.74,
+    "time_stamp": "2016-04-04T21:35:00",
+    "score": 18.156728939098457,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.61,
-    "longitude": 12.38,
-    "comment": "Entry number 464"
+    "latitude": 53.56,
+    "longitude": 9.75,
+    "time_stamp": "2016-04-04T21:36:00",
+    "score": 1.6594902080660177,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.61,
-    "longitude": 12.39,
-    "comment": "Entry number 465"
+    "latitude": 53.56,
+    "longitude": 9.75,
+    "time_stamp": "2016-04-04T21:37:00",
+    "score": -0.894128015279648,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.62,
-    "longitude": 12.39,
-    "comment": "Entry number 466"
+    "latitude": 53.55,
+    "longitude": 9.76,
+    "time_stamp": "2016-04-04T21:38:00",
+    "score": -101.71280416053037,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.62,
-    "longitude": 12.4,
-    "comment": "Entry number 467"
+    "latitude": 53.55,
+    "longitude": 9.77,
+    "time_stamp": "2016-04-04T21:39:00",
+    "score": -144.94400602731025,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.62,
-    "longitude": 12.4,
-    "comment": "Entry number 468"
+    "latitude": 53.55,
+    "longitude": 9.77,
+    "time_stamp": "2016-04-04T21:40:00",
+    "score": -119.4337855184956,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.62,
-    "longitude": 12.41,
-    "comment": "Entry number 469"
+    "latitude": 53.55,
+    "longitude": 9.78,
+    "time_stamp": "2016-04-04T21:41:00",
+    "score": -22.90008280246525,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.62,
-    "longitude": 12.41,
-    "comment": "Entry number 470"
+    "latitude": 53.55,
+    "longitude": 9.78,
+    "time_stamp": "2016-04-04T21:41:00",
+    "score": -82.84803735295259,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.63,
-    "longitude": 12.42,
-    "comment": "Entry number 471"
+    "latitude": 53.55,
+    "longitude": 9.79,
+    "time_stamp": "2016-04-04T21:42:00",
+    "score": -128.09390130920974,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.63,
-    "longitude": 12.42,
-    "comment": "Entry number 472"
+    "latitude": 53.55,
+    "longitude": 9.79,
+    "time_stamp": "2016-04-04T21:43:00",
+    "score": -75.85282382071159,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.63,
-    "longitude": 12.43,
-    "comment": "Entry number 473"
+    "latitude": 53.55,
+    "longitude": 9.8,
+    "time_stamp": "2016-04-04T21:44:00",
+    "score": -99.93535649852629,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.63,
-    "longitude": 12.43,
-    "comment": "Entry number 474"
+    "latitude": 53.55,
+    "longitude": 9.8,
+    "time_stamp": "2016-04-04T21:45:00",
+    "score": -104.44808343359,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.63,
-    "longitude": 12.44,
-    "comment": "Entry number 475"
+    "latitude": 53.55,
+    "longitude": 9.81,
+    "time_stamp": "2016-04-04T21:47:00",
+    "score": -82.10333707621362,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.63,
-    "longitude": 12.44,
-    "comment": "Entry number 476"
+    "latitude": 53.55,
+    "longitude": 9.81,
+    "time_stamp": "2016-04-04T21:47:00",
+    "score": -82.10333707621362,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.64,
-    "longitude": 12.45,
-    "comment": "Entry number 477"
+    "latitude": 53.55,
+    "longitude": 9.82,
+    "time_stamp": "2016-04-04T21:48:00",
+    "score": -62.601946139874144,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.64,
-    "longitude": 12.45,
-    "comment": "Entry number 478"
+    "latitude": 53.54,
+    "longitude": 9.82,
+    "time_stamp": "2016-04-04T21:49:00",
+    "score": -139.4356290876824,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.64,
-    "longitude": 12.46,
-    "comment": "Entry number 479"
+    "latitude": 53.54,
+    "longitude": 9.83,
+    "time_stamp": "2016-04-04T21:50:00",
+    "score": -151.00463193896917,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.64,
-    "longitude": 12.46,
-    "comment": "Entry number 480"
+    "latitude": 53.54,
+    "longitude": 9.83,
+    "time_stamp": "2016-04-04T21:51:00",
+    "score": -189.00038652077046,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.64,
-    "longitude": 12.47,
-    "comment": "Entry number 481"
+    "latitude": 53.54,
+    "longitude": 9.84,
+    "time_stamp": "2016-04-04T21:52:00",
+    "score": -103.22445083051457,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.65,
-    "longitude": 12.47,
-    "comment": "Entry number 482"
+    "latitude": 53.54,
+    "longitude": 9.84,
+    "time_stamp": "2016-04-04T21:53:00",
+    "score": -71.62640024617917,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.65,
-    "longitude": 12.48,
-    "comment": "Entry number 483"
+    "latitude": 53.54,
+    "longitude": 9.84,
+    "time_stamp": "2016-04-04T21:54:00",
+    "score": -18.09710143939492,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.65,
-    "longitude": 12.48,
-    "comment": "Entry number 484"
+    "latitude": 53.54,
+    "longitude": 9.85,
+    "time_stamp": "2016-04-04T21:55:00",
+    "score": -79.37699720093497,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.65,
-    "longitude": 12.49,
-    "comment": "Entry number 485"
+    "latitude": 53.54,
+    "longitude": 9.85,
+    "time_stamp": "2016-04-04T21:56:00",
+    "score": -42.02328180209474,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.65,
-    "longitude": 12.49,
-    "comment": "Entry number 486"
+    "latitude": 53.54,
+    "longitude": 9.86,
+    "time_stamp": "2016-04-04T21:57:00",
+    "score": -62.3289458224408,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.66,
-    "longitude": 12.5,
-    "comment": "Entry number 487"
+    "latitude": 53.54,
+    "longitude": 9.86,
+    "time_stamp": "2016-04-04T21:58:00",
+    "score": -67.71585619456732,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.66,
-    "longitude": 12.51,
-    "comment": "Entry number 488"
+    "latitude": 53.54,
+    "longitude": 9.86,
+    "time_stamp": "2016-04-04T21:59:00",
+    "score": -66.14877781927794,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.66,
-    "longitude": 12.51,
-    "comment": "Entry number 489"
+    "latitude": 53.54,
+    "longitude": 9.87,
+    "time_stamp": "2016-04-04T22:00:00",
+    "score": -123.48721112184921,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.66,
-    "longitude": 12.52,
-    "comment": "Entry number 490"
+    "latitude": 53.54,
+    "longitude": 9.87,
+    "time_stamp": "2016-04-04T22:01:00",
+    "score": -90.75751005533289,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.67,
-    "longitude": 12.52,
-    "comment": "Entry number 491"
+    "latitude": 53.54,
+    "longitude": 9.88,
+    "time_stamp": "2016-04-04T22:02:00",
+    "score": -74.38829588970066,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.67,
-    "longitude": 12.52,
-    "comment": "Entry number 492"
+    "latitude": 53.54,
+    "longitude": 9.88,
+    "time_stamp": "2016-04-04T22:03:00",
+    "score": -11.004852020660337,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.67,
-    "longitude": 12.53,
-    "comment": "Entry number 493"
+    "latitude": 53.54,
+    "longitude": 9.88,
+    "time_stamp": "2016-04-04T22:04:00",
+    "score": -112.22203996251824,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.67,
-    "longitude": 12.53,
-    "comment": "Entry number 494"
+    "latitude": 53.54,
+    "longitude": 9.89,
+    "time_stamp": "2016-04-04T22:05:00",
+    "score": -148.00379053067263,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.67,
-    "longitude": 12.54,
-    "comment": "Entry number 495"
+    "latitude": 53.54,
+    "longitude": 9.89,
+    "time_stamp": "2016-04-04T22:06:00",
+    "score": -137.7766739560434,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.68,
-    "longitude": 12.54,
-    "comment": "Entry number 496"
+    "latitude": 53.54,
+    "longitude": 9.9,
+    "time_stamp": "2016-04-04T22:08:00",
+    "score": -162.20061053250402,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.68,
-    "longitude": 12.55,
-    "comment": "Entry number 497"
+    "latitude": 53.54,
+    "longitude": 9.9,
+    "time_stamp": "2016-04-04T22:09:00",
+    "score": -161.763082718619,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.68,
-    "longitude": 12.55,
-    "comment": "Entry number 498"
+    "latitude": 53.54,
+    "longitude": 9.9,
+    "time_stamp": "2016-04-04T22:10:00",
+    "score": -144.85973202716718,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.68,
-    "longitude": 12.56,
-    "comment": "Entry number 499"
+    "latitude": 53.54,
+    "longitude": 9.9,
+    "time_stamp": "2016-04-04T22:11:00",
+    "score": -135.40968108208244,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.68,
-    "longitude": 12.56,
-    "comment": "Entry number 500"
+    "latitude": 53.54,
+    "longitude": 9.91,
+    "time_stamp": "2016-04-04T22:11:00",
+    "score": 1.7268785117569223,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.68,
-    "longitude": 12.57,
-    "comment": "Entry number 501"
+    "latitude": 53.54,
+    "longitude": 9.91,
+    "time_stamp": "2016-04-04T22:12:00",
+    "score": 568.4251233153989,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.69,
-    "longitude": 12.57,
-    "comment": "Entry number 502"
+    "latitude": 53.54,
+    "longitude": 9.91,
+    "time_stamp": "2016-04-04T22:13:00",
+    "score": -9.225698290025093,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.69,
-    "longitude": 12.58,
-    "comment": "Entry number 503"
+    "latitude": 53.54,
+    "longitude": 9.91,
+    "time_stamp": "2016-04-04T22:14:00",
+    "score": 1.4194972510090338,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.69,
-    "longitude": 12.58,
-    "comment": "Entry number 504"
+    "latitude": 53.54,
+    "longitude": 9.91,
+    "time_stamp": "2016-04-04T22:15:00",
+    "score": -27.62197928490218,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.69,
-    "longitude": 12.59,
-    "comment": "Entry number 505"
+    "latitude": 53.54,
+    "longitude": 9.91,
+    "time_stamp": "2016-04-04T22:16:00",
+    "score": -36.63020811583851,
+    "is_anomaly_pred": 0
   },
   {
-    "latitude": 54.69,
-    "longitude": 12.59,
-    "comment": "Entry number 506"
+    "latitude": 53.53,
+    "longitude": 9.91,
+    "time_stamp": "2016-04-04T22:17:00",
+    "score": 78.81911104709457,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.7,
-    "longitude": 12.6,
-    "comment": "Entry number 507"
+    "latitude": 53.54,
+    "longitude": 9.91,
+    "time_stamp": "2016-04-04T22:18:00",
+    "score": 149.47982297681824,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.7,
-    "longitude": 12.6,
-    "comment": "Entry number 508"
+    "latitude": 53.54,
+    "longitude": 9.91,
+    "time_stamp": "2016-04-04T22:19:00",
+    "score": 47.15391465446169,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.7,
-    "longitude": 12.61,
-    "comment": "Entry number 509"
+    "latitude": 53.54,
+    "longitude": 9.91,
+    "time_stamp": "2016-04-04T22:20:00",
+    "score": 1437.3202460337336,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.7,
-    "longitude": 12.62,
-    "comment": "Entry number 510"
+    "latitude": 53.54,
+    "longitude": 9.91,
+    "time_stamp": "2016-04-04T22:21:00",
+    "score": 966.9947214995034,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.7,
-    "longitude": 12.61,
-    "comment": "Entry number 511"
+    "latitude": 53.54,
+    "longitude": 9.91,
+    "time_stamp": "2016-04-04T22:22:00",
+    "score": 86.14437568109952,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.71,
-    "longitude": 12.62,
-    "comment": "Entry number 512"
+    "latitude": 53.54,
+    "longitude": 9.91,
+    "time_stamp": "2016-04-04T22:23:00",
+    "score": 75.24820131039019,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.71,
-    "longitude": 12.63,
-    "comment": "Entry number 513"
+    "latitude": 53.54,
+    "longitude": 9.91,
+    "time_stamp": "2016-04-04T22:25:00",
+    "score": 132.771331721166,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.71,
-    "longitude": 12.63,
-    "comment": "Entry number 514"
+    "latitude": 53.54,
+    "longitude": 9.91,
+    "time_stamp": "2016-04-04T22:26:00",
+    "score": 54.63386514236572,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.71,
-    "longitude": 12.64,
-    "comment": "Entry number 515"
+    "latitude": 53.53,
+    "longitude": 9.91,
+    "time_stamp": "2016-04-04T22:26:00",
+    "score": 99.90740019016175,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.71,
-    "longitude": 12.64,
-    "comment": "Entry number 516"
+    "latitude": 53.53,
+    "longitude": 9.91,
+    "time_stamp": "2016-04-04T22:28:00",
+    "score": 755.9351106758385,
+    "is_anomaly_pred": 1
   },
   {
-    "latitude": 54.72,
-    "longitude": 12.65,
-    "comment": "Entry number 517"
-  },
-  {
-    "latitude": 54.72,
-    "longitude": 12.65,
-    "comment": "Entry number 518"
-  },
-  {
-    "latitude": 54.72,
-    "longitude": 12.66,
-    "comment": "Entry number 519"
-  },
-  {
-    "latitude": 54.72,
-    "longitude": 12.66,
-    "comment": "Entry number 520"
-  },
-  {
-    "latitude": 54.72,
-    "longitude": 12.67,
-    "comment": "Entry number 521"
-  },
-  {
-    "latitude": 54.73,
-    "longitude": 12.67,
-    "comment": "Entry number 522"
-  },
-  {
-    "latitude": 54.73,
-    "longitude": 12.68,
-    "comment": "Entry number 523"
-  },
-  {
-    "latitude": 54.73,
-    "longitude": 12.68,
-    "comment": "Entry number 524"
-  },
-  {
-    "latitude": 54.73,
-    "longitude": 12.69,
-    "comment": "Entry number 525"
-  },
-  {
-    "latitude": 54.73,
-    "longitude": 12.69,
-    "comment": "Entry number 526"
-  },
-  {
-    "latitude": 54.73,
-    "longitude": 12.7,
-    "comment": "Entry number 527"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 12.7,
-    "comment": "Entry number 528"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 12.7,
-    "comment": "Entry number 529"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 12.71,
-    "comment": "Entry number 530"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 12.71,
-    "comment": "Entry number 531"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 12.72,
-    "comment": "Entry number 532"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 12.72,
-    "comment": "Entry number 533"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 12.73,
-    "comment": "Entry number 534"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 12.73,
-    "comment": "Entry number 535"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 12.74,
-    "comment": "Entry number 536"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 12.74,
-    "comment": "Entry number 537"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 12.75,
-    "comment": "Entry number 538"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 12.75,
-    "comment": "Entry number 539"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 12.76,
-    "comment": "Entry number 540"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 12.76,
-    "comment": "Entry number 541"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 12.77,
-    "comment": "Entry number 542"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 12.78,
-    "comment": "Entry number 543"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 12.78,
-    "comment": "Entry number 544"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 12.79,
-    "comment": "Entry number 545"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 12.79,
-    "comment": "Entry number 546"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 12.8,
-    "comment": "Entry number 547"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 12.81,
-    "comment": "Entry number 548"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 12.82,
-    "comment": "Entry number 549"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 12.82,
-    "comment": "Entry number 550"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 12.83,
-    "comment": "Entry number 551"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 12.83,
-    "comment": "Entry number 552"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 12.84,
-    "comment": "Entry number 553"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 12.85,
-    "comment": "Entry number 554"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 12.85,
-    "comment": "Entry number 555"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 12.86,
-    "comment": "Entry number 556"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 12.86,
-    "comment": "Entry number 557"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 12.87,
-    "comment": "Entry number 558"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 12.88,
-    "comment": "Entry number 559"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 12.89,
-    "comment": "Entry number 560"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 12.89,
-    "comment": "Entry number 561"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 12.9,
-    "comment": "Entry number 562"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 12.9,
-    "comment": "Entry number 563"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 12.91,
-    "comment": "Entry number 564"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 12.91,
-    "comment": "Entry number 565"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 12.92,
-    "comment": "Entry number 566"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 12.93,
-    "comment": "Entry number 567"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 12.93,
-    "comment": "Entry number 568"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 12.94,
-    "comment": "Entry number 569"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 12.94,
-    "comment": "Entry number 570"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 12.95,
-    "comment": "Entry number 571"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 12.95,
-    "comment": "Entry number 572"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 12.96,
-    "comment": "Entry number 573"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 12.97,
-    "comment": "Entry number 574"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 12.97,
-    "comment": "Entry number 575"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 12.98,
-    "comment": "Entry number 576"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 12.98,
-    "comment": "Entry number 577"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 12.99,
-    "comment": "Entry number 578"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 12.99,
-    "comment": "Entry number 579"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 13.0,
-    "comment": "Entry number 580"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 13.01,
-    "comment": "Entry number 581"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 13.01,
-    "comment": "Entry number 582"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 13.02,
-    "comment": "Entry number 583"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 13.02,
-    "comment": "Entry number 584"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 13.03,
-    "comment": "Entry number 585"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 13.04,
-    "comment": "Entry number 586"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 13.05,
-    "comment": "Entry number 587"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 13.05,
-    "comment": "Entry number 588"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 13.06,
-    "comment": "Entry number 589"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 13.06,
-    "comment": "Entry number 590"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 13.07,
-    "comment": "Entry number 591"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 13.07,
-    "comment": "Entry number 592"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 13.08,
-    "comment": "Entry number 593"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 13.08,
-    "comment": "Entry number 594"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 13.09,
-    "comment": "Entry number 595"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 13.1,
-    "comment": "Entry number 596"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 13.1,
-    "comment": "Entry number 597"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 13.11,
-    "comment": "Entry number 598"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 13.11,
-    "comment": "Entry number 599"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 13.12,
-    "comment": "Entry number 600"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 13.12,
-    "comment": "Entry number 601"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 13.13,
-    "comment": "Entry number 602"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 13.13,
-    "comment": "Entry number 603"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 13.14,
-    "comment": "Entry number 604"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 13.15,
-    "comment": "Entry number 605"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 13.15,
-    "comment": "Entry number 606"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 13.16,
-    "comment": "Entry number 607"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 13.16,
-    "comment": "Entry number 608"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 13.17,
-    "comment": "Entry number 609"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 13.17,
-    "comment": "Entry number 610"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 13.18,
-    "comment": "Entry number 611"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 13.18,
-    "comment": "Entry number 612"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 13.19,
-    "comment": "Entry number 613"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 13.2,
-    "comment": "Entry number 614"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 13.2,
-    "comment": "Entry number 615"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 13.21,
-    "comment": "Entry number 616"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 13.21,
-    "comment": "Entry number 617"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 13.22,
-    "comment": "Entry number 618"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 13.22,
-    "comment": "Entry number 619"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 13.23,
-    "comment": "Entry number 620"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 13.23,
-    "comment": "Entry number 621"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 13.24,
-    "comment": "Entry number 622"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 13.25,
-    "comment": "Entry number 623"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 13.25,
-    "comment": "Entry number 624"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.26,
-    "comment": "Entry number 625"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.26,
-    "comment": "Entry number 626"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.27,
-    "comment": "Entry number 627"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.27,
-    "comment": "Entry number 628"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.28,
-    "comment": "Entry number 629"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.29,
-    "comment": "Entry number 630"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.29,
-    "comment": "Entry number 631"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.3,
-    "comment": "Entry number 632"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.3,
-    "comment": "Entry number 633"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.31,
-    "comment": "Entry number 634"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.31,
-    "comment": "Entry number 635"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.32,
-    "comment": "Entry number 636"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.33,
-    "comment": "Entry number 637"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.33,
-    "comment": "Entry number 638"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.34,
-    "comment": "Entry number 639"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.34,
-    "comment": "Entry number 640"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.35,
-    "comment": "Entry number 641"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.35,
-    "comment": "Entry number 642"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.36,
-    "comment": "Entry number 643"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.37,
-    "comment": "Entry number 644"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.37,
-    "comment": "Entry number 645"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.38,
-    "comment": "Entry number 646"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.39,
-    "comment": "Entry number 647"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.39,
-    "comment": "Entry number 648"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.4,
-    "comment": "Entry number 649"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.4,
-    "comment": "Entry number 650"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.41,
-    "comment": "Entry number 651"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.41,
-    "comment": "Entry number 652"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.42,
-    "comment": "Entry number 653"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.43,
-    "comment": "Entry number 654"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.43,
-    "comment": "Entry number 655"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.44,
-    "comment": "Entry number 656"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.44,
-    "comment": "Entry number 657"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.45,
-    "comment": "Entry number 658"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.46,
-    "comment": "Entry number 659"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.46,
-    "comment": "Entry number 660"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.47,
-    "comment": "Entry number 661"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.47,
-    "comment": "Entry number 662"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.48,
-    "comment": "Entry number 663"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.48,
-    "comment": "Entry number 664"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.49,
-    "comment": "Entry number 665"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.5,
-    "comment": "Entry number 666"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.5,
-    "comment": "Entry number 667"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.51,
-    "comment": "Entry number 668"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.51,
-    "comment": "Entry number 669"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.52,
-    "comment": "Entry number 670"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.53,
-    "comment": "Entry number 671"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.53,
-    "comment": "Entry number 672"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.54,
-    "comment": "Entry number 673"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.54,
-    "comment": "Entry number 674"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.55,
-    "comment": "Entry number 675"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.56,
-    "comment": "Entry number 676"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.56,
-    "comment": "Entry number 677"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 13.57,
-    "comment": "Entry number 678"
-  },
-  {
-    "latitude": 54.73,
-    "longitude": 13.57,
-    "comment": "Entry number 679"
-  },
-  {
-    "latitude": 54.73,
-    "longitude": 13.58,
-    "comment": "Entry number 680"
-  },
-  {
-    "latitude": 54.73,
-    "longitude": 13.58,
-    "comment": "Entry number 681"
-  },
-  {
-    "latitude": 54.73,
-    "longitude": 13.59,
-    "comment": "Entry number 682"
-  },
-  {
-    "latitude": 54.73,
-    "longitude": 13.59,
-    "comment": "Entry number 683"
-  },
-  {
-    "latitude": 54.73,
-    "longitude": 13.6,
-    "comment": "Entry number 684"
-  },
-  {
-    "latitude": 54.73,
-    "longitude": 13.6,
-    "comment": "Entry number 685"
-  },
-  {
-    "latitude": 54.73,
-    "longitude": 13.61,
-    "comment": "Entry number 686"
-  },
-  {
-    "latitude": 54.72,
-    "longitude": 13.61,
-    "comment": "Entry number 687"
-  },
-  {
-    "latitude": 54.72,
-    "longitude": 13.62,
-    "comment": "Entry number 688"
-  },
-  {
-    "latitude": 54.72,
-    "longitude": 13.63,
-    "comment": "Entry number 689"
-  },
-  {
-    "latitude": 54.72,
-    "longitude": 13.63,
-    "comment": "Entry number 690"
-  },
-  {
-    "latitude": 54.72,
-    "longitude": 13.64,
-    "comment": "Entry number 691"
-  },
-  {
-    "latitude": 54.72,
-    "longitude": 13.64,
-    "comment": "Entry number 692"
-  },
-  {
-    "latitude": 54.72,
-    "longitude": 13.65,
-    "comment": "Entry number 693"
-  },
-  {
-    "latitude": 54.72,
-    "longitude": 13.65,
-    "comment": "Entry number 694"
-  },
-  {
-    "latitude": 54.72,
-    "longitude": 13.66,
-    "comment": "Entry number 695"
-  },
-  {
-    "latitude": 54.71,
-    "longitude": 13.66,
-    "comment": "Entry number 696"
-  },
-  {
-    "latitude": 54.71,
-    "longitude": 13.67,
-    "comment": "Entry number 697"
-  },
-  {
-    "latitude": 54.71,
-    "longitude": 13.67,
-    "comment": "Entry number 698"
-  },
-  {
-    "latitude": 54.71,
-    "longitude": 13.68,
-    "comment": "Entry number 699"
-  },
-  {
-    "latitude": 54.71,
-    "longitude": 13.69,
-    "comment": "Entry number 700"
-  },
-  {
-    "latitude": 54.71,
-    "longitude": 13.69,
-    "comment": "Entry number 701"
-  },
-  {
-    "latitude": 54.71,
-    "longitude": 13.7,
-    "comment": "Entry number 702"
-  },
-  {
-    "latitude": 54.71,
-    "longitude": 13.7,
-    "comment": "Entry number 703"
-  },
-  {
-    "latitude": 54.71,
-    "longitude": 13.71,
-    "comment": "Entry number 704"
-  },
-  {
-    "latitude": 54.7,
-    "longitude": 13.71,
-    "comment": "Entry number 705"
-  },
-  {
-    "latitude": 54.7,
-    "longitude": 13.72,
-    "comment": "Entry number 706"
-  },
-  {
-    "latitude": 54.7,
-    "longitude": 13.72,
-    "comment": "Entry number 707"
-  },
-  {
-    "latitude": 54.7,
-    "longitude": 13.73,
-    "comment": "Entry number 708"
-  },
-  {
-    "latitude": 54.7,
-    "longitude": 13.73,
-    "comment": "Entry number 709"
-  },
-  {
-    "latitude": 54.7,
-    "longitude": 13.74,
-    "comment": "Entry number 710"
-  },
-  {
-    "latitude": 54.7,
-    "longitude": 13.74,
-    "comment": "Entry number 711"
-  },
-  {
-    "latitude": 54.7,
-    "longitude": 13.75,
-    "comment": "Entry number 712"
-  },
-  {
-    "latitude": 54.7,
-    "longitude": 13.76,
-    "comment": "Entry number 713"
-  },
-  {
-    "latitude": 54.7,
-    "longitude": 13.76,
-    "comment": "Entry number 714"
-  },
-  {
-    "latitude": 54.69,
-    "longitude": 13.77,
-    "comment": "Entry number 715"
-  },
-  {
-    "latitude": 54.69,
-    "longitude": 13.77,
-    "comment": "Entry number 716"
-  },
-  {
-    "latitude": 54.69,
-    "longitude": 13.78,
-    "comment": "Entry number 717"
-  },
-  {
-    "latitude": 54.69,
-    "longitude": 13.79,
-    "comment": "Entry number 718"
-  },
-  {
-    "latitude": 54.69,
-    "longitude": 13.79,
-    "comment": "Entry number 719"
-  },
-  {
-    "latitude": 54.69,
-    "longitude": 13.8,
-    "comment": "Entry number 720"
-  },
-  {
-    "latitude": 54.69,
-    "longitude": 13.8,
-    "comment": "Entry number 721"
-  },
-  {
-    "latitude": 54.69,
-    "longitude": 13.81,
-    "comment": "Entry number 722"
-  },
-  {
-    "latitude": 54.69,
-    "longitude": 13.82,
-    "comment": "Entry number 723"
-  },
-  {
-    "latitude": 54.68,
-    "longitude": 13.82,
-    "comment": "Entry number 724"
-  },
-  {
-    "latitude": 54.68,
-    "longitude": 13.83,
-    "comment": "Entry number 725"
-  },
-  {
-    "latitude": 54.68,
-    "longitude": 13.83,
-    "comment": "Entry number 726"
-  },
-  {
-    "latitude": 54.68,
-    "longitude": 13.84,
-    "comment": "Entry number 727"
-  },
-  {
-    "latitude": 54.68,
-    "longitude": 13.84,
-    "comment": "Entry number 728"
-  },
-  {
-    "latitude": 54.68,
-    "longitude": 13.85,
-    "comment": "Entry number 729"
-  },
-  {
-    "latitude": 54.68,
-    "longitude": 13.85,
-    "comment": "Entry number 730"
-  },
-  {
-    "latitude": 54.68,
-    "longitude": 13.86,
-    "comment": "Entry number 731"
-  },
-  {
-    "latitude": 54.68,
-    "longitude": 13.87,
-    "comment": "Entry number 732"
-  },
-  {
-    "latitude": 54.68,
-    "longitude": 13.87,
-    "comment": "Entry number 733"
-  },
-  {
-    "latitude": 54.67,
-    "longitude": 13.88,
-    "comment": "Entry number 734"
-  },
-  {
-    "latitude": 54.67,
-    "longitude": 13.88,
-    "comment": "Entry number 735"
-  },
-  {
-    "latitude": 54.67,
-    "longitude": 13.89,
-    "comment": "Entry number 736"
-  },
-  {
-    "latitude": 54.67,
-    "longitude": 13.89,
-    "comment": "Entry number 737"
-  },
-  {
-    "latitude": 54.67,
-    "longitude": 13.9,
-    "comment": "Entry number 738"
-  },
-  {
-    "latitude": 54.67,
-    "longitude": 13.9,
-    "comment": "Entry number 739"
-  },
-  {
-    "latitude": 54.67,
-    "longitude": 13.91,
-    "comment": "Entry number 740"
-  },
-  {
-    "latitude": 54.67,
-    "longitude": 13.91,
-    "comment": "Entry number 741"
-  },
-  {
-    "latitude": 54.67,
-    "longitude": 13.92,
-    "comment": "Entry number 742"
-  },
-  {
-    "latitude": 54.67,
-    "longitude": 13.93,
-    "comment": "Entry number 743"
-  },
-  {
-    "latitude": 54.67,
-    "longitude": 13.93,
-    "comment": "Entry number 744"
-  },
-  {
-    "latitude": 54.66,
-    "longitude": 13.94,
-    "comment": "Entry number 745"
-  },
-  {
-    "latitude": 54.66,
-    "longitude": 13.94,
-    "comment": "Entry number 746"
-  },
-  {
-    "latitude": 54.66,
-    "longitude": 13.95,
-    "comment": "Entry number 747"
-  },
-  {
-    "latitude": 54.66,
-    "longitude": 13.95,
-    "comment": "Entry number 748"
-  },
-  {
-    "latitude": 54.66,
-    "longitude": 13.96,
-    "comment": "Entry number 749"
-  },
-  {
-    "latitude": 54.66,
-    "longitude": 13.96,
-    "comment": "Entry number 750"
-  },
-  {
-    "latitude": 54.66,
-    "longitude": 13.97,
-    "comment": "Entry number 751"
-  },
-  {
-    "latitude": 54.66,
-    "longitude": 13.97,
-    "comment": "Entry number 752"
-  },
-  {
-    "latitude": 54.66,
-    "longitude": 13.98,
-    "comment": "Entry number 753"
-  },
-  {
-    "latitude": 54.66,
-    "longitude": 13.98,
-    "comment": "Entry number 754"
-  },
-  {
-    "latitude": 54.66,
-    "longitude": 13.99,
-    "comment": "Entry number 755"
-  },
-  {
-    "latitude": 54.65,
-    "longitude": 13.99,
-    "comment": "Entry number 756"
-  },
-  {
-    "latitude": 54.65,
-    "longitude": 14.0,
-    "comment": "Entry number 757"
-  },
-  {
-    "latitude": 54.65,
-    "longitude": 14.01,
-    "comment": "Entry number 758"
-  },
-  {
-    "latitude": 54.65,
-    "longitude": 14.01,
-    "comment": "Entry number 759"
-  },
-  {
-    "latitude": 54.65,
-    "longitude": 14.02,
-    "comment": "Entry number 760"
-  },
-  {
-    "latitude": 54.65,
-    "longitude": 14.02,
-    "comment": "Entry number 761"
-  },
-  {
-    "latitude": 54.65,
-    "longitude": 14.03,
-    "comment": "Entry number 762"
-  },
-  {
-    "latitude": 54.65,
-    "longitude": 14.03,
-    "comment": "Entry number 763"
-  },
-  {
-    "latitude": 54.65,
-    "longitude": 14.04,
-    "comment": "Entry number 764"
-  },
-  {
-    "latitude": 54.65,
-    "longitude": 14.04,
-    "comment": "Entry number 765"
-  },
-  {
-    "latitude": 54.64,
-    "longitude": 14.05,
-    "comment": "Entry number 766"
-  },
-  {
-    "latitude": 54.64,
-    "longitude": 14.05,
-    "comment": "Entry number 767"
-  },
-  {
-    "latitude": 54.64,
-    "longitude": 14.06,
-    "comment": "Entry number 768"
-  },
-  {
-    "latitude": 54.64,
-    "longitude": 14.06,
-    "comment": "Entry number 769"
-  },
-  {
-    "latitude": 54.64,
-    "longitude": 14.07,
-    "comment": "Entry number 770"
-  },
-  {
-    "latitude": 54.64,
-    "longitude": 14.07,
-    "comment": "Entry number 771"
-  },
-  {
-    "latitude": 54.64,
-    "longitude": 14.08,
-    "comment": "Entry number 772"
-  },
-  {
-    "latitude": 54.64,
-    "longitude": 14.08,
-    "comment": "Entry number 773"
-  },
-  {
-    "latitude": 54.64,
-    "longitude": 14.09,
-    "comment": "Entry number 774"
-  },
-  {
-    "latitude": 54.64,
-    "longitude": 14.1,
-    "comment": "Entry number 775"
-  },
-  {
-    "latitude": 54.64,
-    "longitude": 14.1,
-    "comment": "Entry number 776"
-  },
-  {
-    "latitude": 54.63,
-    "longitude": 14.11,
-    "comment": "Entry number 777"
-  },
-  {
-    "latitude": 54.63,
-    "longitude": 14.11,
-    "comment": "Entry number 778"
-  },
-  {
-    "latitude": 54.63,
-    "longitude": 14.12,
-    "comment": "Entry number 779"
-  },
-  {
-    "latitude": 54.63,
-    "longitude": 14.12,
-    "comment": "Entry number 780"
-  },
-  {
-    "latitude": 54.63,
-    "longitude": 14.13,
-    "comment": "Entry number 781"
-  },
-  {
-    "latitude": 54.63,
-    "longitude": 14.13,
-    "comment": "Entry number 782"
-  },
-  {
-    "latitude": 54.63,
-    "longitude": 14.14,
-    "comment": "Entry number 783"
-  },
-  {
-    "latitude": 54.63,
-    "longitude": 14.14,
-    "comment": "Entry number 784"
-  },
-  {
-    "latitude": 54.63,
-    "longitude": 14.15,
-    "comment": "Entry number 785"
-  },
-  {
-    "latitude": 54.63,
-    "longitude": 14.15,
-    "comment": "Entry number 786"
-  },
-  {
-    "latitude": 54.63,
-    "longitude": 14.16,
-    "comment": "Entry number 787"
-  },
-  {
-    "latitude": 54.62,
-    "longitude": 14.16,
-    "comment": "Entry number 788"
-  },
-  {
-    "latitude": 54.62,
-    "longitude": 14.17,
-    "comment": "Entry number 789"
-  },
-  {
-    "latitude": 54.62,
-    "longitude": 14.18,
-    "comment": "Entry number 790"
-  },
-  {
-    "latitude": 54.62,
-    "longitude": 14.18,
-    "comment": "Entry number 791"
-  },
-  {
-    "latitude": 54.62,
-    "longitude": 14.19,
-    "comment": "Entry number 792"
-  },
-  {
-    "latitude": 54.62,
-    "longitude": 14.19,
-    "comment": "Entry number 793"
-  },
-  {
-    "latitude": 54.62,
-    "longitude": 14.2,
-    "comment": "Entry number 794"
-  },
-  {
-    "latitude": 54.62,
-    "longitude": 14.2,
-    "comment": "Entry number 795"
-  },
-  {
-    "latitude": 54.62,
-    "longitude": 14.21,
-    "comment": "Entry number 796"
-  },
-  {
-    "latitude": 54.62,
-    "longitude": 14.21,
-    "comment": "Entry number 797"
-  },
-  {
-    "latitude": 54.61,
-    "longitude": 14.22,
-    "comment": "Entry number 798"
-  },
-  {
-    "latitude": 54.61,
-    "longitude": 14.22,
-    "comment": "Entry number 799"
-  },
-  {
-    "latitude": 54.61,
-    "longitude": 14.23,
-    "comment": "Entry number 800"
-  },
-  {
-    "latitude": 54.61,
-    "longitude": 14.23,
-    "comment": "Entry number 801"
-  },
-  {
-    "latitude": 54.61,
-    "longitude": 14.24,
-    "comment": "Entry number 802"
-  },
-  {
-    "latitude": 54.61,
-    "longitude": 14.24,
-    "comment": "Entry number 803"
-  },
-  {
-    "latitude": 54.61,
-    "longitude": 14.25,
-    "comment": "Entry number 804"
-  },
-  {
-    "latitude": 54.61,
-    "longitude": 14.26,
-    "comment": "Entry number 805"
-  },
-  {
-    "latitude": 54.61,
-    "longitude": 14.26,
-    "comment": "Entry number 806"
-  },
-  {
-    "latitude": 54.61,
-    "longitude": 14.27,
-    "comment": "Entry number 807"
-  },
-  {
-    "latitude": 54.61,
-    "longitude": 14.27,
-    "comment": "Entry number 808"
-  },
-  {
-    "latitude": 54.6,
-    "longitude": 14.28,
-    "comment": "Entry number 809"
-  },
-  {
-    "latitude": 54.6,
-    "longitude": 14.28,
-    "comment": "Entry number 810"
-  },
-  {
-    "latitude": 54.6,
-    "longitude": 14.29,
-    "comment": "Entry number 811"
-  },
-  {
-    "latitude": 54.6,
-    "longitude": 14.29,
-    "comment": "Entry number 812"
-  },
-  {
-    "latitude": 54.6,
-    "longitude": 14.3,
-    "comment": "Entry number 813"
-  },
-  {
-    "latitude": 54.6,
-    "longitude": 14.3,
-    "comment": "Entry number 814"
-  },
-  {
-    "latitude": 54.6,
-    "longitude": 14.31,
-    "comment": "Entry number 815"
-  },
-  {
-    "latitude": 54.6,
-    "longitude": 14.31,
-    "comment": "Entry number 816"
-  },
-  {
-    "latitude": 54.6,
-    "longitude": 14.32,
-    "comment": "Entry number 817"
-  },
-  {
-    "latitude": 54.6,
-    "longitude": 14.32,
-    "comment": "Entry number 818"
-  },
-  {
-    "latitude": 54.6,
-    "longitude": 14.33,
-    "comment": "Entry number 819"
-  },
-  {
-    "latitude": 54.59,
-    "longitude": 14.34,
-    "comment": "Entry number 820"
-  },
-  {
-    "latitude": 54.59,
-    "longitude": 14.34,
-    "comment": "Entry number 821"
-  },
-  {
-    "latitude": 54.59,
-    "longitude": 14.35,
-    "comment": "Entry number 822"
-  },
-  {
-    "latitude": 54.59,
-    "longitude": 14.35,
-    "comment": "Entry number 823"
-  },
-  {
-    "latitude": 54.59,
-    "longitude": 14.36,
-    "comment": "Entry number 824"
-  },
-  {
-    "latitude": 54.59,
-    "longitude": 14.36,
-    "comment": "Entry number 825"
-  },
-  {
-    "latitude": 54.59,
-    "longitude": 14.37,
-    "comment": "Entry number 826"
-  },
-  {
-    "latitude": 54.59,
-    "longitude": 14.37,
-    "comment": "Entry number 827"
-  },
-  {
-    "latitude": 54.59,
-    "longitude": 14.38,
-    "comment": "Entry number 828"
-  },
-  {
-    "latitude": 54.59,
-    "longitude": 14.38,
-    "comment": "Entry number 829"
-  },
-  {
-    "latitude": 54.58,
-    "longitude": 14.39,
-    "comment": "Entry number 830"
-  },
-  {
-    "latitude": 54.58,
-    "longitude": 14.39,
-    "comment": "Entry number 831"
-  },
-  {
-    "latitude": 54.59,
-    "longitude": 14.4,
-    "comment": "Entry number 832"
-  },
-  {
-    "latitude": 54.59,
-    "longitude": 14.4,
-    "comment": "Entry number 833"
-  },
-  {
-    "latitude": 54.59,
-    "longitude": 14.41,
-    "comment": "Entry number 834"
-  },
-  {
-    "latitude": 54.59,
-    "longitude": 14.42,
-    "comment": "Entry number 835"
-  },
-  {
-    "latitude": 54.59,
-    "longitude": 14.42,
-    "comment": "Entry number 836"
-  },
-  {
-    "latitude": 54.59,
-    "longitude": 14.43,
-    "comment": "Entry number 837"
-  },
-  {
-    "latitude": 54.59,
-    "longitude": 14.43,
-    "comment": "Entry number 838"
-  },
-  {
-    "latitude": 54.59,
-    "longitude": 14.44,
-    "comment": "Entry number 839"
-  },
-  {
-    "latitude": 54.59,
-    "longitude": 14.44,
-    "comment": "Entry number 840"
-  },
-  {
-    "latitude": 54.59,
-    "longitude": 14.45,
-    "comment": "Entry number 841"
-  },
-  {
-    "latitude": 54.59,
-    "longitude": 14.45,
-    "comment": "Entry number 842"
-  },
-  {
-    "latitude": 54.59,
-    "longitude": 14.46,
-    "comment": "Entry number 843"
-  },
-  {
-    "latitude": 54.59,
-    "longitude": 14.46,
-    "comment": "Entry number 844"
-  },
-  {
-    "latitude": 54.59,
-    "longitude": 14.47,
-    "comment": "Entry number 845"
-  },
-  {
-    "latitude": 54.59,
-    "longitude": 14.48,
-    "comment": "Entry number 846"
-  },
-  {
-    "latitude": 54.59,
-    "longitude": 14.48,
-    "comment": "Entry number 847"
-  },
-  {
-    "latitude": 54.59,
-    "longitude": 14.49,
-    "comment": "Entry number 848"
-  },
-  {
-    "latitude": 54.59,
-    "longitude": 14.49,
-    "comment": "Entry number 849"
-  },
-  {
-    "latitude": 54.59,
-    "longitude": 14.5,
-    "comment": "Entry number 850"
-  },
-  {
-    "latitude": 54.59,
-    "longitude": 14.5,
-    "comment": "Entry number 851"
-  },
-  {
-    "latitude": 54.59,
-    "longitude": 14.51,
-    "comment": "Entry number 852"
-  },
-  {
-    "latitude": 54.59,
-    "longitude": 14.51,
-    "comment": "Entry number 853"
-  },
-  {
-    "latitude": 54.59,
-    "longitude": 14.52,
-    "comment": "Entry number 854"
-  },
-  {
-    "latitude": 54.6,
-    "longitude": 14.52,
-    "comment": "Entry number 855"
-  },
-  {
-    "latitude": 54.6,
-    "longitude": 14.53,
-    "comment": "Entry number 856"
-  },
-  {
-    "latitude": 54.6,
-    "longitude": 14.53,
-    "comment": "Entry number 857"
-  },
-  {
-    "latitude": 54.6,
-    "longitude": 14.54,
-    "comment": "Entry number 858"
-  },
-  {
-    "latitude": 54.6,
-    "longitude": 14.55,
-    "comment": "Entry number 859"
-  },
-  {
-    "latitude": 54.6,
-    "longitude": 14.55,
-    "comment": "Entry number 860"
-  },
-  {
-    "latitude": 54.6,
-    "longitude": 14.56,
-    "comment": "Entry number 861"
-  },
-  {
-    "latitude": 54.6,
-    "longitude": 14.56,
-    "comment": "Entry number 862"
-  },
-  {
-    "latitude": 54.6,
-    "longitude": 14.57,
-    "comment": "Entry number 863"
-  },
-  {
-    "latitude": 54.6,
-    "longitude": 14.57,
-    "comment": "Entry number 864"
-  },
-  {
-    "latitude": 54.6,
-    "longitude": 14.58,
-    "comment": "Entry number 865"
-  },
-  {
-    "latitude": 54.6,
-    "longitude": 14.58,
-    "comment": "Entry number 866"
-  },
-  {
-    "latitude": 54.6,
-    "longitude": 14.59,
-    "comment": "Entry number 867"
-  },
-  {
-    "latitude": 54.6,
-    "longitude": 14.59,
-    "comment": "Entry number 868"
-  },
-  {
-    "latitude": 54.6,
-    "longitude": 14.6,
-    "comment": "Entry number 869"
-  },
-  {
-    "latitude": 54.6,
-    "longitude": 14.61,
-    "comment": "Entry number 870"
-  },
-  {
-    "latitude": 54.6,
-    "longitude": 14.61,
-    "comment": "Entry number 871"
-  },
-  {
-    "latitude": 54.6,
-    "longitude": 14.62,
-    "comment": "Entry number 872"
-  },
-  {
-    "latitude": 54.6,
-    "longitude": 14.62,
-    "comment": "Entry number 873"
-  },
-  {
-    "latitude": 54.6,
-    "longitude": 14.63,
-    "comment": "Entry number 874"
-  },
-  {
-    "latitude": 54.61,
-    "longitude": 14.63,
-    "comment": "Entry number 875"
-  },
-  {
-    "latitude": 54.61,
-    "longitude": 14.64,
-    "comment": "Entry number 876"
-  },
-  {
-    "latitude": 54.61,
-    "longitude": 14.64,
-    "comment": "Entry number 877"
-  },
-  {
-    "latitude": 54.61,
-    "longitude": 14.65,
-    "comment": "Entry number 878"
-  },
-  {
-    "latitude": 54.61,
-    "longitude": 14.65,
-    "comment": "Entry number 879"
-  },
-  {
-    "latitude": 54.61,
-    "longitude": 14.68,
-    "comment": "Entry number 880"
-  },
-  {
-    "latitude": 54.64,
-    "longitude": 14.99,
-    "comment": "Entry number 881"
-  },
-  {
-    "latitude": 54.67,
-    "longitude": 15.45,
-    "comment": "Entry number 882"
-  },
-  {
-    "latitude": 54.87,
-    "longitude": 17.54,
-    "comment": "Entry number 883"
-  },
-  {
-    "latitude": 54.87,
-    "longitude": 17.57,
-    "comment": "Entry number 884"
-  },
-  {
-    "latitude": 54.87,
-    "longitude": 17.6,
-    "comment": "Entry number 885"
-  },
-  {
-    "latitude": 54.87,
-    "longitude": 17.6,
-    "comment": "Entry number 886"
-  },
-  {
-    "latitude": 54.87,
-    "longitude": 17.61,
-    "comment": "Entry number 887"
-  },
-  {
-    "latitude": 54.87,
-    "longitude": 17.62,
-    "comment": "Entry number 888"
-  },
-  {
-    "latitude": 54.87,
-    "longitude": 17.62,
-    "comment": "Entry number 889"
-  },
-  {
-    "latitude": 54.87,
-    "longitude": 17.63,
-    "comment": "Entry number 890"
-  },
-  {
-    "latitude": 54.87,
-    "longitude": 17.65,
-    "comment": "Entry number 891"
-  },
-  {
-    "latitude": 54.87,
-    "longitude": 17.66,
-    "comment": "Entry number 892"
-  },
-  {
-    "latitude": 54.87,
-    "longitude": 17.67,
-    "comment": "Entry number 893"
-  },
-  {
-    "latitude": 54.87,
-    "longitude": 17.68,
-    "comment": "Entry number 894"
-  },
-  {
-    "latitude": 54.88,
-    "longitude": 17.69,
-    "comment": "Entry number 895"
-  },
-  {
-    "latitude": 54.88,
-    "longitude": 17.84,
-    "comment": "Entry number 896"
-  },
-  {
-    "latitude": 54.88,
-    "longitude": 17.87,
-    "comment": "Entry number 897"
-  },
-  {
-    "latitude": 54.88,
-    "longitude": 17.87,
-    "comment": "Entry number 898"
-  },
-  {
-    "latitude": 54.88,
-    "longitude": 17.88,
-    "comment": "Entry number 899"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 17.89,
-    "comment": "Entry number 900"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 17.9,
-    "comment": "Entry number 901"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 17.91,
-    "comment": "Entry number 902"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 17.91,
-    "comment": "Entry number 903"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 17.92,
-    "comment": "Entry number 904"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 17.93,
-    "comment": "Entry number 905"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 17.94,
-    "comment": "Entry number 906"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 17.95,
-    "comment": "Entry number 907"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 17.96,
-    "comment": "Entry number 908"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 17.97,
-    "comment": "Entry number 909"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 17.98,
-    "comment": "Entry number 910"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 17.99,
-    "comment": "Entry number 911"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 17.99,
-    "comment": "Entry number 912"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 18.0,
-    "comment": "Entry number 913"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 18.0,
-    "comment": "Entry number 914"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 18.01,
-    "comment": "Entry number 915"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 18.01,
-    "comment": "Entry number 916"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 18.02,
-    "comment": "Entry number 917"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 18.03,
-    "comment": "Entry number 918"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 18.03,
-    "comment": "Entry number 919"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 18.03,
-    "comment": "Entry number 920"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 18.04,
-    "comment": "Entry number 921"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 18.05,
-    "comment": "Entry number 922"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 18.05,
-    "comment": "Entry number 923"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 18.06,
-    "comment": "Entry number 924"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 18.06,
-    "comment": "Entry number 925"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 18.07,
-    "comment": "Entry number 926"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 18.07,
-    "comment": "Entry number 927"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 18.08,
-    "comment": "Entry number 928"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 18.08,
-    "comment": "Entry number 929"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 18.09,
-    "comment": "Entry number 930"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 18.09,
-    "comment": "Entry number 931"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 18.1,
-    "comment": "Entry number 932"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 18.1,
-    "comment": "Entry number 933"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 18.11,
-    "comment": "Entry number 934"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 18.11,
-    "comment": "Entry number 935"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 18.12,
-    "comment": "Entry number 936"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 18.12,
-    "comment": "Entry number 937"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 18.13,
-    "comment": "Entry number 938"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 18.14,
-    "comment": "Entry number 939"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 18.14,
-    "comment": "Entry number 940"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 18.15,
-    "comment": "Entry number 941"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 18.15,
-    "comment": "Entry number 942"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 18.16,
-    "comment": "Entry number 943"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 18.16,
-    "comment": "Entry number 944"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 18.17,
-    "comment": "Entry number 945"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 18.17,
-    "comment": "Entry number 946"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 18.18,
-    "comment": "Entry number 947"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 18.18,
-    "comment": "Entry number 948"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 18.19,
-    "comment": "Entry number 949"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 18.19,
-    "comment": "Entry number 950"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 18.2,
-    "comment": "Entry number 951"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 18.2,
-    "comment": "Entry number 952"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 18.21,
-    "comment": "Entry number 953"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 18.21,
-    "comment": "Entry number 954"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 18.22,
-    "comment": "Entry number 955"
-  },
-  {
-    "latitude": 54.9,
-    "longitude": 18.22,
-    "comment": "Entry number 956"
-  },
-  {
-    "latitude": 54.9,
-    "longitude": 18.23,
-    "comment": "Entry number 957"
-  },
-  {
-    "latitude": 54.9,
-    "longitude": 18.23,
-    "comment": "Entry number 958"
-  },
-  {
-    "latitude": 54.9,
-    "longitude": 18.24,
-    "comment": "Entry number 959"
-  },
-  {
-    "latitude": 54.9,
-    "longitude": 18.24,
-    "comment": "Entry number 960"
-  },
-  {
-    "latitude": 54.9,
-    "longitude": 18.25,
-    "comment": "Entry number 961"
-  },
-  {
-    "latitude": 54.9,
-    "longitude": 18.25,
-    "comment": "Entry number 962"
-  },
-  {
-    "latitude": 54.9,
-    "longitude": 18.26,
-    "comment": "Entry number 963"
-  },
-  {
-    "latitude": 54.9,
-    "longitude": 18.26,
-    "comment": "Entry number 964"
-  },
-  {
-    "latitude": 54.9,
-    "longitude": 18.27,
-    "comment": "Entry number 965"
-  },
-  {
-    "latitude": 54.9,
-    "longitude": 18.28,
-    "comment": "Entry number 966"
-  },
-  {
-    "latitude": 54.9,
-    "longitude": 18.28,
-    "comment": "Entry number 967"
-  },
-  {
-    "latitude": 54.9,
-    "longitude": 18.29,
-    "comment": "Entry number 968"
-  },
-  {
-    "latitude": 54.9,
-    "longitude": 18.29,
-    "comment": "Entry number 969"
-  },
-  {
-    "latitude": 54.9,
-    "longitude": 18.3,
-    "comment": "Entry number 970"
-  },
-  {
-    "latitude": 54.9,
-    "longitude": 18.31,
-    "comment": "Entry number 971"
-  },
-  {
-    "latitude": 54.9,
-    "longitude": 18.31,
-    "comment": "Entry number 972"
-  },
-  {
-    "latitude": 54.9,
-    "longitude": 18.32,
-    "comment": "Entry number 973"
-  },
-  {
-    "latitude": 54.9,
-    "longitude": 18.32,
-    "comment": "Entry number 974"
-  },
-  {
-    "latitude": 54.9,
-    "longitude": 18.33,
-    "comment": "Entry number 975"
-  },
-  {
-    "latitude": 54.9,
-    "longitude": 18.33,
-    "comment": "Entry number 976"
-  },
-  {
-    "latitude": 54.9,
-    "longitude": 18.34,
-    "comment": "Entry number 977"
-  },
-  {
-    "latitude": 54.9,
-    "longitude": 18.34,
-    "comment": "Entry number 978"
-  },
-  {
-    "latitude": 54.9,
-    "longitude": 18.35,
-    "comment": "Entry number 979"
-  },
-  {
-    "latitude": 54.9,
-    "longitude": 18.35,
-    "comment": "Entry number 980"
-  },
-  {
-    "latitude": 54.9,
-    "longitude": 18.36,
-    "comment": "Entry number 981"
-  },
-  {
-    "latitude": 54.9,
-    "longitude": 18.36,
-    "comment": "Entry number 982"
-  },
-  {
-    "latitude": 54.9,
-    "longitude": 18.37,
-    "comment": "Entry number 983"
-  },
-  {
-    "latitude": 54.9,
-    "longitude": 18.37,
-    "comment": "Entry number 984"
-  },
-  {
-    "latitude": 54.9,
-    "longitude": 18.38,
-    "comment": "Entry number 985"
-  },
-  {
-    "latitude": 54.9,
-    "longitude": 18.38,
-    "comment": "Entry number 986"
-  },
-  {
-    "latitude": 54.9,
-    "longitude": 18.39,
-    "comment": "Entry number 987"
-  },
-  {
-    "latitude": 54.9,
-    "longitude": 18.39,
-    "comment": "Entry number 988"
-  },
-  {
-    "latitude": 54.9,
-    "longitude": 18.4,
-    "comment": "Entry number 989"
-  },
-  {
-    "latitude": 54.9,
-    "longitude": 18.4,
-    "comment": "Entry number 990"
-  },
-  {
-    "latitude": 54.9,
-    "longitude": 18.41,
-    "comment": "Entry number 991"
-  },
-  {
-    "latitude": 54.9,
-    "longitude": 18.41,
-    "comment": "Entry number 992"
-  },
-  {
-    "latitude": 54.9,
-    "longitude": 18.42,
-    "comment": "Entry number 993"
-  },
-  {
-    "latitude": 54.9,
-    "longitude": 18.42,
-    "comment": "Entry number 994"
-  },
-  {
-    "latitude": 54.9,
-    "longitude": 18.43,
-    "comment": "Entry number 995"
-  },
-  {
-    "latitude": 54.9,
-    "longitude": 18.43,
-    "comment": "Entry number 996"
-  },
-  {
-    "latitude": 54.9,
-    "longitude": 18.44,
-    "comment": "Entry number 997"
-  },
-  {
-    "latitude": 54.9,
-    "longitude": 18.44,
-    "comment": "Entry number 998"
-  },
-  {
-    "latitude": 54.9,
-    "longitude": 18.45,
-    "comment": "Entry number 999"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 18.45,
-    "comment": "Entry number 1000"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 18.46,
-    "comment": "Entry number 1001"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 18.46,
-    "comment": "Entry number 1002"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 18.47,
-    "comment": "Entry number 1003"
-  },
-  {
-    "latitude": 54.89,
-    "longitude": 18.47,
-    "comment": "Entry number 1004"
-  },
-  {
-    "latitude": 54.88,
-    "longitude": 18.47,
-    "comment": "Entry number 1005"
-  },
-  {
-    "latitude": 54.88,
-    "longitude": 18.48,
-    "comment": "Entry number 1006"
-  },
-  {
-    "latitude": 54.88,
-    "longitude": 18.48,
-    "comment": "Entry number 1007"
-  },
-  {
-    "latitude": 54.88,
-    "longitude": 18.49,
-    "comment": "Entry number 1008"
-  },
-  {
-    "latitude": 54.88,
-    "longitude": 18.49,
-    "comment": "Entry number 1009"
-  },
-  {
-    "latitude": 54.88,
-    "longitude": 18.49,
-    "comment": "Entry number 1010"
-  },
-  {
-    "latitude": 54.87,
-    "longitude": 18.5,
-    "comment": "Entry number 1011"
-  },
-  {
-    "latitude": 54.87,
-    "longitude": 18.5,
-    "comment": "Entry number 1012"
-  },
-  {
-    "latitude": 54.87,
-    "longitude": 18.5,
-    "comment": "Entry number 1013"
-  },
-  {
-    "latitude": 54.87,
-    "longitude": 18.51,
-    "comment": "Entry number 1014"
-  },
-  {
-    "latitude": 54.87,
-    "longitude": 18.51,
-    "comment": "Entry number 1015"
-  },
-  {
-    "latitude": 54.86,
-    "longitude": 18.52,
-    "comment": "Entry number 1016"
-  },
-  {
-    "latitude": 54.86,
-    "longitude": 18.52,
-    "comment": "Entry number 1017"
-  },
-  {
-    "latitude": 54.86,
-    "longitude": 18.52,
-    "comment": "Entry number 1018"
-  },
-  {
-    "latitude": 54.86,
-    "longitude": 18.53,
-    "comment": "Entry number 1019"
-  },
-  {
-    "latitude": 54.86,
-    "longitude": 18.53,
-    "comment": "Entry number 1020"
-  },
-  {
-    "latitude": 54.85,
-    "longitude": 18.54,
-    "comment": "Entry number 1021"
-  },
-  {
-    "latitude": 54.85,
-    "longitude": 18.54,
-    "comment": "Entry number 1022"
-  },
-  {
-    "latitude": 54.85,
-    "longitude": 18.54,
-    "comment": "Entry number 1023"
-  },
-  {
-    "latitude": 54.85,
-    "longitude": 18.55,
-    "comment": "Entry number 1024"
-  },
-  {
-    "latitude": 54.85,
-    "longitude": 18.55,
-    "comment": "Entry number 1025"
-  },
-  {
-    "latitude": 54.84,
-    "longitude": 18.56,
-    "comment": "Entry number 1026"
-  },
-  {
-    "latitude": 54.84,
-    "longitude": 18.56,
-    "comment": "Entry number 1027"
-  },
-  {
-    "latitude": 54.84,
-    "longitude": 18.56,
-    "comment": "Entry number 1028"
-  },
-  {
-    "latitude": 54.84,
-    "longitude": 18.57,
-    "comment": "Entry number 1029"
-  },
-  {
-    "latitude": 54.84,
-    "longitude": 18.57,
-    "comment": "Entry number 1030"
-  },
-  {
-    "latitude": 54.83,
-    "longitude": 18.57,
-    "comment": "Entry number 1031"
-  },
-  {
-    "latitude": 54.83,
-    "longitude": 18.58,
-    "comment": "Entry number 1032"
-  },
-  {
-    "latitude": 54.83,
-    "longitude": 18.58,
-    "comment": "Entry number 1033"
-  },
-  {
-    "latitude": 54.83,
-    "longitude": 18.59,
-    "comment": "Entry number 1034"
-  },
-  {
-    "latitude": 54.83,
-    "longitude": 18.59,
-    "comment": "Entry number 1035"
-  },
-  {
-    "latitude": 54.83,
-    "longitude": 18.59,
-    "comment": "Entry number 1036"
-  },
-  {
-    "latitude": 54.82,
-    "longitude": 18.6,
-    "comment": "Entry number 1037"
-  },
-  {
-    "latitude": 54.82,
-    "longitude": 18.6,
-    "comment": "Entry number 1038"
-  },
-  {
-    "latitude": 54.82,
-    "longitude": 18.6,
-    "comment": "Entry number 1039"
-  },
-  {
-    "latitude": 54.82,
-    "longitude": 18.61,
-    "comment": "Entry number 1040"
-  },
-  {
-    "latitude": 54.82,
-    "longitude": 18.61,
-    "comment": "Entry number 1041"
-  },
-  {
-    "latitude": 54.81,
-    "longitude": 18.62,
-    "comment": "Entry number 1042"
-  },
-  {
-    "latitude": 54.81,
-    "longitude": 18.62,
-    "comment": "Entry number 1043"
-  },
-  {
-    "latitude": 54.81,
-    "longitude": 18.62,
-    "comment": "Entry number 1044"
-  },
-  {
-    "latitude": 54.81,
-    "longitude": 18.63,
-    "comment": "Entry number 1045"
-  },
-  {
-    "latitude": 54.8,
-    "longitude": 18.63,
-    "comment": "Entry number 1046"
-  },
-  {
-    "latitude": 54.8,
-    "longitude": 18.63,
-    "comment": "Entry number 1047"
-  },
-  {
-    "latitude": 54.8,
-    "longitude": 18.64,
-    "comment": "Entry number 1048"
-  },
-  {
-    "latitude": 54.8,
-    "longitude": 18.64,
-    "comment": "Entry number 1049"
-  },
-  {
-    "latitude": 54.8,
-    "longitude": 18.65,
-    "comment": "Entry number 1050"
-  },
-  {
-    "latitude": 54.8,
-    "longitude": 18.65,
-    "comment": "Entry number 1051"
-  },
-  {
-    "latitude": 54.79,
-    "longitude": 18.65,
-    "comment": "Entry number 1052"
-  },
-  {
-    "latitude": 54.79,
-    "longitude": 18.66,
-    "comment": "Entry number 1053"
-  },
-  {
-    "latitude": 54.79,
-    "longitude": 18.66,
-    "comment": "Entry number 1054"
-  },
-  {
-    "latitude": 54.79,
-    "longitude": 18.67,
-    "comment": "Entry number 1055"
-  },
-  {
-    "latitude": 54.79,
-    "longitude": 18.67,
-    "comment": "Entry number 1056"
-  },
-  {
-    "latitude": 54.78,
-    "longitude": 18.67,
-    "comment": "Entry number 1057"
-  },
-  {
-    "latitude": 54.78,
-    "longitude": 18.68,
-    "comment": "Entry number 1058"
-  },
-  {
-    "latitude": 54.78,
-    "longitude": 18.68,
-    "comment": "Entry number 1059"
-  },
-  {
-    "latitude": 54.78,
-    "longitude": 18.68,
-    "comment": "Entry number 1060"
-  },
-  {
-    "latitude": 54.78,
-    "longitude": 18.69,
-    "comment": "Entry number 1061"
-  },
-  {
-    "latitude": 54.77,
-    "longitude": 18.69,
-    "comment": "Entry number 1062"
-  },
-  {
-    "latitude": 54.77,
-    "longitude": 18.7,
-    "comment": "Entry number 1063"
-  },
-  {
-    "latitude": 54.77,
-    "longitude": 18.7,
-    "comment": "Entry number 1064"
-  },
-  {
-    "latitude": 54.77,
-    "longitude": 18.7,
-    "comment": "Entry number 1065"
-  },
-  {
-    "latitude": 54.77,
-    "longitude": 18.71,
-    "comment": "Entry number 1066"
-  },
-  {
-    "latitude": 54.76,
-    "longitude": 18.71,
-    "comment": "Entry number 1067"
-  },
-  {
-    "latitude": 54.76,
-    "longitude": 18.72,
-    "comment": "Entry number 1068"
-  },
-  {
-    "latitude": 54.76,
-    "longitude": 18.72,
-    "comment": "Entry number 1069"
-  },
-  {
-    "latitude": 54.76,
-    "longitude": 18.72,
-    "comment": "Entry number 1070"
-  },
-  {
-    "latitude": 54.76,
-    "longitude": 18.73,
-    "comment": "Entry number 1071"
-  },
-  {
-    "latitude": 54.76,
-    "longitude": 18.73,
-    "comment": "Entry number 1072"
-  },
-  {
-    "latitude": 54.76,
-    "longitude": 18.73,
-    "comment": "Entry number 1073"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 18.74,
-    "comment": "Entry number 1074"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 18.74,
-    "comment": "Entry number 1075"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 18.74,
-    "comment": "Entry number 1076"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 18.75,
-    "comment": "Entry number 1077"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 18.75,
-    "comment": "Entry number 1078"
-  },
-  {
-    "latitude": 54.75,
-    "longitude": 18.75,
-    "comment": "Entry number 1079"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 18.76,
-    "comment": "Entry number 1080"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 18.76,
-    "comment": "Entry number 1081"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 18.76,
-    "comment": "Entry number 1082"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 18.77,
-    "comment": "Entry number 1083"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 18.77,
-    "comment": "Entry number 1084"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 18.77,
-    "comment": "Entry number 1085"
-  },
-  {
-    "latitude": 54.74,
-    "longitude": 18.78,
-    "comment": "Entry number 1086"
-  },
-  {
-    "latitude": 54.73,
-    "longitude": 18.78,
-    "comment": "Entry number 1087"
-  },
-  {
-    "latitude": 54.73,
-    "longitude": 18.78,
-    "comment": "Entry number 1088"
-  },
-  {
-    "latitude": 54.73,
-    "longitude": 18.79,
-    "comment": "Entry number 1089"
-  },
-  {
-    "latitude": 54.73,
-    "longitude": 18.79,
-    "comment": "Entry number 1090"
-  },
-  {
-    "latitude": 54.73,
-    "longitude": 18.79,
-    "comment": "Entry number 1091"
-  },
-  {
-    "latitude": 54.73,
-    "longitude": 18.8,
-    "comment": "Entry number 1092"
-  },
-  {
-    "latitude": 54.72,
-    "longitude": 18.8,
-    "comment": "Entry number 1093"
-  },
-  {
-    "latitude": 54.72,
-    "longitude": 18.8,
-    "comment": "Entry number 1094"
-  },
-  {
-    "latitude": 54.72,
-    "longitude": 18.81,
-    "comment": "Entry number 1095"
-  },
-  {
-    "latitude": 54.72,
-    "longitude": 18.81,
-    "comment": "Entry number 1096"
-  },
-  {
-    "latitude": 54.72,
-    "longitude": 18.82,
-    "comment": "Entry number 1097"
-  },
-  {
-    "latitude": 54.72,
-    "longitude": 18.82,
-    "comment": "Entry number 1098"
-  },
-  {
-    "latitude": 54.72,
-    "longitude": 18.82,
-    "comment": "Entry number 1099"
-  },
-  {
-    "latitude": 54.71,
-    "longitude": 18.82,
-    "comment": "Entry number 1100"
-  },
-  {
-    "latitude": 54.71,
-    "longitude": 18.83,
-    "comment": "Entry number 1101"
-  },
-  {
-    "latitude": 54.71,
-    "longitude": 18.83,
-    "comment": "Entry number 1102"
-  },
-  {
-    "latitude": 54.71,
-    "longitude": 18.83,
-    "comment": "Entry number 1103"
-  },
-  {
-    "latitude": 54.71,
-    "longitude": 18.84,
-    "comment": "Entry number 1104"
-  },
-  {
-    "latitude": 54.71,
-    "longitude": 18.84,
-    "comment": "Entry number 1105"
-  },
-  {
-    "latitude": 54.71,
-    "longitude": 18.84,
-    "comment": "Entry number 1106"
-  },
-  {
-    "latitude": 54.7,
-    "longitude": 18.85,
-    "comment": "Entry number 1107"
-  },
-  {
-    "latitude": 54.7,
-    "longitude": 18.85,
-    "comment": "Entry number 1108"
-  },
-  {
-    "latitude": 54.7,
-    "longitude": 18.85,
-    "comment": "Entry number 1109"
-  },
-  {
-    "latitude": 54.7,
-    "longitude": 18.86,
-    "comment": "Entry number 1110"
-  },
-  {
-    "latitude": 54.7,
-    "longitude": 18.86,
-    "comment": "Entry number 1111"
-  },
-  {
-    "latitude": 54.7,
-    "longitude": 18.86,
-    "comment": "Entry number 1112"
-  },
-  {
-    "latitude": 54.7,
-    "longitude": 18.87,
-    "comment": "Entry number 1113"
-  },
-  {
-    "latitude": 54.69,
-    "longitude": 18.87,
-    "comment": "Entry number 1114"
-  },
-  {
-    "latitude": 54.69,
-    "longitude": 18.87,
-    "comment": "Entry number 1115"
-  },
-  {
-    "latitude": 54.69,
-    "longitude": 18.88,
-    "comment": "Entry number 1116"
-  },
-  {
-    "latitude": 54.69,
-    "longitude": 18.88,
-    "comment": "Entry number 1117"
-  },
-  {
-    "latitude": 54.69,
-    "longitude": 18.88,
-    "comment": "Entry number 1118"
-  },
-  {
-    "latitude": 54.69,
-    "longitude": 18.89,
-    "comment": "Entry number 1119"
-  },
-  {
-    "latitude": 54.68,
-    "longitude": 18.89,
-    "comment": "Entry number 1120"
-  },
-  {
-    "latitude": 54.68,
-    "longitude": 18.89,
-    "comment": "Entry number 1121"
-  },
-  {
-    "latitude": 54.68,
-    "longitude": 18.9,
-    "comment": "Entry number 1122"
-  },
-  {
-    "latitude": 54.68,
-    "longitude": 18.9,
-    "comment": "Entry number 1123"
-  },
-  {
-    "latitude": 54.68,
-    "longitude": 18.91,
-    "comment": "Entry number 1124"
-  },
-  {
-    "latitude": 54.68,
-    "longitude": 18.91,
-    "comment": "Entry number 1125"
-  },
-  {
-    "latitude": 54.68,
-    "longitude": 18.91,
-    "comment": "Entry number 1126"
-  },
-  {
-    "latitude": 54.67,
-    "longitude": 18.92,
-    "comment": "Entry number 1127"
-  },
-  {
-    "latitude": 54.67,
-    "longitude": 18.92,
-    "comment": "Entry number 1128"
-  },
-  {
-    "latitude": 54.67,
-    "longitude": 18.92,
-    "comment": "Entry number 1129"
-  },
-  {
-    "latitude": 54.67,
-    "longitude": 18.92,
-    "comment": "Entry number 1130"
-  },
-  {
-    "latitude": 54.67,
-    "longitude": 18.93,
-    "comment": "Entry number 1131"
-  },
-  {
-    "latitude": 54.67,
-    "longitude": 18.93,
-    "comment": "Entry number 1132"
-  },
-  {
-    "latitude": 54.66,
-    "longitude": 18.93,
-    "comment": "Entry number 1133"
-  },
-  {
-    "latitude": 54.66,
-    "longitude": 18.93,
-    "comment": "Entry number 1134"
-  },
-  {
-    "latitude": 54.66,
-    "longitude": 18.93,
-    "comment": "Entry number 1135"
-  },
-  {
-    "latitude": 54.65,
-    "longitude": 18.93,
-    "comment": "Entry number 1136"
-  },
-  {
-    "latitude": 54.65,
-    "longitude": 18.92,
-    "comment": "Entry number 1137"
-  },
-  {
-    "latitude": 54.65,
-    "longitude": 18.92,
-    "comment": "Entry number 1138"
-  },
-  {
-    "latitude": 54.63,
-    "longitude": 18.91,
-    "comment": "Entry number 1139"
-  },
-  {
-    "latitude": 54.63,
-    "longitude": 18.91,
-    "comment": "Entry number 1140"
-  },
-  {
-    "latitude": 54.63,
-    "longitude": 18.9,
-    "comment": "Entry number 1141"
-  },
-  {
-    "latitude": 54.62,
-    "longitude": 18.9,
-    "comment": "Entry number 1142"
-  },
-  {
-    "latitude": 54.61,
-    "longitude": 18.89,
-    "comment": "Entry number 1143"
-  },
-  {
-    "latitude": 54.59,
-    "longitude": 18.88,
-    "comment": "Entry number 1144"
-  },
-  {
-    "latitude": 54.58,
-    "longitude": 18.87,
-    "comment": "Entry number 1145"
-  },
-  {
-    "latitude": 54.57,
-    "longitude": 18.85,
-    "comment": "Entry number 1146"
-  },
-  {
-    "latitude": 54.57,
-    "longitude": 18.84,
-    "comment": "Entry number 1147"
-  },
-  {
-    "latitude": 54.57,
-    "longitude": 18.84,
-    "comment": "Entry number 1148"
-  },
-  {
-    "latitude": 54.56,
-    "longitude": 18.83,
-    "comment": "Entry number 1149"
-  },
-  {
-    "latitude": 54.56,
-    "longitude": 18.83,
-    "comment": "Entry number 1150"
-  },
-  {
-    "latitude": 54.55,
-    "longitude": 18.82,
-    "comment": "Entry number 1151"
-  },
-  {
-    "latitude": 54.55,
-    "longitude": 18.82,
-    "comment": "Entry number 1152"
-  },
-  {
-    "latitude": 54.55,
-    "longitude": 18.82,
-    "comment": "Entry number 1153"
-  },
-  {
-    "latitude": 54.55,
-    "longitude": 18.82,
-    "comment": "Entry number 1154"
-  },
-  {
-    "latitude": 54.55,
-    "longitude": 18.81,
-    "comment": "Entry number 1155"
-  },
-  {
-    "latitude": 54.55,
-    "longitude": 18.81,
-    "comment": "Entry number 1156"
-  },
-  {
-    "latitude": 54.54,
-    "longitude": 18.81,
-    "comment": "Entry number 1157"
-  },
-  {
-    "latitude": 54.54,
-    "longitude": 18.81,
-    "comment": "Entry number 1158"
-  },
-  {
-    "latitude": 54.54,
-    "longitude": 18.8,
-    "comment": "Entry number 1159"
-  },
-  {
-    "latitude": 54.54,
-    "longitude": 18.8,
-    "comment": "Entry number 1160"
-  },
-  {
-    "latitude": 54.54,
-    "longitude": 18.8,
-    "comment": "Entry number 1161"
-  },
-  {
-    "latitude": 54.54,
-    "longitude": 18.79,
-    "comment": "Entry number 1162"
-  },
-  {
-    "latitude": 54.54,
-    "longitude": 18.79,
-    "comment": "Entry number 1163"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.79,
-    "comment": "Entry number 1164"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.78,
-    "comment": "Entry number 1165"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.78,
-    "comment": "Entry number 1166"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.78,
-    "comment": "Entry number 1167"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.77,
-    "comment": "Entry number 1168"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.77,
-    "comment": "Entry number 1169"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.76,
-    "comment": "Entry number 1170"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.76,
-    "comment": "Entry number 1171"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.76,
-    "comment": "Entry number 1172"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.75,
-    "comment": "Entry number 1173"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.75,
-    "comment": "Entry number 1174"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.74,
-    "comment": "Entry number 1175"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.74,
-    "comment": "Entry number 1176"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.73,
-    "comment": "Entry number 1177"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.73,
-    "comment": "Entry number 1178"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.73,
-    "comment": "Entry number 1179"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.72,
-    "comment": "Entry number 1180"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.72,
-    "comment": "Entry number 1181"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.71,
-    "comment": "Entry number 1182"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.71,
-    "comment": "Entry number 1183"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.7,
-    "comment": "Entry number 1184"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.7,
-    "comment": "Entry number 1185"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.69,
-    "comment": "Entry number 1186"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.69,
-    "comment": "Entry number 1187"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.68,
-    "comment": "Entry number 1188"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.67,
-    "comment": "Entry number 1189"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.67,
-    "comment": "Entry number 1190"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.66,
-    "comment": "Entry number 1191"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.66,
-    "comment": "Entry number 1192"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.65,
-    "comment": "Entry number 1193"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.65,
-    "comment": "Entry number 1194"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.64,
-    "comment": "Entry number 1195"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.64,
-    "comment": "Entry number 1196"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.64,
-    "comment": "Entry number 1197"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.63,
-    "comment": "Entry number 1198"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.63,
-    "comment": "Entry number 1199"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.63,
-    "comment": "Entry number 1200"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.62,
-    "comment": "Entry number 1201"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.62,
-    "comment": "Entry number 1202"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.61,
-    "comment": "Entry number 1203"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.61,
-    "comment": "Entry number 1204"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.6,
-    "comment": "Entry number 1205"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.59,
-    "comment": "Entry number 1206"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.59,
-    "comment": "Entry number 1207"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.58,
-    "comment": "Entry number 1208"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.58,
-    "comment": "Entry number 1209"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.57,
-    "comment": "Entry number 1210"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.57,
-    "comment": "Entry number 1211"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.56,
-    "comment": "Entry number 1212"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.56,
-    "comment": "Entry number 1213"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.56,
-    "comment": "Entry number 1214"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.55,
-    "comment": "Entry number 1215"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.55,
-    "comment": "Entry number 1216"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.55,
-    "comment": "Entry number 1217"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.54,
-    "comment": "Entry number 1218"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.54,
-    "comment": "Entry number 1219"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.54,
-    "comment": "Entry number 1220"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.53,
-    "comment": "Entry number 1221"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.53,
-    "comment": "Entry number 1222"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.53,
-    "comment": "Entry number 1223"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.53,
-    "comment": "Entry number 1224"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.52,
-    "comment": "Entry number 1225"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.52,
-    "comment": "Entry number 1226"
-  },
-  {
-    "latitude": 54.53,
-    "longitude": 18.52,
-    "comment": "Entry number 1227"
-  },
-  {
-    "latitude": 54.54,
-    "longitude": 18.52,
-    "comment": "Entry number 1228"
-  },
-  {
-    "latitude": 54.54,
-    "longitude": 18.52,
-    "comment": "Entry number 1229"
-  },
-  {
-    "latitude": 54.54,
-    "longitude": 18.52,
-    "comment": "Entry number 1230"
-  },
-  {
-    "latitude": 54.54,
-    "longitude": 18.52,
-    "comment": "Entry number 1231"
-  },
-  {
-    "latitude": 54.54,
-    "longitude": 18.52,
-    "comment": "Entry number 1232"
-  },
-  {
-    "latitude": 54.54,
-    "longitude": 18.52,
-    "comment": "Entry number 1233"
-  },
-  {
-    "latitude": 54.54,
-    "longitude": 18.51,
-    "comment": "Entry number 1234"
-  },
-  {
-    "latitude": 54.54,
-    "longitude": 18.51,
-    "comment": "Entry number 1235"
-  },
-  {
-    "latitude": 54.54,
-    "longitude": 18.51,
-    "comment": "Entry number 1236"
-  },
-  {
-    "latitude": 54.54,
-    "longitude": 18.51,
-    "comment": "Entry number 1237"
-  },
-  {
-    "latitude": 54.54,
-    "longitude": 18.51,
-    "comment": "Entry number 1238"
-  },
-  {
-    "latitude": 54.54,
-    "longitude": 18.51,
-    "comment": "Entry number 1239"
-  },
-  {
-    "latitude": 54.54,
-    "longitude": 18.51,
-    "comment": "Entry number 1240"
-  },
-  {
-    "latitude": 54.54,
-    "longitude": 18.51,
-    "comment": "Entry number 1241"
-  },
-  {
-    "latitude": 54.54,
-    "longitude": 18.5,
-    "comment": "Entry number 1242"
-  },
-  {
-    "latitude": 54.54,
-    "longitude": 18.5,
-    "comment": "Entry number 1243"
-  },
-  {
-    "latitude": 54.54,
-    "longitude": 18.5,
-    "comment": "Entry number 1244"
-  },
-  {
-    "latitude": 54.54,
-    "longitude": 18.5,
-    "comment": "Entry number 1245"
-  },
-  {
-    "latitude": 54.54,
-    "longitude": 18.5,
-    "comment": "Entry number 1246"
-  },
-  {
-    "latitude": 54.54,
-    "longitude": 18.5,
-    "comment": "Entry number 1247"
+    "latitude": 53.53,
+    "longitude": 9.91,
+    "time_stamp": "2016-04-04T22:29:00",
+    "score": 214.5294897195447,
+    "is_anomaly_pred": 1
   }
 ]
