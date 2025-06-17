@@ -47,7 +47,9 @@
 	let markersGroup = null;
 	let polyline = null;
 
-	function drawPoints(points) {
+	function drawPoints(points, options = { showIndices: false }) {
+		const { showIndices } = options;
+
 		if (markersGroup) {
 			markersGroup.clearLayers();
 		}
@@ -56,15 +58,27 @@
 		}
 
 		const latlngs = points.map((pt) => [pt.latitude, pt.longitude]);
+
 		markersGroup = L.layerGroup().addTo(map);
 
 		points.forEach((pt, idx) => {
-			// Uncomment if you want indexes
-			// const marker = L.marker([pt.latitude, pt.longitude]).addTo(markersGroup);
-			// marker.bindTooltip(`${idx + 1}`, { permanent: true, direction: "right" });
+			const color = pt.is_anomaly_pred ? "red" : "blue";
 
-			// Uncomment if you don't want indexes
-			L.marker([pt.latitude, pt.longitude]).addTo(markersGroup);
+			const marker = L.circleMarker([pt.latitude, pt.longitude], {
+				radius: 6,
+				color: color,
+				fillColor: color,
+				fillOpacity: 0.8,
+				weight: 1,
+			}).addTo(markersGroup);
+
+			if (showIndices) {
+				marker.bindTooltip(`${idx + 1}`, {
+					permanent: true,
+					direction: "right",
+					className: "point-index-tooltip",
+				});
+			}
 		});
 
 		if (latlngs.length) {
