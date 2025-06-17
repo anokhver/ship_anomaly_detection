@@ -88,12 +88,8 @@ def merge_dataframes(dfs_clean):
 def sort_and_group_data(df):
     """Sort data by time and group by TripID and StartPort."""
     print("Sorting data by time...")
-    df_sorted = df.sort_values('time')
+    df_sorted = df.sort_values(['TripID', 'time'])
     print("Data sorted successfully")
-
-    # Group by TripID and StartPort (for verification)
-    grouped = df_sorted.groupby(['TripID', 'StartPort'])
-    print(f"Data grouped into {len(grouped)} groups")
 
     return df_sorted
 

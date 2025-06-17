@@ -179,32 +179,6 @@ Examples:
         default='../data/2_destination_norm.parquet',
         help='Output parquet file path (default: %(default)s)'
     )
-
-    # Processing options
-    parser.add_argument(
-        '--skip-text-normalization',
-        action='store_true',
-        help='Skip text column standardization step'
-    )
-
-    parser.add_argument(
-        '--skip-invalid-filter',
-        action='store_true',
-        help='Skip filtering of invalid destinations'
-    )
-
-    parser.add_argument(
-        '--skip-duplicates',
-        action='store_true',
-        help='Skip duplicate removal step'
-    )
-
-    parser.add_argument(
-        '--skip-name-standardization',
-        action='store_true',
-        help='Skip destination name standardization'
-    )
-
     # Output options
     parser.add_argument(
         '--no-summary',
@@ -216,25 +190,6 @@ Examples:
         '-v', '--verbose',
         action='store_true',
         help='Enable verbose output with detailed processing information'
-    )
-
-    parser.add_argument(
-        '--dry-run',
-        action='store_true',
-        help='Run pipeline without saving output file (for testing)'
-    )
-
-    # Validation options
-    parser.add_argument(
-        '--force',
-        action='store_true',
-        help='Force overwrite output file if it exists'
-    )
-
-    parser.add_argument(
-        '--validate-input',
-        action='store_true',
-        help='Perform additional input data validation'
     )
 
     return parser.parse_args()
@@ -281,9 +236,7 @@ def destination_normalization(
         file_path: str = 'data/1_merged_typed_data.parquet',
         output_path: str = 'data/2_destination_norm.parquet',
         verbose: bool = False,
-        dry_run: bool = False,
         show_summary: bool = True,
-        validate_input: bool = False
 ) -> None:
     """
     Main pipeline for normalizing destination data in ship AIS records.
@@ -312,7 +265,6 @@ def destination_normalization(
         print(f"  - Input file: {file_path}")
         print(f"  - Output file: {output_path}")
         print(f"  - Show summary: {show_summary}")
-        print(f"  - Dry run: {dry_run}")
         print()
 
     # Validate input file
@@ -329,20 +281,6 @@ def destination_normalization(
             print(f"  - Memory usage: {df.memory_usage(deep=True).sum() / 1024 ** 2:.1f} MB")
     except Exception as e:
         raise RuntimeError(f"Failed to load data: {e}")
-
-    # Additional input validation
-    if validate_input:
-        print(f"\nStep 1.5: Validating input data")
-        if 'Destination' not in df.columns:
-            raise ValueError("Input data missing required 'Destination' column")
-
-        null_destinations = df['Destination'].isna().sum()
-        if null_destinations > 0:
-            print(f"  - Found {null_destinations} null destinations ({null_destinations / len(df) * 100:.1f}%)")
-
-        if verbose:
-            print(f"  - Destination column type: {df['Destination'].dtype}")
-            print(f"  - Sample destinations: {df['Destination'].dropna().head(3).tolist()}")
 
     # Check initial unique values
     print(f"\nStep 2: Analyzing initial data structure")
@@ -394,28 +332,23 @@ def destination_normalization(
         display_summary_statistics(df)
 
     # Save processed data
-    if not dry_run:
-        print(f"\nStep 6: Saving processed data")
-        try:
-            # Ensure output directory exists
-            output_dir = Path(output_path).parent
-            output_dir.mkdir(parents=True, exist_ok=True)
+    print(f"\nStep 6: Saving processed data")
+    try:
+        # Ensure output directory exists
+        output_dir = Path(output_path).parent
+        output_dir.mkdir(parents=True, exist_ok=True)
 
-            df.to_parquet(output_path, index=False)
-            print(f"  - Data saved to: {output_path}")
-            print(f"  - Final shape: {df.shape}")
-
-            # Verify file was created and get size
-            if os.path.exists(output_path):
-                file_size = os.path.getsize(output_path) / 1024 ** 2
-                print(f"  - File size: {file_size:.1f} MB")
-
-        except Exception as e:
-            raise RuntimeError(f"Failed to save data: {e}")
-    else:
-        print(f"\nStep 6: Dry run - skipping file save")
-        print(f"  - Would save to: {output_path}")
+        df.to_parquet(output_path, index=False)
+        print(f"  - Data saved to: {output_path}")
         print(f"  - Final shape: {df.shape}")
+
+        # Verify file was created and get size
+        if os.path.exists(output_path):
+            file_size = os.path.getsize(output_path) / 1024 ** 2
+            print(f"  - File size: {file_size:.1f} MB")
+
+    except Exception as e:
+        raise RuntimeError(f"Failed to save data: {e}")
 
 
 def main():
@@ -433,8 +366,6 @@ def main():
             output_path=args.output,
             show_summary=not args.no_summary,
             verbose=args.verbose,
-            dry_run=args.dry_run,
-            validate_input=args.validate_input
         )
 
         print("\nDestination normalization pipeline completed successfully!")
@@ -444,6 +375,7 @@ def main():
         sys.exit(1)
     except Exception as e:
         print(f"\n❌ Pipeline failed: {e}")
+
         if args.verbose if 'args' in locals() else False:
             import traceback
             traceback.print_exc()
