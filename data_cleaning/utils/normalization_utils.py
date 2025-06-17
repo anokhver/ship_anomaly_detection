@@ -136,94 +136,75 @@ def match_names(name: Union[str, None],
     if not isinstance(name, str) or not name.strip():
         return name if test else None
 
-    # Clean the input name
-    cleaned_name = clean_destination(name)
-    if not cleaned_name:
-        return name if test else None
-
     if variants_dicts is None:
         variants_dicts = full_dict()
 
     for variant_dict in variants_dicts:
-        country_codes = variant_dict.get('country', [])
-        if not country_codes:
-            continue
-
+        country_codes = variant_dict.get('country', [''])
         country_code = country_codes[0]
 
         # Get all port keys (excluding 'country')
         port_keys = [k for k in variant_dict.keys() if k != 'country']
-        # Sort by length (longest first) to prioritize more specific matches
-        port_keys.sort(key=len, reverse=True)
 
         for port_key in port_keys:
             # Check all variants for this port
             all_patterns = [port_key] + variant_dict[port_key]
-            # Sort patterns by length (longest first) for better matching
-            all_patterns.sort(key=len, reverse=True)
 
             for pattern in all_patterns:
-                if _matches_pattern(cleaned_name, pattern, country_code):
+                if _matches_pattern(name, pattern, country_code):
                     return f"{country_code}.{port_key}"
 
     return name if test else None
 
 
 def _matches_pattern(name: str, pattern: str, country_code: str) -> bool:
-    """Check if a name matches a pattern, considering country code variations.
+    """Check if a name matches a pattern, considering country code variations."""
 
-    Args:
-        name: Cleaned name to match
-        pattern: Pattern to match against
-        country_code: Country code to consider
+    # Since names are already cleaned (uppercase, no spaces, normalized dots),
+    # we can use simpler string operations
 
-    Returns:
-        True if pattern matches the name
-    """
-    # Direct exact match
-    if name == pattern:
-        return True
-
-    # Match with country prefix (e.g., "DE.HAM", "DEHAM")
-    if name == f"{country_code}.{pattern}" or name == f"{country_code}{pattern}":
-        return True
-
-    # Match with country suffix (e.g., "HAM.DE", "HAMDE")
-    if name == f"{pattern}.{country_code}" or name == f"{pattern}{country_code}":
-        return True
-
-    # This handles cases like "GDYNIAVIANOK" containing "GDYNIA"
-    if name.startswith(pattern):
-        return True
-
-    if name.endswith(pattern):
-        return True
-
-    # Check if pattern is contained within name with separators
-    # This handles cases with dots, slashes, etc.
-    separator_patterns = [
-        rf'\.{re.escape(pattern)}(?:\.|$)',  # .PATTERN. or .PATTERN at end
-        rf'^{re.escape(pattern)}\.',  # PATTERN. at start
-        rf'\.{re.escape(pattern)}$',  # .PATTERN at end
+    # Exact matches (including country code variations)
+    exact_matches = [
+        pattern,
+        f"{country_code}.{pattern}",
+        f"{country_code}{pattern}",
+        f"{pattern}.{country_code}",
+        f"{pattern}{country_code}"
     ]
 
-    for sep_pattern in separator_patterns:
-        if re.search(sep_pattern, name, re.IGNORECASE):
-            return True
+    if name in exact_matches:
+        return True
 
-    # Check for pattern with country code variations
-    country_patterns = [
-        rf'^{re.escape(country_code)}\.?{re.escape(pattern)}',  # Start with country code
-        rf'{re.escape(pattern)}\.?{re.escape(country_code)}$',  # End with country code
-        rf'\.{re.escape(country_code)}\.?{re.escape(pattern)}(?:\.|$)',  # Country in middle
-        rf'(?:^|\.){re.escape(pattern)}\.?{re.escape(country_code)}(?:\.|$)',  # Pattern then country
+    # Prefix/suffix matches (handles cases like "GDYNIAVIANOK" containing "GDYNIA")
+    if name.startswith(pattern) or name.endswith(pattern):
+        return True
+
+    # Check if pattern appears with dot separators
+    # Since names are already normalized with dots as separators
+    dot_patterns = [
+        f".{pattern}.",  # .PATTERN.
+        f".{pattern}",  # .PATTERN (at end)
+        f"{pattern}.",  # PATTERN. (at start)
     ]
 
-    for country_pattern in country_patterns:
-        if re.search(country_pattern, name, re.IGNORECASE):
+    for dot_pattern in dot_patterns:
+        if dot_pattern in name:
             return True
 
-    return False
+    # Check country code combinations with optional dots
+    # Since separators are already normalized to dots
+    country_combinations = [
+        f"{country_code}.{pattern}",
+        f"{country_code}{pattern}",
+        f"{pattern}.{country_code}",
+        f"{pattern}{country_code}",
+        f".{country_code}.{pattern}",
+        f".{country_code}{pattern}",
+        f".{pattern}.{country_code}",
+        f".{pattern}{country_code}"
+    ]
+
+    return any(combo in name for combo in country_combinations)
 
 
 def get_all_ports() -> Dict[str, str]:

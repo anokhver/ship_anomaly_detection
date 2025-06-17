@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-from scipy.spatial import distance
+from scipy.spatial.distance import euclidean
 from matplotlib import pyplot as plt
 import seaborn as sns
 from sklearn.metrics import r2_score
@@ -79,7 +79,7 @@ def get_entries_with_missing_values(df: pd.DataFrame, col: str) -> pd.Series:
     return (
         df_missing_trips
         .groupby('TripID')[col]
-        .apply(lambda x: list(x.dropna().unique()))
+        .apply(lambda x: list(x.unique()))
     )
 
 
@@ -354,8 +354,8 @@ def fill_missing_destinations_by_proximity(df: pd.DataFrame) -> pd.DataFrame:
                     below_point = (below_dest['lat'], below_dest['lon'])
 
                     try:
-                        dist_above = distance(current_point, above_point).kilometers
-                        dist_below = distance(current_point, below_point).kilometers
+                        dist_above = euclidean(current_point, above_point)
+                        dist_below = euclidean(current_point, below_point)
 
                         chosen_dest = above_dest['dest'] if dist_above <= dist_below else below_dest['dest']
                     except Exception:

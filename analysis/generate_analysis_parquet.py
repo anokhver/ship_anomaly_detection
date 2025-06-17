@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from ydata_profiling import ProfileReport
 
 # --- Settings ---
-INPUT_PATH = '../data/fix_noise.parquet'
+INPUT_PATH = '../data/fix_noise_(old).parquet'
 FIGURES_DIR = './figures_prepared'
 REPORT_HTML = './profile_parquet.html'
 
