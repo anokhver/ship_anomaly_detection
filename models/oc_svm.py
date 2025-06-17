@@ -1,6 +1,6 @@
 """
 OC-SVM per-route training pipeline (with simple v grid-search + τ thresholding)
--------------------------------------------------------------------
+-------------------------------------------------------------------------------
 • cleans and featurizes AIS data
 • trains a separate One-Class SVM for each route
 • selects best v by ROC-AUC (anomaly vs random normal)
@@ -28,10 +28,11 @@ warnings.filterwarnings("ignore", category=UserWarning)
 DROP_TRIPS      = [10257]
 BASE_COLUMNS    = [
     "speed_over_ground", "dv", "dcourse", "ddraft",
-    "zone_port", "zone_approach", "zone_open_sea",
+    "zone",
     "x_km", "y_km", "dist_to_ref", "route_dummy"
 ]
-NU_GRID         = [0.01, 0.2]
+ZONES           = [[53.8, 53.5, 8.6, 8.14], [53.66, 53.0, 11.0, 9.5]]  # [lat_max, lat_min, lon_max, lon_min]
+NU_GRID         = [0.01, 0.03]
 TEST_FRACTION_N = 0.10        # fraction of normal points to include in test
 R_PORT, R_APP   = 5.0, 15.0   # km: defines "port" and "approach" zones
 EARTH_R         = 6_371.0     # Earth radius in km
@@ -42,7 +43,7 @@ def haversine(lat1, lon1, lat2, lon2):
     """Vectorized haversine distance (km)."""
     lat1, lon1, lat2, lon2 = map(np.radians, (lat1, lon1, lat2, lon2))
     dlat, dlon = lat2 - lat1, lon2 - lon1
-    a = np.sin(dlat/2)**2 + np.cos(lat1)*np.cos(lat2)*np.sin(dlon/2)**2
+    a = np.sin(dlat / 2) ** 2 + np.cos(lat1) * np.cos(lat2) * np.sin(dlon / 2) ** 2
     return 2 * EARTH_R * np.arcsin(np.sqrt(a))
 
 
@@ -59,26 +60,32 @@ def load_and_prepare(path: str) -> pd.DataFrame:
         df[col] = pd.to_datetime(df[col])
 
     df = df.dropna(subset=["ship_type"]).reset_index(drop=True)
-    df["y_true"]  = df["is_anomaly"].map({True: 1, False: 0})
+    df["y_true"]   = df["is_anomaly"].map({True: 1, False: 0})
     df["route_id"] = df["start_port"]
 
-    # compute per-point deltas
+    # per-point deltas
     df = df.sort_values(["trip_id", "time_stamp"])
     df["dv"]      = df.groupby("trip_id")["speed_over_ground"].diff().abs().fillna(0)
     df["dcourse"] = df.groupby("trip_id")["course_over_ground"].diff().abs().fillna(0)
     df["ddraft"]  = df.groupby("trip_id")["draught"].diff().abs().fillna(0)
 
-    # assign zones
-    port_coords = df.groupby("start_port")[["start_latitude", "start_longitude"]] \
-                    .first().to_dict("index")
-    def zone_label(row):
-        dmin = min(
-            haversine(row.latitude, row.longitude, pc["start_latitude"], pc["start_longitude"])
-            for pc in port_coords.values()
-        )
-        if dmin < R_PORT:   return "port"
-        if dmin < R_APP:    return "approach"
-        return "open_sea"
+    # zones
+    port_coords = (
+        df.groupby("start_port")[["start_latitude", "start_longitude"]]
+          .first()
+          .to_dict("index")
+    )
+
+    def _in_any_rect(lat: float, lon: float) -> bool:
+        for lat_max, lat_min, lon_max, lon_min in ZONES:
+            if lat_min <= lat <= lat_max and lon_min <= lon <= lon_max:
+                return True
+        return False
+
+    def zone_label(row) -> str:
+        if _in_any_rect(row.latitude, row.longitude):
+            return 0
+        return 1
 
     df["zone"] = df.apply(zone_label, axis=1)
     df = pd.concat([df, pd.get_dummies(df["zone"], prefix="zone")], axis=1)
@@ -108,9 +115,9 @@ def compute_average_route(df_route: pd.DataFrame, n_points: int = 100) -> np.nda
 def add_route_specific_features(df: pd.DataFrame, route: str) -> pd.DataFrame:
     """
     For a single route:
-    - project lat/lon to local x_km, y_km
-    - compute distance to average route (dist_to_ref)
-    - add constant route_dummy=1
+    • project lat/lon to local x_km, y_km
+    • compute distance to average route (dist_to_ref)
+    • add constant route_dummy = 1
     """
     df_r = df[df.route_id == route].copy()
 
@@ -134,7 +141,7 @@ def add_route_specific_features(df: pd.DataFrame, route: str) -> pd.DataFrame:
         frac[pos] = cum / total
 
     df_r["dist_to_ref"] = [
-        haversine(lat, lon, avg[int(f*99),0], avg[int(f*99),1])
+        haversine(lat, lon, avg[int(f * 99), 0], avg[int(f * 99), 1])
         for lat, lon, f in zip(df_r.latitude, df_r.longitude, frac)
     ]
     df_r["route_dummy"] = 1.0
@@ -143,7 +150,6 @@ def add_route_specific_features(df: pd.DataFrame, route: str) -> pd.DataFrame:
 
 # ───────────────────────────── training ────────────────────────────────── #
 def train_per_route(df: pd.DataFrame, out_dir: str = "models_per_route") -> None:
-    """Train one OC-SVM per route, tune v + τ, save pipelines + dispatcher."""
     Path(out_dir).mkdir(exist_ok=True)
     dispatcher: Dict[str, str] = {}
 
@@ -151,60 +157,81 @@ def train_per_route(df: pd.DataFrame, out_dir: str = "models_per_route") -> None
         t0 = time.time()
         print(f"\n=== Training route: {route} ===")
 
-        fr      = add_route_specific_features(df, route)
-        X_norm  = fr[fr.y_true == 0][BASE_COLUMNS].fillna(0).values
-        X_anom  = fr[fr.y_true == 1][BASE_COLUMNS].fillna(0).values
+        fr     = add_route_specific_features(df, route)
+        X_norm = fr[fr.y_true == 0][BASE_COLUMNS].fillna(0).values
+        X_anom = fr[fr.y_true == 1][BASE_COLUMNS].fillna(0).values
 
         if len(X_norm) == 0:
             print("  * No normal points, skipping this route.")
             continue
 
-        # prepare test set: all anomalies + fraction of normals
+        # ─── prepare test set: all anomalies + fraction of normals ───
+        idx_anom    = fr[fr.y_true == 1].index.to_numpy()
         n_norm_test = max(1, int(TEST_FRACTION_N * len(X_norm)))
-        idx_norm    = np.random.choice(len(X_norm), size=n_norm_test, replace=False)
-        X_test = np.vstack([X_anom, X_norm[idx_norm]])
-        y_test = np.concatenate([np.ones(len(X_anom)), np.zeros(n_norm_test)])
+        idx_norm    = fr[fr.y_true == 0].sample(n=n_norm_test, random_state=42).index.to_numpy()
 
+        X_test = np.vstack([
+            fr.loc[idx_anom, BASE_COLUMNS].fillna(0).values,
+            fr.loc[idx_norm, BASE_COLUMNS].fillna(0).values
+        ])
+        y_test = np.concatenate([
+            np.ones(len(idx_anom), dtype=int),
+            np.zeros(len(idx_norm), dtype=int)
+        ])
+
+        # mask for port-zone override
+        zone = np.concatenate([
+            fr.loc[idx_anom, "zone"].to_numpy(),
+            fr.loc[idx_norm, "zone"].to_numpy()
+        ]).astype(bool)
+
+        # ─── grid-search over ν ───
         best = {"auc": -np.inf}
-        # grid-search over ν
         for nu in NU_GRID:
             pipe = Pipeline([
                 ("scaler", StandardScaler()),
                 ("ocsvm",  OneClassSVM(kernel="rbf", gamma="scale", nu=nu))
             ])
 
-            pipe.fit(X_norm)  # train only on normal
+            pipe.fit(X_norm)
             scores_train = -pipe.decision_function(X_norm)
-            tau          = np.percentile(scores_train, 100 * (1 - nu))
+            tau = np.percentile(scores_train, 100 * (1 - nu))
 
             scores_test = -pipe.decision_function(X_test)
-            preds       = (scores_test > tau).astype(int)
+            preds = (scores_test > tau).astype(int)
 
-            auc = roc_auc_score(y_test, scores_test) if len(np.unique(y_test))>1 else 0.0
+            # force port-zone → always normal
+           ## preds[zone] = 0
+
+            auc = roc_auc_score(y_test, scores_test) if len(np.unique(y_test)) > 1 else 0.0
             print(f"  ν={nu:<4}  τ={tau:6.3f}  AUC={auc:5.3f}")
 
             if auc > best["auc"]:
                 best.update(pipe=pipe, nu=nu, tau=tau, auc=auc)
 
-        # final evaluation & save
+        # ─── final evaluation & save  ───
         print(f"\n-> Selected ν={best['nu']}  τ={best['tau']:.3f}  AUC={best['auc']:.3f}")
         scores_test = -best["pipe"].decision_function(X_test)
-        preds       = (scores_test > best["tau"]).astype(int)
+        preds = (scores_test > best["tau"]).astype(int)
+       # preds[zone] = 0
 
         print(confusion_matrix(y_test, preds))
         print(classification_report(y_test, preds, digits=3))
-        print(f"Route {route} done in {time.time()-t0:.1f}s\n")
+        print(f"Route {route} done in {time.time() - t0:.1f}s\n")
 
         model_path = Path(out_dir) / f"ocsvm_{route}.pkl"
-        joblib.dump({
-            "pipeline": best["pipe"],
-            "features": BASE_COLUMNS,
-            "tau":      best["tau"]
-        }, model_path)
+        joblib.dump(
+            {
+                "pipeline": best["pipe"],
+                "features": BASE_COLUMNS,
+                "tau": best["tau"],
+            },
+            model_path,
+        )
         dispatcher[route] = str(model_path)
 
     # save dispatcher
-    joblib.dump(dispatcher, Path(out_dir)/"dispatcher.pkl")
+    joblib.dump(dispatcher, Path(out_dir) / "dispatcher.pkl")
     print("All models saved, dispatcher.pkl created.")
 
 
