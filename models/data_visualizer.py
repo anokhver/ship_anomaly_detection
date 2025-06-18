@@ -125,8 +125,8 @@ def main() -> None:
     ap.add_argument("trip_id")
     ap.add_argument("-i", "--input", default="all_anomalies_combined.parquet")
     ap.add_argument("-o", "--output", default="/workspace/frontend/src/assets/trip.json")
-    ap.add_argument("--dispatcher", default="models_per_route/dispatcher.pkl")
-    #ap.add_argument("--dispatcher", default="models_per_route_iso_for/dispatcher.pkl")
+    #ap.add_argument("--dispatcher", default="models_per_route/dispatcher.pkl")
+    ap.add_argument("--dispatcher", default="models_per_route_iso_for/dispatcher.pkl")
     args = ap.parse_args()
 
     dispatcher = load_dispatcher(args.dispatcher)
