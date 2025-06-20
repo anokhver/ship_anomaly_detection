@@ -119,14 +119,28 @@ def build_feature_frame(trip: pd.DataFrame, full_df: pd.DataFrame) -> pd.DataFra
 
     return trip
 
+def get_scores_from_model(model, X):
+    # Handle sklearn-style models
+    if hasattr(model, "predict_proba"):
+        # Logistic regression or any classifier with probabilities
+        return model.predict_proba(X)[:, 1]  # Class 1 = anomaly
+    elif hasattr(model, "decision_function"):
+        # OC-SVM, Isolation Forest, etc.
+        return -model.decision_function(X)  # negate: lower score = more anomalous
+    else:
+        raise RuntimeError("Model does not support scoring")
+
+
+
 
 def main() -> None:
     ap = argparse.ArgumentParser("Score single trip and dump JSON")
     ap.add_argument("trip_id")
     ap.add_argument("-i", "--input", default="all_anomalies_combined.parquet")
     ap.add_argument("-o", "--output", default="/workspace/frontend/src/assets/trip.json")
-    ap.add_argument("--dispatcher", default="models_per_route/dispatcher.pkl")
+    #ap.add_argument("--dispatcher", default="models_per_route/dispatcher.pkl")
     #ap.add_argument("--dispatcher", default="models_per_route_iso_for/dispatcher.pkl")
+    ap.add_argument("--dispatcher", default="models_per_route_lr/dispatcher.pkl")
     args = ap.parse_args()
 
     dispatcher = load_dispatcher(args.dispatcher)
@@ -152,12 +166,20 @@ def main() -> None:
 
     pipe = artefacts.get("pipeline")
     if pipe is not None:
-        scores = -pipe.decision_function(X_raw)
+        # Pipeline present, use its decision_function or predict_proba
+        if hasattr(pipe, "predict_proba"):
+            scores = pipe.predict_proba(X_raw)[:, 1]
+        else:
+            scores = -pipe.decision_function(X_raw)
     else:
         scaler: StandardScaler = artefacts["scaler"]
         model = artefacts["model"]
         Xs = scaler.transform(X_raw)
-        scores = -model.decision_function(Xs)
+        # Check if model is logistic regression (has predict_proba)
+        if hasattr(model, "predict_proba"):
+            scores = model.predict_proba(Xs)[:, 1]
+        else:
+            scores = -model.decision_function(Xs)
 
     preds = (scores > tau).astype(int)
 
