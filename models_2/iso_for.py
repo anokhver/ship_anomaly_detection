@@ -1,8 +1,8 @@
 """
-OC-SVM per-route training pipeline (with simple v grid-search + τ thresholding)
+Isolation forest per-route training pipeline (with simple v grid-search + τ thresholding)
 -------------------------------------------------------------------------------
 • cleans and featurizes AIS data
-• trains a separate One-Class SVM for each route
+• trains a separate Isolation Forest for each route
 • selects best v by ROC-AUC (anomaly vs random normal)
 • saves {pipeline, features, τ} + dispatcher.pkl
 """
@@ -25,7 +25,7 @@ from sklearn.pipeline import Pipeline
 warnings.filterwarnings("ignore", category=UserWarning)
 
 # ───────────────────────────── configuration ────────────────────────────── #
-DROP_TRIPS      = [10257]
+DROP_TRIPS      = []
 BASE_COLUMNS    = [
     "speed_over_ground", "dv", "dcourse", "ddraft",
     "zone",

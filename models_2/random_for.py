@@ -1,8 +1,8 @@
 """
-OC-SVM per-route training pipeline (with simple v grid-search + τ thresholding)
+Logistic regression per-route training pipeline (with simple v grid-search + τ thresholding)
 -------------------------------------------------------------------------------
 • cleans and featurizes AIS data
-• trains a separate One-Class SVM for each route
+• trains a separate Logistic Regression model for each route
 • selects best v by ROC-AUC (anomaly vs random normal)
 • saves {pipeline, features, τ} + dispatcher.pkl
 """
@@ -19,8 +19,9 @@ import numpy as np
 import pandas as pd
 from sklearn.metrics import classification_report, confusion_matrix, roc_auc_score
 from sklearn.preprocessing import StandardScaler
-from sklearn.svm import OneClassSVM
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.pipeline import Pipeline
+from sklearn.model_selection import train_test_split
 
 warnings.filterwarnings("ignore", category=UserWarning)
 
@@ -149,26 +150,27 @@ def add_route_specific_features(df: pd.DataFrame, route: str) -> pd.DataFrame:
 
 
 # ───────────────────────────── training ────────────────────────────────── #
-def train_per_route(df: pd.DataFrame, out_dir: str = "models_per_route") -> None:
+def train_per_route(df: pd.DataFrame, out_dir: str = "models_per_route_rf") -> None:
     Path(out_dir).mkdir(exist_ok=True)
     dispatcher: Dict[str, str] = {}
+    tau = 0.75  # threshold for anomaly detection
 
     for route in df.route_id.unique():
         t0 = time.time()
         print(f"\n=== Training route: {route} ===")
 
-        fr     = add_route_specific_features(df, route)
-        X_norm = fr[fr.y_true == 0][BASE_COLUMNS].fillna(0).values
-        X_anom = fr[fr.y_true == 1][BASE_COLUMNS].fillna(0).values
+        fr = add_route_specific_features(df, route)
+        fr = fr.dropna(subset=["y_true"])
+        X = fr[BASE_COLUMNS].fillna(0).values
+        y = fr["y_true"].values
 
-        if len(X_norm) == 0:
-            print("  * No normal points, skipping this route.")
+        if np.sum(y == 0) == 0 or np.sum(y == 1) == 0:
+            print("  * Not enough class samples, skipping this route.")
             continue
 
-        # ─── prepare test set: all anomalies + fraction of normals ───
-        idx_anom    = fr[fr.y_true == 1].index.to_numpy()
-        n_norm_test = max(1, int(TEST_FRACTION_N * len(X_norm)))
-        idx_norm    = fr[fr.y_true == 0].sample(n=n_norm_test, random_state=42).index.to_numpy()
+        idx_anom = fr[fr.y_true == 1].index.to_numpy()
+        n_norm_test = max(1, int(TEST_FRACTION_N * np.sum(y == 0)))
+        idx_norm = fr[fr.y_true == 0].sample(n=n_norm_test, random_state=42).index.to_numpy()
 
         X_test = np.vstack([
             fr.loc[idx_anom, BASE_COLUMNS].fillna(0).values,
@@ -179,61 +181,50 @@ def train_per_route(df: pd.DataFrame, out_dir: str = "models_per_route") -> None
             np.zeros(len(idx_norm), dtype=int)
         ])
 
-        # mask for port-zone override
-        zone = np.concatenate([
-            fr.loc[idx_anom, "zone"].to_numpy(),
-            fr.loc[idx_norm, "zone"].to_numpy()
-        ]).astype(bool)
-
-        # ─── grid-search over ν ───
+        # ─── grid-search over RF hyperparams ───
         best = {"auc": -np.inf}
-        for nu in NU_GRID:
-            pipe = Pipeline([
-                ("scaler", StandardScaler()),
-                ("ocsvm",  OneClassSVM(kernel="rbf", gamma="scale", nu=nu))
-            ])
+        for n in [50, 100, 200]:
+            for d in [None, 10, 20]:
+                clf = RandomForestClassifier(
+                    n_estimators=n,
+                    max_depth=d,
+                    random_state=42,
+                    class_weight={0: 1.0, 1: 2.0},  # handle imbalance
+                    n_jobs=-1
+                )
 
-            pipe.fit(X_norm)
-            scores_train = -pipe.decision_function(X_norm)
-            tau = np.percentile(scores_train, 100 * (1 - nu))
+                clf.fit(X, y)
+                scores_test = clf.predict_proba(X_test)[:, 1]
+                preds = (scores_test > tau).astype(int)
 
-            scores_test = -pipe.decision_function(X_test)
-            preds = (scores_test > tau).astype(int)
+                auc = roc_auc_score(y_test, scores_test) if len(np.unique(y_test)) > 1 else 0.0
+                print(f"  n={n:<3} d={str(d):<4} AUC={auc:5.3f}")
 
-            # force port-zone → always normal
-           ## preds[zone] = 0
+                if auc > best["auc"]:
+                    best.update(pipe=clf, n=n, d=d, auc=auc)
 
-            auc = roc_auc_score(y_test, scores_test) if len(np.unique(y_test)) > 1 else 0.0
-            print(f"  ν={nu:<4}  τ={tau:6.3f}  AUC={auc:5.3f}")
-
-            if auc > best["auc"]:
-                best.update(pipe=pipe, nu=nu, tau=tau, auc=auc)
-
-        # ─── final evaluation & save  ───
-        print(f"\n-> Selected ν={best['nu']}  τ={best['tau']:.3f}  AUC={best['auc']:.3f}")
-        scores_test = -best["pipe"].decision_function(X_test)
-        preds = (scores_test > best["tau"]).astype(int)
-       # preds[zone] = 0
+        # ─── final evaluation & save ───
+        print(f"\n-> Selected n={best['n']} d={best['d']}  AUC={best['auc']:.3f}")
+        scores_test = best["pipe"].predict_proba(X_test)[:, 1]
+        preds = (scores_test > tau).astype(int)
 
         print(confusion_matrix(y_test, preds))
         print(classification_report(y_test, preds, digits=3))
         print(f"Route {route} done in {time.time() - t0:.1f}s\n")
 
-        model_path = Path(out_dir) / f"ocsvm_{route}.pkl"
+        model_path = Path(out_dir) / f"rf_{route}.pkl"
         joblib.dump(
             {
                 "pipeline": best["pipe"],
                 "features": BASE_COLUMNS,
-                "tau": best["tau"],
+                "tau": tau,
             },
             model_path,
         )
         dispatcher[route] = str(model_path)
 
-    # save dispatcher
     joblib.dump(dispatcher, Path(out_dir) / "dispatcher.pkl")
     print("All models saved, dispatcher.pkl created.")
-
 
 if __name__ == "__main__":
     df_all = load_and_prepare("all_anomalies_combined.parquet")
