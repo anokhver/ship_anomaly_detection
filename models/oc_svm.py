@@ -25,7 +25,7 @@ from sklearn.pipeline import Pipeline
 warnings.filterwarnings("ignore", category=UserWarning)
 
 # ───────────────────────────── configuration ────────────────────────────── #
-DROP_TRIPS      = [10257]
+DROP_TRIPS      = []
 BASE_COLUMNS    = [
     "speed_over_ground", "dv", "dcourse", "ddraft",
     "zone",
