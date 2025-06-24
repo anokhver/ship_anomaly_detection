@@ -66,7 +66,9 @@ def load_and_prepare(path: str) -> pd.DataFrame:
     # per-point deltas
     df = df.sort_values(["trip_id", "time_stamp"])
     df["dv"]      = df.groupby("trip_id")["speed_over_ground"].diff().abs().fillna(0)
-    df["dcourse"] = df.groupby("trip_id")["course_over_ground"].diff().abs().fillna(0)
+    dcourse = df.groupby("trip_id")["course_over_ground"].diff().abs()
+    dcourse = dcourse.where(dcourse <= 180, 360 - dcourse)
+    df["dcourse"] = dcourse.fillna(0)
     df["ddraft"]  = df.groupby("trip_id")["draught"].diff().abs().fillna(0)
 
     # zones
@@ -193,7 +195,7 @@ def train_per_route(df: pd.DataFrame, out_dir: str = "models_per_route_lr") -> N
             pipe = Pipeline([
                 ("scaler", StandardScaler()),
                 ("logreg", LogisticRegression(C=C, solver="liblinear", random_state=42, class_weight={0: 1.0, 1: 2.0}))
-                
+
             ])
 
             pipe.fit(X, y)

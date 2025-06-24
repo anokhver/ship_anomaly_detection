@@ -104,7 +104,9 @@ class DataProcessor:
         route = trip.start_port.iloc[0]
         # Delta features
         trip["dv"] = trip.speed_over_ground.diff().abs().fillna(0)
-        trip["dcourse"] = trip.course_over_ground.diff().abs().fillna(0)
+        dcourse = trip.course_over_ground.diff().abs()
+        dcourse = dcourse.where(dcourse <= 180, 360 - dcourse)
+        trip["dcourse"] = dcourse.fillna(0)
         trip["ddraft"] = trip.draught.diff().abs().fillna(0)
         # Zone
         trip["zone"] = trip.apply(lambda r: zone_label(r.latitude, r.longitude), axis=1)
@@ -213,13 +215,19 @@ def build_output_json(df: pd.DataFrame, scores: np.ndarray, preds: np.ndarray) -
     for idx, row in df.reset_index(drop=True).iterrows():
         data_fields = {
             k: (row[k].isoformat() if hasattr(row[k], 'isoformat') else row[k])
+            # [
+            #     'trip_id','start_latitude','start_longitude','start_time',
+            #     'end_latitude','end_longitude','end_time','start_port',
+            #     'end_port','ship_type','length','breadth','draught',
+            #     'speed_over_ground','course_over_ground','true_heading',
+            #     'destination','is_anomaly','dv','dcourse','ddraft',
+            #     'zone','x_km','y_km','dist_to_ref','route_dummy'
+            # ]
             for k in [
-                'trip_id','start_latitude','start_longitude','start_time',
-                'end_latitude','end_longitude','end_time','start_port',
-                'end_port','ship_type','length','breadth','draught',
+                'ship_type','length','breadth','draught',
                 'speed_over_ground','course_over_ground','true_heading',
-                'destination','is_anomaly','dv','dcourse','ddraft',
-                'zone','x_km','y_km','dist_to_ref','route_dummy'
+                'dv','dcourse','ddraft',
+                'zone','x_km','y_km','dist_to_ref'
             ] if k in df.columns
         }
         out.append({

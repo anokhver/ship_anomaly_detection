@@ -66,7 +66,9 @@ def load_and_prepare(path: str) -> pd.DataFrame:
     # per-point deltas
     df = df.sort_values(["trip_id", "time_stamp"])
     df["dv"]      = df.groupby("trip_id")["speed_over_ground"].diff().abs().fillna(0)
-    df["dcourse"] = df.groupby("trip_id")["course_over_ground"].diff().abs().fillna(0)
+    dcourse = df.groupby("trip_id")["course_over_ground"].diff().abs()
+    dcourse = dcourse.where(dcourse <= 180, 360 - dcourse)
+    df["dcourse"] = dcourse.fillna(0)
     df["ddraft"]  = df.groupby("trip_id")["draught"].diff().abs().fillna(0)
 
     # zones

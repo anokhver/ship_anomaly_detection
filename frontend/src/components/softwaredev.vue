@@ -1,15 +1,42 @@
 <template>
 	<div class="app-container">
 		<div class="content">
+			<div class="control-panel">
+				<div class="control-model">
+					<h2>Model</h2>
+					<select v-model="selectedModel" @change="onModelChange">
+						<option disabled hidden value="">-- Choose a model --</option>
+						<option v-for="option in modelOptions" :key="option.value" :value="option.value">
+							{{ option.label }}
+						</option>
+					</select>
+				</div>
+				<div class="chart-controls">
+					<div class="metricsy">
+						<h2>Metrics</h2>
+						<select id="metric-select" v-model="selectedMetric">
+							<option v-for="option in metricOptions" :key="option.value" :value="option.value">
+								{{ option.label }}
+							</option>
+						</select>
+					</div>
+					<div class="zoom-control">
+						<label for="zoom-slider">Zoom:</label>
+						<input id="zoom-slider" type="range" :min="4" :max="18" v-model.number="targetZoom" />
+						<span>{{ targetZoom }}</span>
+					</div>
+					<button @click="chartInstance.resetZoom()">Reset chart zoom</button>
+				</div>
+				<div class="runmodel-controls">
+					<button
+						class="train-button"
+						:disabled="!selectedModel || !selectedTripId || loading"
+						@click="runModel">
+						{{ loading ? "Running..." : "Run Model" }}
+					</button>
+				</div>
+			</div>
 			<aside class="sidebar">
-				<h2>Select Model</h2>
-				<select v-model="selectedModel" @change="onModelChange">
-					<option disabled hidden value="">-- Choose a model --</option>
-					<option v-for="option in modelOptions" :key="option.value" :value="option.value">
-						{{ option.label }}
-					</option>
-				</select>
-
 				<h2>Select a cruise</h2>
 				<ul class="trip-list">
 					<li
@@ -20,10 +47,6 @@
 						{{ trip }}
 					</li>
 				</ul>
-
-				<button class="train-button" :disabled="!selectedModel || !selectedTripId || loading" @click="runModel">
-					{{ loading ? "Running..." : "Run Model" }}
-				</button>
 			</aside>
 
 			<main class="main-view">
@@ -31,15 +54,6 @@
 					<div id="map" class="map-container"></div>
 				</section>
 				<section class="chart-view">
-					<div class="chart-controls">
-						<label for="metric-select">Select metrics:</label>
-						<select id="metric-select" v-model="selectedMetric">
-							<option v-for="option in metricOptions" :key="option.value" :value="option.value">
-								{{ option.label }}
-							</option>
-						</select>
-						<button @click="chartInstance.resetZoom()">Reset zoom</button>
-					</div>
 					<div class="chart-scroll">
 						<canvas v-show="selectedMetric !== 'all_points'" id="metric-chart"> </canvas>
 
@@ -83,7 +97,14 @@
 	const selectedModel = ref("");
 	const loading = ref(false);
 	const tripData = ref([]);
+	const selectedPointIdx = ref(null);
+	const markerRefs = [];
+	const selectedMetric = ref("");
+	const targetZoom = ref(12);
 	let chartInstance = null;
+	let map = null;
+	let markersGroup = null;
+	let polyline = null;
 
 	// Options
 	const modelOptions = [
@@ -93,13 +114,6 @@
 		{ value: "4", label: "Random Forest" },
 	];
 	const metricOptions = ref([]);
-	const selectedMetric = ref("");
-
-	let map = null;
-	let markersGroup = null;
-	let polyline = null;
-	const selectedPointIdx = ref(null);
-	const markerRefs = [];
 
 	// Draw points on the map
 	function drawPoints(points, options = { showIndices: false }) {
@@ -115,8 +129,9 @@
 
 		points.forEach((pt, idx) => {
 			const baseColor = pt.is_anomaly_pred ? "red" : "blue";
+			const r = idx === selectedPointIdx.value ? 8 : pt.is_anomaly_pred ? 6 : 4;
 			const marker = L.circleMarker([pt.latitude, pt.longitude], {
-				radius: 6,
+				radius: r,
 				color: baseColor,
 				fillColor: baseColor,
 				fillOpacity: 0.8,
@@ -217,6 +232,8 @@
 			return typeof v === "number" ? v : null;
 		});
 
+		const bgColors = values.map((_, i) => (tripData.value[i].is_anomaly_pred ? "red" : "blue"));
+
 		if (chartInstance) {
 			chartInstance.destroy();
 		}
@@ -232,7 +249,13 @@
 						data: values,
 						fill: false,
 						tension: 0.1,
-						pointRadius: 3,
+						pointRadius: (context) => {
+							const i = context.dataIndex;
+							if (i === selectedPointIdx.value) return 8;
+							return tripData.value[i].is_anomaly_pred ? 6 : 4;
+						},
+						pointHoverRadius: 8,
+						pointBackgroundColor: bgColors,
 					},
 				],
 			},
@@ -289,10 +312,17 @@
 
 	function updateMarkerColors() {
 		markerRefs.forEach((m, i) => {
+			const isSelected = i === selectedPointIdx.value;
 			const base = tripData.value[i].is_anomaly_pred ? "red" : "blue";
-			const color = i === selectedPointIdx.value ? "green" : base;
-			m.setStyle({ color, fillColor: color });
-			if (i === selectedPointIdx.value) {
+			const r = isSelected ? 8 : tripData.value[i].is_anomaly_pred ? 6 : 4;
+
+			m.setStyle({
+				radius: r,
+				color: isSelected ? "green" : base,
+				fillColor: isSelected ? "green" : base,
+			});
+
+			if (isSelected) {
 				map.flyTo(m.getLatLng(), map.getZoom(), { duration: 0.4 });
 			}
 		});
@@ -315,7 +345,7 @@
 		const min = Math.max(i - 5, 0);
 		const max = Math.min(i + 5, ds.data.length - 1);
 		chartInstance.resetZoom();
-		chartInstance.zoomScale("x", { min, max });
+		chartInstance.zoomScale("x", { min, max }, "default");
 
 		chartInstance.update("none");
 	}
@@ -337,12 +367,30 @@
 		createChart();
 	});
 
+	watch(targetZoom, (newZoom) => {
+		const center = map.getCenter();
+		if (selectedPointIdx.value !== null && markerRefs[selectedPointIdx.value]) {
+			const marker = markerRefs[selectedPointIdx.value];
+			map.flyTo(marker.getLatLng(), newZoom, { duration: 0.4 });
+		}
+		map.setView(center, newZoom, { animate: false });
+
+		if (selectedPointIdx.value !== null && markerRefs[selectedPointIdx.value]) {
+			const marker = markerRefs[selectedPointIdx.value];
+			map.flyTo(marker.getLatLng(), newZoom, { duration: 0.4 });
+		}
+	});
+
 	onMounted(async () => {
-		map = L.map("map").setView([53.57, 8.53], 6);
+		map = L.map("map").setView([53.57, 8.53], targetZoom.value);
 		L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 			maxZoom: 18,
 		}).addTo(map);
 		markersGroup = L.layerGroup().addTo(map);
+
+		map.on("zoomend", () => {
+			targetZoom.value = map.getZoom();
+		});
 
 		await fetchTrips();
 	});
@@ -358,9 +406,54 @@
 		height: 800px;
 	}
 
+	select {
+		max-height: 200px;
+		overflow-y: auto;
+		padding: 0.5rem;
+		margin: 0;
+		border-radius: 4px;
+		appearance: none;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		border: none;
+	}
+
+	select option {
+		padding: 0.5rem;
+		cursor: pointer;
+	}
+
+	select option:checked {
+		background-color: #d0d0d0;
+	}
+
+	select option:hover {
+		background-color: #d0d0d0;
+	}
+
+	select:hover,
+	select:focus {
+		background-color: #f5f5f5;
+	}
+
 	.content {
+		width: 100%;
 		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
 		flex: 1;
+	}
+	.control-panel {
+		width: 100%;
+		padding: 1rem;
+		border-right: 1px solid #ccc;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+	}
+
+	.control-panel * {
+		margin: 0 !important;
 	}
 
 	.sidebar {
@@ -374,7 +467,6 @@
 		font-size: 1.1rem;
 	}
 
-	.sidebar select,
 	.sidebar .train-button {
 		width: 100%;
 		padding: 0.5rem;
@@ -426,6 +518,8 @@
 		margin-bottom: 0.5rem;
 		display: flex;
 		align-items: center;
+		justify-content: space-between;
+		gap: 10px;
 	}
 
 	.chart-controls label {
@@ -442,21 +536,29 @@
 		max-width: 300px;
 	}
 
+	.zoom-control {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 3px;
+	}
+
 	.chart-scroll canvas {
 		display: block;
 		width: 800px;
 		height: 800px;
 	}
 
-	.train-button {
+	button {
 		background-color: #007bff;
 		color: white;
 		border: none;
 		border-radius: 4px;
 		cursor: pointer;
+		height: 30px;
 	}
 
-	.train-button:disabled {
+	button:disabled {
 		background-color: #ccc;
 		cursor: not-allowed;
 	}
