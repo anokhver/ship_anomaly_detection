@@ -89,7 +89,7 @@
 
 	Chart.register(zoomPlugin);
 	// Base URL for backend API
-	const endpoint = "debug";
+	const endpoint = "http://localhost:8000/api";
 
 	// State
 	const trips = ref([]);
@@ -182,7 +182,7 @@
 				const module = await import("@/assets/trip.json");
 				data = module.default;
 			} else {
-				const res = await fetch(`${endpoint}/train?model=${selectedModel.value}&trip=${selectedTripId.value}`);
+				const res = await fetch(`${endpoint}/eval?model=${selectedModel.value}&trip=${selectedTripId.value}`);
 				data = await res.json();
 			}
 
