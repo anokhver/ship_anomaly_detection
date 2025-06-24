@@ -1,0 +1,9 @@
+__pycache__
+db.sqlite3
+node_modules
+venv
+dist
+.env.local
+.env.*.local
+.vscode/
+frontend_backup
