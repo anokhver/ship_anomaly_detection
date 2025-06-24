@@ -31,7 +31,10 @@
    - Does not rely on distance or density, making it robust to scaling and irrelevant features.
 
    *Observations during training*
-   - Someobservation
+   - Correctly identifies anomalous sections of the trip
+   - Hard to balance between finding "too much" or "too little" anomalies
+   - Able to find anomalies unseen in the training data
+   - Potential tuning: balance n_estimators, contamination to find best possible precision and recall
 
 3. **Random Forest (Classification - Supervised)**
     *Theory*
@@ -67,4 +70,4 @@
    - Assumes anomalies significantly deviate from learned temporal patterns.
 
    *Observations during training*
-   - Someobservation
+   - 
