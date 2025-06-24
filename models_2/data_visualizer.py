@@ -49,7 +49,7 @@ def get_scores_from_lstm_model(model_artifacts, trip_features):
 
     # Load model configuration
     model_config = model_artifacts.get("model_config", {})
-    input_size = model_config.get("input_size", 5)  # Default from your notebook
+    input_size = model_config.get("input_size", 5)
     hidden_size = model_config.get("hidden_size", 128)
     num_layers = model_config.get("num_layers", 1)
     sequence_length = model_config.get("sequence_length", 10)
@@ -91,10 +91,7 @@ def get_scores_from_lstm_model(model_artifacts, trip_features):
     X_tensor = torch.from_numpy(sequences).float().to(device)
 
     print("Computing reconstruction errors...")
-    with torch.no_grad():
-        reconstructed = model.forward(X_tensor)
-        mse = torch.mean((X_tensor - reconstructed) ** 2, dim=(1, 2))
-        reconstruction_errors = mse.cpu().numpy()
+    reconstruction_errors = model.get_reconstruction_error(X_tensor)
 
     print("Reconstruction errors computed.")
     # Calculate threshold and scores
@@ -233,6 +230,7 @@ def main() -> None:
     # ap.add_argument("--dispatcher", default="models_per_route_lr/dispatcher.pkl")
     ap.add_argument("--dispatcher", default="models_per_route_lstm_ae/dispatcher.pkl")
 
+
     ap.add_argument("--model-type", choices=["sklearn", "lstm"], default="lstm",
                     help="Type of model to use")
 
@@ -257,7 +255,8 @@ def main() -> None:
 
     if args.model_type == "lstm":
         # LSTM current feature columns
-        feats = ['latitude', 'longitude', 'speed_over_ground', 'course_over_ground', 'zone']  # NOTE change when retrain
+        feats = ['latitude', 'longitude',
+                    'speed_over_ground', 'course_over_ground'] # NOTE change when retrain
         X_raw = trip[feats].fillna(0).values
 
         scores, threshold = get_scores_from_lstm_model(artifacts, X_raw)
@@ -283,6 +282,8 @@ def main() -> None:
 
         preds = (scores > tau).astype(int)
 
+    y_true = np.array([1 if x else 0 for x in trip.is_anomaly.values])
+
     out = []
     for i, row in trip.reset_index(drop=True).iterrows():
         out.append({
@@ -291,6 +292,7 @@ def main() -> None:
             "time_stamp": row.time_stamp.isoformat() if pd.notna(row.time_stamp) else None,
             "score": float(scores[i]),
             "is_anomaly_pred": int(preds[i]),
+            # "is_anomaly_pred": int(y_true[i])
         })
 
     Path(args.output).write_text(json.dumps(out, ensure_ascii=False, indent=2))
