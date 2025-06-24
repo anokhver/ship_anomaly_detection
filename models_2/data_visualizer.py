@@ -29,13 +29,102 @@ ZONES = [[53.8, 53.5, 8.6, 8.14], [53.66, 53.0, 11.0, 9.5]]  # [lat_max, lat_min
 EARTH_R = 6_371.0  # km
 
 # --------------------------------------------------------------------------- #
+# LSTM utils
+# --------------------------------------------------------------------------- #
+
+import torch
+from LSTM.lstm_encoder import LSTMModel
+
+
+def create_sequences(data, seq_length):
+    """Creates sequences from time-series data for LSTM."""
+    xs = []
+    for i in range(len(data) - seq_length):
+        xs.append(data[i: i + seq_length])
+    return np.array(xs)
+
+
+def get_scores_from_lstm_model(model_artifacts, trip_features):
+    """Handle LSTM autoencoder model."""
+
+    # Load model configuration
+    model_config = model_artifacts.get("model_config", {})
+    input_size = model_config.get("input_size", 5)  # Default from your notebook
+    hidden_size = model_config.get("hidden_size", 128)
+    num_layers = model_config.get("num_layers", 1)
+    sequence_length = model_config.get("sequence_length", 10)
+    threshold_percentile = model_config.get("threshold_percentile", 95)
+
+    # Initialize model
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    model = LSTMModel(
+        input_size=input_size,
+        hidden_size=hidden_size,
+        num_layers=num_layers,
+        output_size=input_size
+    )
+
+    # Load state dict
+    model.load_state_dict(model_artifacts["model_state"])
+    model = model.to(device)
+    model.eval()
+
+    print("LSTM model loaded and set to evaluation mode.")
+
+    # Load scaler and prepare data
+    scaler = model_artifacts["scaler"]
+    scaled_features = scaler.transform(trip_features)
+
+    print("Features scaled using the provided scaler.")
+
+    print("Creating sequences for LSTM...")
+    # Create sequences
+    if len(scaled_features) < sequence_length:
+        # Handle short trips by padding or using available data
+        # Note not sure if this is the best way to handle short trips
+        sequences = np.array([scaled_features])
+        sequences = np.pad(sequences, ((0, 0), (0, max(0, sequence_length - len(scaled_features))), (0, 0)), 'edge')
+    else:
+        sequences = create_sequences(scaled_features, sequence_length)
+
+    # Get reconstruction errors
+    X_tensor = torch.from_numpy(sequences).float().to(device)
+
+    print("Computing reconstruction errors...")
+    with torch.no_grad():
+        reconstructed = model.forward(X_tensor)
+        mse = torch.mean((X_tensor - reconstructed) ** 2, dim=(1, 2))
+        reconstruction_errors = mse.cpu().numpy()
+
+    print("Reconstruction errors computed.")
+    # Calculate threshold and scores
+    threshold = model_artifacts.get("threshold", np.percentile(reconstruction_errors, threshold_percentile))
+
+    # Convert reconstruction errors to anomaly scores for all points
+    scores = np.zeros(len(trip_features))
+
+    if len(scaled_features) < sequence_length:
+        # For short trips, assign the single reconstruction error to all points
+        scores[:] = reconstruction_errors[0]
+    else:
+        # For normal trips, assign reconstruction errors to corresponding points
+        for i, error in enumerate(reconstruction_errors):
+            start_idx = i
+            end_idx = min(i + sequence_length, len(scores))
+            scores[start_idx:end_idx] = np.maximum(scores[start_idx:end_idx], error)
+
+    print("Anomaly scores calculated.")
+    return scores, threshold
+
+
+# --------------------------------------------------------------------------- #
 # geometry helpers – identical to training pipeline
 # --------------------------------------------------------------------------- #
 def haversine(lat1, lon1, lat2, lon2):
     """Vectorized haversine distance (km)."""
     lat1, lon1, lat2, lon2 = map(np.radians, (lat1, lon1, lat2, lon2))
     dlat, dlon = lat2 - lat1, lon2 - lon1
-    a = np.sin(dlat / 2)**2 + np.cos(lat1) * np.cos(lat2) * np.sin(dlon / 2)**2
+    a = np.sin(dlat / 2) ** 2 + np.cos(lat1) * np.cos(lat2) * np.sin(dlon / 2) ** 2
     return 2 * EARTH_R * np.arcsin(np.sqrt(a))
 
 
@@ -119,6 +208,7 @@ def build_feature_frame(trip: pd.DataFrame, full_df: pd.DataFrame) -> pd.DataFra
 
     return trip
 
+
 def get_scores_from_model(model, X):
     # Handle sklearn-style models
     if hasattr(model, "predict_proba"):
@@ -131,18 +221,22 @@ def get_scores_from_model(model, X):
         raise RuntimeError("Model does not support scoring")
 
 
-
-
 def main() -> None:
     ap = argparse.ArgumentParser("Score single trip and dump JSON")
     ap.add_argument("trip_id")
     ap.add_argument("-i", "--input", default="all_anomalies_combined.parquet")
-    ap.add_argument("-o", "--output", default="/workspace/frontend/src/assets/trip.json")
-    #ap.add_argument("--dispatcher", default="models_per_route/dispatcher.pkl")
-    #ap.add_argument("--dispatcher", default="models_per_route_iso_for/dispatcher.pkl")
-    ap.add_argument("--dispatcher", default="models_per_route_lr/dispatcher.pkl")
-    args = ap.parse_args()
+    # ap.add_argument("-o", "--output", default="/workspace/frontend/src/assets/trip.json")
+    ap.add_argument("-o", "--output", default="../frontend/src/assets/trip.json")
 
+    # ap.add_argument("--dispatcher", default="models_per_route/dispatcher.pkl")
+    # ap.add_argument("--dispatcher", default="models_per_route_iso_for/dispatcher.pkl")
+    # ap.add_argument("--dispatcher", default="models_per_route_lr/dispatcher.pkl")
+    ap.add_argument("--dispatcher", default="models_per_route_lstm_ae/dispatcher.pkl")
+
+    ap.add_argument("--model-type", choices=["sklearn", "lstm"], default="lstm",
+                    help="Type of model to use")
+
+    args = ap.parse_args()
     dispatcher = load_dispatcher(args.dispatcher)
 
     df_all = pd.read_parquet(args.input, engine="pyarrow")
@@ -158,30 +252,36 @@ def main() -> None:
     if not model_path:
         sys.exit(f"[!] No model for route {route}")
 
-    artefacts = joblib.load(model_path)
-    feats: List[str] = artefacts["features"]
-    tau: float = artefacts["tau"]
+    artifacts = joblib.load(model_path)
+    preds = ()
 
-    X_raw = trip[feats].fillna(0).values
+    if args.model_type == "lstm":
+        # LSTM current feature columns
+        feats = ['latitude', 'longitude', 'speed_over_ground', 'course_over_ground', 'zone']  # NOTE change when retrain
+        X_raw = trip[feats].fillna(0).values
 
-    pipe = artefacts.get("pipeline")
-    if pipe is not None:
-        # Pipeline present, use its decision_function or predict_proba
-        if hasattr(pipe, "predict_proba"):
-            scores = pipe.predict_proba(X_raw)[:, 1]
-        else:
-            scores = -pipe.decision_function(X_raw)
+        scores, threshold = get_scores_from_lstm_model(artifacts, X_raw)
+        print(f"LSTM model loaded for route {route}, threshold: {threshold:.4f}")
+        preds = (scores > threshold).astype(int)
     else:
-        scaler: StandardScaler = artefacts["scaler"]
-        model = artefacts["model"]
-        Xs = scaler.transform(X_raw)
-        # Check if model is logistic regression (has predict_proba)
-        if hasattr(model, "predict_proba"):
-            scores = model.predict_proba(Xs)[:, 1]
-        else:
-            scores = -model.decision_function(Xs)
+        # Original sklearn logic
+        feats: List[str] = artifacts["features"]
+        tau: float = artifacts["tau"]
+        X_raw = trip[feats].fillna(0).values
 
-    preds = (scores > tau).astype(int)
+        pipe = artifacts.get("pipeline")
+        if pipe is not None:
+            if hasattr(pipe, "predict_proba"):
+                scores = pipe.predict_proba(X_raw)[:, 1]
+            else:
+                scores = -pipe.decision_function(X_raw)
+        else:
+            scaler: StandardScaler = artifacts["scaler"]
+            model = artifacts["model"]
+            Xs = scaler.transform(X_raw)
+            scores = get_scores_from_model(model, Xs)
+
+        preds = (scores > tau).astype(int)
 
     out = []
     for i, row in trip.reset_index(drop=True).iterrows():
