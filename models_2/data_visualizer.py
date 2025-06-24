@@ -163,11 +163,12 @@ def build_feature_frame(trip: pd.DataFrame, full_df: pd.DataFrame) -> pd.DataFra
     """Adds all model features to *trip* and returns the enriched frame, matching training pipeline."""
     route = trip.start_port.iloc[0]
 
-    # Δ features
-    trip = trip.sort_values("time_stamp").copy()
-    trip["dv"] = trip["speed_over_ground"].diff().abs().fillna(0)
-    trip["dcourse"] = trip["course_over_ground"].diff().abs().fillna(0)
-    trip["ddraft"] = trip["draught"].diff().abs().fillna(0)
+    # Delta features
+    trip["dv"] = trip.speed_over_ground.diff().abs().fillna(0)
+    dcourse = trip.course_over_ground.diff().abs()
+    dcourse = dcourse.where(dcourse <= 180, 360 - dcourse)
+    trip["dcourse"] = dcourse.fillna(0)
+    trip["ddraft"] = trip.draught.diff().abs().fillna(0)
 
     # zone
     trip["zone"] = trip.apply(zone_label, axis=1)
