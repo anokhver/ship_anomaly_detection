@@ -1,4 +1,4 @@
-### Anomaly Definition
+# Anomaly Definition
 By definion anomaly is a deviation from the usual result. After analyzing and visualising the data, we reviewed our anomaly definition.
 Here is the list of deviations we determined to be anomalies in ship trajectory data after the analysis:
 
