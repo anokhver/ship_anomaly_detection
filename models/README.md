@@ -5,12 +5,19 @@
     - contains data analysis (semantics, types, distributions)
 - **📂 labeled data**
     - contains parquet files with cleaned data, as well as trip data with partial manual labeling
+- **📂 models_per_route**
+    - contains model files (except LSTM)
+- **📂 LSTM**
+    - contains all files connected to LSTM training
 - **Anomaly_definition**
     - Self-explanatory
+- **.py model files**
+    - python files with shortened model names contain the training script for specific models
 
 ## **Selected Models**
 
 1. **One-Class SVM (Distance-Based  - Semi-Supervised)**
+
     *Theory*
    - Learns **only normal behavior** during training. (Excludes anomalies from dataset)
    - Flags deviations from the learned normal pattern as anomalies.
@@ -24,6 +31,7 @@
    - Potential tuning: change nu
 
 2. **Isolation Forest (Isolation - Unsupervised)**
+
      *Theory*
    - Randomly partitions data; anomalies are isolated closer to the root.
    - Efficient for **high-dimensional data**, handles global anomalies well.
@@ -37,6 +45,7 @@
    - Potential tuning: balance n_estimators, contamination to find best possible precision and recall
 
 3. **Random Forest (Classification - Supervised)**
+
     *Theory*
    - Data needs to be labeled
    - Uses an ensemble of decision trees to classify data; majority voting determines the final prediction.
@@ -50,6 +59,7 @@
    - Potential tuning: change n_estimators and max_depth, proper balancing of class_weight
 
 4. **Logistic regression (Classification - Supervised)**
+
     *Theory*
    - Data needs to be labeled
    - Models the probability of a binary outcome (e.g., normal vs anomaly).
@@ -62,12 +72,13 @@
    - Like random forest, struggles with anomalies before unseen.
    - Potential tuning: change in C (regularization strength), penalty, different solver algorithms, proper balancing of class_weight
 
-
 5. **LSTM (Forecasting-Based - Semi-Supervised)**
+
+    *Theory*
    - Learns to **reconstruct normal time series**; high reconstruction error = anomaly.
    - Captures temporal dependencies, ideal for sequential data.
    - Uses memory cells and gating mechanisms to retain long-term context.
    - Assumes anomalies significantly deviate from learned temporal patterns.
 
    *Observations during training*
-   - 
+   - Observation
