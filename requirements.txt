@@ -4,3 +4,7 @@ django-cors-headers
 scikit-learn>=1.0
 numpy
 pandas
+pyarrow
+matplotlib
+ydata_profiling
+ydata-sdk

@@ -1,9 +1,9 @@
  # Group05
 
  ## Participants
-- **Developer 1**: @coz1686 (Piotr Ciupiński)  
-- **Developer 2**: @cgy3920 (Veronika Anokhina)  
-- **Developer 3**: @cuu7703 (Rafał Mironko)  
+- **Developer 1**: @coz1686 (Piotr Ciupiński)
+- **Developer 2**: @cgy3920 (Veronika Anokhina)
+- **Developer 3**: @cuu7703 (Rafał Mironko)
 
 ---
 ### Development environment
@@ -21,15 +21,15 @@
 
 ## Directory contents
 
-- **📂 models**  
+- **📂 models**
   - Contains all files for ML models, as well as data set, distribution.
-- **📂 sprint_backlogs**  
+- **📂 sprint_backlogs**
   - Contains all sprint documentation.
-- **📂 backend**  
+- **📂 backend**
   - Contains all files for the django backend application.
-- **📂 frontend**  
+- **📂 frontend**
   - Contains all files for the Vue.js frontend application.
-- **📂 .devcontainer**  
+- **📂 .devcontainer**
   - Docker
 
 - The .md files in the repository are used as additional descriptions for specific parts - their titles indicate what they're about.
@@ -37,5 +37,5 @@
 
 
 ## Project Status
-- **Sprint 1**: 07.05.2025 - 21.05.2025  
+- **Sprint 1**: 07.05.2025 - 21.05.2025
 - **Sprint 2**: 22.05.2025 - 11.06.2025 (current)
