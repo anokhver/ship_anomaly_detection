@@ -4,11 +4,28 @@ from django.views.decorators.csrf import csrf_exempt
 import json
 from pathlib import Path
 import subprocess
+import pandas as pd
 
 
 @csrf_exempt
 def gettrips(request):
+    if request.method != "GET":
+        return JsonResponse({"error": "Only GET allowed"}, status=405)
+    #load trips from parquet file
+
+    data_file = Path(__file__).parent / "visualization/clean_data/all_anomalies_combined.parquet"
+    if not data_file.exists():
+        return JsonResponse({"error": "Data file not found"}, status=404)
+    df = pd.read_parquet(data_file)
+    unique_trip_ids = df["trip_id"].unique().tolist()
+    
+    # Save unique_trip_ids to trips.json in the specified format
     trips_file = Path(__file__).parent / "visualization/clean_data/trips.json"
+    with open(trips_file, "w") as f:
+        json.dump(unique_trip_ids, f)
+    
+
+    
     with open(trips_file, "r") as f:
         trips = json.load(f)
     return JsonResponse(trips, safe=False)
