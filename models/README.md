@@ -75,10 +75,13 @@
 5. **LSTM (Forecasting-Based - Semi-Supervised)**
 
     *Theory*
-   - Learns to **reconstruct normal time series**; high reconstruction error = anomaly.
-   - Captures temporal dependencies, ideal for sequential data.
-   - Uses memory cells and gating mechanisms to retain long-term context.
-   - Assumes anomalies significantly deviate from learned temporal patterns.
+   - Learns to **reconstruct normal time series** through an encoder-decoder architecture; high reconstruction error indicates anomaly.
+   - Captures temporal dependencies in sequential data, ideal for ship trajectory analysis.
+   - Uses memory cells and gating mechanisms to retain long-term context and handle irregular time intervals.
+   - Assumes anomalies significantly deviate from learned normal temporal patterns in reconstruction quality.
 
-   *Observations during training*
-   - Observation
+    *Observations during training*
+   - Identifies most anomalies, but too many false positives (mostly because of ports)
+   - We Need to incorporate flexible thresholding if the ship is in port (zones)
+   - Potential tuning: adjust sequence length (currently 15), hidden size (64), threshold percentile, and number of layers for optimal performance, early stopping
+   - Now overfitting, threshold calculation might be not optimal
