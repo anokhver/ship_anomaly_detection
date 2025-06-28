@@ -56,7 +56,6 @@ def get_scores_from_lstm_model(model_artifacts, trip_features):
     threshold_percentile = model_config.get("threshold_percentile", 95)
 
     # Initialize model
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     model = LSTMModel(
         input_size=input_size,
         hidden_size=hidden_size,
@@ -66,7 +65,7 @@ def get_scores_from_lstm_model(model_artifacts, trip_features):
 
     # Load state dict
     model.load_state_dict(model_artifacts["model_state"])
-    model = model.to(device)
+    model = model
     model.eval()
 
     print("LSTM model loaded and set to evaluation mode.")
@@ -88,14 +87,14 @@ def get_scores_from_lstm_model(model_artifacts, trip_features):
         sequences = create_sequences(scaled_features, sequence_length)
 
     # Get reconstruction errors
-    X_tensor = torch.from_numpy(sequences).float().to(device)
+    X_tensor = torch.from_numpy(sequences).float()
 
     print("Computing reconstruction errors...")
     reconstruction_errors = model.get_reconstruction_error(X_tensor)
 
     print("Reconstruction errors computed.")
     # Calculate threshold and scores
-    threshold = model_artifacts.get("threshold", np.percentile(reconstruction_errors, threshold_percentile))
+    threshold = model_artifacts.get("threshold")
 
     # Convert reconstruction errors to anomaly scores for all points
     scores = np.zeros(len(trip_features))
