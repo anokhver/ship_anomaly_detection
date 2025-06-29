@@ -59,7 +59,7 @@ def clean_and_type_dataframes(dfs, columns_to_drop):
         for col in datetime_columns:
             if col in df_clean.columns:
                 original_count = df_clean[col].notna().sum()
-                df_clean[col] = pd.to_datetime(df_clean[col], utc=True)
+                df_clean[col] = pd.to_datetime(df_clean[col])  # , utc=True)
                 new_count = df_clean[col].notna().sum()
                 print(f" {col}: {new_count:,} valid timestamps ({original_count - new_count:,} lost)")
 
