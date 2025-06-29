@@ -263,7 +263,7 @@ def fill_missing(
         predicted_values = model.predict(X_test)
 
         if round_values:
-            predicted_values = np.round(predicted_values).astype(int)
+            predicted_values = np.round(predicted_values, decimals=2)
 
         # Fill missing values
         df_copy.loc[missing_mask, target_col] = predicted_values
