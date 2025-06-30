@@ -2,6 +2,16 @@
 	<div class="app-container">
 		<div class="content">
 			<div class="control-panel">
+				<div class="control-data">
+					<h2>Load data</h2>
+					<input type="file" accept=".csv" :disabled="uploading" @change="sendFile" />
+					<!-- Upload state -->
+					<div v-if="uploading" class="upload-status">
+						Uploading: {{ uploadProgress.toFixed(0) }}%
+						<progress :value="uploadProgress" max="100"></progress>
+					</div>
+					<div v-else-if="uploadError" class="upload-error">{{ uploadError }}</div>
+				</div>
 				<div class="control-model">
 					<h2>Model</h2>
 					<select v-model="selectedModel" @change="onModelChange">
@@ -106,6 +116,11 @@
 	let markersGroup = null;
 	let polyline = null;
 
+	// Upload state
+	const uploading = ref(false);
+	const uploadProgress = ref(0);
+	const uploadError = ref("");
+
 	// Options
 	const modelOptions = [
 		{ value: "1", label: "OC-SVM" },
@@ -115,6 +130,58 @@
 		{ value: "5", label: "LSTM" },
 	];
 	const metricOptions = ref([]);
+
+	/**
+	 * Upload selected CSV file to backend with progress reporting.
+	 */
+	function sendFile(e) {
+		const file = e.target.files[0];
+		if (!file) return;
+
+		// Only accept CSV in case the browser allows other types via hacking
+		if (!file.name.endsWith(".csv")) {
+			uploadError.value = "Please select a .csv file";
+			return;
+		}
+
+		const formData = new FormData();
+		formData.append("file", file);
+
+		uploadError.value = "";
+		uploadProgress.value = 0;
+		uploading.value = true;
+
+		// Use XMLHttpRequest because fetch() does not yet give reliable upload progress
+		const xhr = new XMLHttpRequest();
+		xhr.open("POST", `${endpoint}/file`);
+
+		// Optional: include an auth header etc.
+		// xhr.setRequestHeader('Authorization', 'Bearer ...')
+
+		xhr.upload.onprogress = (event) => {
+			if (event.lengthComputable) {
+				uploadProgress.value = (event.loaded / event.total) * 100;
+			}
+		};
+
+		xhr.onload = () => {
+			uploading.value = false;
+			if (xhr.status >= 200 && xhr.status < 300) {
+				uploadProgress.value = 100;
+				// After successful upload you could refresh trip list etc.
+				fetchTrips();
+			} else {
+				uploadError.value = `Upload failed: ${xhr.status} ${xhr.statusText}`;
+			}
+		};
+
+		xhr.onerror = () => {
+			uploading.value = false;
+			uploadError.value = "Network error while uploading";
+		};
+
+		xhr.send(formData);
+	}
 
 	// Draw points on the map
 	function drawPoints(points, options = { showIndices: false }) {
@@ -534,7 +601,7 @@
 		overflow-y: hidden;
 		background-color: #f0f0f0;
 		border: 1px solid #ccc;
-		max-width: 300px;
+		max-width: 500px;
 	}
 
 	.zoom-control {
@@ -584,5 +651,36 @@
 	}
 	.point-item.active {
 		background-color: green !important;
+	}
+
+	/* Upload progress styles */
+	.upload-status,
+	.upload-error {
+		margin-top: 0.5rem;
+		font-size: 0.9rem;
+	}
+
+	.upload-error {
+		color: red;
+	}
+
+	progress {
+		width: 100%;
+		height: 8px;
+		border: none;
+		background-color: #e0e0e0;
+		border-radius: 4px;
+	}
+	progress::-webkit-progress-bar {
+		background-color: #e0e0e0;
+		border-radius: 4px;
+	}
+	progress::-webkit-progress-value {
+		background-color: #007bff;
+		border-radius: 4px;
+	}
+	progress::-moz-progress-bar {
+		background-color: #007bff;
+		border-radius: 4px;
 	}
 </style>

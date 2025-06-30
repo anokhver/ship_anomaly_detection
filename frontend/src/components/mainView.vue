@@ -16,7 +16,7 @@
 
 		#main-1 {
 			width: 100vw;
-			max-width: 1400px;
+			max-width: 1600px;
 		}
 	}
 </style>
