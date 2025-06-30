@@ -112,6 +112,7 @@
 		{ value: "2", label: "Isolation Forest" },
 		{ value: "3", label: "Logistic Regression" },
 		{ value: "4", label: "Random Forest" },
+		{ value: "5", label: "LSTM" },
 	];
 	const metricOptions = ref([]);
 

@@ -38,7 +38,93 @@ DISPATCHER_PATHS: Dict[int, str] = {
     2: "models_per_route_iso_for/dispatcher.pkl",  # Isolation Forest
     3: "models_per_route_lr/dispatcher.pkl",       # Logistic Regression
     4: "models_per_route_rf/dispatcher.pkl",       # Random Forest
+    5: "models_per_route_lstm_ae/dispatcher.pkl",     # LSTM Autoencoder
 }
+
+# --------------------------------------------------------------------------- #
+# LSTM utils
+# --------------------------------------------------------------------------- #
+
+import torch
+from LSTM.lstm_encoder import LSTMModel
+
+
+def create_sequences(data, seq_length):
+    """Creates sequences from time-series data for LSTM."""
+    xs = []
+    for i in range(len(data) - seq_length):
+        xs.append(data[i: i + seq_length])
+    return np.array(xs)
+
+
+def get_scores_from_lstm_model(model_artifacts, trip_features):
+    """Handle LSTM autoencoder model."""
+
+    # Load model configuration
+    model_config = model_artifacts.get("model_config", {})
+    input_size = model_config.get("input_size", 5)
+    hidden_size = model_config.get("hidden_size", 128)
+    num_layers = model_config.get("num_layers", 1)
+    sequence_length = model_config.get("sequence_length", 10)
+    threshold_percentile = model_config.get("threshold_percentile", 95)
+
+    # Initialize model
+    model = LSTMModel(
+        input_size=input_size,
+        hidden_size=hidden_size,
+        num_layers=num_layers,
+        output_size=input_size
+    )
+
+    # Load state dict
+    model.load_state_dict(model_artifacts["model_state"])
+    model = model
+    model.eval()
+
+    print("LSTM model loaded and set to evaluation mode.")
+
+    # Load scaler and prepare data
+    scaler = model_artifacts["scaler"]
+    scaled_features = scaler.transform(trip_features)
+
+    print("Features scaled using the provided scaler.")
+
+    print("Creating sequences for LSTM...")
+    # Create sequences
+    if len(scaled_features) < sequence_length:
+        # Handle short trips by padding or using available data
+        # Note not sure if this is the best way to handle short trips
+        sequences = np.array([scaled_features])
+        sequences = np.pad(sequences, ((0, 0), (0, max(0, sequence_length - len(scaled_features))), (0, 0)), 'edge')
+    else:
+        sequences = create_sequences(scaled_features, sequence_length)
+
+    # Get reconstruction errors
+    X_tensor = torch.from_numpy(sequences).float()
+
+    print("Computing reconstruction errors...")
+    reconstruction_errors = model.get_reconstruction_error(X_tensor)
+
+    print("Reconstruction errors computed.")
+    # Calculate threshold and scores
+    threshold = model_artifacts.get("threshold")
+
+    # Convert reconstruction errors to anomaly scores for all points
+    scores = np.zeros(len(trip_features))
+
+    if len(scaled_features) < sequence_length:
+        # For short trips, assign the single reconstruction error to all points
+        scores[:] = reconstruction_errors[0]
+    else:
+        # For normal trips, assign reconstruction errors to corresponding points
+        for i, error in enumerate(reconstruction_errors):
+            start_idx = i
+            end_idx = min(i + sequence_length, len(scores))
+            scores[start_idx:end_idx] = np.maximum(scores[start_idx:end_idx], error)
+
+    print("Anomaly scores calculated.")
+    return scores, threshold
+
 
 # --------------------------------------------------------------------------- #
 # Geometry and Zone Helpers
@@ -155,22 +241,28 @@ class Scorer:
         return joblib.load(model_path)
 
     def score(self, artefacts: Dict[str, Any], X_raw: np.ndarray) -> Any:
-        tau = artefacts["tau"]
+        
         pipe = artefacts.get("pipeline")
-        if pipe is not None:
-            if hasattr(pipe, "predict_proba"):
-                scores = pipe.predict_proba(X_raw)[:,1]
-            else:
-                scores = -pipe.decision_function(X_raw)
+        if artefacts.get("model_type") == "lstm":
+            scores, threshold = get_scores_from_lstm_model(artefacts, X_raw)
+            preds = (scores > threshold).astype(int)
+            return scores, preds
         else:
-            scaler: StandardScaler = artefacts["scaler"]
-            model = artefacts["model"]
-            Xs = scaler.transform(X_raw)
-            if hasattr(model, "predict_proba"):
-                scores = model.predict_proba(Xs)[:,1]
+            tau = artefacts["tau"]
+            if pipe is not None:
+                if hasattr(pipe, "predict_proba"):
+                    scores = pipe.predict_proba(X_raw)[:,1]
+                else:
+                    scores = -pipe.decision_function(X_raw)
             else:
-                scores = -model.decision_function(Xs)
-        preds = (scores > tau).astype(int)
+                scaler: StandardScaler = artefacts["scaler"]
+                model = artefacts["model"]
+                Xs = scaler.transform(X_raw)
+                if hasattr(model, "predict_proba"):
+                    scores = model.predict_proba(Xs)[:,1]
+                else:
+                    scores = -model.decision_function(Xs)
+            preds = (scores > tau).astype(int)
         return scores, preds
 
 # --------------------------------------------------------------------------- #
