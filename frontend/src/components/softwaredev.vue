@@ -131,14 +131,10 @@
 	];
 	const metricOptions = ref([]);
 
-	/**
-	 * Upload selected CSV file to backend with progress reporting.
-	 */
 	function sendFile(e) {
 		const file = e.target.files[0];
 		if (!file) return;
 
-		// Only accept CSV in case the browser allows other types via hacking
 		if (!file.name.endsWith(".csv")) {
 			uploadError.value = "Please select a .csv file";
 			return;
@@ -151,12 +147,8 @@
 		uploadProgress.value = 0;
 		uploading.value = true;
 
-		// Use XMLHttpRequest because fetch() does not yet give reliable upload progress
 		const xhr = new XMLHttpRequest();
 		xhr.open("POST", `${endpoint}/file`);
-
-		// Optional: include an auth header etc.
-		// xhr.setRequestHeader('Authorization', 'Bearer ...')
 
 		xhr.upload.onprogress = (event) => {
 			if (event.lengthComputable) {
@@ -168,7 +160,6 @@
 			uploading.value = false;
 			if (xhr.status >= 200 && xhr.status < 300) {
 				uploadProgress.value = 100;
-				// After successful upload you could refresh trip list etc.
 				fetchTrips();
 			} else {
 				uploadError.value = `Upload failed: ${xhr.status} ${xhr.statusText}`;
