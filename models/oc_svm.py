@@ -31,7 +31,7 @@ BASE_COLUMNS    = [
     "zone",
     "x_km", "y_km", "dist_to_ref", "route_dummy"
 ]
-ZONES           = [[53.8, 53.5, 8.6, 8.14], [53.66, 53.0, 11.0, 9.5], [54.45, 54.2, 10.3, 10.0], [55.0, 54.25, 18.9, 18.2]]  # [lat_max, lat_min, lon_max, lon_min]
+ZONES           = [[53.8, 53.5, 8.6, 8.14], [53.66, 53.0, 11.0, 9.5], [54.45, 54.2, 10.3, 10.0], [54.71, 54.25, 19, 18.35]]  # [lat_max, lat_min, lon_max, lon_min]
 NU_GRID         = [0.01, 0.03]
 TEST_FRACTION_N = 0.10        # fraction of normal points to include in test
 R_PORT, R_APP   = 5.0, 15.0   # km: defines "port" and "approach" zones

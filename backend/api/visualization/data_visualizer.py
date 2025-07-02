@@ -28,7 +28,7 @@ ZONES: List[List[float]] = [
     [53.8, 53.5, 8.6, 8.14],
     [53.66, 53.0, 11.0, 9.5],
     [54.45, 54.2, 10.3, 10.0],
-    [55.0, 54.25, 18.9, 18.2],
+    [54.71, 54.25, 19, 18.35],
 ]
 EARTH_RADIUS_KM: float = 6371.0
 
@@ -241,7 +241,7 @@ class Scorer:
         return joblib.load(model_path)
 
     def score(self, artefacts: Dict[str, Any], X_raw: np.ndarray) -> Any:
-        
+
         pipe = artefacts.get("pipeline")
         if artefacts.get("model_type") == "lstm":
             scores, threshold = get_scores_from_lstm_model(artefacts, X_raw)
