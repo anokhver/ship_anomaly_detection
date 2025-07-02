@@ -21,5 +21,6 @@ urlpatterns = [
     #path('admin/', admin.site.urls),
     path('api/gettrips', views.gettrips, name='get_trips'),
     path('api/eval', views.eval, name='eval'),
+    path('api/upload', views.upload, name='upload_file'),
     #path('api/eval', views.train_model, name='train_model'),
 ]

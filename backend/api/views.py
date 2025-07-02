@@ -89,3 +89,28 @@ def eval(request):
     
 
 
+@csrf_exempt
+def upload(request):
+    if request.method != "POST":
+        return JsonResponse({"error": "Only POST allowed"}, status=405)
+    old_data_file = Path(__file__).parent / "visualization/clean_data/all_anomalies_combined.parquet"
+    if old_data_file.exists():
+        old_data_file.unlink()
+
+    # Handle file upload
+    file = request.FILES.get("file")
+    if not file:
+        return JsonResponse({"error": "No file uploaded"}, status=400)
+
+    # Save the uploaded file
+    file_path = Path(__file__).parent / "../../input_data" / file.name
+    # Remove all files from the target directory before saving the new file
+    input_data_dir = file_path.parent
+    for existing_file in input_data_dir.glob("*"):
+        if existing_file.is_file():
+            existing_file.unlink()
+    with open(file_path, "wb") as f:
+        for chunk in file.chunks():
+            f.write(chunk)
+
+    return JsonResponse({"message": "File uploaded successfully"}, status=200)

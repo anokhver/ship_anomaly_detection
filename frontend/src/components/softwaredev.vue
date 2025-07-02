@@ -148,7 +148,7 @@
 		uploading.value = true;
 
 		const xhr = new XMLHttpRequest();
-		xhr.open("POST", `${endpoint}/file`);
+		xhr.open("POST", `${endpoint}/upload`);
 
 		xhr.upload.onprogress = (event) => {
 			if (event.lengthComputable) {
@@ -223,6 +223,7 @@
 		}
 
 		try {
+			trips.value = ['Loading trips...'];
 			const res = await fetch(`${endpoint}/gettrips`);
 			trips.value = await res.json();
 		} catch (err) {
