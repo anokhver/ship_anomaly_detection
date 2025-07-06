@@ -209,11 +209,6 @@ def noise_handling(
     plot_dir = Path(output_path).parent / 'plots'
     plot_dir.mkdir(exist_ok=True)
 
-    plot = plot_missing(df)
-    plot_path = plot_dir / 'missing_values_before.png'
-    plot.figure.savefig(plot_path, dpi=300, bbox_inches='tight')
-    print(f"Missing values plot saved to {plot_path}")
-
     # Step 3: Fill missing destinations
     print("\nStep 3: Filling missing destinations")
     print("Entries with missing destinations:", get_entries_with_missing_values(df, 'Destination'))
@@ -240,18 +235,23 @@ def noise_handling(
         missing_pct = get_percentage_missing(df, col)
         print(f"{col}: {missing_pct:.2f}% missing")
 
-    # Final missing values plot
-    plot = plot_missing(df)
-    plot_path = plot_dir / 'missing_values_after.png'
-    plot.figure.savefig(plot_path, dpi=300, bbox_inches='tight')
-    print(f"Final missing values plot saved to {plot_path}")
-
     # Final duplicate removal
     df = remove_duplicates(df)
 
     # Step 6: Finalize dataset
     print("\nStep 6: Finalizing dataset")
     df_final = df.rename(columns=column_mapping)
+    
+    #TODO
+    for col in df_final.columns:
+        if pd.api.types.is_numeric_dtype(df_final[col]):
+            df_final[col] = df_final[col].fillna(-1)
+        else:
+            if pd.api.types.is_categorical_dtype(df_final[col]):
+                if 'null' not in df_final[col].cat.categories:
+                    df_final[col] = df_final[col].cat.add_categories(['null'])
+            df_final[col] = df_final[col].fillna('null')
+
     df_final['is_anomaly'] = None
 
     # Create output splits for manual labeling if requested
