@@ -5,6 +5,7 @@ This module preprocesses AIS vessel trajectory data for LSTM-based anomaly detec
 It adds engineered features like delta values, zone classifications, and route-specific
 deviation metrics that help identify abnormal vessel behaviors.
 """
+from typing import List
 
 import numpy as np
 import pandas as pd
@@ -15,20 +16,32 @@ from pathlib import Path
 tqdm.pandas()
 
 # Configuration constants
-DROP_TRIPS = [10257]  # Problematic trips to exclude
-ZONES = [[53.8, 53.5, 8.6, 8.14], [53.66, 53.0, 11.0, 9.5]]  # Port zone boundaries
-R_PORT, R_APP = 5.0, 15.0  # Port and approach radii in km
-EARTH_R = 6_371.0  # Earth radius in km
+ZONES: List[List[float]] = [
+    [53.8, 53.5, 8.6, 8.14],
+    [53.66, 53.0, 11.0, 9.5],
+    [54.45, 54.2, 10.3, 10.0],
+    [54.71, 54.25, 19, 18.35],
+]
+
+EARTH_RADIUS_KM: float = 6371.0
 RANDOM_STATE = 42
 
 
-def haversine(lat1, lon1, lat2, lon2):
-    """Calculate great-circle distance between points in kilometers."""
+def haversine(lat1: np.ndarray, lon1: np.ndarray, lat2: np.ndarray, lon2: np.ndarray) -> np.ndarray:
+    """Compute the great-circle distance between two points (km)"""
     lat1, lon1, lat2, lon2 = map(np.radians, (lat1, lon1, lat2, lon2))
-
-    dlat, dlon = lat2 - lat1, lon2 - lon1
+    dlat = lat2 - lat1
+    dlon = lon2 - lon1
     a = np.sin(dlat / 2) ** 2 + np.cos(lat1) * np.cos(lat2) * np.sin(dlon / 2) ** 2
-    return 2 * EARTH_R * np.arcsin(np.sqrt(a))
+    return 2 * EARTH_RADIUS_KM * np.arcsin(np.sqrt(a))
+
+
+def zone_label(row) -> int:
+    """Assign zone label: 0 inside any zone rectangle, else 1"""
+    for lat_max, lat_min, lon_max, lon_min in ZONES:
+        if lat_min <= row.latitude <= lat_max and lon_min <= row.longitude <= lon_max:
+            return 0
+    return 1
 
 
 def load_and_prepare(path: str) -> pd.DataFrame:
@@ -42,8 +55,6 @@ def load_and_prepare(path: str) -> pd.DataFrame:
     """
     # Load data and remove problematic trips
     df = pd.read_parquet(path, engine="pyarrow")
-    print(f"Loaded {len(df):,} rows, dropping {len(df[df.trip_id.isin(DROP_TRIPS)]):,} rows from {DROP_TRIPS}")
-    df = df[~df.trip_id.isin(DROP_TRIPS)].reset_index(drop=True)
 
     # Parse datetime columns
     for col in ("start_time", "end_time", "time_stamp"):
@@ -60,13 +71,6 @@ def load_and_prepare(path: str) -> pd.DataFrame:
     df["ddraft"] = df.groupby("trip_id")["draught"].diff().abs().fillna(0)
 
     # Zone classification (0=port area, 1=open water)
-    def zone_label(row) -> int:
-        """Check if vessel is in port zone."""
-        for lat_max, lat_min, lon_max, lon_min in ZONES:
-            if lat_min <= row.latitude <= lat_max and lon_min <= row.longitude <= lon_max:
-                return 0
-        return 1
-
     df["zone"] = df.progress_apply(zone_label, axis=1)
     df = pd.concat([df, pd.get_dummies(df["zone"], prefix="zone")], axis=1)
 
@@ -154,7 +158,7 @@ def add_route_specific_features(df: pd.DataFrame, route: str) -> pd.DataFrame:
     return df_r
 
 
-def preprocess_data(data_path: str, output_dir: str, output_name: str = "LSTM_preprocessed") -> pd.DataFrame:
+def preprocess_data(data_path: str, output_name: str = "LSTM_preprocessed") -> pd.DataFrame:
     """
     Main preprocessing pipeline.
 
@@ -166,7 +170,6 @@ def preprocess_data(data_path: str, output_dir: str, output_name: str = "LSTM_pr
     Returns:
         Preprocessed DataFrame ready for LSTM training
     """
-    Path(output_dir).mkdir(exist_ok=True)
 
     # Load and prepare basic features
     df = load_and_prepare(data_path)
@@ -182,7 +185,7 @@ def preprocess_data(data_path: str, output_dir: str, output_name: str = "LSTM_pr
     df_final.sort_values(["trip_id", "time_stamp"], inplace=True)
 
     # Save processed data
-    output_path = f"{output_dir}/{output_name}.parquet"
+    output_path = f"{output_name}.parquet"
     df_final.to_parquet(output_path, index=False)
     print(f"Saved processed data to {output_path}")
 
@@ -192,7 +195,6 @@ def preprocess_data(data_path: str, output_dir: str, output_name: str = "LSTM_pr
 if __name__ == "__main__":
     # Example usage
     data_path = "../all_anomalies_combined.parquet"
-    output_dir = "data"
 
-    df_final = preprocess_data(data_path, output_dir)
+    df_final = preprocess_data(data_path)
     print(f"Preprocessing complete. Shape: {df_final.shape}")

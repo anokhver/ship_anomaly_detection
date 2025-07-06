@@ -72,7 +72,8 @@ def get_scores_from_lstm_model(model_artifacts, trip_features):
     sequence_length = model_artifacts.get("sequence_length")
     seq_step_length = model_artifacts.get("seq_step_length")
 
-    scaler = model_artifacts["scaler"]
+    loss = model_artifacts.get("loss")
+    scaler = model_artifacts.get("scaler")
 
     # Initialize model
     model = LSTMModel(
@@ -110,7 +111,7 @@ def get_scores_from_lstm_model(model_artifacts, trip_features):
     # Get reconstruction errors
     X_tensor = torch.from_numpy(sequences).float()
 
-    reconstruction_errors = model.get_reconstruction_error(X_tensor)
+    reconstruction_errors = model.get_reconstruction_error(X_tensor, loss)
     print(f"Reconstruction errors computed for {len(reconstruction_errors)} sequences.")
 
     # Convert reconstruction errors to anomaly scores for all points

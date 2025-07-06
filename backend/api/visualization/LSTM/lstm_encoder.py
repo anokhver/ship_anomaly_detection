@@ -57,13 +57,13 @@ class LSTMModel(nn.Module):
 
         return reconstructed
 
-    def get_reconstruction_error(self, x):
+    def get_reconstruction_error(self, x, loss):
         """Calculate reconstruction error for anomaly detection"""
         with torch.no_grad():
             reconstructed = self.forward(x)
             # Calculate MSE for each sequence
-            mse = torch.mean((x - reconstructed) ** 2, dim=(1, 2)) 
-            return mse.cpu().numpy()
+            result =  loss(reconstructed, x).amax(dim=(1, 2)).cpu().numpy()
+            return result
 
     def encode(self, x):
         """Get the encoded representation of input sequences"""
