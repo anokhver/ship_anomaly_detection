@@ -21,6 +21,9 @@ import numpy as np
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
 
+import torch
+from LSTM.lstm_encoder import LSTMModel
+
 # --------------------------------------------------------------------------- #
 # Constants
 # --------------------------------------------------------------------------- #
@@ -34,25 +37,23 @@ EARTH_RADIUS_KM: float = 6371.0
 
 # Dispatcher mapping: numeric choice -> dispatcher path
 DISPATCHER_PATHS: Dict[int, str] = {
-    1: "models_per_route/dispatcher.pkl",           # OC-SVM
+    1: "models_per_route/dispatcher.pkl",  # OC-SVM
     2: "models_per_route_iso_for/dispatcher.pkl",  # Isolation Forest
-    3: "models_per_route_lr/dispatcher.pkl",       # Logistic Regression
-    4: "models_per_route_rf/dispatcher.pkl",       # Random Forest
-    5: "models_per_route_lstm_ae/dispatcher.pkl",     # LSTM Autoencoder
+    3: "models_per_route_lr/dispatcher.pkl",  # Logistic Regression
+    4: "models_per_route_rf/dispatcher.pkl",  # Random Forest
+    5: "models_per_route_lstm_ae/dispatcher.pkl",  # LSTM Autoencoder
 }
+
 
 # --------------------------------------------------------------------------- #
 # LSTM utils
 # --------------------------------------------------------------------------- #
 
-import torch
-from LSTM.lstm_encoder import LSTMModel
 
-
-def create_sequences(data, seq_length):
+def create_sequences(data, seq_length, seq_step_length):
     """Creates sequences from time-series data for LSTM."""
     xs = []
-    for i in range(len(data) - seq_length):
+    for i in range(0, len(data) - seq_length - 1, seq_step_length):
         xs.append(data[i: i + seq_length])
     return np.array(xs)
 
@@ -61,32 +62,40 @@ def get_scores_from_lstm_model(model_artifacts, trip_features):
     """Handle LSTM autoencoder model."""
 
     # Load model configuration
-    model_config = model_artifacts.get("model_config", {})
-    input_size = model_config.get("input_size", 5)
-    hidden_size = model_config.get("hidden_size", 128)
-    num_layers = model_config.get("num_layers", 1)
-    sequence_length = model_config.get("sequence_length", 10)
-    threshold_percentile = model_config.get("threshold_percentile", 95)
+    model_config = model_artifacts.get("model_config")
+    input_size = model_config.get("input_size")
+    hidden_size = model_config.get("hidden_size")
+    num_layers = model_config.get("num_layers")
+    dropout = model_config.get("dropout")
+
+    threshold = model_artifacts.get("threshold")
+    sequence_length = model_artifacts.get("sequence_length")
+    seq_step_length = model_artifacts.get("seq_step_length")
+
+    loss = model_artifacts.get("loss")
+    scaler = model_artifacts.get("scaler")
 
     # Initialize model
     model = LSTMModel(
         input_size=input_size,
         hidden_size=hidden_size,
         num_layers=num_layers,
-        output_size=input_size
+        output_size=input_size,
+        dropout=dropout
     )
 
     # Load state dict
-    model.load_state_dict(model_artifacts["model_state"])
-    model = model
+    state_dict = model_artifacts["model_state"]
+    missing_keys, unexpected_keys = model.load_state_dict(state_dict, strict=False)
+    if missing_keys:
+        print(f"Missing keys: {missing_keys}")
+    if unexpected_keys:
+        print(f"Unexpected keys: {unexpected_keys}")
+    print("LSTM model state loaded successfully.")
     model.eval()
-
     print("LSTM model loaded and set to evaluation mode.")
 
-    # Load scaler and prepare data
-    scaler = model_artifacts["scaler"]
-    scaled_features = scaler.transform(trip_features)
-
+    scaled_features = scaler.transform(trip_features)  # Load scaler and prepare data
     print("Features scaled using the provided scaler.")
 
     print("Creating sequences for LSTM...")
@@ -97,17 +106,13 @@ def get_scores_from_lstm_model(model_artifacts, trip_features):
         sequences = np.array([scaled_features])
         sequences = np.pad(sequences, ((0, 0), (0, max(0, sequence_length - len(scaled_features))), (0, 0)), 'edge')
     else:
-        sequences = create_sequences(scaled_features, sequence_length)
+        sequences = create_sequences(scaled_features, sequence_length, seq_step_length)
 
     # Get reconstruction errors
     X_tensor = torch.from_numpy(sequences).float()
 
-    print("Computing reconstruction errors...")
-    reconstruction_errors = model.get_reconstruction_error(X_tensor)
-
-    print("Reconstruction errors computed.")
-    # Calculate threshold and scores
-    threshold = model_artifacts.get("threshold")
+    reconstruction_errors = model.get_reconstruction_error(X_tensor, loss)
+    print(f"Reconstruction errors computed for {len(reconstruction_errors)} sequences.")
 
     # Convert reconstruction errors to anomaly scores for all points
     scores = np.zeros(len(trip_features))
@@ -145,6 +150,7 @@ def zone_label(latitude: float, longitude: float) -> int:
         if lat_min <= latitude <= lat_max and lon_min <= longitude <= lon_max:
             return 0
     return 1
+
 
 # --------------------------------------------------------------------------- #
 # Data Processing
@@ -211,14 +217,15 @@ class DataProcessor:
         frac = cum / total
         distances = [
             haversine(np.array([lat]), np.array([lon]),
-                      np.array([avg[int(f*(len(avg)-1)),0]]),
-                      np.array([avg[int(f*(len(avg)-1)),1]]))[0]
+                      np.array([avg[int(f * (len(avg) - 1)), 0]]),
+                      np.array([avg[int(f * (len(avg) - 1)), 1]]))[0]
             for lat, lon, f in zip(trip.latitude, trip.longitude, frac)
         ]
         trip["dist_to_ref"] = distances
         # Dummy
         trip["route_dummy"] = 1.0
         return trip
+
 
 # --------------------------------------------------------------------------- #
 # Model Loading and Scoring
@@ -251,7 +258,7 @@ class Scorer:
             tau = artefacts["tau"]
             if pipe is not None:
                 if hasattr(pipe, "predict_proba"):
-                    scores = pipe.predict_proba(X_raw)[:,1]
+                    scores = pipe.predict_proba(X_raw)[:, 1]
                 else:
                     scores = -pipe.decision_function(X_raw)
             else:
@@ -259,11 +266,12 @@ class Scorer:
                 model = artefacts["model"]
                 Xs = scaler.transform(X_raw)
                 if hasattr(model, "predict_proba"):
-                    scores = model.predict_proba(Xs)[:,1]
+                    scores = model.predict_proba(Xs)[:, 1]
                 else:
                     scores = -model.decision_function(Xs)
             preds = (scores > tau).astype(int)
         return scores, preds
+
 
 # --------------------------------------------------------------------------- #
 # CLI and Execution
@@ -288,7 +296,7 @@ def parse_args() -> argparse.Namespace:
                         help="Select dispatcher: 1=OC-SVM, 2=Isolation Forest, 3=Logistic Regression, 4=Random Forest"
                         )
     parser.add_argument("--log-level",
-                        choices=["DEBUG","INFO","WARNING","ERROR","CRITICAL"],
+                        choices=["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"],
                         default="INFO",
                         help="Logging level"
                         )
@@ -316,10 +324,10 @@ def build_output_json(df: pd.DataFrame, scores: np.ndarray, preds: np.ndarray) -
             #     'zone','x_km','y_km','dist_to_ref','route_dummy'
             # ]
             for k in [
-                'ship_type','length','breadth','draught',
-                'speed_over_ground','course_over_ground','true_heading',
-                'dv','dcourse','ddraft',
-                'zone','x_km','y_km','dist_to_ref'
+                'ship_type', 'length', 'breadth', 'draught',
+                'speed_over_ground', 'course_over_ground', 'true_heading',
+                'dv', 'dcourse', 'ddraft',
+                'zone', 'x_km', 'y_km', 'dist_to_ref'
             ] if k in df.columns
         }
         out.append({
@@ -367,6 +375,7 @@ def main() -> None:
     X_raw = feature_df[feats].fillna(0).values
     scores, preds = scorer.score(artefacts, X_raw)
 
+    print("Scores and predictions computed.")
     output_data = build_output_json(feature_df, scores, preds)
     try:
         args.output.write_text(json.dumps(output_data, ensure_ascii=False, indent=2))

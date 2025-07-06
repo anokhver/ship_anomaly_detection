@@ -15,10 +15,6 @@ class LSTMModel(nn.Module):
 
         super(LSTMModel, self).__init__()
 
-        self.input_size = input_size
-        self.hidden_size = hidden_size
-        self.num_layers = num_layers
-
         self.encoder = nn.LSTM(
             input_size=input_size,
             hidden_size=hidden_size,
@@ -43,8 +39,6 @@ class LSTMModel(nn.Module):
         self.num_layers = num_layers
         self.dropout = dropout
 
-        self.fc = nn.Linear(hidden_size, output_size)
-
     def forward(self, x):
         batch_size, seq_len, _ = x.shape
 
@@ -56,20 +50,20 @@ class LSTMModel(nn.Module):
         encoded = hidden[-1].unsqueeze(1).repeat(1, seq_len, 1)  # Shape: (batch, seq_len, hidden_size)
 
         # Decode: Reconstruct the sequence
-        decoder_output, _ = self.decoder(encoded)
+        decoder_output, _ = self.decoder(encoded, (hidden, cell))
 
         # Reconstruct
         reconstructed = self.output_layer(decoder_output)
 
         return reconstructed
 
-    def get_reconstruction_error(self, x):
+    def get_reconstruction_error(self, x, loss):
         """Calculate reconstruction error for anomaly detection"""
         with torch.no_grad():
             reconstructed = self.forward(x)
             # Calculate MSE for each sequence
-            mse = torch.mean((x - reconstructed) ** 2, dim=(1, 2))
-            return mse.cpu().numpy()  # Changed from .gpu() to .cpu()
+            result =  loss(reconstructed, x).amax(dim=(1, 2)).cpu().numpy()
+            return result
 
     def encode(self, x):
         """Get the encoded representation of input sequences"""
