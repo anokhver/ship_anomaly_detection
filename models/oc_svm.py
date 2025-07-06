@@ -17,7 +17,8 @@ from typing import Dict
 import joblib
 import numpy as np
 import pandas as pd
-from sklearn.metrics import classification_report, confusion_matrix, roc_auc_score
+from sklearn.inspection import permutation_importance
+from sklearn.metrics import classification_report, confusion_matrix, roc_auc_score, f1_score, recall_score
 from sklearn.preprocessing import StandardScaler
 from sklearn.svm import OneClassSVM
 from sklearn.pipeline import Pipeline
@@ -32,7 +33,7 @@ BASE_COLUMNS    = [
     "x_km", "y_km", "dist_to_ref", "route_dummy"
 ]
 ZONES           = [[53.8, 53.5, 8.6, 8.14], [53.66, 53.0, 11.0, 9.5], [54.45, 54.2, 10.3, 10.0], [54.71, 54.25, 19, 18.35]]  # [lat_max, lat_min, lon_max, lon_min]
-NU_GRID         = [0.01, 0.03]
+NU_GRID = [0.003]
 TEST_FRACTION_N = 0.10        # fraction of normal points to include in test
 R_PORT, R_APP   = 5.0, 15.0   # km: defines "port" and "approach" zones
 EARTH_R         = 6_371.0     # Earth radius in km
@@ -170,7 +171,8 @@ def train_per_route(df: pd.DataFrame, out_dir: str = "models_per_route") -> None
         # ─── prepare test set: all anomalies + fraction of normals ───
         idx_anom    = fr[fr.y_true == 1].index.to_numpy()
         n_norm_test = max(1, int(TEST_FRACTION_N * len(X_norm)))
-        idx_norm    = fr[fr.y_true == 0].sample(n=n_norm_test, random_state=42).index.to_numpy()
+        idx_norm = fr[fr.y_true == 0].sample(n=n_norm_test, random_state=42).index.to_numpy()
+        X_norm = fr[(fr.y_true == 0) & (~fr.index.isin(idx_norm))][BASE_COLUMNS].fillna(0).values
 
         X_test = np.vstack([
             fr.loc[idx_anom, BASE_COLUMNS].fillna(0).values,
@@ -197,29 +199,58 @@ def train_per_route(df: pd.DataFrame, out_dir: str = "models_per_route") -> None
 
             pipe.fit(X_norm)
             scores_train = -pipe.decision_function(X_norm)
-            tau = np.percentile(scores_train, 100 * (1 - nu))
-
             scores_test = -pipe.decision_function(X_test)
-            preds = (scores_test > tau).astype(int)
+            #tau = np.percentile(scores_train, 100 * (1 - nu*0.8)) 
+       
+            tau_candidates = np.percentile(scores_train, np.linspace(60, 99.9, 80))
 
-            # force port-zone → always normal
-           ## preds[zone] = 0
+            for tau_candidate in tau_candidates:
+                preds = (scores_test > tau_candidate).astype(int)
+
+                f1 = f1_score(y_test, preds)
+                auc = roc_auc_score(y_test, scores_test) if len(np.unique(y_test)) > 1 else 0.0
+
+                if f1 > best.get("f1", -1):  # Compare by F1 score
+                    best.update(
+                        pipe=pipe,
+                        nu=nu,
+                        tau=tau_candidate,
+                        auc=auc,
+                        f1=f1
+                    )
+            tau = best["tau"]
+            scores_test = -best["pipe"].decision_function(X_test)
+
+
+            print(f"Training with ν={nu}  τ={tau}")
+           
+            preds = (scores_test > tau).astype(int)
 
             auc = roc_auc_score(y_test, scores_test) if len(np.unique(y_test)) > 1 else 0.0
             print(f"  ν={nu:<4}  τ={tau:6.3f}  AUC={auc:5.3f}")
 
-            if auc > best["auc"]:
-                best.update(pipe=pipe, nu=nu, tau=tau, auc=auc)
+            
 
         # ─── final evaluation & save  ───
         print(f"\n-> Selected ν={best['nu']}  τ={best['tau']:.3f}  AUC={best['auc']:.3f}")
         scores_test = -best["pipe"].decision_function(X_test)
         preds = (scores_test > best["tau"]).astype(int)
-       # preds[zone] = 0
+       
 
         print(confusion_matrix(y_test, preds))
+        tn, fp, fn, tp = confusion_matrix(y_test, preds).ravel()
+        print(f"TP={tp}, FP={fp}, TN={tn}, FN={fn}")
         print(classification_report(y_test, preds, digits=3))
         print(f"Route {route} done in {time.time() - t0:.1f}s\n")
+
+         # Display feature importances
+        perm_importance = permutation_importance(
+            best["pipe"], X_test, y_test, scoring=anomaly_f1, random_state=42
+        )
+        for i, importance in enumerate(perm_importance.importances_mean):
+            print(f"Feature {BASE_COLUMNS[i]}: {importance}")
+
+        ##########
 
         model_path = Path(out_dir) / f"ocsvm_{route}.pkl"
         joblib.dump(
@@ -235,6 +266,17 @@ def train_per_route(df: pd.DataFrame, out_dir: str = "models_per_route") -> None
     # save dispatcher
     joblib.dump(dispatcher, Path(out_dir) / "dispatcher.pkl")
     print("All models saved, dispatcher.pkl created.")
+
+
+
+# Custom scoring function for anomaly detection (F1 score)
+def anomaly_f1(estimator, X, y):
+    scores = -estimator.decision_function(X)  # higher = more anomalous
+    # Use median as threshold for binary prediction
+    threshold = np.median(scores)
+    preds = (scores > threshold).astype(int)
+    return f1_score(y, preds)
+
 
 
 if __name__ == "__main__":

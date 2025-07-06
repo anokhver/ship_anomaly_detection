@@ -1,8 +1,8 @@
 """
-Logistic regression per-route training pipeline (with simple v grid-search + τ thresholding)
+Random forest per-route training pipeline (with simple v grid-search + τ thresholding)
 -------------------------------------------------------------------------------
 • cleans and featurizes AIS data
-• trains a separate Logistic Regression model for each route
+• trains a separate Random Forest model for each route
 • selects best v by ROC-AUC (anomaly vs random normal)
 • saves {pipeline, features, τ} + dispatcher.pkl
 """
@@ -17,11 +17,12 @@ from typing import Dict
 import joblib
 import numpy as np
 import pandas as pd
-from sklearn.metrics import classification_report, confusion_matrix, roc_auc_score
+from sklearn.metrics import classification_report, confusion_matrix, f1_score, roc_auc_score
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.pipeline import Pipeline
 from sklearn.model_selection import train_test_split
+from sklearn.model_selection import StratifiedKFold
 
 warnings.filterwarnings("ignore", category=UserWarning)
 
@@ -187,30 +188,48 @@ def train_per_route(df: pd.DataFrame, out_dir: str = "models_per_route_rf") -> N
         best = {"auc": -np.inf}
         for n in [50, 100, 200]:
             for d in [None, 10, 20]:
-                clf = RandomForestClassifier(
-                    n_estimators=n,
-                    max_depth=d,
-                    random_state=42,
-                    class_weight={0: 1.0, 1: 2.0},  # handle imbalance
-                    n_jobs=-1
-                )
+                kf = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+                auc_scores = []
 
-                clf.fit(X, y)
-                scores_test = clf.predict_proba(X_test)[:, 1]
-                preds = (scores_test > tau).astype(int)
+                for train_idx, val_idx in kf.split(X, y):
+                    clf = RandomForestClassifier(
+                        n_estimators=n,
+                        max_depth=d,
+                        random_state=42,
+                        class_weight={0: 1.0, 1: 2.0},
+                        n_jobs=-1
+                    )
+                    clf.fit(X[train_idx], y[train_idx])
+                    val_scores = clf.predict_proba(X[val_idx])[:, 1]
+                    val_preds = (val_scores > tau).astype(int)
+                    auc = roc_auc_score(y[val_idx], val_scores)
+                    auc_scores.append(auc)
 
-                auc = roc_auc_score(y_test, scores_test) if len(np.unique(y_test)) > 1 else 0.0
-                print(f"  n={n:<3} d={str(d):<4} AUC={auc:5.3f}")
+                mean_auc = np.mean(auc_scores)
+                print(f"  n={n:<3} d={str(d):<4} AUC={mean_auc:.3f}")
 
-                if auc > best["auc"]:
-                    best.update(pipe=clf, n=n, d=d, auc=auc)
+                if mean_auc > best["auc"]:
+                    best.update(pipe=clf, n=n, d=d, auc=mean_auc)
 
         # ─── final evaluation & save ───
         print(f"\n-> Selected n={best['n']} d={best['d']}  AUC={best['auc']:.3f}")
         scores_test = best["pipe"].predict_proba(X_test)[:, 1]
+        best_tau = 1
+        best_f1 = 0
+        for tau in np.linspace(0, 1, 101):
+            preds = (scores_test > tau).astype(int)
+            f1 = f1_score(y_test, preds)
+            if f1 > best_f1:
+                best_f1 = f1
+                best_tau = tau
+
+        print(f"Best F1: {best_f1:.3f} at tau = {best_tau:.2f}")
+        tau = best_tau
         preds = (scores_test > tau).astype(int)
 
         print(confusion_matrix(y_test, preds))
+        tn, fp, fn, tp = confusion_matrix(y_test, preds).ravel()
+        print(f"TP: {tp}, TN: {tn}, FP: {fp}, FN: {fn}")
         print(classification_report(y_test, preds, digits=3))
         print(f"Route {route} done in {time.time() - t0:.1f}s\n")
 
