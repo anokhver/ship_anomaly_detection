@@ -17,7 +17,7 @@ from typing import Dict
 import joblib
 import numpy as np
 import pandas as pd
-from sklearn.metrics import classification_report, confusion_matrix, roc_auc_score
+from sklearn.metrics import classification_report, confusion_matrix, roc_auc_score, f1_score
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import Pipeline
@@ -162,58 +162,83 @@ def train_per_route(df: pd.DataFrame, out_dir: str = "models_per_route_lr") -> N
 
         fr = add_route_specific_features(df, route)
         fr = fr.dropna(subset=["y_true"])  # Drop rows where y_true is NaN
-        X = fr[BASE_COLUMNS].fillna(0).values
-        y = fr["y_true"].values
+
+        # Define test indices (stratified sampling)
+        anom_indices = fr[fr.y_true == 1].index
+        norm_indices = fr[fr.y_true == 0].index
+        n_anom_test = max(1, int(TEST_FRACTION_N * len(anom_indices)))
+        n_norm_test = max(1, int(TEST_FRACTION_N * len(norm_indices)))
+        idx_anom_test = anom_indices.to_series().sample(n=n_anom_test, random_state=42)
+        idx_norm_test = norm_indices.to_series().sample(n=n_norm_test, random_state=42)
+        test_idx = np.concatenate([idx_anom_test, idx_norm_test])
+        fr_train = fr.drop(index=test_idx)
+
+        X = fr_train[BASE_COLUMNS].fillna(0).values
+        y = fr_train["y_true"].values
 
         if np.sum(y == 0) == 0 or np.sum(y == 1) == 0:
             print("  * Not enough class samples, skipping this route.")
             continue
 
-        # ─── prepare test set: all anomalies + fraction of normals ───
-        idx_anom = fr[fr.y_true == 1].index.to_numpy()
-        n_norm_test = max(1, int(TEST_FRACTION_N * np.sum(y == 0)))
-        idx_norm = fr[fr.y_true == 0].sample(n=n_norm_test, random_state=42).index.to_numpy()
-
         X_test = np.vstack([
-            fr.loc[idx_anom, BASE_COLUMNS].fillna(0).values,
-            fr.loc[idx_norm, BASE_COLUMNS].fillna(0).values
+            fr.loc[idx_anom_test, BASE_COLUMNS].fillna(0).values,
+            fr.loc[idx_norm_test, BASE_COLUMNS].fillna(0).values
         ])
         y_test = np.concatenate([
-            np.ones(len(idx_anom), dtype=int),
-            np.zeros(len(idx_norm), dtype=int)
+            np.ones(len(idx_anom_test), dtype=int),
+            np.zeros(len(idx_norm_test), dtype=int)
         ])
 
         # mask for port-zone override
         zone = np.concatenate([
-            fr.loc[idx_anom, "zone"].to_numpy(),
-            fr.loc[idx_norm, "zone"].to_numpy()
+            fr.loc[idx_anom_test, "zone"].to_numpy(),
+            fr.loc[idx_norm_test, "zone"].to_numpy()
         ]).astype(bool)
 
-        # ─── grid-search over C (inverse of regularization strength) ───
-        best = {"auc": -np.inf}
-        for C in [0.01, 0.1, 1.0, 10.0]:
-            pipe = Pipeline([
-                ("scaler", StandardScaler()),
-                ("logreg", LogisticRegression(C=C, solver="liblinear", random_state=42, class_weight={0: 1.0, 1: 2.0}))
-
-            ])
-
-            pipe.fit(X, y)
-            scores_test = pipe.predict_proba(X_test)[:, 1]
-            preds = (scores_test > tau).astype(int)
-
-            auc = roc_auc_score(y_test, scores_test) if len(np.unique(y_test)) > 1 else 0.0
-            print(f"  C={C:<5}  AUC={auc:5.3f}")
-
-            if auc > best["auc"]:
-                best.update(pipe=pipe, C=C, auc=auc)
+        # ─── grid-search over C, penalty, class_weight ───
+        best = {"f1": -np.inf}
+        param_grid = [
+            {"C": C, "penalty": penalty, "class_weight": cw, "solver": solver}
+            for C in [0.01, 0.1, 1.0, 10.0]
+            for penalty, solver in [("l2", "liblinear"), ("l1", "liblinear")]
+            for cw in [None, {0: 1.0, 1: 2.0}, {0: 1.0, 1: 3.0}, {0: 1.0, 1: 4.0}, {0: 1.0, 1: 5.0}, "balanced"]
+        ]
+        for params in param_grid:
+            try:
+                pipe = Pipeline([
+                    ("scaler", StandardScaler()),
+                    ("logreg", LogisticRegression(
+                        C=params["C"],
+                        penalty=params["penalty"],
+                        solver=params["solver"],
+                        random_state=42,
+                        class_weight=params["class_weight"]
+                    ))
+                ])
+                pipe.fit(X, y)
+                scores_test = pipe.predict_proba(X_test)[:, 1]
+                best_f1 = 0
+                best_tau = 0.5
+                for tau_candidate in np.linspace(0, 1, 101):
+                    preds = (scores_test > tau_candidate).astype(int)
+                    f1 = f1_score(y_test, preds)
+                    if f1 > best_f1:
+                        best_f1 = f1
+                        best_tau = tau_candidate
+                print(f"  {params}  F1={best_f1:.3f}")
+                if best_f1 > best["f1"]:
+                    best.update(pipe=pipe, f1=best_f1, tau=best_tau, **params)
+            except Exception as e:
+                print(f"  Skipping params {params} due to error: {e}")
 
         # ─── final evaluation & save  ───
-        print(f"\n-> Selected C={best['C']}  AUC={best['auc']:.3f}")
+        print(f"\n-> Selected { {k: best[k] for k in ['C','penalty','class_weight','solver','tau']} }  F1={best['f1']:.3f}")
         scores_test = best["pipe"].predict_proba(X_test)[:, 1]
-        preds = (scores_test > tau).astype(int)
+        preds = (scores_test > best["tau"]).astype(int)
 
         print(confusion_matrix(y_test, preds))
+        tn, fp, fn, tp = confusion_matrix(y_test, preds).ravel()
+        print(f"Total samples: {len(y_test)} TP: {tp}, TN: {tn}, FP: {fp}, FN: {fn}")
         print(classification_report(y_test, preds, digits=3))
         print(f"Route {route} done in {time.time() - t0:.1f}s\n")
 

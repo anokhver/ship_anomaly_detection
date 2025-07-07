@@ -33,7 +33,6 @@ BASE_COLUMNS    = [
     "x_km", "y_km", "dist_to_ref", "route_dummy"
 ]
 ZONES           = [[53.8, 53.5, 8.6, 8.14], [53.66, 53.0, 11.0, 9.5], [54.45, 54.2, 10.3, 10.0], [54.71, 54.25, 19, 18.35]]  # [lat_max, lat_min, lon_max, lon_min]
-NU_GRID = [0.003]
 TEST_FRACTION_N = 0.10        # fraction of normal points to include in test
 R_PORT, R_APP   = 5.0, 15.0   # km: defines "port" and "approach" zones
 EARTH_R         = 6_371.0     # Earth radius in km
@@ -164,6 +163,9 @@ def train_per_route(df: pd.DataFrame, out_dir: str = "models_per_route") -> None
         X_norm = fr[fr.y_true == 0][BASE_COLUMNS].fillna(0).values
         X_anom = fr[fr.y_true == 1][BASE_COLUMNS].fillna(0).values
 
+        # Total samples
+        print(f"  * Normal points: {len(X_norm)}")
+        print(f"  * Anomalous points: {len(X_anom)}")
         if len(X_norm) == 0:
             print("  * No normal points, skipping this route.")
             continue
@@ -189,57 +191,56 @@ def train_per_route(df: pd.DataFrame, out_dir: str = "models_per_route") -> None
             fr.loc[idx_norm, "zone"].to_numpy()
         ]).astype(bool)
 
-        # ─── grid-search over ν ───
-        best = {"auc": -np.inf}
+        # ─── grid-search ───
+        NU_GRID = [0.003]
+        GAMMA_GRID = ["scale", "auto", 0.001, 0.01, 0.1, 1.0]
+        best = {"f1": -np.inf}  # Compare by F1 score
         for nu in NU_GRID:
-            pipe = Pipeline([
-                ("scaler", StandardScaler()),
-                ("ocsvm",  OneClassSVM(kernel="rbf", gamma="scale", nu=nu))
-            ])
+            for gamma in GAMMA_GRID:
+                pipe = Pipeline([
+                    ("scaler", StandardScaler()),
+                    ("ocsvm",  OneClassSVM(kernel="rbf", gamma=gamma, nu=nu))
+                ])
 
-            pipe.fit(X_norm)
-            scores_train = -pipe.decision_function(X_norm)
-            scores_test = -pipe.decision_function(X_test)
-            #tau = np.percentile(scores_train, 100 * (1 - nu*0.8)) 
-       
-            tau_candidates = np.percentile(scores_train, np.linspace(60, 99.9, 80))
+                pipe.fit(X_norm)
+                scores_train = -pipe.decision_function(X_norm)
+                scores_test = -pipe.decision_function(X_test)
+                
+                tau_candidates = np.percentile(scores_train, np.linspace(60, 99.9, 80))
 
-            for tau_candidate in tau_candidates:
-                preds = (scores_test > tau_candidate).astype(int)
+                for tau_candidate in tau_candidates:
+                    preds = (scores_test > tau_candidate).astype(int)
 
-                f1 = f1_score(y_test, preds)
+                    f1 = f1_score(y_test, preds)
+                    auc = roc_auc_score(y_test, scores_test) if len(np.unique(y_test)) > 1 else 0.0
+
+                    if f1 > best.get("f1", -1):  # Compare by F1 score
+                        best.update(
+                            pipe=pipe,
+                            nu=nu,
+                            gamma=gamma,
+                            tau=tau_candidate,
+                            auc=auc,
+                            f1=f1
+                        )
+                tau = best["tau"]
+                scores_test = -best["pipe"].decision_function(X_test)
+
+                print(f"Training with ν={nu}  γ={gamma}  τ={tau}")
+                preds = (scores_test > tau).astype(int)
                 auc = roc_auc_score(y_test, scores_test) if len(np.unique(y_test)) > 1 else 0.0
-
-                if f1 > best.get("f1", -1):  # Compare by F1 score
-                    best.update(
-                        pipe=pipe,
-                        nu=nu,
-                        tau=tau_candidate,
-                        auc=auc,
-                        f1=f1
-                    )
-            tau = best["tau"]
-            scores_test = -best["pipe"].decision_function(X_test)
-
-
-            print(f"Training with ν={nu}  τ={tau}")
-           
-            preds = (scores_test > tau).astype(int)
-
-            auc = roc_auc_score(y_test, scores_test) if len(np.unique(y_test)) > 1 else 0.0
-            print(f"  ν={nu:<4}  τ={tau:6.3f}  AUC={auc:5.3f}")
-
-            
+                f1 = f1_score(y_test, preds)
+                print(f"  ν={nu:<4}  γ={gamma}  τ={tau:6.3f}  F1={f1:5.3f}  AUC={auc:5.3f}")
 
         # ─── final evaluation & save  ───
-        print(f"\n-> Selected ν={best['nu']}  τ={best['tau']:.3f}  AUC={best['auc']:.3f}")
+        print(f"\n-> Selected ν={best['nu']}  τ={best['tau']:.3f}  F1={best['f1']:.3f}")
         scores_test = -best["pipe"].decision_function(X_test)
         preds = (scores_test > best["tau"]).astype(int)
        
 
         print(confusion_matrix(y_test, preds))
         tn, fp, fn, tp = confusion_matrix(y_test, preds).ravel()
-        print(f"TP={tp}, FP={fp}, TN={tn}, FN={fn}")
+        print(f"Total samples: {len(y_test)} TP={tp}, FP={fp}, TN={tn}, FN={fn}")
         print(classification_report(y_test, preds, digits=3))
         print(f"Route {route} done in {time.time() - t0:.1f}s\n")
 

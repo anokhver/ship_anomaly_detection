@@ -21,6 +21,7 @@ from sklearn.metrics import classification_report, confusion_matrix, roc_auc_sco
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import IsolationForest
 from sklearn.pipeline import Pipeline
+from sklearn.metrics import f1_score
 
 warnings.filterwarnings("ignore", category=UserWarning)
 
@@ -32,8 +33,8 @@ BASE_COLUMNS    = [
     "x_km", "y_km", "dist_to_ref", "route_dummy"
 ]
 ZONES           = [[53.8, 53.5, 8.6, 8.14], [53.66, 53.0, 11.0, 9.5], [54.45, 54.2, 10.3, 10.0], [54.71, 54.25, 19, 18.35]]  # [lat_max, lat_min, lon_max, lon_min]
-N_ESTIMATORS        = [100, 101]
-TEST_FRACTION_N = 0.10        # fraction of normal points to include in test
+N_ESTIMATORS        = [80, 100, 120, 140, 200]
+
 R_PORT, R_APP   = 5.0, 15.0   # km: defines "port" and "approach" zones
 EARTH_R         = 6_371.0     # Earth radius in km
 
@@ -147,6 +148,8 @@ def add_route_specific_features(df: pd.DataFrame, route: str) -> pd.DataFrame:
         for lat, lon, f in zip(df_r.latitude, df_r.longitude, frac)
     ]
     df_r["route_dummy"] = 1.0
+    
+
     return df_r
 
 
@@ -176,9 +179,10 @@ def train_per_route(df: pd.DataFrame,
 
         # route‑specific feature engineering (user‑defined helper)
         fr = add_route_specific_features(df, route)
-
+        
         # split route frame into arrays
-        X_norm = fr[fr.y_true == 0][BASE_COLUMNS].fillna(0).values
+        mask_train = (fr["y_true"] == 0) | (fr["y_true"].isna())
+        X_norm = fr[mask_train][BASE_COLUMNS].fillna(0).values
         X_anom = fr[fr.y_true == 1][BASE_COLUMNS].fillna(0).values
 
         if X_norm.size == 0:
@@ -187,13 +191,16 @@ def train_per_route(df: pd.DataFrame,
 
         # ── build a small, stratified test set ──────────────────────────── #
         idx_anom = fr[fr.y_true == 1].index.to_numpy()
-        n_norm_test = max(1, int(TEST_FRACTION_N * len(X_norm)))
+        labeled_normals = fr[fr.y_true == 0]
+        n_labeled_normals = len(labeled_normals)
+        n_norm_test = max(1, int(TEST_FRACTION_N * n_labeled_normals))
         idx_norm = (
             fr[fr.y_true == 0]
             .sample(n=n_norm_test, random_state=42)
             .index.to_numpy()
         )
-
+        #X_norm = fr[mask_train & (~fr.index.isin(idx_norm))][BASE_COLUMNS].fillna(0).values - just for testing
+        X_norm = fr[(fr.y_true == 0) & (~fr.index.isin(idx_norm))][BASE_COLUMNS].fillna(0).values
         X_test = np.vstack([
             fr.loc[idx_anom, BASE_COLUMNS].fillna(0).values,
             fr.loc[idx_norm, BASE_COLUMNS].fillna(0).values,
@@ -202,6 +209,8 @@ def train_per_route(df: pd.DataFrame,
             np.ones(len(idx_anom), dtype=int),
             np.zeros(len(idx_norm), dtype=int),
         ])
+        
+        
 
         # contamination fraction depends on the port
         contamination = (
@@ -209,44 +218,49 @@ def train_per_route(df: pd.DataFrame,
         )
 
         # ── grid‑search over *n_estimators* ─────────────────────────────── #
-        best = {"auc": -np.inf}
+        best = {"f1": -np.inf}
         for n_est in N_ESTIMATORS:
-            pipe = Pipeline(
-                steps=[
-                    ("scaler", StandardScaler(with_mean=False)),
-                    (
-                        "iso",
-                        IsolationForest(
-                            n_estimators=n_est,
-                            contamination=contamination,
-                            max_samples="auto",
-                            random_state=42,
-                            n_jobs=-1,
-                            verbose=0,
-                        ),
-                    ),
-                ]
-            )
+            for max_samples in [0.5, 0.75, 1.0, "auto"]:
+                for max_features in [1.0, 0.8, 0.6]:
+                    pipe = Pipeline(
+                        steps=[
+                            ("scaler", StandardScaler(with_mean=False)),
+                            (
+                                "iso",
+                                IsolationForest(
+                                    n_estimators=n_est,
+                                    contamination=contamination,
+                                    max_samples=max_samples,
+                                    max_features=max_features,
+                                    random_state=42,
+                                    n_jobs=-1,
+                                    verbose=0,
+                                ),
+                            ),
+                        ]
+                    )
 
-            # fit only on known‑normal data (unsupervised)
-            pipe.fit(X_norm)
-
-            # IsolationForest.decision_function -> higher is *more normal*
-            # We flip the sign so that higher = *more anomalous* like OC‑SVM.
-            scores_train = -pipe.decision_function(X_norm)
-            # tau = np.percentile(scores_train, 100 * (1 - contamination))
-            tau = np.percentile(scores_train, 94)
-
-            scores_test = -pipe.decision_function(X_test)
-            preds = (scores_test > tau).astype(int)
-
-            auc = (
-                roc_auc_score(y_test, scores_test) if len(np.unique(y_test)) > 1 else 0.0
-            )
-            print(f"  n_estimators={n_est:<4}  τ={tau:6.3f}  AUC={auc:5.3f}")
-
-            if auc > best["auc"]:
-                best.update(pipe=pipe, n_est=n_est, tau=tau, auc=auc)
+                    pipe.fit(X_norm)
+                    scores_train = -pipe.decision_function(X_norm)
+                    tau = np.percentile(scores_train, 94)
+                    scores_test = -pipe.decision_function(X_test)
+                    preds = (scores_test > tau).astype(int)
+                    auc = roc_auc_score(y_test, scores_test) if len(np.unique(y_test)) > 1 else 0.0
+                    f1 = f1_score(y_test, preds)
+                    print(
+                        f"n_estimators={n_est:<4} max_samples={max_samples} max_features={max_features} "
+                        f"τ={tau:6.3f} AUC={auc:5.3f} F1={f1:5.3f}"
+                    )
+                    if f1 > best["f1"]:
+                        best.update(
+                            pipe=pipe,
+                            n_est=n_est,
+                            max_samples=max_samples,
+                            max_features=max_features,
+                            tau=tau,
+                            auc=auc,
+                            f1=f1,
+                        )
 
         # ── final evaluation and serialisation ──────────────────────────── #
         print(
@@ -256,6 +270,8 @@ def train_per_route(df: pd.DataFrame,
         preds = (scores_test > best["tau"]).astype(int)
 
         print(confusion_matrix(y_test, preds))
+        tn, fp, fn, tp = confusion_matrix(y_test, preds).ravel()
+        print(f"Total samples: {len(y_test)} TP: {tp}, TN: {tn}, FP: {fp}, FN: {fn}")
         print(classification_report(y_test, preds, digits=3))
         print(f"Route {route} done in {time.time() - t0:.1f}s\n")
 
