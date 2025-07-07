@@ -1,0 +1,2930 @@
+[
+  {
+    "latitude": 53.59,
+    "longitude": 8.51,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 1"
+  },
+  {
+    "latitude": 53.59,
+    "longitude": 8.51,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 2"
+  },
+  {
+    "latitude": 53.59,
+    "longitude": 8.51,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 3"
+  },
+  {
+    "latitude": 53.59,
+    "longitude": 8.51,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 4"
+  },
+  {
+    "latitude": 53.59,
+    "longitude": 8.51,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 5"
+  },
+  {
+    "latitude": 53.59,
+    "longitude": 8.51,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 6"
+  },
+  {
+    "latitude": 53.59,
+    "longitude": 8.5,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 7"
+  },
+  {
+    "latitude": 53.6,
+    "longitude": 8.5,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 8"
+  },
+  {
+    "latitude": 53.6,
+    "longitude": 8.5,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 9"
+  },
+  {
+    "latitude": 53.6,
+    "longitude": 8.49,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 10"
+  },
+  {
+    "latitude": 53.61,
+    "longitude": 8.49,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 11"
+  },
+  {
+    "latitude": 53.61,
+    "longitude": 8.48,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 12"
+  },
+  {
+    "latitude": 53.61,
+    "longitude": 8.48,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 13"
+  },
+  {
+    "latitude": 53.62,
+    "longitude": 8.47,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 14"
+  },
+  {
+    "latitude": 53.62,
+    "longitude": 8.46,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 15"
+  },
+  {
+    "latitude": 53.62,
+    "longitude": 8.46,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 16"
+  },
+  {
+    "latitude": 53.63,
+    "longitude": 8.45,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 17"
+  },
+  {
+    "latitude": 53.63,
+    "longitude": 8.44,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 18"
+  },
+  {
+    "latitude": 53.63,
+    "longitude": 8.44,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 19"
+  },
+  {
+    "latitude": 53.63,
+    "longitude": 8.43,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 20"
+  },
+  {
+    "latitude": 53.64,
+    "longitude": 8.42,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 21"
+  },
+  {
+    "latitude": 53.64,
+    "longitude": 8.42,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 22"
+  },
+  {
+    "latitude": 53.64,
+    "longitude": 8.41,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 23"
+  },
+  {
+    "latitude": 53.65,
+    "longitude": 8.4,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 24"
+  },
+  {
+    "latitude": 53.65,
+    "longitude": 8.4,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 25"
+  },
+  {
+    "latitude": 53.65,
+    "longitude": 8.39,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 26"
+  },
+  {
+    "latitude": 53.66,
+    "longitude": 8.39,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 27"
+  },
+  {
+    "latitude": 53.66,
+    "longitude": 8.38,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 28"
+  },
+  {
+    "latitude": 53.66,
+    "longitude": 8.38,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 29"
+  },
+  {
+    "latitude": 53.67,
+    "longitude": 8.37,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 30"
+  },
+  {
+    "latitude": 53.67,
+    "longitude": 8.37,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 31"
+  },
+  {
+    "latitude": 53.67,
+    "longitude": 8.36,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 32"
+  },
+  {
+    "latitude": 53.68,
+    "longitude": 8.36,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 33"
+  },
+  {
+    "latitude": 53.68,
+    "longitude": 8.35,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 34"
+  },
+  {
+    "latitude": 53.68,
+    "longitude": 8.35,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 35"
+  },
+  {
+    "latitude": 53.69,
+    "longitude": 8.34,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 36"
+  },
+  {
+    "latitude": 53.69,
+    "longitude": 8.34,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 37"
+  },
+  {
+    "latitude": 53.69,
+    "longitude": 8.33,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 38"
+  },
+  {
+    "latitude": 53.7,
+    "longitude": 8.32,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 39"
+  },
+  {
+    "latitude": 53.7,
+    "longitude": 8.32,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 40"
+  },
+  {
+    "latitude": 53.7,
+    "longitude": 8.31,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 41"
+  },
+  {
+    "latitude": 53.71,
+    "longitude": 8.3,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 42"
+  },
+  {
+    "latitude": 53.71,
+    "longitude": 8.3,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 43"
+  },
+  {
+    "latitude": 53.71,
+    "longitude": 8.29,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 44"
+  },
+  {
+    "latitude": 53.71,
+    "longitude": 8.29,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 45"
+  },
+  {
+    "latitude": 53.72,
+    "longitude": 8.28,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 46"
+  },
+  {
+    "latitude": 53.72,
+    "longitude": 8.27,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 47"
+  },
+  {
+    "latitude": 53.72,
+    "longitude": 8.27,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 48"
+  },
+  {
+    "latitude": 53.72,
+    "longitude": 8.26,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 49"
+  },
+  {
+    "latitude": 53.73,
+    "longitude": 8.25,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 50"
+  },
+  {
+    "latitude": 53.73,
+    "longitude": 8.25,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 51"
+  },
+  {
+    "latitude": 53.73,
+    "longitude": 8.24,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 52"
+  },
+  {
+    "latitude": 53.73,
+    "longitude": 8.23,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 53"
+  },
+  {
+    "latitude": 53.74,
+    "longitude": 8.23,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 54"
+  },
+  {
+    "latitude": 53.74,
+    "longitude": 8.22,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 55"
+  },
+  {
+    "latitude": 53.74,
+    "longitude": 8.22,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 56"
+  },
+  {
+    "latitude": 53.74,
+    "longitude": 8.21,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 57"
+  },
+  {
+    "latitude": 53.75,
+    "longitude": 8.21,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 58"
+  },
+  {
+    "latitude": 53.75,
+    "longitude": 8.2,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 59"
+  },
+  {
+    "latitude": 53.75,
+    "longitude": 8.19,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 60"
+  },
+  {
+    "latitude": 53.76,
+    "longitude": 8.19,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 61"
+  },
+  {
+    "latitude": 53.76,
+    "longitude": 8.18,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 62"
+  },
+  {
+    "latitude": 53.76,
+    "longitude": 8.18,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 63"
+  },
+  {
+    "latitude": 53.77,
+    "longitude": 8.17,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 64"
+  },
+  {
+    "latitude": 53.77,
+    "longitude": 8.17,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 65"
+  },
+  {
+    "latitude": 53.77,
+    "longitude": 8.16,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 66"
+  },
+  {
+    "latitude": 53.78,
+    "longitude": 8.16,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 67"
+  },
+  {
+    "latitude": 53.78,
+    "longitude": 8.15,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 68"
+  },
+  {
+    "latitude": 53.78,
+    "longitude": 8.15,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 69"
+  },
+  {
+    "latitude": 53.79,
+    "longitude": 8.15,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 70"
+  },
+  {
+    "latitude": 53.79,
+    "longitude": 8.14,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 71"
+  },
+  {
+    "latitude": 53.79,
+    "longitude": 8.14,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 72"
+  },
+  {
+    "latitude": 53.8,
+    "longitude": 8.13,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 73"
+  },
+  {
+    "latitude": 53.8,
+    "longitude": 8.13,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 74"
+  },
+  {
+    "latitude": 53.8,
+    "longitude": 8.13,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 75"
+  },
+  {
+    "latitude": 53.81,
+    "longitude": 8.12,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 76"
+  },
+  {
+    "latitude": 53.81,
+    "longitude": 8.12,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 77"
+  },
+  {
+    "latitude": 53.81,
+    "longitude": 8.11,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 78"
+  },
+  {
+    "latitude": 53.82,
+    "longitude": 8.11,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 79"
+  },
+  {
+    "latitude": 53.82,
+    "longitude": 8.1,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 80"
+  },
+  {
+    "latitude": 53.82,
+    "longitude": 8.1,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 81"
+  },
+  {
+    "latitude": 53.82,
+    "longitude": 8.09,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 82"
+  },
+  {
+    "latitude": 53.83,
+    "longitude": 8.09,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 83"
+  },
+  {
+    "latitude": 53.83,
+    "longitude": 8.08,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 84"
+  },
+  {
+    "latitude": 53.83,
+    "longitude": 8.07,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 85"
+  },
+  {
+    "latitude": 53.83,
+    "longitude": 8.07,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 86"
+  },
+  {
+    "latitude": 53.83,
+    "longitude": 8.06,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 87"
+  },
+  {
+    "latitude": 53.84,
+    "longitude": 8.05,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 88"
+  },
+  {
+    "latitude": 53.84,
+    "longitude": 8.05,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 89"
+  },
+  {
+    "latitude": 53.84,
+    "longitude": 8.04,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 90"
+  },
+  {
+    "latitude": 53.84,
+    "longitude": 8.03,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 91"
+  },
+  {
+    "latitude": 53.85,
+    "longitude": 8.03,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 92"
+  },
+  {
+    "latitude": 53.85,
+    "longitude": 8.02,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 93"
+  },
+  {
+    "latitude": 53.85,
+    "longitude": 8.01,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 94"
+  },
+  {
+    "latitude": 53.85,
+    "longitude": 8.01,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 95"
+  },
+  {
+    "latitude": 53.85,
+    "longitude": 8.0,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 96"
+  },
+  {
+    "latitude": 53.85,
+    "longitude": 7.99,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 97"
+  },
+  {
+    "latitude": 53.85,
+    "longitude": 7.98,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 98"
+  },
+  {
+    "latitude": 53.85,
+    "longitude": 7.97,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 99"
+  },
+  {
+    "latitude": 53.86,
+    "longitude": 7.97,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 100"
+  },
+  {
+    "latitude": 53.86,
+    "longitude": 7.96,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 101"
+  },
+  {
+    "latitude": 53.86,
+    "longitude": 7.95,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 102"
+  },
+  {
+    "latitude": 53.86,
+    "longitude": 7.95,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 103"
+  },
+  {
+    "latitude": 53.86,
+    "longitude": 7.94,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 104"
+  },
+  {
+    "latitude": 53.86,
+    "longitude": 7.93,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 105"
+  },
+  {
+    "latitude": 53.86,
+    "longitude": 7.93,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 106"
+  },
+  {
+    "latitude": 53.86,
+    "longitude": 7.92,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 107"
+  },
+  {
+    "latitude": 53.86,
+    "longitude": 7.91,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 108"
+  },
+  {
+    "latitude": 53.87,
+    "longitude": 7.91,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 109"
+  },
+  {
+    "latitude": 53.87,
+    "longitude": 7.91,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 110"
+  },
+  {
+    "latitude": 53.87,
+    "longitude": 7.91,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 111"
+  },
+  {
+    "latitude": 53.88,
+    "longitude": 7.91,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 112"
+  },
+  {
+    "latitude": 53.88,
+    "longitude": 7.91,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 113"
+  },
+  {
+    "latitude": 53.88,
+    "longitude": 7.91,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 114"
+  },
+  {
+    "latitude": 53.89,
+    "longitude": 7.91,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 115"
+  },
+  {
+    "latitude": 53.89,
+    "longitude": 7.91,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 116"
+  },
+  {
+    "latitude": 53.89,
+    "longitude": 7.92,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 117"
+  },
+  {
+    "latitude": 53.9,
+    "longitude": 7.92,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 118"
+  },
+  {
+    "latitude": 53.9,
+    "longitude": 7.93,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 119"
+  },
+  {
+    "latitude": 53.9,
+    "longitude": 7.93,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 120"
+  },
+  {
+    "latitude": 53.9,
+    "longitude": 7.93,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 121"
+  },
+  {
+    "latitude": 53.91,
+    "longitude": 7.94,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 122"
+  },
+  {
+    "latitude": 53.91,
+    "longitude": 7.94,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 123"
+  },
+  {
+    "latitude": 53.91,
+    "longitude": 7.95,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 124"
+  },
+  {
+    "latitude": 53.92,
+    "longitude": 7.95,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 125"
+  },
+  {
+    "latitude": 53.92,
+    "longitude": 7.95,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 126"
+  },
+  {
+    "latitude": 53.92,
+    "longitude": 7.96,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 127"
+  },
+  {
+    "latitude": 53.93,
+    "longitude": 7.96,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 128"
+  },
+  {
+    "latitude": 53.93,
+    "longitude": 7.96,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 129"
+  },
+  {
+    "latitude": 53.93,
+    "longitude": 7.97,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 130"
+  },
+  {
+    "latitude": 53.93,
+    "longitude": 7.97,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 131"
+  },
+  {
+    "latitude": 53.94,
+    "longitude": 7.98,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 132"
+  },
+  {
+    "latitude": 53.94,
+    "longitude": 7.98,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 133"
+  },
+  {
+    "latitude": 53.94,
+    "longitude": 7.98,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 134"
+  },
+  {
+    "latitude": 53.95,
+    "longitude": 7.99,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 135"
+  },
+  {
+    "latitude": 53.95,
+    "longitude": 7.99,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 136"
+  },
+  {
+    "latitude": 53.95,
+    "longitude": 8.0,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 137"
+  },
+  {
+    "latitude": 53.95,
+    "longitude": 8.01,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 138"
+  },
+  {
+    "latitude": 53.95,
+    "longitude": 8.01,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 139"
+  },
+  {
+    "latitude": 53.95,
+    "longitude": 8.02,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 140"
+  },
+  {
+    "latitude": 53.96,
+    "longitude": 8.03,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 141"
+  },
+  {
+    "latitude": 53.96,
+    "longitude": 8.03,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 142"
+  },
+  {
+    "latitude": 53.96,
+    "longitude": 8.04,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 143"
+  },
+  {
+    "latitude": 53.96,
+    "longitude": 8.05,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 144"
+  },
+  {
+    "latitude": 53.96,
+    "longitude": 8.05,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 145"
+  },
+  {
+    "latitude": 53.96,
+    "longitude": 8.06,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 146"
+  },
+  {
+    "latitude": 53.96,
+    "longitude": 8.07,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 147"
+  },
+  {
+    "latitude": 53.96,
+    "longitude": 8.08,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 148"
+  },
+  {
+    "latitude": 53.96,
+    "longitude": 8.08,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 149"
+  },
+  {
+    "latitude": 53.97,
+    "longitude": 8.09,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 150"
+  },
+  {
+    "latitude": 53.97,
+    "longitude": 8.1,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 151"
+  },
+  {
+    "latitude": 53.97,
+    "longitude": 8.1,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 152"
+  },
+  {
+    "latitude": 53.97,
+    "longitude": 8.11,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 153"
+  },
+  {
+    "latitude": 53.97,
+    "longitude": 8.11,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 154"
+  },
+  {
+    "latitude": 53.97,
+    "longitude": 8.12,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 155"
+  },
+  {
+    "latitude": 53.97,
+    "longitude": 8.13,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 156"
+  },
+  {
+    "latitude": 53.97,
+    "longitude": 8.13,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 157"
+  },
+  {
+    "latitude": 53.98,
+    "longitude": 8.14,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 158"
+  },
+  {
+    "latitude": 53.98,
+    "longitude": 8.15,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 159"
+  },
+  {
+    "latitude": 53.98,
+    "longitude": 8.15,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 160"
+  },
+  {
+    "latitude": 53.98,
+    "longitude": 8.16,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 161"
+  },
+  {
+    "latitude": 53.98,
+    "longitude": 8.17,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 162"
+  },
+  {
+    "latitude": 53.98,
+    "longitude": 8.17,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 163"
+  },
+  {
+    "latitude": 53.98,
+    "longitude": 8.18,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 164"
+  },
+  {
+    "latitude": 53.98,
+    "longitude": 8.19,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 165"
+  },
+  {
+    "latitude": 53.98,
+    "longitude": 8.19,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 166"
+  },
+  {
+    "latitude": 53.98,
+    "longitude": 8.2,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 167"
+  },
+  {
+    "latitude": 53.98,
+    "longitude": 8.21,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 168"
+  },
+  {
+    "latitude": 53.98,
+    "longitude": 8.22,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 169"
+  },
+  {
+    "latitude": 53.99,
+    "longitude": 8.22,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 170"
+  },
+  {
+    "latitude": 53.99,
+    "longitude": 8.23,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 171"
+  },
+  {
+    "latitude": 53.99,
+    "longitude": 8.24,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 172"
+  },
+  {
+    "latitude": 53.99,
+    "longitude": 8.24,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 173"
+  },
+  {
+    "latitude": 53.99,
+    "longitude": 8.25,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 174"
+  },
+  {
+    "latitude": 53.99,
+    "longitude": 8.26,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 175"
+  },
+  {
+    "latitude": 53.99,
+    "longitude": 8.27,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 176"
+  },
+  {
+    "latitude": 53.99,
+    "longitude": 8.27,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 177"
+  },
+  {
+    "latitude": 53.99,
+    "longitude": 8.28,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 178"
+  },
+  {
+    "latitude": 53.99,
+    "longitude": 8.29,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 179"
+  },
+  {
+    "latitude": 53.99,
+    "longitude": 8.3,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 180"
+  },
+  {
+    "latitude": 53.99,
+    "longitude": 8.3,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 181"
+  },
+  {
+    "latitude": 53.99,
+    "longitude": 8.31,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 182"
+  },
+  {
+    "latitude": 53.98,
+    "longitude": 8.33,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 183"
+  },
+  {
+    "latitude": 53.98,
+    "longitude": 8.32,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 184"
+  },
+  {
+    "latitude": 53.98,
+    "longitude": 8.33,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 185"
+  },
+  {
+    "latitude": 53.98,
+    "longitude": 8.34,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 186"
+  },
+  {
+    "latitude": 53.98,
+    "longitude": 8.35,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 187"
+  },
+  {
+    "latitude": 53.98,
+    "longitude": 8.35,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 188"
+  },
+  {
+    "latitude": 53.98,
+    "longitude": 8.36,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 189"
+  },
+  {
+    "latitude": 53.98,
+    "longitude": 8.37,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 190"
+  },
+  {
+    "latitude": 53.98,
+    "longitude": 8.37,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 191"
+  },
+  {
+    "latitude": 53.98,
+    "longitude": 8.38,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 192"
+  },
+  {
+    "latitude": 53.98,
+    "longitude": 8.39,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 193"
+  },
+  {
+    "latitude": 53.98,
+    "longitude": 8.4,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 194"
+  },
+  {
+    "latitude": 53.98,
+    "longitude": 8.4,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 195"
+  },
+  {
+    "latitude": 53.98,
+    "longitude": 8.41,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 196"
+  },
+  {
+    "latitude": 53.98,
+    "longitude": 8.42,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 197"
+  },
+  {
+    "latitude": 53.97,
+    "longitude": 8.43,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 198"
+  },
+  {
+    "latitude": 53.97,
+    "longitude": 8.43,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 199"
+  },
+  {
+    "latitude": 53.97,
+    "longitude": 8.44,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 200"
+  },
+  {
+    "latitude": 53.97,
+    "longitude": 8.45,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 201"
+  },
+  {
+    "latitude": 53.97,
+    "longitude": 8.46,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 202"
+  },
+  {
+    "latitude": 53.97,
+    "longitude": 8.46,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 203"
+  },
+  {
+    "latitude": 53.97,
+    "longitude": 8.47,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 204"
+  },
+  {
+    "latitude": 53.97,
+    "longitude": 8.48,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 205"
+  },
+  {
+    "latitude": 53.97,
+    "longitude": 8.49,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 206"
+  },
+  {
+    "latitude": 53.97,
+    "longitude": 8.49,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 207"
+  },
+  {
+    "latitude": 53.97,
+    "longitude": 8.5,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 208"
+  },
+  {
+    "latitude": 53.97,
+    "longitude": 8.51,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 209"
+  },
+  {
+    "latitude": 53.96,
+    "longitude": 8.52,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 210"
+  },
+  {
+    "latitude": 53.96,
+    "longitude": 8.52,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 211"
+  },
+  {
+    "latitude": 53.96,
+    "longitude": 8.53,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 212"
+  },
+  {
+    "latitude": 53.96,
+    "longitude": 8.54,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 213"
+  },
+  {
+    "latitude": 53.96,
+    "longitude": 8.55,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 214"
+  },
+  {
+    "latitude": 53.96,
+    "longitude": 8.55,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 215"
+  },
+  {
+    "latitude": 53.96,
+    "longitude": 8.56,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 216"
+  },
+  {
+    "latitude": 53.96,
+    "longitude": 8.57,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 217"
+  },
+  {
+    "latitude": 53.96,
+    "longitude": 8.57,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 218"
+  },
+  {
+    "latitude": 53.96,
+    "longitude": 8.58,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 219"
+  },
+  {
+    "latitude": 53.95,
+    "longitude": 8.59,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 220"
+  },
+  {
+    "latitude": 53.95,
+    "longitude": 8.6,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 221"
+  },
+  {
+    "latitude": 53.95,
+    "longitude": 8.6,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 222"
+  },
+  {
+    "latitude": 53.95,
+    "longitude": 8.61,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 223"
+  },
+  {
+    "latitude": 53.95,
+    "longitude": 8.62,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 224"
+  },
+  {
+    "latitude": 53.94,
+    "longitude": 8.62,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 225"
+  },
+  {
+    "latitude": 53.94,
+    "longitude": 8.63,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 226"
+  },
+  {
+    "latitude": 53.94,
+    "longitude": 8.64,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 227"
+  },
+  {
+    "latitude": 53.94,
+    "longitude": 8.64,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 228"
+  },
+  {
+    "latitude": 53.93,
+    "longitude": 8.65,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 229"
+  },
+  {
+    "latitude": 53.93,
+    "longitude": 8.65,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 230"
+  },
+  {
+    "latitude": 53.92,
+    "longitude": 8.66,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 231"
+  },
+  {
+    "latitude": 53.92,
+    "longitude": 8.66,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 232"
+  },
+  {
+    "latitude": 53.92,
+    "longitude": 8.66,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 233"
+  },
+  {
+    "latitude": 53.91,
+    "longitude": 8.67,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 234"
+  },
+  {
+    "latitude": 53.91,
+    "longitude": 8.67,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 235"
+  },
+  {
+    "latitude": 53.9,
+    "longitude": 8.68,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 236"
+  },
+  {
+    "latitude": 53.9,
+    "longitude": 8.68,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 237"
+  },
+  {
+    "latitude": 53.9,
+    "longitude": 8.68,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 238"
+  },
+  {
+    "latitude": 53.89,
+    "longitude": 8.69,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 239"
+  },
+  {
+    "latitude": 53.89,
+    "longitude": 8.69,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 240"
+  },
+  {
+    "latitude": 53.88,
+    "longitude": 8.69,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 241"
+  },
+  {
+    "latitude": 53.88,
+    "longitude": 8.7,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 242"
+  },
+  {
+    "latitude": 53.88,
+    "longitude": 8.7,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 243"
+  },
+  {
+    "latitude": 53.87,
+    "longitude": 8.7,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 244"
+  },
+  {
+    "latitude": 53.87,
+    "longitude": 8.71,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 245"
+  },
+  {
+    "latitude": 53.87,
+    "longitude": 8.71,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 246"
+  },
+  {
+    "latitude": 53.86,
+    "longitude": 8.72,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 247"
+  },
+  {
+    "latitude": 53.86,
+    "longitude": 8.72,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 248"
+  },
+  {
+    "latitude": 53.86,
+    "longitude": 8.72,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 249"
+  },
+  {
+    "latitude": 53.86,
+    "longitude": 8.73,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 250"
+  },
+  {
+    "latitude": 53.85,
+    "longitude": 8.73,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 251"
+  },
+  {
+    "latitude": 53.85,
+    "longitude": 8.74,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 252"
+  },
+  {
+    "latitude": 53.85,
+    "longitude": 8.74,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 253"
+  },
+  {
+    "latitude": 53.85,
+    "longitude": 8.75,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 254"
+  },
+  {
+    "latitude": 53.84,
+    "longitude": 8.75,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 255"
+  },
+  {
+    "latitude": 53.84,
+    "longitude": 8.76,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 256"
+  },
+  {
+    "latitude": 53.84,
+    "longitude": 8.77,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 257"
+  },
+  {
+    "latitude": 53.84,
+    "longitude": 8.77,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 258"
+  },
+  {
+    "latitude": 53.84,
+    "longitude": 8.78,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 259"
+  },
+  {
+    "latitude": 53.83,
+    "longitude": 8.79,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 260"
+  },
+  {
+    "latitude": 53.83,
+    "longitude": 8.8,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 261"
+  },
+  {
+    "latitude": 53.83,
+    "longitude": 8.8,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 262"
+  },
+  {
+    "latitude": 53.83,
+    "longitude": 8.81,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 263"
+  },
+  {
+    "latitude": 53.83,
+    "longitude": 8.82,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 264"
+  },
+  {
+    "latitude": 53.83,
+    "longitude": 8.83,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 265"
+  },
+  {
+    "latitude": 53.83,
+    "longitude": 8.84,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 266"
+  },
+  {
+    "latitude": 53.83,
+    "longitude": 8.85,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 267"
+  },
+  {
+    "latitude": 53.83,
+    "longitude": 8.85,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 268"
+  },
+  {
+    "latitude": 53.83,
+    "longitude": 8.86,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 269"
+  },
+  {
+    "latitude": 53.83,
+    "longitude": 8.87,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 270"
+  },
+  {
+    "latitude": 53.83,
+    "longitude": 8.88,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 271"
+  },
+  {
+    "latitude": 53.84,
+    "longitude": 8.88,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 272"
+  },
+  {
+    "latitude": 53.84,
+    "longitude": 8.89,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 273"
+  },
+  {
+    "latitude": 53.84,
+    "longitude": 8.9,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 274"
+  },
+  {
+    "latitude": 53.84,
+    "longitude": 8.91,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 275"
+  },
+  {
+    "latitude": 53.84,
+    "longitude": 8.92,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 276"
+  },
+  {
+    "latitude": 53.84,
+    "longitude": 8.92,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 277"
+  },
+  {
+    "latitude": 53.84,
+    "longitude": 8.93,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 278"
+  },
+  {
+    "latitude": 53.84,
+    "longitude": 8.94,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 279"
+  },
+  {
+    "latitude": 53.84,
+    "longitude": 8.95,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 280"
+  },
+  {
+    "latitude": 53.84,
+    "longitude": 8.95,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 281"
+  },
+  {
+    "latitude": 53.84,
+    "longitude": 8.96,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 282"
+  },
+  {
+    "latitude": 53.84,
+    "longitude": 8.97,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 283"
+  },
+  {
+    "latitude": 53.84,
+    "longitude": 8.98,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 284"
+  },
+  {
+    "latitude": 53.85,
+    "longitude": 8.98,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 285"
+  },
+  {
+    "latitude": 53.85,
+    "longitude": 8.99,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 286"
+  },
+  {
+    "latitude": 53.85,
+    "longitude": 9.0,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 287"
+  },
+  {
+    "latitude": 53.85,
+    "longitude": 9.0,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 288"
+  },
+  {
+    "latitude": 53.85,
+    "longitude": 9.01,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 289"
+  },
+  {
+    "latitude": 53.85,
+    "longitude": 9.01,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 290"
+  },
+  {
+    "latitude": 53.85,
+    "longitude": 9.02,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 291"
+  },
+  {
+    "latitude": 53.85,
+    "longitude": 9.03,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 292"
+  },
+  {
+    "latitude": 53.86,
+    "longitude": 9.03,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 293"
+  },
+  {
+    "latitude": 53.86,
+    "longitude": 9.04,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 294"
+  },
+  {
+    "latitude": 53.86,
+    "longitude": 9.04,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 295"
+  },
+  {
+    "latitude": 53.86,
+    "longitude": 9.05,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 296"
+  },
+  {
+    "latitude": 53.86,
+    "longitude": 9.05,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 297"
+  },
+  {
+    "latitude": 53.86,
+    "longitude": 9.06,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 298"
+  },
+  {
+    "latitude": 53.86,
+    "longitude": 9.07,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 299"
+  },
+  {
+    "latitude": 53.87,
+    "longitude": 9.07,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 300"
+  },
+  {
+    "latitude": 53.87,
+    "longitude": 9.08,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 301"
+  },
+  {
+    "latitude": 53.87,
+    "longitude": 9.08,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 302"
+  },
+  {
+    "latitude": 53.87,
+    "longitude": 9.09,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 303"
+  },
+  {
+    "latitude": 53.87,
+    "longitude": 9.09,
+    "is_anomaly_pred": 1,
+    "comment": "Entry number 304"
+  },
+  {
+    "latitude": 53.87,
+    "longitude": 9.09,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 305"
+  },
+  {
+    "latitude": 53.87,
+    "longitude": 9.1,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 306"
+  },
+  {
+    "latitude": 53.87,
+    "longitude": 9.1,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 307"
+  },
+  {
+    "latitude": 53.87,
+    "longitude": 9.1,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 308"
+  },
+  {
+    "latitude": 53.87,
+    "longitude": 9.1,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 309"
+  },
+  {
+    "latitude": 53.87,
+    "longitude": 9.1,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 310"
+  },
+  {
+    "latitude": 53.87,
+    "longitude": 9.11,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 311"
+  },
+  {
+    "latitude": 53.87,
+    "longitude": 9.11,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 312"
+  },
+  {
+    "latitude": 53.87,
+    "longitude": 9.11,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 313"
+  },
+  {
+    "latitude": 53.87,
+    "longitude": 9.11,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 314"
+  },
+  {
+    "latitude": 53.87,
+    "longitude": 9.12,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 315"
+  },
+  {
+    "latitude": 53.87,
+    "longitude": 9.12,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 316"
+  },
+  {
+    "latitude": 53.87,
+    "longitude": 9.12,
+    "is_anomaly_pred": 1,
+    "comment": "Entry number 317"
+  },
+  {
+    "latitude": 53.87,
+    "longitude": 9.13,
+    "is_anomaly_pred": 1,
+    "comment": "Entry number 318"
+  },
+  {
+    "latitude": 53.87,
+    "longitude": 9.13,
+    "is_anomaly_pred": 1,
+    "comment": "Entry number 319"
+  },
+  {
+    "latitude": 53.87,
+    "longitude": 9.14,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 320"
+  },
+  {
+    "latitude": 53.87,
+    "longitude": 9.15,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 321"
+  },
+  {
+    "latitude": 53.87,
+    "longitude": 9.16,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 322"
+  },
+  {
+    "latitude": 53.87,
+    "longitude": 9.16,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 323"
+  },
+  {
+    "latitude": 53.87,
+    "longitude": 9.17,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 324"
+  },
+  {
+    "latitude": 53.87,
+    "longitude": 9.18,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 325"
+  },
+  {
+    "latitude": 53.87,
+    "longitude": 9.19,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 326"
+  },
+  {
+    "latitude": 53.87,
+    "longitude": 9.2,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 327"
+  },
+  {
+    "latitude": 53.87,
+    "longitude": 9.2,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 328"
+  },
+  {
+    "latitude": 53.87,
+    "longitude": 9.21,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 329"
+  },
+  {
+    "latitude": 53.87,
+    "longitude": 9.22,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 330"
+  },
+  {
+    "latitude": 53.87,
+    "longitude": 9.23,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 331"
+  },
+  {
+    "latitude": 53.87,
+    "longitude": 9.24,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 332"
+  },
+  {
+    "latitude": 53.87,
+    "longitude": 9.24,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 333"
+  },
+  {
+    "latitude": 53.87,
+    "longitude": 9.25,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 334"
+  },
+  {
+    "latitude": 53.87,
+    "longitude": 9.26,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 335"
+  },
+  {
+    "latitude": 53.86,
+    "longitude": 9.27,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 336"
+  },
+  {
+    "latitude": 53.86,
+    "longitude": 9.27,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 337"
+  },
+  {
+    "latitude": 53.86,
+    "longitude": 9.28,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 338"
+  },
+  {
+    "latitude": 53.86,
+    "longitude": 9.29,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 339"
+  },
+  {
+    "latitude": 53.85,
+    "longitude": 9.29,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 340"
+  },
+  {
+    "latitude": 53.85,
+    "longitude": 9.3,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 341"
+  },
+  {
+    "latitude": 53.85,
+    "longitude": 9.31,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 342"
+  },
+  {
+    "latitude": 53.85,
+    "longitude": 9.31,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 343"
+  },
+  {
+    "latitude": 53.84,
+    "longitude": 9.32,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 344"
+  },
+  {
+    "latitude": 53.84,
+    "longitude": 9.32,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 345"
+  },
+  {
+    "latitude": 53.83,
+    "longitude": 9.33,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 346"
+  },
+  {
+    "latitude": 53.83,
+    "longitude": 9.34,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 347"
+  },
+  {
+    "latitude": 53.83,
+    "longitude": 9.34,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 348"
+  },
+  {
+    "latitude": 53.82,
+    "longitude": 9.35,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 349"
+  },
+  {
+    "latitude": 53.82,
+    "longitude": 9.35,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 350"
+  },
+  {
+    "latitude": 53.82,
+    "longitude": 9.36,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 351"
+  },
+  {
+    "latitude": 53.81,
+    "longitude": 9.36,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 352"
+  },
+  {
+    "latitude": 53.81,
+    "longitude": 9.36,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 353"
+  },
+  {
+    "latitude": 53.8,
+    "longitude": 9.37,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 354"
+  },
+  {
+    "latitude": 53.8,
+    "longitude": 9.37,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 355"
+  },
+  {
+    "latitude": 53.79,
+    "longitude": 9.37,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 356"
+  },
+  {
+    "latitude": 53.79,
+    "longitude": 9.37,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 357"
+  },
+  {
+    "latitude": 53.78,
+    "longitude": 9.38,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 358"
+  },
+  {
+    "latitude": 53.78,
+    "longitude": 9.38,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 359"
+  },
+  {
+    "latitude": 53.77,
+    "longitude": 9.38,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 360"
+  },
+  {
+    "latitude": 53.77,
+    "longitude": 9.39,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 361"
+  },
+  {
+    "latitude": 53.76,
+    "longitude": 9.39,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 362"
+  },
+  {
+    "latitude": 53.76,
+    "longitude": 9.39,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 363"
+  },
+  {
+    "latitude": 53.75,
+    "longitude": 9.39,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 364"
+  },
+  {
+    "latitude": 53.75,
+    "longitude": 9.4,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 365"
+  },
+  {
+    "latitude": 53.75,
+    "longitude": 9.4,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 366"
+  },
+  {
+    "latitude": 53.74,
+    "longitude": 9.41,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 367"
+  },
+  {
+    "latitude": 53.74,
+    "longitude": 9.41,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 368"
+  },
+  {
+    "latitude": 53.73,
+    "longitude": 9.42,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 369"
+  },
+  {
+    "latitude": 53.73,
+    "longitude": 9.42,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 370"
+  },
+  {
+    "latitude": 53.73,
+    "longitude": 9.43,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 371"
+  },
+  {
+    "latitude": 53.73,
+    "longitude": 9.44,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 372"
+  },
+  {
+    "latitude": 53.72,
+    "longitude": 9.44,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 373"
+  },
+  {
+    "latitude": 53.72,
+    "longitude": 9.45,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 374"
+  },
+  {
+    "latitude": 53.72,
+    "longitude": 9.46,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 375"
+  },
+  {
+    "latitude": 53.72,
+    "longitude": 9.46,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 376"
+  },
+  {
+    "latitude": 53.71,
+    "longitude": 9.47,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 377"
+  },
+  {
+    "latitude": 53.71,
+    "longitude": 9.47,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 378"
+  },
+  {
+    "latitude": 53.7,
+    "longitude": 9.48,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 379"
+  },
+  {
+    "latitude": 53.7,
+    "longitude": 9.48,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 380"
+  },
+  {
+    "latitude": 53.7,
+    "longitude": 9.49,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 381"
+  },
+  {
+    "latitude": 53.69,
+    "longitude": 9.49,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 382"
+  },
+  {
+    "latitude": 53.69,
+    "longitude": 9.49,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 383"
+  },
+  {
+    "latitude": 53.68,
+    "longitude": 9.49,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 384"
+  },
+  {
+    "latitude": 53.68,
+    "longitude": 9.5,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 385"
+  },
+  {
+    "latitude": 53.67,
+    "longitude": 9.5,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 386"
+  },
+  {
+    "latitude": 53.67,
+    "longitude": 9.5,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 387"
+  },
+  {
+    "latitude": 53.66,
+    "longitude": 9.5,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 388"
+  },
+  {
+    "latitude": 53.66,
+    "longitude": 9.51,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 389"
+  },
+  {
+    "latitude": 53.66,
+    "longitude": 9.51,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 390"
+  },
+  {
+    "latitude": 53.65,
+    "longitude": 9.51,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 391"
+  },
+  {
+    "latitude": 53.65,
+    "longitude": 9.51,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 392"
+  },
+  {
+    "latitude": 53.65,
+    "longitude": 9.51,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 393"
+  },
+  {
+    "latitude": 53.64,
+    "longitude": 9.51,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 394"
+  },
+  {
+    "latitude": 53.64,
+    "longitude": 9.51,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 395"
+  },
+  {
+    "latitude": 53.64,
+    "longitude": 9.52,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 396"
+  },
+  {
+    "latitude": 53.63,
+    "longitude": 9.52,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 397"
+  },
+  {
+    "latitude": 53.63,
+    "longitude": 9.52,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 398"
+  },
+  {
+    "latitude": 53.62,
+    "longitude": 9.53,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 399"
+  },
+  {
+    "latitude": 53.62,
+    "longitude": 9.53,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 400"
+  },
+  {
+    "latitude": 53.62,
+    "longitude": 9.54,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 401"
+  },
+  {
+    "latitude": 53.61,
+    "longitude": 9.54,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 402"
+  },
+  {
+    "latitude": 53.61,
+    "longitude": 9.55,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 403"
+  },
+  {
+    "latitude": 53.61,
+    "longitude": 9.55,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 404"
+  },
+  {
+    "latitude": 53.61,
+    "longitude": 9.56,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 405"
+  },
+  {
+    "latitude": 53.6,
+    "longitude": 9.57,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 406"
+  },
+  {
+    "latitude": 53.6,
+    "longitude": 9.57,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 407"
+  },
+  {
+    "latitude": 53.6,
+    "longitude": 9.58,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 408"
+  },
+  {
+    "latitude": 53.6,
+    "longitude": 9.58,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 409"
+  },
+  {
+    "latitude": 53.59,
+    "longitude": 9.59,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 410"
+  },
+  {
+    "latitude": 53.59,
+    "longitude": 9.59,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 411"
+  },
+  {
+    "latitude": 53.59,
+    "longitude": 9.6,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 412"
+  },
+  {
+    "latitude": 53.58,
+    "longitude": 9.61,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 413"
+  },
+  {
+    "latitude": 53.58,
+    "longitude": 9.61,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 414"
+  },
+  {
+    "latitude": 53.58,
+    "longitude": 9.62,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 415"
+  },
+  {
+    "latitude": 53.57,
+    "longitude": 9.62,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 416"
+  },
+  {
+    "latitude": 53.57,
+    "longitude": 9.63,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 417"
+  },
+  {
+    "latitude": 53.57,
+    "longitude": 9.64,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 418"
+  },
+  {
+    "latitude": 53.57,
+    "longitude": 9.64,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 419"
+  },
+  {
+    "latitude": 53.56,
+    "longitude": 9.65,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 420"
+  },
+  {
+    "latitude": 53.56,
+    "longitude": 9.66,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 421"
+  },
+  {
+    "latitude": 53.56,
+    "longitude": 9.67,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 422"
+  },
+  {
+    "latitude": 53.56,
+    "longitude": 9.67,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 423"
+  },
+  {
+    "latitude": 53.56,
+    "longitude": 9.68,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 424"
+  },
+  {
+    "latitude": 53.56,
+    "longitude": 9.69,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 425"
+  },
+  {
+    "latitude": 53.56,
+    "longitude": 9.7,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 426"
+  },
+  {
+    "latitude": 53.56,
+    "longitude": 9.7,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 427"
+  },
+  {
+    "latitude": 53.56,
+    "longitude": 9.71,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 428"
+  },
+  {
+    "latitude": 53.56,
+    "longitude": 9.72,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 429"
+  },
+  {
+    "latitude": 53.56,
+    "longitude": 9.73,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 430"
+  },
+  {
+    "latitude": 53.56,
+    "longitude": 9.73,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 431"
+  },
+  {
+    "latitude": 53.56,
+    "longitude": 9.74,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 432"
+  },
+  {
+    "latitude": 53.56,
+    "longitude": 9.74,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 433"
+  },
+  {
+    "latitude": 53.56,
+    "longitude": 9.75,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 434"
+  },
+  {
+    "latitude": 53.56,
+    "longitude": 9.76,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 435"
+  },
+  {
+    "latitude": 53.55,
+    "longitude": 9.76,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 436"
+  },
+  {
+    "latitude": 53.55,
+    "longitude": 9.76,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 437"
+  },
+  {
+    "latitude": 53.55,
+    "longitude": 9.77,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 438"
+  },
+  {
+    "latitude": 53.55,
+    "longitude": 9.78,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 439"
+  },
+  {
+    "latitude": 53.55,
+    "longitude": 9.78,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 440"
+  },
+  {
+    "latitude": 53.55,
+    "longitude": 9.79,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 441"
+  },
+  {
+    "latitude": 53.55,
+    "longitude": 9.79,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 442"
+  },
+  {
+    "latitude": 53.55,
+    "longitude": 9.8,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 443"
+  },
+  {
+    "latitude": 53.55,
+    "longitude": 9.8,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 444"
+  },
+  {
+    "latitude": 53.55,
+    "longitude": 9.81,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 445"
+  },
+  {
+    "latitude": 53.55,
+    "longitude": 9.81,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 446"
+  },
+  {
+    "latitude": 53.55,
+    "longitude": 9.81,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 447"
+  },
+  {
+    "latitude": 53.55,
+    "longitude": 9.82,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 448"
+  },
+  {
+    "latitude": 53.54,
+    "longitude": 9.82,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 449"
+  },
+  {
+    "latitude": 53.54,
+    "longitude": 9.83,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 450"
+  },
+  {
+    "latitude": 53.54,
+    "longitude": 9.83,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 451"
+  },
+  {
+    "latitude": 53.54,
+    "longitude": 9.83,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 452"
+  },
+  {
+    "latitude": 53.54,
+    "longitude": 9.84,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 453"
+  },
+  {
+    "latitude": 53.54,
+    "longitude": 9.84,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 454"
+  },
+  {
+    "latitude": 53.54,
+    "longitude": 9.84,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 455"
+  },
+  {
+    "latitude": 53.54,
+    "longitude": 9.85,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 456"
+  },
+  {
+    "latitude": 53.54,
+    "longitude": 9.85,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 457"
+  },
+  {
+    "latitude": 53.54,
+    "longitude": 9.86,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 458"
+  },
+  {
+    "latitude": 53.54,
+    "longitude": 9.86,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 459"
+  },
+  {
+    "latitude": 53.54,
+    "longitude": 9.87,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 460"
+  },
+  {
+    "latitude": 53.54,
+    "longitude": 9.87,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 461"
+  },
+  {
+    "latitude": 53.54,
+    "longitude": 9.88,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 462"
+  },
+  {
+    "latitude": 53.54,
+    "longitude": 9.88,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 463"
+  },
+  {
+    "latitude": 53.54,
+    "longitude": 9.89,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 464"
+  },
+  {
+    "latitude": 53.54,
+    "longitude": 9.9,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 465"
+  },
+  {
+    "latitude": 53.54,
+    "longitude": 9.9,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 466"
+  },
+  {
+    "latitude": 53.54,
+    "longitude": 9.91,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 467"
+  },
+  {
+    "latitude": 53.54,
+    "longitude": 9.91,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 468"
+  },
+  {
+    "latitude": 53.54,
+    "longitude": 9.92,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 469"
+  },
+  {
+    "latitude": 53.54,
+    "longitude": 9.92,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 470"
+  },
+  {
+    "latitude": 53.54,
+    "longitude": 9.93,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 471"
+  },
+  {
+    "latitude": 53.54,
+    "longitude": 9.93,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 472"
+  },
+  {
+    "latitude": 53.54,
+    "longitude": 9.93,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 473"
+  },
+  {
+    "latitude": 53.54,
+    "longitude": 9.94,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 474"
+  },
+  {
+    "latitude": 53.54,
+    "longitude": 9.94,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 475"
+  },
+  {
+    "latitude": 53.54,
+    "longitude": 9.94,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 476"
+  },
+  {
+    "latitude": 53.53,
+    "longitude": 9.94,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 477"
+  },
+  {
+    "latitude": 53.53,
+    "longitude": 9.95,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 478"
+  },
+  {
+    "latitude": 53.53,
+    "longitude": 9.95,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 479"
+  },
+  {
+    "latitude": 53.53,
+    "longitude": 9.95,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 480"
+  },
+  {
+    "latitude": 53.53,
+    "longitude": 9.95,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 481"
+  },
+  {
+    "latitude": 53.53,
+    "longitude": 9.95,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 482"
+  },
+  {
+    "latitude": 53.53,
+    "longitude": 9.95,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 483"
+  },
+  {
+    "latitude": 53.53,
+    "longitude": 9.94,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 484"
+  },
+  {
+    "latitude": 53.53,
+    "longitude": 9.94,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 485"
+  },
+  {
+    "latitude": 53.53,
+    "longitude": 9.94,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 486"
+  },
+  {
+    "latitude": 53.53,
+    "longitude": 9.94,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 487"
+  },
+  {
+    "latitude": 53.53,
+    "longitude": 9.94,
+    "is_anomaly_pred": 0,
+    "comment": "Entry number 488"
+  }
+]

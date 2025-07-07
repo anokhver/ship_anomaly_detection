@@ -7,3 +7,4 @@ dist
 .env.*.local
 .vscode/
 frontend_backup
+input_data
