@@ -3,7 +3,7 @@
 """
 Trip-wise anomaly labeller with undo confirmation and detailed logging
 
-*   Anomalies = (manual intervals ∪ Δ-speed>thr ∪ Δ-course>thr) \ ZONES
+*   Anomalies = (manual intervals or Δ-speed>thr or Δ-course>thr) \ ZONES
 *   All other trip points → no anomaly.
 *   Before writing: displays override statistics and requires confirmation.
 """
