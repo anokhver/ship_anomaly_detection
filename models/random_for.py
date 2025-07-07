@@ -164,55 +164,78 @@ def train_per_route(df: pd.DataFrame, out_dir: str = "models_per_route_rf") -> N
 
         fr = add_route_specific_features(df, route)
         fr = fr.dropna(subset=["y_true"])
-        X = fr[BASE_COLUMNS].fillna(0).values
-        y = fr["y_true"].values
+        # Define test indices
+        # Stratified sampling of anomaly and normal points
+        anom_indices = fr[fr.y_true == 1].index
+        norm_indices = fr[fr.y_true == 0].index
+
+        n_anom_test = max(1, int(TEST_FRACTION_N * len(anom_indices)))
+        n_norm_test = max(1, int(TEST_FRACTION_N * len(norm_indices)))
+
+        idx_anom_test = anom_indices.to_series().sample(n=n_anom_test, random_state=42)
+        idx_norm_test = norm_indices.to_series().sample(n=n_norm_test, random_state=42)
+
+        test_idx = np.concatenate([idx_anom_test, idx_norm_test])
+        fr_train = fr.drop(index=test_idx)
+
+        X = fr_train[BASE_COLUMNS].fillna(0).values
+        y = fr_train["y_true"].values
+        
 
         if np.sum(y == 0) == 0 or np.sum(y == 1) == 0:
             print("  * Not enough class samples, skipping this route.")
             continue
 
-        idx_anom = fr[fr.y_true == 1].index.to_numpy()
-        n_norm_test = max(1, int(TEST_FRACTION_N * np.sum(y == 0)))
-        idx_norm = fr[fr.y_true == 0].sample(n=n_norm_test, random_state=42).index.to_numpy()
+        
 
         X_test = np.vstack([
-            fr.loc[idx_anom, BASE_COLUMNS].fillna(0).values,
-            fr.loc[idx_norm, BASE_COLUMNS].fillna(0).values
+            fr.loc[idx_anom_test, BASE_COLUMNS].fillna(0).values,
+            fr.loc[idx_norm_test, BASE_COLUMNS].fillna(0).values
         ])
         y_test = np.concatenate([
-            np.ones(len(idx_anom), dtype=int),
-            np.zeros(len(idx_norm), dtype=int)
+            np.ones(len(idx_anom_test), dtype=int),
+            np.zeros(len(idx_norm_test), dtype=int)
         ])
 
         # ─── grid-search over RF hyperparams ───
-        best = {"auc": -np.inf}
-        for n in [50, 100, 200]:
-            for d in [None, 10, 20]:
-                kf = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
-                auc_scores = []
+        best = {"f1": -np.inf}
+        param_grid = [
+            {"n_estimators": n, "max_depth": d, "min_samples_leaf": l, "max_features": f}
+            for n in [100, 200]
+            for d in [None, 10, 20]
+            for l in [1, 5]
+            for f in ["sqrt", "log2"]
+        ]
 
-                for train_idx, val_idx in kf.split(X, y):
-                    clf = RandomForestClassifier(
-                        n_estimators=n,
-                        max_depth=d,
-                        random_state=42,
-                        class_weight={0: 1.0, 1: 2.0},
-                        n_jobs=-1
-                    )
-                    clf.fit(X[train_idx], y[train_idx])
-                    val_scores = clf.predict_proba(X[val_idx])[:, 1]
-                    val_preds = (val_scores > tau).astype(int)
-                    auc = roc_auc_score(y[val_idx], val_scores)
-                    auc_scores.append(auc)
+        for params in param_grid:
+            kf = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+            f1_scores = []
 
-                mean_auc = np.mean(auc_scores)
-                print(f"  n={n:<3} d={str(d):<4} AUC={mean_auc:.3f}")
+            for train_idx, val_idx in kf.split(X, y):
+                clf = RandomForestClassifier(
+                    **params,
+                    random_state=42,
+                    class_weight={0: 1.0, 1: 2.0},
+                    n_jobs=-1
+                )
+                clf.fit(X[train_idx], y[train_idx])
+                val_scores = clf.predict_proba(X[val_idx])[:, 1]
+                best_f1 = 0
+                for t in np.linspace(0, 1, 101):
+                    val_preds = (val_scores > t).astype(int)
+                    f1 = f1_score(y[val_idx], val_preds)
+                    if f1 > best_f1:
+                        best_f1 = f1
+                f1_scores.append(best_f1)
 
-                if mean_auc > best["auc"]:
-                    best.update(pipe=clf, n=n, d=d, auc=mean_auc)
+            mean_f1 = np.mean(f1_scores)
+            print(f"  {params}  F1={mean_f1:.3f}")
 
-        # ─── final evaluation & save ───
-        print(f"\n-> Selected n={best['n']} d={best['d']}  AUC={best['auc']:.3f}")
+            if mean_f1 > best["f1"]:
+                best.update(pipe=clf, f1=mean_f1, **params)
+
+        # ─── final evaluation & save (only once per route) ───
+        print(f"\n-> Selected n_estimators={best['n_estimators']} max_depth={best['max_depth']} min_samples_leaf={best['min_samples_leaf']} max_features={best['max_features']}  F1={best['f1']:.3f}")
         scores_test = best["pipe"].predict_proba(X_test)[:, 1]
         best_tau = 1
         best_f1 = 0
@@ -229,7 +252,7 @@ def train_per_route(df: pd.DataFrame, out_dir: str = "models_per_route_rf") -> N
 
         print(confusion_matrix(y_test, preds))
         tn, fp, fn, tp = confusion_matrix(y_test, preds).ravel()
-        print(f"TP: {tp}, TN: {tn}, FP: {fp}, FN: {fn}")
+        print(f"Total samples: {len(y_test)} TP: {tp}, TN: {tn}, FP: {fp}, FN: {fn}")
         print(classification_report(y_test, preds, digits=3))
         print(f"Route {route} done in {time.time() - t0:.1f}s\n")
 
@@ -244,7 +267,6 @@ def train_per_route(df: pd.DataFrame, out_dir: str = "models_per_route_rf") -> N
         )
         dispatcher[route] = str(model_path)
 
-    joblib.dump(dispatcher, Path(out_dir) / "dispatcher.pkl")
     print("All models saved, dispatcher.pkl created.")
 
 if __name__ == "__main__":
