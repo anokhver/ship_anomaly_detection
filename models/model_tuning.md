@@ -14,6 +14,8 @@ F1 score=2⋅(Precision+Recall)/(Precision⋅Recall)
 
 Different models required different ways of tuning and testing, depending on their behaviour.
 
+---
+
 ## Random forest
 
 ### Model description
@@ -44,6 +46,7 @@ BREMERHAVEN-HAMBURG route - n_estimators=200, max_depth=None, min_samples_leaf=1
 
 ### Observations and potential improvements
 
+---
 
 ## Logistic regression
 
@@ -83,7 +86,7 @@ BREMERHAVEN-HAMBURG route - C=0.01, penalty : l2, class_weight : {0: 1.0, 1: 4.0
 
 ### Observations and potential improvements
 
-
+---
 
 ## Isolation forest
 
@@ -114,6 +117,8 @@ BREMERHAVEN-HAMBURG route - n_estimators=140, τ=-0.038, max_samples=1.0, max_fe
 
 ### Observations and potential improvements
 
+---
+
 ## One-class SVM
 
 ### Model descripiton
@@ -140,3 +145,167 @@ BREMERHAVEN-HAMBURG route - ν=0.001, τ=0.000, γ(gamma)=1.0 with anomaly score
 
 ### Observations and potential improvements
 
+---
+
+## LSTM Autoencoder training
+    
+### Model Architectures
+
+Two models were tested
+
+The LSTM autoencoders completely poor performance might be due to the few facts:
+1. LSTM focuses on sequence reconstruction error rather than feature-based classification and classification only at one point as anomalous.
+2. The LSTM autoencoder architecture is more complex and data-hungry, requiring substantial amounts of training data to generalize well.
+
+#### 1. LSTM Autoencoder (Lightweight)
+
+Hidden size was tested from 8 to 32
+
+```
+Architecture:
+├── Encoder LSTM
+│   ├── Input Size: 4-5 features (varies by route)
+│   ├── Hidden Size: 16
+│   ├── Layers: 2 (stacked)
+│   └── Dropout: 0.1
+└── Decoder LSTM
+    ├── Hidden Size: 16
+    ├── Layers: 2 (stacked)
+    ├── Output Layer: Linear(16 → input_size)
+    └── Dropout: 0.1
+```
+
+#### 2. LSTM Autoencoder (Deep Architecture)
+
+Hidden size was tested from 8 to 32
+
+```
+Architecture:
+├── Multi-Stage Encoder
+│   ├── Stage 1: LSTM(input_size → hidden_size*2)
+│   ├── Stage 2: LSTM(hidden_size*2 → hidden_size)
+│   └── Bottleneck: Compressed latent representation
+├── Bridge Layers
+│   ├── Hidden Transform: Linear(hidden_size → hidden_size*2)
+│   └── Cell Transform: Linear(hidden_size → hidden_size*2)
+└── Multi-Stage Decoder
+    ├── Stage 1: LSTM(hidden_size → hidden_size*2)
+    ├── Stage 2: LSTM(hidden_size*2 → hidden_size*2)
+    └── Output: Linear(hidden_size*2 → input_size)
+```
+### Training Description
+
+**Lightweight vs Deep Architecture:** \
+The Deep Architecture achieved better results on validation data,
+reaching MCC and F1 scores as high as _0.89_,
+while the Lightweight model achieved _0.87_. 
+
+However, when examined on unlabeled data manually and compared to the Random Forest model,
+both architectures showed signs of overfitting near the starting ports in the training data,
+incorrectly labeling normal departures from both Kiel and Bremerhaven routes as anomalies.
+
+The complex model required noticeably more training time without proving to boost results substantially.
+
+
+**Feature Engineering Limitations:** \
+Adding zone features that boosted performance in other models did not help the LSTM autoencoder. 
+
+While zone features could theoretically be used to implement different thresholds for different geographical zones,
+there was not much time left to, so focus remained on improving the existing architecture.
+
+**Attempts in Overfitting Fixing:** \
+The attempt of reducing overfitting was made by adding a learning rate scheduler and changing the batch size in range from _16_ to _32_,
+but these adjustments provided minimal improvement.
+
+**Model Selection Reasoning:** \
+LSTM Autoencoders are data-hungry models that require substantial amounts of training data to generalize well.\
+Given the limited labeled dataset available, 
+the lightweight model proved more suitable for this task due to its reduced parameter count and faster training time. 
+
+________
+
+### Final Models setup 
+
+#### General Training Parameters
+
+- **Optimizer**: AdamW (with weight decay for regularization)
+- **Loss Function**: Mean Squared Error (MSE)
+- **Anomaly Detection Threshold**: 95th percentile of reconstruction error
+- **Architecture**: 2-layer LSTM with 16 hidden units per layer
+- **Dropout**: 0.1
+- **Sequence Length**: 15 time steps
+- **Sequence Step**: 7 (overlapping windows)
+- **Batch Size**: 32
+- **Validation Split**: 10%
+
+---
+
+#### Route-Specific Configurations
+
+One other metric that was used to evaluate the models is the
+
+**MCC** (Matthews Correlation Coefficient):
+it's a metric used to evaluate the quality of binary classifications.\
+`MCC = (TP×TN - FP×FN) / √[(TP+FP)(TP+FN)(TN+FP)(TN+FN)]`\
+Gives a single score between -1 and +1:
+- +1 = Perfect prediction
+- 0 = Random prediction 
+- -1 = Completely wrong 
+
+##### Kiel Route (Model K)
+
+**Model Performance**:
+- **Precision**: 0.8630
+- **Recall**: 0.8956
+- **F1**: 0.8790 
+- **Mcc**: 0.8353
+
+- **Features**:
+- `speed_over_ground`
+- `course_over_ground`
+- `x_km` (projected coordinates)
+- `y_km` (projected coordinates)
+- `draught`
+- `dv` (speed variation)
+
+**Training Parameters**:
+- **Learning Rate**: 0.005
+- **Weight Decay**: 1e-3
+- **Input/Output Size**: 6 features
+
+---
+
+##### Bremerhaven Route (Model B)
+
+**Model Performance**
+- **F1 Score**: 0.8073
+- **Precision**: 0.8000  
+- **Recall**: 0.8148
+- **MCC**: 0.7590
+
+**Features**:
+- `speed_over_ground`
+- `course_over_ground`
+- `x_km` (projected coordinates)
+- `y_km` (projected coordinates)
+- `dist_to_ref` (distance to average route)
+- `draught`
+- `dv` (speed variation)
+
+**Training Parameters**:
+- **Learning Rate**: 0.001
+- **Weight Decay**: 1e-5
+- **Input/Output Size**: 7 features
+
+### Potential Improvements
+
+- **Expanding Training Data**: 
+  To improve how well the model generalizes, we need to collect more labeled data. This can be done through unsupervised clustering methods, \
+  other unsupervised techniques, or by using a model that has already proven reliable with the current dataset size.
+- **Hyperparameter Tuning**: 
+  Further tuning of hyperparameters such as learning rate, dropout, and sequence length. \
+  Using more extensive grid search or random search could help find optimal values.
+- **LSTM modifications**: 
+  Experimenting with different LSTM architectures to improve sequence modeling. \
+  This could involve simple changes like adding more layers, or more substantial modifications from research papers, \, 
+  for example, as incorporating attention mechanisms (allows the model to focus on specific parts of the input when making predictions, rather than treating all inputs equally)
