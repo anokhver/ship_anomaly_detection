@@ -121,6 +121,25 @@
 	const uploadProgress = ref(0);
 	const uploadError = ref("");
 
+	// Mapping from metric keys to user-friendly labels
+	const METRIC_LABELS = {
+		ship_type: "Ship Type",
+		length: "Length",
+		breadth: "Breadth",
+		draught: "Draught",
+		speed_over_ground: "Speed Over Ground",
+		course_over_ground: "Course Over Ground",
+		true_heading: "True Heading",
+		dv: "Delta Velocity",
+		dcourse: "Delta Course",
+		ddraft: "Delta Draught",
+		zone: "Zone",
+		x_km: "X Kilometers",
+		y_km: "Y Kilometers",
+		dist_to_ref: "Distance To Ref",
+		all_points: "All Points",
+	};
+
 	// Options
 	const modelOptions = [
 		{ value: "1", label: "OC-SVM" },
@@ -223,7 +242,7 @@
 		}
 
 		try {
-			trips.value = ['Loading trips...'];
+			trips.value = ["Loading trips..."];
 			const res = await fetch(`${endpoint}/gettrips`);
 			trips.value = await res.json();
 		} catch (err) {
@@ -250,9 +269,9 @@
 				const keys = Object.keys(data[0].data);
 				metricOptions.value = keys.map((key) => ({
 					value: key,
-					label: key,
+					label: METRIC_LABELS[key] || key,
 				}));
-				metricOptions.value.push({ value: "all_points", label: "All Points" });
+				metricOptions.value.push({ value: "all_points", label: METRIC_LABELS.all_points });
 				selectedMetric.value = metricOptions.value[0].value;
 			}
 
@@ -305,7 +324,7 @@
 				labels,
 				datasets: [
 					{
-						label: metric,
+						label: METRIC_LABELS[metric] || metric,
 						data: values,
 						fill: false,
 						tension: 0.1,
@@ -336,7 +355,7 @@
 					},
 					y: {
 						display: true,
-						title: { display: true, text: metric },
+						title: { display: true, text: METRIC_LABELS[metric] || metric },
 					},
 				},
 				plugins: {
