@@ -31,7 +31,7 @@ RUN pip install --upgrade pip && pip install -r requirements.txt
 RUN echo '#!/bin/bash\n\
 echo "Setting up development environment..."\n\
 echo "Installing frontend dependencies..."\n\
-cd /workspace/frontend && npm install\n\
+cd /workspace/frontend && npm install && cd /workspace\n\
 echo ""\n\
 echo "Development environment ready!"\n\
 echo ""\n\
