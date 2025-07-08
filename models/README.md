@@ -10,6 +10,12 @@
     - contains model files for both routs with a dispatcher 
 - **📂 LSTM**
     - contains all files connected to LSTM training
+- **model_tuning.md**
+    - describes what was done for tuning of the machine learning models
+- **LSTM/README.md**
+    - contains additional information about the LSTM autoencoder model used in the project
+
+
 - **Anomaly_definition**
     - Self-explanatory
 - **.py model files**
