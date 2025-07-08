@@ -2,7 +2,7 @@
 
 ## Overview
 
-The web interface has a few functions. You can:
+The web interface has a few functions. You can do:
 
 - Load data
 - Select a model
