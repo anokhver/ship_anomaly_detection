@@ -8,4 +8,4 @@ pyarrow
 matplotlib
 seaborn
 torch
-
+notebook
