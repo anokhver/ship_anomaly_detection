@@ -2,16 +2,21 @@
 
 After creating the model training script, the models needed to be properly adjusted to produce the most informative results. 
 
-We selected F1-score, as well as its components - Precision and Recall to focus on during the tuning, since they model the ratios of false positive and negative results, which is crucial in anomaly detection.
+### Primary Metric: F1 Score
+For this anomaly detection problem, 
+we chose to maximize the F1 score as our primary evaluation metric.
 
-Precision = TP / (TP + FP)
+**Why F1 Score is Appropriate**
+- **Class Imbalance Handling: The problem with anomalies is that** 
+  they by definition are significantly less frequent than normal ones, creating a heavily imbalanced dataset. 
+  F1 score effectively balances precision and recall, preventing models from simply predicting the majority class (normal class) to achieve high accuracy. 
+-**Equal Weight to False Positives and False Negatives & Harmonic Mean Benefits:**
+  F1 score considers both precision (avoiding false alarms) and recall (detecting actual anomalies) equally important.
+  If only recall was optimized,
+  models might flag too many normal points as anomalies (dropping precision) that would consequently defite the purpose of application.
 
-Recall = TP / (TP + FN)
-
-F1 score=2⋅(Precision+Recall)/(Precision⋅Recall)
+The F1 score is fitted for our goal familiar and easily interpretable, making it a suitable choice for evaluation.
 ​
-
-
 Different models required different ways of tuning and testing, depending on their behaviour.
 
 ## Random forest
