@@ -200,7 +200,7 @@ def train_per_route(df: pd.DataFrame, out_dir: str = "models_per_route_lr") -> N
         param_grid = [
             {"C": C, "penalty": penalty, "class_weight": cw, "solver": solver}
             for C in [0.01, 0.1, 1.0, 10.0]
-            for penalty, solver in [("l2", "liblinear"), ("l1", "liblinear")]
+            for penalty, solver in [("l2", "liblinear"), ("l1", "liblinear"), ("l2", "lbfgs")]
             for cw in [None, {0: 1.0, 1: 2.0}, {0: 1.0, 1: 3.0}, {0: 1.0, 1: 4.0}, {0: 1.0, 1: 5.0}, "balanced"]
         ]
         for params in param_grid:

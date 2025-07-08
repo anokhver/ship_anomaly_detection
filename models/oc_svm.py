@@ -192,7 +192,7 @@ def train_per_route(df: pd.DataFrame, out_dir: str = "models_per_route") -> None
         ]).astype(bool)
 
         # ─── grid-search ───
-        NU_GRID = [0.003]
+        NU_GRID = [0.001, 0.003, 0.01, 0.03]  # ν values to try
         GAMMA_GRID = ["scale", "auto", 0.001, 0.01, 0.1, 1.0]
         best = {"f1": -np.inf}  # Compare by F1 score
         for nu in NU_GRID:
@@ -233,7 +233,7 @@ def train_per_route(df: pd.DataFrame, out_dir: str = "models_per_route") -> None
                 print(f"  ν={nu:<4}  γ={gamma}  τ={tau:6.3f}  F1={f1:5.3f}  AUC={auc:5.3f}")
 
         # ─── final evaluation & save  ───
-        print(f"\n-> Selected ν={best['nu']}  τ={best['tau']:.3f}  F1={best['f1']:.3f}")
+        print(f"\n-> Selected ν={best['nu']}  τ={best['tau']:.3f}  F1={best['f1']:.3f}, AUC={best['auc']:.3f}, γ={best['gamma']}")
         scores_test = -best["pipe"].decision_function(X_test)
         preds = (scores_test > best["tau"]).astype(int)
        
