@@ -1,5 +1,7 @@
 import os
 import shutil
+
+
 def main():
     # Ensure data_to_clean directory exists and clean it if needed
     data_dir = 'data_to_clean'
@@ -14,10 +16,11 @@ def main():
                 os.remove(f)
             print("All files removed.")
 
-    #copying
+    # copying
     input_dir = '../../../input_data'
     if os.path.isdir(input_dir):
-        input_files = [os.path.join(input_dir, f) for f in os.listdir(input_dir) if os.path.isfile(os.path.join(input_dir, f))]
+        input_files = [os.path.join(input_dir, f) for f in os.listdir(input_dir) if
+                       os.path.isfile(os.path.join(input_dir, f))]
         if input_files:
             for f in input_files:
                 shutil.copy(f, data_dir)
