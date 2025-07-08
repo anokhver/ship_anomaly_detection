@@ -264,7 +264,7 @@ def train_per_route(df: pd.DataFrame,
 
         # ── final evaluation and serialisation ──────────────────────────── #
         print(
-            f"\n-> Selected n_estimators={best['n_est']}  τ={best['tau']:.3f}  AUC={best['auc']:.3f}"
+            f"\n-> Selected n_estimators={best['n_est']}  τ={best['tau']:.3f}  AUC={best['auc']:.3f}, F1={best['f1']:.3f}, max_samples={best['max_samples']}, max_features={best['max_features']}"
         )
         scores_test = -best["pipe"].decision_function(X_test)
         preds = (scores_test > best["tau"]).astype(int)
