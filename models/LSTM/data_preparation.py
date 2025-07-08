@@ -194,7 +194,7 @@ def preprocess_data(data_path: str, output_name: str = "LSTM_preprocessed") -> p
 
 if __name__ == "__main__":
     # Example usage
-    data_path = "../all_anomalies_combined.parquet"
+    data_path = "../saved_data/anomalies_after_additional.parquet"
 
     df_final = preprocess_data(data_path)
     print(f"Preprocessing complete. Shape: {df_final.shape}")

@@ -245,7 +245,7 @@ def noise_handling(
     #TODO
     for col in df_final.columns:
         if pd.api.types.is_numeric_dtype(df_final[col]):
-            df_final[col] = df_final[col].fillna(-1)
+            df_final[col] = df_final[col].fillna(0)
         else:
             if pd.api.types.is_categorical_dtype(df_final[col]):
                 if 'null' not in df_final[col].cat.categories:

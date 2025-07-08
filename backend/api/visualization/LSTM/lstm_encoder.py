@@ -1,6 +1,7 @@
 import torch
 from torch import nn
 
+
 class LSTMModel(nn.Module):
     """
     A PyTorch implementation of a Long Short-Term Memory (LSTM) model for time-series forecasting.
@@ -12,7 +13,6 @@ class LSTMModel(nn.Module):
                  num_layers,
                  output_size,
                  dropout=0):
-
         super(LSTMModel, self).__init__()
 
         self.encoder = nn.LSTM(
@@ -62,11 +62,5 @@ class LSTMModel(nn.Module):
         with torch.no_grad():
             reconstructed = self.forward(x)
             # Calculate MSE for each sequence
-            result =  loss(reconstructed, x).amax(dim=(1, 2)).cpu().numpy()
+            result = loss(reconstructed, x).amax(dim=(1, 2)).cpu().numpy()
             return result
-
-    def encode(self, x):
-        """Get the encoded representation of input sequences"""
-        with torch.no_grad():
-            _, (hidden, _) = self.encoder(x)
-            return hidden[-1]  # Return the last layer's hidden state
