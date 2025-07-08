@@ -24,18 +24,27 @@ COPY requirements.txt .
 RUN pip install --upgrade pip && pip install -r requirements.txt
 
 
-# Install frontend dependencies (if not using multi-stage build)
-COPY frontend/package*.json frontend/
-RUN cd frontend && npm install
+# Note: Frontend dependencies will be installed at runtime
+# This allows for better development workflow with volume mounts
 
-
-
-# Optional: build frontend (Vue) on container start
-# You can also leave this to a manual npm run build
-# RUN cd frontend && npm run build
+# Create startup script
+RUN echo '#!/bin/bash\n\
+echo "Setting up development environment..."\n\
+echo "Installing frontend dependencies..."\n\
+cd /workspace/frontend && npm install\n\
+echo ""\n\
+echo "Development environment ready!"\n\
+echo ""\n\
+exec "$@"' > /usr/local/bin/setup-dev.sh && chmod +x /usr/local/bin/setup-dev.sh
 
 # Expose both ports
 EXPOSE 8000 5173
 
-# run the backend server
+# Use the setup script as entrypoint
+ENTRYPOINT ["/usr/local/bin/setup-dev.sh"]
+
+# Set default command to bash for interactive development
+CMD ["/bin/bash"]
+
+# run the backend server (in case starting script fails)
 ## python manage.py runserver 0.0.0.0:8000
