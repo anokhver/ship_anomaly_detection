@@ -242,7 +242,6 @@ def noise_handling(
     print("\nStep 6: Finalizing dataset")
     df_final = df.rename(columns=column_mapping)
     
-    #TODO
     for col in df_final.columns:
         if pd.api.types.is_numeric_dtype(df_final[col]):
             df_final[col] = df_final[col].fillna(0)
