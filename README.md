@@ -29,7 +29,7 @@ If for some other reason the script still doesn't work, you can run the frontend
 
 frontend: cd frontend -> npm run dev
 
-run a new terminal in workspace directory
+run a new terminal in workspace directory (you can use docker exec -it <name of the active container> bash)
 
 backend: cd backend -> python3 manage.py runserver 0.0.0.0:8000
 

@@ -42,7 +42,7 @@ The tuning consisted of training the model multiple times with a grid of differe
 
 Final values of parameters are as follows(with τ being a scoring threshold):
 
-KIEL-GDYNIA route - n_estimators=100, max_depth=20, min_samples_leaf=1,max_features=sqrt, τ = 0.39 with anomaly score F1=0.992
+KIEL-GDYNIA route - n_estimators=100, max_depth=20, min_samples_leaf=1, max_features=sqrt, τ = 0.39 with anomaly score F1=0.992
 
 
 BREMERHAVEN-HAMBURG route - n_estimators=200, max_depth=None, min_samples_leaf=1, max_features=sqrt, τ=0.42 with anomaly score F1=0.972
