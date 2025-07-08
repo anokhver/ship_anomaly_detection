@@ -14,8 +14,6 @@ F1 score=2⋅(Precision+Recall)/(Precision⋅Recall)
 
 Different models required different ways of tuning and testing, depending on their behaviour.
 
----
-
 ## Random forest
 
 ### Model description
@@ -45,8 +43,7 @@ KIEL-GDYNIA route - n_estimators=100, max_depth=20, min_samples_leaf=1,max_featu
 BREMERHAVEN-HAMBURG route - n_estimators=200, max_depth=None, min_samples_leaf=1, max_features=sqrt, τ=0.42 with anomaly score F1=0.972
 
 ### Observations and potential improvements
-
----
+The model did quite well from the very beginning, so the tuning was only a slight improvement. As with any supervised classifier, the quality would probably increase, if it was trained on a larger amount of data. Looking at statistics and visualization, the model seems to perform the best of all, with very little false results. However, if a type of anomaly occurs that was not present in the labeled data, or if we just didn't notice it during the labeling, the random forest might have trouble categorizing it. As expected, the unsupervised models handle such anomalies better, but if the random forest finds an anomaly, it is very likely to be correct. For potentially improving the model, we could feed it more labeled data, however a risk of encountering an unknown anomaly will persist, no matter how much data we add.
 
 ## Logistic regression
 
@@ -85,8 +82,8 @@ KIEL-GDYNIA route - C=1.0, penalty : l1, class_weight: None, solver : liblinear,
 BREMERHAVEN-HAMBURG route - C=0.01, penalty : l2, class_weight : {0: 1.0, 1: 4.0}, solver : lbfgs, τ=0.54 with anomaly score F1=0.760
 
 ### Observations and potential improvements
+Logistic regression, although still being able to find many anomalies, performs significantly worse than the random forest. The model also suffers from the same problem of not being able to properly detect new types of anomalies. The worse performance is likely caused by the fact that logistic regression assumes a linear relationship between the features and the log-odds of the outcome. Anomalies often don’t follow such linear trends — they may be hidden in interactions, non-linear clusters, or subtle context-dependent patterns. The amount of features might also be a possible cause - logistic regression doesn't do well when there's many features to train on. The model could potentially be improved by giving it more data to process or improving and simplifying the features if possible, but it seems that the logistic regression isn't suited to this type of task.
 
----
 
 ## Isolation forest
 
@@ -115,9 +112,10 @@ KIEL-GDYNIA route - n_estimators=140, τ=-0.070, max_samples=0.75, max_features=
 
 BREMERHAVEN-HAMBURG route - n_estimators=140, τ=-0.038, max_samples=1.0, max_features=0.8 with anomaly score F1=0.875
 
-### Observations and potential improvements
+Contamination for both routes were set manually based on number of labeled anomalies in our data - 0.008 for KG route and 0.02 for BH route.
 
----
+### Observations and potential improvements
+After tuning, the model performs relatively well - it corretly identifies anomalous sections and manages to find even unknown anomalies that the supervised models could not detect. Unfortunately, it also labels a lot of false positives, especially in port zones, when values change more often. We tried multiple ways to fix this - increasing the importance of the zone feature, or forcing higher threshold in the zone, but none of these proved to be a solution to the problem. We could potentially train the model separately in and outside the port zones but it feels like a wrong approach to the issue.
 
 ## One-class SVM
 
@@ -144,8 +142,7 @@ KIEL-GDYNIA route - ν=0.03, τ=0.123, γ(gamma)=1.0 with anomaly score F1=0.941
 BREMERHAVEN-HAMBURG route - ν=0.001, τ=0.000, γ(gamma)=1.0 with anomaly score F1=0.900
 
 ### Observations and potential improvements
-
----
+The model performs quite well, although it also labels unneccesary anomalies in ports. It manages to find most of the anomalies correctly, and since it trains only on non-anomalous data, it is able to find anomalies not encountered by us during labeling without issues. It is more strict on scoring anomalies and therefore returns less false positives than isolation forest - hence higher F1-scores. Potential improvements could consist of giving more data for the model to train on, but we still don't know how to handle the port zones.
 
 ## LSTM Autoencoder training
     
