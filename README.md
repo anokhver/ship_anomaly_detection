@@ -1,9 +1,9 @@
  # Group05
 
  ## Participants
-- **Developer 1**: @coz1686 (Piotr Ciupiński)
-- **Developer 2**: @cgy3920 (Veronika Anokhina)
-- **Developer 3**: @cuu7703 (Rafał Mironko)
+- [anokhver](https://github.com/anokhver) (Veronika Anokhina)
+- [PjoterC](https://github.com/PjoterC) (Piotr Ciupiński)
+- [Mironiusz](https://github.com/Mironiusz) (Rafał Mironko)
 
 ---
 # Installing and running the application
@@ -70,9 +70,3 @@ To find out how to use the application, check the INSTRUCTIONS.md file
   - Instructions on how to use the application
 
 - The .md files in the repository are used as additional descriptions for specific parts - their titles indicate what they're about.
----
-
-
-## Project Status
-- **Sprint 1**: 07.05.2025 - 21.05.2025
-- **Sprint 2**: 22.05.2025 - 11.06.2025 (current)
