@@ -1,9 +1,29 @@
- # Group05
+# Project
 
- ## Participants
+This project builds a full ML pipeline to detect abnormal vessel trajectories from AIS data for two different routes.
+It includes preprocessing, trajectory structuring, manual + rule-based labeling, experiments with 4 classical models and an LSTM, and visual tools for analysis.
+
+## Participants
 - [anokhver](https://github.com/anokhver) (Veronika Anokhina)
 - [PjoterC](https://github.com/PjoterC) (Piotr Ciupiński)
 - [Mironiusz](https://github.com/Mironiusz) (Rafał Mironko)
+
+## Models
+After its evaluation by the models, they obtained following scores (route 1 / route 2):
+- Random forest: F1 = 0.992/0.972
+- One-class SVM: F1 = 0.941/0.900
+- Isolation forest: F1 = 0.884/0.875
+- Logistic regression: F1 = 0.859/0.760
+- LSTM: F1 = 0.879/0.807
+
+## Features
+- AIS data cleaning & feature engineering
+- Automatic + manual abnormal-trajectory labeling
+- Comparative evaluation across all 5 models
+- LSTM sequence modeling for time-dependent patterns
+- Metrics, plots, and experiment logs
+- Lightweight GUI for trajectory visualization
+- Dockerized environment
 
 ---
 # Installing and running the application
@@ -70,3 +90,4 @@ To find out how to use the application, check the INSTRUCTIONS.md file
   - Instructions on how to use the application
 
 - The .md files in the repository are used as additional descriptions for specific parts - their titles indicate what they're about.
+
